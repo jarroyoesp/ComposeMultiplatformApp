@@ -1,5 +1,5 @@
 ## 1
-name: Test and deploy
+name: Test and Deploy
 
 ## Actions that will be executed when you push code currently none
 on:
@@ -33,34 +33,27 @@ jobs:
   #        api-level: 29
   #        script: ./gradlew connectedAndroidTest
 
-  build:
-    needs: [ unit_tests ]
-    runs-on: ubuntu-latest
-    steps:
-      # 1
-      - name: Checkout code
-        uses: actions/checkout@v2
-      # 2
-      - name: Generate Release APK
-        run: ./gradlew assembleRelease
-      # 3
-      - name: Sign APK
-        uses: r0adkll/sign-android-release@v1
-        # ID used to access action output
-        id: sign_app
+  - name: Decode Keystore
+      id: decode_keystore
+      uses: timheuer/base64-to-file@v1
+      with:
+        fileName: 'keystore/your_signing_keystore.jks'
+        encodedString: ${{ secrets.KEYSTORE }}
+      - uses: actions/checkout@v2
+      - name: set up JDK 1.8
+        uses: actions/setup-java@v1
         with:
-          releaseDirectory: app/build/outputs/apk/release
-          signingKeyBase64: ${{ secrets.SIGNING_STORE_PASSWORD }}
-          alias: ${{ secrets.SIGNING_KEY_ALIAS }}
-          keyStorePassword: ${{ secrets.SIGNING_KEY_PASSWORD }}
-          keyPassword: ${{ secrets.SIGNING_KEY_PASSWORD }}
-      # 4
-      - uses: actions/upload-artifact@master
+          java-version: 1.8
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+      - name: build prod
+        run: ./gradlew app:bundleRelease
+        env:
+          SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
+          SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
+          SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
+      - name: Upload
+        uses: actions/upload-artifact@v2
         with:
-          name: release.apk
-          path: ${{steps.sign_app.outputs.signedReleaseFile}}
-      # 5
-      - uses: actions/upload-artifact@master
-        with:
-          name: mapping.txt
-          path: app/build/outputs/mapping/release/mapping.txt
+          name: Build Artifacts
+          path: app/build/outputs/
