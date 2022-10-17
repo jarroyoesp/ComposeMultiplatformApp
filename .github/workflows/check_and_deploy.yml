@@ -2,8 +2,7 @@
 name: Test and Deploy
 
 ## Actions that will be executed when you push code currently none
-on:
-  workflow_dispatch:
+on: workflow_dispatch
 
 ## 2
 jobs:
