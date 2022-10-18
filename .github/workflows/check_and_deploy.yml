@@ -4,6 +4,20 @@ name: Test and Deploy
 ## Actions that will be executed when you push code currently none
 on:
   workflow_dispatch:
+    inputs:
+      semver:
+        description: 'Release Semantic Versioning (e.g. 4.15.2)'
+        required: true
+      track:
+        description: 'Track'
+        required: true
+        default: internal
+        type: choice
+        options:
+          - internal
+          - alpha
+          - beta
+          - production
 
 ## 2
 jobs:
@@ -40,6 +54,23 @@ jobs:
       # 1
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Create release tag
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: "refs/tags/${{ github.event.inputs.semver }}",
+              sha: context.sha
+            })
+
+      - name: Workaround to fetch the tag # Is there a better way to do it?
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       # 2
       - name: Generate Release APK
         run: ./gradlew assembleRelease
