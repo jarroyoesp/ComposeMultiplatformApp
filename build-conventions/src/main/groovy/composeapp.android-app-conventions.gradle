@@ -1,0 +1,77 @@
+import com.mikepenz.aboutlibraries.plugin.DuplicateMode
+import com.mikepenz.aboutlibraries.plugin.DuplicateRule
+
+plugins {
+    id 'com.android.application'
+    id 'com.google.dagger.hilt.android'
+    id 'com.mikepenz.aboutlibraries.plugin'
+    id 'com.starter.easylauncher'
+    id 'composeapp.android-conventions'
+    id 'composeapp.dependencies-conventions'
+    id 'composeapp.merged-manifests-conventions'
+    id 'composeapp.ruler-conventions'
+    id 'kotlin-parcelize'
+}
+
+android {
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion libs.versions.androidx.compose.compiler.get()
+    }
+    applicationVariants.all {
+        kotlin.sourceSets {
+            getByName(name) {
+                kotlin.srcDir("build/generated/ksp/${name}/kotlin")
+            }
+        }
+    }
+    kotlinOptions {
+        freeCompilerArgs += '-opt-in=androidx.compose.material.ExperimentalMaterialApi'
+        freeCompilerArgs += '-opt-in=androidx.compose.material3.ExperimentalMaterial3Api'
+        freeCompilerArgs += '-opt-in=androidx.compose.ui.ExperimentalComposeUiApi'
+    }
+}
+
+easylauncher {
+    buildTypes {
+        debug {
+            filters = [
+                chromeLike(label: "DEBUG", overlayHeight: 0.35, textSizeRatio: 0.20),
+            ]
+        }
+    }
+}
+
+aboutLibraries {
+    duplicationMode = DuplicateMode.MERGE
+    duplicationRule = DuplicateRule.SIMPLE
+}
+
+dependencies {
+
+    // Android
+    implementation libs.androidx.activity.compose
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.lifecycle.runtime
+    implementation libs.androidx.navigation.fragment
+    implementation libs.androidx.navigation.ui.ktx
+
+    // General
+    implementation libs.hilt.android
+    implementation libs.hilt.navigation.compose
+    kapt libs.hilt.compiler
+    implementation libs.timber
+    debugImplementation libs.leakcanary
+}
+
+tasks.register("installGitHooks", Copy) {
+    from file("$rootDir/.githooks")
+    into file("$rootDir/.git/hooks")
+    fileMode 0775
+}
+
+afterEvaluate {
+    preBuild.dependsOn installGitHooks
+}

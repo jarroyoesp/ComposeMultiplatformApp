@@ -1,0 +1,20 @@
+- identifier: :app
+  owner: :app
+
+- identifier: :modules:library*
+  owner: :module:library*
+
+- identifier: :modules:feature*
+  owner: :module:feature*
+
+- identifier: androidx.*
+  owner: androidx
+
+- identifier: com.apollographql.*
+  owner: apollo
+
+- identifier: com.google.*
+  owner: google
+
+- identifier: org.jetbrains.kotlin* # without the . to match also kotlinx
+  owner: kotlin

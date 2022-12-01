@@ -44,9 +44,9 @@ jobs:
       # Allow tests to continue on other devices if they fail on one device.
       fail-fast: false
       matrix:
-        api-level: [ 24, 29 ]
-        target: [ google_apis ]
-        arch: [ x86_64 ]
+        api-level: [24, 29]
+        target: [google_apis]
+        arch: [x86_64]
 
     steps:
       - name: Checkout
@@ -118,7 +118,7 @@ jobs:
             ./gradlew connectedCheck
 
   build:
-    needs: [ unit_tests, instrumentation_tests ]
+    needs: [unit_tests, instrumentation_tests]
     runs-on: ubuntu-latest
     steps:
       # 1
