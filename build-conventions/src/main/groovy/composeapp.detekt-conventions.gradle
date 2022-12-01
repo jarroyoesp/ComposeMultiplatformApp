@@ -1,0 +1,21 @@
+plugins {
+    id 'io.gitlab.arturbosch.detekt'
+}
+
+detekt {
+    toolVersion = libs.versions.detekt.get()
+    source = files("src/main/kotlin", "src/test/kotlin", "src/androidTest/kotlin")
+    parallel = true
+    autoCorrect = true
+}
+
+dependencies {
+    detektPlugins libs.detekt
+    detektPlugins libs.detekt.rules.compose
+    detektPlugins libs.detekt.twitter.compose.rules
+}
+
+afterEvaluate {
+    check.dependsOn tasks.named("detektMain")
+    check.dependsOn tasks.named("detektTest")
+}

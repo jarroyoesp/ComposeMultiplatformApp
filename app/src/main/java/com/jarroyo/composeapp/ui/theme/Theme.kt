@@ -18,20 +18,20 @@ import androidx.core.view.ViewCompat
 private val DarkColorScheme = darkColorScheme(
     primary = PurpleDark,
     secondary = PurpleGreyDark,
-    tertiary = PinkDark
+    tertiary = PinkDark,
 )
 
 private val LightColorScheme = lightColorScheme(
     primary = PurpleLight,
     secondary = PurpleGreyLight,
-    tertiary = PinkLight
+    tertiary = PinkLight,
 )
 
 @Composable
 fun ComposeAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     dynamicColor: Boolean = true,
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
@@ -52,6 +52,6 @@ fun ComposeAppTheme(
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,
-        content = content
+        content = content,
     )
 }
