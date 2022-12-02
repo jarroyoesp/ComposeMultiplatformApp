@@ -140,7 +140,7 @@ tink = { module = "com.google.crypto.tink:tink-android", version = "1.7.0" }
 
 # plugins
 plugin-aboutlibraries = { module = "com.mikepenz.aboutlibraries.plugin:aboutlibraries-plugin", version.ref = "aboutlibraries" }
-plugin-android-gradle = { module = "com.android.tools.build:gradle", version = "7.4.0-beta05" }
+plugin-android-gradle = { module = "com.android.tools.build:gradle", version = "7.4.0-rc01" }
 plugin-androidcachefix = { module = "gradle.plugin.org.gradle.android:android-cache-fix-gradle-plugin", version = "2.6.0" }
 plugin-androidx-navigation-safeargs = { module = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "androidx-navigation" }
 plugin-appversioning = { module = "io.github.reactivecircus.appversioning:app-versioning-gradle-plugin", version = "1.1.2" }
