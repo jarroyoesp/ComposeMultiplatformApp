@@ -14,7 +14,6 @@ on:
       - master
 
 jobs:
-  
   build-release:
     name: Build release
     runs-on: ubuntu-latest
