@@ -17,4 +17,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ComposeApp"
 includeBuild("build-conventions")
-include ':app'
+include(':app',
+        ':modules:feature-home',
+        ':modules:library-ui',
+        )
