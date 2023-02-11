@@ -1,0 +1,49 @@
+import se.bjurr.violations.comments.github.plugin.gradle.ViolationCommentsToGitHubTask
+
+plugins {
+    id 'se.bjurr.violations.violation-comments-to-github-gradle-plugin'
+}
+
+tasks.register('violationCommentsToGitHub', ViolationCommentsToGitHubTask) {
+    repositoryOwner = "jarroyo"
+    repositoryName = "ComposeApp"
+    pullRequestId = System.properties['GITHUB_PULLREQUESTID']
+    oAuth2Token = System.properties['GITHUB_OAUTH2TOKEN']
+    gitHubUrl = "https://api.github.com/"
+    createCommentWithAllSingleFileComments = false
+    createSingleFileComments = true
+    commentOnlyChangedContent = true
+    keepOldComments = false
+    violations = [
+        [
+            "KOTLINGRADLE",
+            ".",
+            ".*/build/logs/buildlog.*\\.txt\$",
+            "Gradle"
+        ],
+        [
+            "CHECKSTYLE",
+            ".",
+            ".*/reports/detekt/.*\\.xml\$",
+            "Detekt"
+        ],
+        [
+            "ANDROIDLINT",
+            ".",
+            ".*/reports/lint-results.*\\.xml\$",
+            "Android Lint"
+        ],
+        [
+            "JUNIT",
+            ".",
+            ".*/build/test-results/test.*/.*\\.xml\$",
+            "JUnit"
+        ],
+        [
+            "JUNIT",
+            ".",
+            ".*/build/sauce/saucectl-report\\.xml\$",
+            "Espresso"
+        ],
+    ]
+}
