@@ -17,6 +17,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.jarroyo.libraryui.test", appContext.packageName)
+        assertEquals("com.jarroyo.library.ui.test", appContext.packageName)
     }
 }
