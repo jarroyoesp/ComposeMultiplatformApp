@@ -23,6 +23,10 @@ android {
 }
 
 dependencies {
+    // Modules
+    implementation projects.modules.featureHome
+    implementation projects.modules.libraryUi
+
     implementation libs.androidx.core.ktx
     implementation libs.androidx.lifecycle.runtime
     implementation libs.androidx.activity.compose
