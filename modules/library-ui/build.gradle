@@ -27,7 +27,7 @@ dependencies {
     //api projects.modules.libraryUiApi
     //implementation projects.modules.libraryAndroidApi
     //implementation projects.modules.libraryI18n
-    //implementation projects.modules.libraryNavigationApi
+    implementation projects.modules.libraryNavigationApi
     //implementation projects.modules.libraryPreferencesApi
     api libs.accompanist.flowlayout
     api libs.accompanist.navigation.material

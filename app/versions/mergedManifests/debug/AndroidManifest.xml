@@ -6,6 +6,9 @@
         android:minSdkVersion="24"
         android:targetSdkVersion="33" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <permission
         android:name="com.jarroyo.composeapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
@@ -66,6 +69,9 @@
                 android:value="androidx.startup" />
             <meta-data
                 android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" /> <!-- This entry makes ApolloInitializer discoverable. -->
+            <meta-data
+                android:name="com.apollographql.apollo3.cache.normalized.sql.ApolloInitializer"
                 android:value="androidx.startup" />
             <meta-data
                 android:name="androidx.profileinstaller.ProfileInstallerInitializer"

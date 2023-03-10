@@ -1,0 +1,8 @@
+query RocketsQuery {
+    rockets {
+        company
+        name
+        id
+        wikipedia
+    }
+}

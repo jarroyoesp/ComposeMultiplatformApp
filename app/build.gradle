@@ -25,6 +25,8 @@ android {
 dependencies {
     // Modules
     implementation projects.modules.featureHome
+    implementation projects.modules.libraryNavigation
+    implementation projects.modules.libraryNetwork
     implementation projects.modules.libraryUi
 
     implementation libs.androidx.core.ktx
