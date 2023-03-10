@@ -662,7 +662,7 @@ naming:
   TopLevelPropertyNaming:
     active: true
     excludes: [
-        '**/modules/library-ui/src/main/kotlin/com/veeva/link/library/ui/component/**',
+        '**/modules/library-ui/src/main/kotlin/com/jarroyo/library/ui/component/**',
       ] # Custom
     constantPattern: '[A-Z][_A-Z0-9]*'
     propertyPattern: '[A-Za-z][_A-Za-z0-9]*'

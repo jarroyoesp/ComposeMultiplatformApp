@@ -25,6 +25,11 @@
             <option value="$PROJECT_DIR$/build-conventions" />
             <option value="$PROJECT_DIR$/modules" />
             <option value="$PROJECT_DIR$/modules/feature-home" />
+            <option value="$PROJECT_DIR$/modules/feature-home-api" />
+            <option value="$PROJECT_DIR$/modules/library-navigation" />
+            <option value="$PROJECT_DIR$/modules/library-navigation-api" />
+            <option value="$PROJECT_DIR$/modules/library-network" />
+            <option value="$PROJECT_DIR$/modules/library-network-api" />
             <option value="$PROJECT_DIR$/modules/library-ui" />
           </set>
         </option>
