@@ -33,8 +33,7 @@ fun HomeRocketItem(
         Row(
             modifier = Modifier
                 .padding(Spacing.x02)
-                .fillMaxWidth()
-                .defaultMinSize(minHeight = 400.dp),
+                .fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(Spacing.x01),
             verticalAlignment = Alignment.CenterVertically,
         ) {

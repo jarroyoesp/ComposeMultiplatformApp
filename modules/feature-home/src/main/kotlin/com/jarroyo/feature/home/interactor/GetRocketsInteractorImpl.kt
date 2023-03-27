@@ -1,5 +1,6 @@
 package com.jarroyo.feature.home.interactor
 
+import android.accounts.NetworkErrorException
 import com.apollographql.apollo3.ApolloClient
 import com.apollographql.apollo3.api.ApolloResponse
 import com.apollographql.apollo3.cache.normalized.FetchPolicy
@@ -19,7 +20,7 @@ internal class GetRocketsInteractorImpl @Inject constructor(
         page: Int,
         pageSize: Int,
         fetchPolicy: FetchPolicy,
-    ): Result<List<RocketsQuery.Rocket>?, Boolean> = try {
+    ): Result<List<RocketsQuery.Rocket>?, Exception> = try {
         val response: ApolloResponse<RocketsQuery.Data> =
             apolloClient
                 .query(RocketsQuery())
@@ -28,9 +29,9 @@ internal class GetRocketsInteractorImpl @Inject constructor(
         if (!response.hasErrors()) {
             Ok(response.data?.rockets?.filterNotNull())
         } else {
-            Err(true)
+            Err(NetworkErrorException(response.errors?.first()?.message))
         }
     } catch (e: ApolloException) {
-        Err(true)
+        Err(e)
     }
 }

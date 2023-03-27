@@ -15,6 +15,7 @@ object HomeContract {
 
     sealed class Event : ViewEvent {
         object OnAcceptButtonClicked : Event()
+        object OnSwipeToRefresh : Event()
     }
 
     sealed class Effect : ViewEffect {
