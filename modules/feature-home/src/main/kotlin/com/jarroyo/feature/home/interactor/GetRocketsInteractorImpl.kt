@@ -29,7 +29,7 @@ internal class GetRocketsInteractorImpl @Inject constructor(
         if (!response.hasErrors()) {
             Ok(response.data?.rockets?.filterNotNull())
         } else {
-            Err(NetworkErrorException(response.errors?.first()?.message))
+            Err(NetworkErrorException(response.errors?.run { first().message }))
         }
     } catch (e: ApolloException) {
         Err(e)

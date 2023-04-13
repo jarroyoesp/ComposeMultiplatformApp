@@ -39,7 +39,7 @@ class HomeViewModel @Inject constructor(
                 is Ok -> updateState { copy(rocketList = result.value) }
                 is Err -> sendEffect {
                     Effect.ShowSnackbar(
-                        result.error.message ?: result.error.toString()
+                        result.error.message ?: result.error.toString(),
                     )
                 }
             }

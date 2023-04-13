@@ -23,6 +23,7 @@ class RocketDetailViewModel @Inject constructor(
     override fun provideInitialState() = State()
 
     override fun handleEvent(event: Event) {
+        // Empty
     }
 
     private fun refreshData() {
