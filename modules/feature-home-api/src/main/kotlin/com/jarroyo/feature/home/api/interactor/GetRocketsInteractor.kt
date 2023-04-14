@@ -9,5 +9,5 @@ interface GetRocketsInteractor {
         page: Int = 1,
         pageSize: Int = 20,
         fetchPolicy: FetchPolicy = FetchPolicy.NetworkFirst,
-    ): Result<List<RocketsQuery.Rocket>?, Boolean>
+    ): Result<List<RocketsQuery.Rocket>?, Exception>
 }

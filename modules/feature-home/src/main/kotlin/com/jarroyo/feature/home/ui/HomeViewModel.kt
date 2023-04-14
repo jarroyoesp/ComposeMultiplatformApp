@@ -28,16 +28,20 @@ class HomeViewModel @Inject constructor(
     override fun handleEvent(event: Event) {
         when (event) {
             Event.OnAcceptButtonClicked -> appNavigator.navigate(Screens.RocketDetailScreen.route)
+            Event.OnSwipeToRefresh -> refreshData()
         }
     }
 
     private fun refreshData() {
         viewModelScope.launch {
-            sendEffect { Effect.ShowSnackbar("Loading") }
             updateState { copy(loading = true) }
             when (val result = getRocketsInteractor()) {
                 is Ok -> updateState { copy(rocketList = result.value) }
-                is Err -> sendEffect { Effect.ShowSnackbar(result.error.toString()) }
+                is Err -> sendEffect {
+                    Effect.ShowSnackbar(
+                        result.error.message ?: result.error.toString(),
+                    )
+                }
             }
             updateState { copy(loading = false) }
         }
