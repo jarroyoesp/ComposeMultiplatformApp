@@ -45,3 +45,6 @@ spotless {
         endWithNewline()
     }
 }
+
+tasks.matching { it.name.startsWith('spotless') }.all { mustRunAfter(":app:copyMergedManifests") }
+
