@@ -504,14 +504,8 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.21 (*)
 |    \--- org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.8.21
 |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.8.21 (*)
-+--- androidx.core:core-ktx:1.9.0 -> 1.11.0-alpha01 (*)
-+--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.0 (*)
-+--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0 (*)
-+--- org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5
-|    \--- org.jetbrains.kotlinx:kotlinx-collections-immutable-jvm:0.3.5
-|         +--- org.jetbrains.kotlin:kotlin-stdlib:1.6.0 -> 1.8.21 (*)
-|         \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.6.0 -> 1.8.21
 +--- androidx.activity:activity-compose:1.7.1 (*)
++--- androidx.core:core-ktx:1.9.0 -> 1.11.0-alpha01 (*)
 +--- androidx.lifecycle:lifecycle-runtime-ktx:2.5.1 -> 2.6.1 (*)
 +--- androidx.navigation:navigation-fragment-ktx:2.5.3 -> 2.6.0-alpha08
 |    +--- androidx.navigation:navigation-fragment:2.6.0-alpha08
@@ -773,6 +767,8 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    +--- androidx.navigation:navigation-runtime:2.6.0-alpha08 (c)
 |    +--- androidx.navigation:navigation-runtime-ktx:2.6.0-alpha08 (c)
 |    \--- androidx.navigation:navigation-ui:2.6.0-alpha08 (c)
++--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.0 (*)
++--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0 (*)
 +--- com.google.dagger:hilt-android:2.46
 |    +--- com.google.dagger:dagger:2.46
 |    |    \--- javax.inject:javax.inject:1
@@ -850,21 +846,21 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |    +--- androidx.navigation:navigation-common:2.6.0-alpha08 (c)
 |    |    \--- androidx.navigation:navigation-ui:2.6.0-alpha08 (c)
 |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.6.0 -> 1.8.21 (*)
++--- com.michael-bull.kotlin-result:kotlin-result:1.1.17
+|    \--- com.michael-bull.kotlin-result:kotlin-result-jvm:1.1.17
+|         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.10 -> 1.8.21 (*)
+|         \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.10 -> 1.8.21
++--- org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5
+|    \--- org.jetbrains.kotlinx:kotlinx-collections-immutable-jvm:0.3.5
+|         +--- org.jetbrains.kotlin:kotlin-stdlib:1.6.0 -> 1.8.21 (*)
+|         \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.6.0 -> 1.8.21
 +--- com.jakewharton.timber:timber:5.0.1
 |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.5.21 -> 1.8.21 (*)
 |    \--- org.jetbrains:annotations:20.1.0 -> 23.0.0
 +--- project :modules:feature-home
 |    +--- project :modules:feature-home-api
 |    |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21 (*)
-|    |    +--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.8.21 (*)
-|    |    +--- androidx.core:core-ktx:1.9.0 -> 1.11.0-alpha01 (*)
-|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.0 (*)
-|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0 (*)
-|    |    +--- org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5 (*)
-|    |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.17
-|    |    |    \--- com.michael-bull.kotlin-result:kotlin-result-jvm:1.1.17
-|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.10 -> 1.8.21 (*)
-|    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.10 -> 1.8.21
+|    |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.17 (*)
 |    |    +--- com.michael-bull.kotlin-result:kotlin-result-coroutines:1.1.17
 |    |    |    \--- com.michael-bull.kotlin-result:kotlin-result-coroutines-jvm:1.1.17
 |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.10 -> 1.8.21 (*)
@@ -920,11 +916,6 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |         +--- com.squareup.retrofit2:retrofit:2.9.0
 |    |         |    \--- com.squareup.okhttp3:okhttp:3.14.9 -> 4.11.0 (*)
 |    |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21 (*)
-|    |         +--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.8.21 (*)
-|    |         +--- androidx.core:core-ktx:1.9.0 -> 1.11.0-alpha01 (*)
-|    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.0 (*)
-|    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0 (*)
-|    |         +--- org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5 (*)
 |    |         +--- com.michael-bull.kotlin-result:kotlin-result:1.1.17 (*)
 |    |         +--- com.michael-bull.kotlin-result:kotlin-result-coroutines:1.1.17 (*)
 |    |         +--- com.jakewharton.timber:timber:5.0.1 (*)
@@ -963,11 +954,6 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |                             +--- org.jetbrains.kotlinx:kotlinx-serialization-bom:1.5.0 (*)
 |    |                             \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.10 -> 1.8.21
 |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21 (*)
-|    +--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.8.21 (*)
-|    +--- androidx.core:core-ktx:1.9.0 -> 1.11.0-alpha01 (*)
-|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.0 (*)
-|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0 (*)
-|    +--- org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5 (*)
 |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.17 (*)
 |    +--- com.michael-bull.kotlin-result:kotlin-result-coroutines:1.1.17 (*)
 |    +--- com.jakewharton.timber:timber:5.0.1 (*)
@@ -1107,27 +1093,18 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21 (*)
 |    |    +--- androidx.customview:customview:1.2.0-alpha02 (*)
 |    |    +--- androidx.customview:customview-poolingcontainer:1.0.0 (*)
-|    |    +--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.8.21 (*)
-|    |    +--- androidx.core:core-ktx:1.9.0 -> 1.11.0-alpha01 (*)
-|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.0 (*)
-|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0 (*)
-|    |    +--- org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5 (*)
 |    |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.17 (*)
 |    |    +--- com.michael-bull.kotlin-result:kotlin-result-coroutines:1.1.17 (*)
 |    |    +--- com.jakewharton.timber:timber:5.0.1 (*)
 |    |    +--- project :modules:library-navigation-api
 |    |    |    +--- androidx.navigation:navigation-compose:2.5.3 -> 2.6.0-alpha08 (*)
 |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21 (*)
-|    |    |    +--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.8.21 (*)
-|    |    |    +--- androidx.core:core-ktx:1.9.0 -> 1.11.0-alpha01 (*)
-|    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.0 (*)
-|    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0 (*)
-|    |    |    +--- org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5 (*)
 |    |    |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.17 (*)
 |    |    |    +--- com.michael-bull.kotlin-result:kotlin-result-coroutines:1.1.17 (*)
 |    |    |    \--- com.jakewharton.timber:timber:5.0.1 (*)
 |    |    \--- com.google.dagger:hilt-android:2.46 (*)
 |    +--- androidx.activity:activity-compose:1.7.1 (*)
+|    +--- androidx.core:core-ktx:1.9.0 -> 1.11.0-alpha01 (*)
 |    +--- androidx.lifecycle:lifecycle-runtime-ktx:2.5.1 -> 2.6.1 (*)
 |    +--- androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1 -> 2.6.1 (*)
 |    +--- androidx.navigation:navigation-fragment-ktx:2.5.3 -> 2.6.0-alpha08 (*)
@@ -1139,11 +1116,6 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 +--- project :modules:library-navigation
 |    +--- project :modules:library-navigation-api (*)
 |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21 (*)
-|    +--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.8.21 (*)
-|    +--- androidx.core:core-ktx:1.9.0 -> 1.11.0-alpha01 (*)
-|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.0 (*)
-|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0 (*)
-|    +--- org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5 (*)
 |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.17 (*)
 |    +--- com.michael-bull.kotlin-result:kotlin-result-coroutines:1.1.17 (*)
 |    +--- com.jakewharton.timber:timber:5.0.1 (*)
@@ -1152,11 +1124,6 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 +--- project :modules:library-network
 |    +--- project :modules:library-network-api (*)
 |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21 (*)
-|    +--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.8.21 (*)
-|    +--- androidx.core:core-ktx:1.9.0 -> 1.11.0-alpha01 (*)
-|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.0 (*)
-|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0 (*)
-|    +--- org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5 (*)
 |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.17 (*)
 |    +--- com.michael-bull.kotlin-result:kotlin-result-coroutines:1.1.17 (*)
 |    +--- com.jakewharton.timber:timber:5.0.1 (*)

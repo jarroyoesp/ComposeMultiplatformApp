@@ -13,8 +13,8 @@ androidx-room = "2.4.3"
 apollo = "3.8.1"
 coroutines = "1.7.0"
 detekt = "1.22.0"
-diktat = "1.2.3"
-gradle = "7.6"
+diktat = "1.2.5"
+gradle = "8.1.1"
 greclipse = "4.19.0"
 hilt = "2.46"
 kotlin = "1.8.21"
@@ -157,7 +157,8 @@ plugin-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.
 plugin-ksp = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 plugin-ruler = { module = "com.spotify.ruler:ruler-gradle-plugin", version = "1.3.0" }
 plugin-spotless = { module = "com.diffplug.spotless:spotless-plugin-gradle", version = "6.11.0" }
-plugin-versionsgradle = { module = "com.github.ben-manes:gradle-versions-plugin", version = "0.42.0" }
+plugin-versions = "com.github.ben-manes:gradle-versions-plugin:0.45.0"
+plugin-versions-update = "nl.littlerobots.vcu:plugin:0.8.0"
 plugin-violation = { module = "se.bjurr.violations:violation-comments-to-github-gradle-plugin", version = "1.69.0" }
 
 [plugins]
