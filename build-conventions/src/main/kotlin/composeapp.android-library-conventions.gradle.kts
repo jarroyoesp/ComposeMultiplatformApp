@@ -1,3 +1,4 @@
+import gradle.kotlin.dsl.accessors._c46661f21c97c0af88bb9497324000a7.testImplementation
 import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.kotlin.dsl.the
 
@@ -15,5 +16,5 @@ dependencies {
 
     // androidTestImplementation projects.modules.libraryTestAndroid
     androidTestUtil (libs.androidx.test.orchestrator)
-    //testImplementation projects.modules.libraryTest
+    testImplementation(project(":modules:library-test"))
 }
