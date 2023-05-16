@@ -54,4 +54,5 @@ dependencies {
     androidTestUtil (libs.androidx.test.orchestrator)
     //testImplementation projects.modules.libraryTestFeature
     testImplementation(project(":modules:library-test"))
+    androidTestImplementation(project(":modules:library-test"))
 }
