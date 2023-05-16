@@ -69,7 +69,7 @@ dependencies {
     implementation(libs.timber)
     kapt(libs.hilt.compiler)
 
-    //testImplementation(project(":modules:library-test"))
+    testImplementation(project(":modules:library-test"))
     //androidTestImplementation(project(":modules:library-test-android"))
     androidTestUtil(libs.androidx.test.orchestrator)
 }

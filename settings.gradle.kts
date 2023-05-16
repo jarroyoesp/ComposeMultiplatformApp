@@ -29,5 +29,6 @@ include(
     ":modules:library-navigation-api",
     ":modules:library-network",
     ":modules:library-network-api",
+    ":modules:library-test",
     ":modules:library-ui",
 )

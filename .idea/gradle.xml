@@ -30,6 +30,7 @@
             <option value="$PROJECT_DIR$/modules/library-navigation-api" />
             <option value="$PROJECT_DIR$/modules/library-network" />
             <option value="$PROJECT_DIR$/modules/library-network-api" />
+            <option value="$PROJECT_DIR$/modules/library-test" />
             <option value="$PROJECT_DIR$/modules/library-ui" />
           </set>
         </option>
