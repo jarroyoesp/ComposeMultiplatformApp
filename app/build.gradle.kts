@@ -13,6 +13,10 @@ android {
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
+        getByName("debug") {
+            namespace = config.android.applicationId.get() + ".debug"
+            applicationIdSuffix = ".debug"
+        }
         getByName("release") {
             namespace = config.android.applicationId.get()
             isShrinkResources = true
