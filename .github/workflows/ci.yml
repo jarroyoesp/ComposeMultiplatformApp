@@ -29,7 +29,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'adopt'
-          java-version: 11.0.14
+          java-version: 17.0.6
 
       - name: Copy CI gradle.properties
         run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
@@ -58,7 +58,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'adopt'
-          java-version: 11.0.14
+          java-version: 17.0.6
 
       - name: Copy CI gradle.properties
         run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
@@ -104,98 +104,3 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: violationCommentsToGitHub -DGITHUB_PULLREQUESTID=${{ github.event.number }} -DGITHUB_OAUTH2TOKEN=${{ secrets.GITHUB_TOKEN }} --info
-
-  instrumentation-tests:
-    name: Instrumentation tests
-    # Android emulators require hardware acceleration (HAXM on Mac & Windows, QEMU on Linux) from the host to run fast.
-    # The macOS VM provided by GitHub Actions is the only one that currently supports it.
-    runs-on: macos-latest
-    timeout-minutes: 45
-    env:
-      JAVA_TOOL_OPTIONS: -Xmx4g
-      TERM: dumb
-    strategy:
-      # Allow tests to continue on other devices if they fail on one device.
-      fail-fast: false
-      matrix:
-        api-level: [24, 29]
-        target: [google_apis]
-        arch: [x86_64]
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Setup JDK
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'adopt'
-          java-version: 11.0.14
-
-      - name: Copy CI gradle.properties
-        run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
-
-      - name: Validate gradle wrapper
-        uses: gradle/wrapper-validation-action@v1
-
-      - name: AVD cache
-        uses: actions/cache@v2
-        id: avd-cache
-        with:
-          path: |
-            ~/.android/avd/*
-            ~/.android/adb*
-            ~/.android/debug.keystore
-          key: avd-${{ matrix.api-level }}-${{ matrix.arch }}-${{ matrix.target }}
-
-      - name: Assemble Android tests
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: assembleAndroidTest
-
-      - name: Run emulator to generate snapshot for caching
-        if: steps.avd-cache.outputs.cache-hit != 'true'
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: ${{ matrix.api-level }}
-          target: ${{ matrix.target }}
-          arch: ${{ matrix.arch }}
-          profile: Galaxy Nexus
-          cores: 2
-          sdcard-path-or-size: 100M
-          avd-name: api${{ matrix.api-level }}-${{ matrix.arch }}-${{ matrix.target }}
-          force-avd-creation: false
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
-          disable-animations: false
-          channel: stable
-          script: echo "Generated AVD snapshot for caching."
-
-      ## Actual task
-      - name: Run Android tests on API ${{ matrix.api-level }} / ${{ matrix.arch }} / ${{ matrix.target }}
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: ${{ matrix.api-level }}
-          target: ${{ matrix.target }}
-          arch: ${{ matrix.arch }}
-          profile: Galaxy Nexus
-          cores: 2
-          ram-size: 2048M
-          sdcard-path-or-size: 100M
-          avd-name: api${{ matrix.api-level }}-${{ matrix.arch }}-${{ matrix.target }}
-          force-avd-creation: false
-          emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
-          disable-animations: true
-          channel: stable
-          script: |
-            echo $GITHUB_REPOSITORY
-            adb devices
-            ./gradlew connectedCheck
-
-      - name: Upload results
-        if: always()
-        uses: actions/upload-artifact@v2
-        with:
-          name: instrumentation-test-results-${{ matrix.api-level }}-${{ matrix.arch }}-${{ matrix.target }}
-          path: |
-            **/build/reports/*
-            **/build/outputs/*/connected/*

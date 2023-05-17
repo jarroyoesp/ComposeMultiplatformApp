@@ -47,7 +47,6 @@ private fun MainScreen(
     val navHostController = rememberNavController(bottomSheetNavigator)
     LaunchedEffect(navHostController) {
         appNavigator.destinations.onEach { event ->
-            Timber.d("backQueue = ${navHostController.backQueue.map { "route = ${it.destination.route}" }}")
             when (event) {
                 is NavigatorEvent.Directions -> navHostController.navigate(
                     event.destination,
