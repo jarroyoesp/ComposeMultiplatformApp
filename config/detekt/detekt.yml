@@ -450,6 +450,8 @@ coroutines:
     active: true # Custom
   SleepInsteadOfDelay:
     active: true # Custom
+  SuspendFunSwallowedCancellation:
+    active: true # Custom
   SuspendFunWithCoroutineScopeReceiver:
     active: true # Custom
   SuspendFunWithFlowReturnType:
@@ -590,7 +592,6 @@ naming:
   BooleanPropertyNaming:
     active: false
     allowedPattern: '^(is|has|are)'
-    ignoreOverridden: true
   ClassNaming:
     active: true
     classPattern: '[A-Z][a-zA-Z0-9]*'
@@ -600,7 +601,6 @@ naming:
     parameterPattern: '([a-ln-z]|m[a-z])[A-Za-z0-9]*' # Custom
     privateParameterPattern: '([a-ln-z]|m[a-z])[A-Za-z0-9]*' # Custom
     excludeClassPattern: '$^'
-    ignoreOverridden: true
   EnumNaming:
     active: true
     enumEntryPattern: '[A-Z][_A-Z0-9]*' # Custom
@@ -626,14 +626,12 @@ naming:
       ]
     functionPattern: '[a-z][a-zA-Z0-9]*'
     excludeClassPattern: '$^'
-    ignoreOverridden: true
     ignoreAnnotated: # Custom
       - 'Composable'
   FunctionParameterNaming:
     active: true
     parameterPattern: '[a-z][A-Za-z0-9]*'
     excludeClassPattern: '$^'
-    ignoreOverridden: true
   InvalidPackageDeclaration:
     active: true
     rootPackage: ''
@@ -678,7 +676,6 @@ naming:
     variablePattern: '[a-z][A-Za-z0-9]*'
     privateVariablePattern: '(_)?[a-z][A-Za-z0-9]*'
     excludeClassPattern: '$^'
-    ignoreOverridden: true
 
 performance:
   active: true
@@ -720,6 +717,8 @@ potential-bugs:
     active: true
     forbiddenTypePatterns:
       - 'kotlin.String'
+  CastNullableToNonNullableType:
+    active: false
   CastToNullableType:
     active: false
   Deprecation:
@@ -795,6 +794,8 @@ potential-bugs:
     active: true # Custom
   NullableToStringCall:
     active: true # Custom
+  PropertyUsedBeforeDeclaration:
+    active: true # Custom
   UnconditionalJumpStatementInLoop:
     active: false
   UnnecessaryNotNullCheck:
@@ -823,6 +824,14 @@ style:
   active: true
   AlsoCouldBeApply:
     active: true # Custom
+  BracesOnIfStatements:
+    active: true # Custom
+    singleLine: 'never'
+    multiLine: 'always'
+  BracesOnWhenStatements:
+    active: false
+    singleLine: 'necessary'
+    multiLine: 'consistent'
   CanBeNonNullable:
     active: false
   CascadingCallWrapping:
@@ -841,6 +850,16 @@ style:
   DestructuringDeclarationWithTooManyEntries:
     active: false # Custom
     maxDestructuringEntries: 3
+  DoubleNegativeLambda:
+    active: true # Custom
+    negativeFunctions:
+      - reason: 'Use `takeIf` instead.'
+        value: 'takeUnless'
+      - reason: 'Use `all` instead.'
+        value: 'none'
+    negativeFunctionNameParts:
+      - 'not'
+      - 'non'
   EqualsNullCall:
     active: true
   EqualsOnSignatureLine:
@@ -852,14 +871,33 @@ style:
   ExpressionBodySyntax:
     active: true # Custom
     includeLineWrapping: true # Custom
+  ForbiddenAnnotation:
+    active: true # Custom
+    annotations:
+      - reason: 'it is a java annotation. Use `Suppress` instead.'
+        value: 'java.lang.SuppressWarnings'
+      - reason: 'it is a java annotation. Use `kotlin.Deprecated` instead.'
+        value: 'java.lang.Deprecated'
+      - reason: 'it is a java annotation. Use `kotlin.annotation.MustBeDocumented` instead.'
+        value: 'java.lang.annotation.Documented'
+      - reason: 'it is a java annotation. Use `kotlin.annotation.Target` instead.'
+        value: 'java.lang.annotation.Target'
+      - reason: 'it is a java annotation. Use `kotlin.annotation.Retention` instead.'
+        value: 'java.lang.annotation.Retention'
+      - reason: 'it is a java annotation. Use `kotlin.annotation.Repeatable` instead.'
+        value: 'java.lang.annotation.Repeatable'
+      - reason: 'Kotlin does not support @Inherited annotation, see https://youtrack.jetbrains.com/issue/KT-22265'
+        value: 'java.lang.annotation.Inherited'
   ForbiddenComment:
     active: true
-    values:
-      - 'FIXME'
-      - 'STOPSHIP'
-      - 'TODO'
+    comments:
+      - reason: 'Forbidden FIXME todo marker in comment, please fix the problem.'
+        value: 'FIXME'
+      - reason: 'Forbidden STOPSHIP todo marker in comment, please address the problem before shipping the code.'
+        value: 'STOPSHIP'
+      - reason: 'Forbidden TODO todo marker in comment, please do the changes.'
+        value: 'TODO'
     allowedPatterns: ''
-    customMessage: ''
   ForbiddenImport:
     active: false
     imports: []
@@ -917,8 +955,6 @@ style:
     ignoreEnums: true # Custom
     ignoreRanges: false
     ignoreExtensionFunctions: true
-  MandatoryBracesIfStatements:
-    active: true # Custom
   MandatoryBracesLoops:
     active: true # Custom
   MaxChainedCallsOnSameLine:
@@ -954,8 +990,6 @@ style:
     active: true
   OptionalUnit:
     active: false
-  OptionalWhenBraces:
-    active: false
   PreferToOverPairSyntax:
     active: false
   ProtectedMemberInFinalClass:
@@ -980,6 +1014,10 @@ style:
     active: true
   SpacingBetweenPackageAndImports:
     active: true # Custom
+  StringShouldBeRawString:
+    active: false
+    maxEscapedCharacterCount: 2
+    ignoredCharacters: []
   ThrowsCount:
     active: false # Custom
     max: 2
@@ -1002,6 +1040,8 @@ style:
     active: true
   UnnecessaryBackticks:
     active: true # Custom
+  UnnecessaryBracesAroundTrailingLambda:
+    active: true # Custom
   UnnecessaryFilter:
     active: true
   UnnecessaryInheritance:
@@ -1017,6 +1057,9 @@ style:
     active: false
   UnusedImports:
     active: false
+  UnusedParameter:
+    active: true
+    allowedNames: 'ignored|expected'
   UnusedPrivateClass:
     active: true
   UnusedPrivateMember:
@@ -1026,6 +1069,9 @@ style:
       - 'DevicePreviews'
       - 'Preview'
       - 'ThemePreviews'
+  UnusedPrivateProperty:
+    active: true
+    allowedNames: '_|ignored|expected|serialVersionUID'
   UseAnyOrNoneInsteadOfFind:
     active: true
   UseArrayLiteralsInAnnotations:
@@ -1055,6 +1101,8 @@ style:
     active: true # Custom
   UselessCallOnNotNull:
     active: true
+  UseLet:
+    active: false
   UtilityClassWithPublicConstructor:
     active: true
   VarCouldBeVal:
