@@ -33,6 +33,7 @@
             <option value="$PROJECT_DIR$/modules/library-network-api" />
             <option value="$PROJECT_DIR$/modules/library-test" />
             <option value="$PROJECT_DIR$/modules/library-ui" />
+            <option value="$PROJECT_DIR$/modules/library-ui-shared" />
           </set>
         </option>
       </GradleProjectSettings>

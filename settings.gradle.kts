@@ -31,4 +31,6 @@ include(
     ":modules:library-network-api",
     ":modules:library-test",
     ":modules:library-ui",
+    ":modules:library-ui-shared",
 )
+include(":modules:library-ui-shared")

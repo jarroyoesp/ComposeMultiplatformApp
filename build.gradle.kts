@@ -6,6 +6,8 @@ plugins {
     id("composeapp.versions-conventions")
     //JAE id 'composeapp.dependency-graph-conventions'
     id("composeapp.violation-comments-to-github-conventions")
+    id("com.android.application") version "8.0.1" apply false
+    id("org.jetbrains.kotlin.android") version "1.8.20" apply false
     //JAE alias(libs.plugins.gradledoctor)
 }
 
