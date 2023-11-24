@@ -1,6 +1,7 @@
 package com.jarroyo.feature.home.shared.ui.rocketdetail
 
 import androidx.compose.material.Button
+import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Scaffold
 import androidx.compose.material.SnackbarDuration
@@ -8,6 +9,8 @@ import androidx.compose.material.SnackbarHostState
 import androidx.compose.material.SnackbarResult
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
@@ -58,6 +61,10 @@ private fun RocketDetailScreen(
                     IconButton(
                         onClick = { sendEvent(Event.OnUpButtonClicked)},
                     ) {
+                        Icon(
+                            imageVector = Icons.Default.ArrowBack,
+                            contentDescription = null,
+                        )
                     }
                 },
             )

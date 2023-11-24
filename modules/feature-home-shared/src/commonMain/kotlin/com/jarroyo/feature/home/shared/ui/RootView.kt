@@ -1,9 +1,15 @@
 package com.jarroyo.feature.home.shared.ui
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.compositionLocalOf
+import androidx.compose.runtime.mutableStateOf
 import co.touchlab.kermit.Logger
+import com.jarroyo.feature.home.shared.destination.HomeDestination
+import com.jarroyo.feature.home.shared.destination.RocketDetailDestination
 import com.jarroyo.feature.home.shared.ui.rocketdetail.RocketDetailScreen
+import com.jarroyo.library.navigation.api.destination.NavigationDestination
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import com.jarroyo.library.navigation.api.navigator.AppNavigator
@@ -11,8 +17,15 @@ import com.jarroyo.library.navigation.api.navigator.NavigatorEvent
 import com.jarroyo.library.navigation.di.NavigationKoinComponent
 import moe.tlaster.precompose.PreComposeApp
 import moe.tlaster.precompose.navigation.NavHost
+import moe.tlaster.precompose.navigation.RouteBuilder
 import moe.tlaster.precompose.navigation.rememberNavigator
 import moe.tlaster.precompose.navigation.transition.NavTransition
+
+
+internal val darkmodeState = mutableStateOf(false)
+internal val safeAreaState = mutableStateOf(PaddingValues())
+internal val SafeArea = compositionLocalOf { safeAreaState }
+internal val DarkMode = compositionLocalOf { darkmodeState }
 
 @Composable
 fun RootView() {
@@ -20,30 +33,11 @@ fun RootView() {
         val appNavigator: AppNavigator = NavigationKoinComponent().appNavigator
         val navigator = rememberNavigator()
         NavHost(
-            // Assign the navigator to the NavHost
             navigator = navigator,
-            // Navigation transition for the scenes in this NavHost, this is optional
             navTransition = NavTransition(),
-            // The start destination
-            initialRoute = "/home",
+            initialRoute = HomeDestination().route,
         ) {
-            // Define a scene to the navigation graph
-            scene(
-                // Scene's route path
-                route = "/home",
-                // Navigation transition for this scene, this is optional
-                navTransition = NavTransition(),
-            ) {
-                HomeScreen()
-            }
-            scene(
-                // Scene's route path
-                route = "/rocket_detail_screen",
-                // Navigation transition for this scene, this is optional
-                navTransition = NavTransition(),
-            ) {
-                RocketDetailScreen()
-            }
+            addComposableDestinations()
         }
         LaunchedEffect(navigator) {
             appNavigator.destinations.onEach { event ->
@@ -52,11 +46,25 @@ fun RootView() {
                         event.destination,
                         event.builder,
                     ).also { Logger.d("Navigate to ${event.destination}") }
-                    // is NavigatorEvent.HandleDeepLink -> TODO()
                     is NavigatorEvent.NavigateBack -> navigator.goBack()
                     is NavigatorEvent.NavigateUp -> navigator.goBack()
                 }
             }.launchIn(this)
+        }
+    }
+}
+
+fun RouteBuilder.addComposableDestinations() {
+    val composableDestinations: Map<NavigationDestination, @Composable () -> Unit> = mapOf(
+        HomeDestination() to { HomeScreen() },
+        RocketDetailDestination() to { RocketDetailScreen() },
+    )
+    composableDestinations.forEach { entry ->
+        scene(
+            route = entry.key.route,
+            navTransition = NavTransition(),
+        ) {
+            entry.value()
         }
     }
 }
