@@ -15,11 +15,13 @@ import com.google.accompanist.navigation.material.ModalBottomSheetLayout
 import com.google.accompanist.navigation.material.rememberBottomSheetNavigator
 import com.jarroyo.composeapp.ui.navigation.NavGraph
 import com.jarroyo.composeapp.ui.theme.ComposeAppTheme
+import com.jarroyo.feature.home.shared.di.initKoin
 import com.jarroyo.library.navigation.api.navigator.AppNavigator
 import com.jarroyo.library.navigation.api.navigator.NavigatorEvent
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import org.koin.android.ext.koin.androidContext
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -30,6 +32,10 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        initKoin {
+            androidContext(applicationContext)
+        }
         setContent {
             ComposeAppTheme {
                 MainScreen(appNavigator)

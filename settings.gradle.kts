@@ -3,6 +3,7 @@ pluginManagement {
         gradlePluginPortal()
         google()
         mavenCentral()
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
 }
 // https://docs.gradle.org/7.0/userguide/declaring_dependencies.html#sec:type-safe-project-accessors
@@ -21,10 +22,12 @@ includeBuild("build-conventions")
 include(
     // Apps
     ":app",
+    ":desktop",
 
     // Modules
     ":modules:feature-home",
     ":modules:feature-home-api",
+    ":modules:feature-home-shared",
     ":modules:library-navigation",
     ":modules:library-navigation-api",
     ":modules:library-network",
@@ -33,4 +36,4 @@ include(
     ":modules:library-ui",
     ":modules:library-ui-shared",
 )
-include(":modules:library-ui-shared")
+include(":desktop")

@@ -1,7 +1,7 @@
 import io.gitlab.arturbosch.detekt.Detekt
 
 plugins {
-    id ("composeapp.android-library-conventions")
+    id ("composeapp.multiplatform-library-conventions")
     alias(libs.plugins.apollo)
     alias(libs.plugins.kotlinx.serialization)
 }
@@ -26,15 +26,22 @@ apollo {
     }
 }
 
-dependencies {
-    // JAE implementation projects.modules.libraryAndroidApi
+kotlin {
+    jvm("desktop")
+    androidTarget()
 
-    api (libs.apollo)
-    api (libs.apollo.adapters)
-    api (libs.apollo.cache)
-    api (libs.retrofit)
-    implementation (libs.apollo.cache.sqlite)
-    implementation (libs.kotlinx.serialization)
+    sourceSets {
+        val commonMain by getting{
+            dependencies{
+                api (libs.apollo)
+                api (libs.apollo.adapters)
+                api (libs.apollo.cache)
+                api (libs.retrofit)
+                implementation (libs.apollo.cache.sqlite)
+                implementation (libs.kotlinx.serialization)
+            }
+        }
+    }
 }
 
 // Workaround for https://github.com/detekt/detekt/issues/4743

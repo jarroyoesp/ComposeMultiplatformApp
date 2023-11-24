@@ -1,5 +1,5 @@
 plugins {
-    id ("composeapp.android-library-conventions")
+    id ("composeapp.multiplatform-library-conventions")
 }
 
 android {
@@ -10,6 +10,16 @@ android {
     }
 }
 
-dependencies {
-    implementation (projects.modules.libraryNetworkApi)
+kotlin {
+    jvm("desktop")
+    androidTarget()
+
+    sourceSets {
+        val commonMain by getting{
+            dependencies{
+                implementation (libs.kotlin.result)
+                implementation (projects.modules.libraryNetworkApi)
+            }
+        }
+    }
 }

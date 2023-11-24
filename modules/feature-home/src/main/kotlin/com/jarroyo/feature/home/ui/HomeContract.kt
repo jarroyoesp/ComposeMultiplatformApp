@@ -2,9 +2,9 @@ package com.jarroyo.feature.home.ui
 
 import androidx.compose.runtime.Immutable
 import com.jarroyo.composeapp.library.network.api.graphql.RocketsQuery
-import com.jarroyo.library.ui.base.ViewEffect
-import com.jarroyo.library.ui.base.ViewEvent
-import com.jarroyo.library.ui.base.ViewState
+import com.jarroyo.library.ui.shared.ViewEffect
+import com.jarroyo.library.ui.shared.ViewEvent
+import com.jarroyo.library.ui.shared.ViewState
 
 @Immutable
 object HomeContract {

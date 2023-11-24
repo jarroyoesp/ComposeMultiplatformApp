@@ -7,7 +7,7 @@ import com.jarroyo.feature.home.api.interactor.GetRocketsInteractor
 import com.jarroyo.feature.home.ui.rocketdetail.RocketDetailContract.Effect
 import com.jarroyo.feature.home.ui.rocketdetail.RocketDetailContract.Event
 import com.jarroyo.feature.home.ui.rocketdetail.RocketDetailContract.State
-import com.jarroyo.library.ui.base.BaseViewModel
+import com.jarroyo.library.ui.shared.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

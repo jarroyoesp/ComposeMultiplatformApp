@@ -2,16 +2,16 @@
 # https://docs.gradle.org/current/userguide/platforms.html
 
 [versions]
-aboutlibraries = "10.8.3"
+aboutlibraries = "10.9.1"
 accompanist = "0.33.1-alpha"
-androidx-compose = "1.6.0-alpha04"
+androidx-compose = "1.5.0" ## TODO check last version for destok androidx.compose.runtime:runtime
 androidx-compose-compiler = "1.5.1"
 androidx-datastore = "1.0.0"
 androidx-lifecycle = "2.6.1"
 androidx-navigation = "2.7.1"
 androidx-room = "2.5.2"
 apollo = "3.8.2"
-coroutines = "1.7.3"
+coroutines = "1.6.4" ## 1.7.3
 detekt = "1.23.1"
 diktat = "1.2.5"
 gradle = "8.1.1"
@@ -26,6 +26,9 @@ mockk = "1.13.7"
 okhttp = "4.11.0"
 prettier = "2.7.1"
 retrofit = "2.9.0"
+agp = "8.1.1"
+org-jetbrains-kotlin-android = "1.8.0"
+junit = "1.1.5"
 
 [libraries]
 aboutlibraries = { module = "com.mikepenz:aboutlibraries-compose", version.ref = "aboutlibraries" }
@@ -106,6 +109,8 @@ hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", vers
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
 hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version = "1.0.0" }
 junit = { module = "junit:junit", version = "4.13.2" }
+koin-android = {module = "io.insert-koin:koin-android", version = "3.2.0"}
+koin-core = {module = "io.insert-koin:koin-core", version = "3.2.0"}
 konfetti = { module = "nl.dionsegijn:konfetti-compose", version = "2.0.3" }
 kotlin-extensions = { module = "org.jetbrains.kotlin:kotlin-android-extensions", version.ref = "kotlin" }
 kotlin-result = { module = "com.michael-bull.kotlin-result:kotlin-result", version.ref = "kotlin-result" }
@@ -160,6 +165,7 @@ plugin-spotless = { module = "com.diffplug.spotless:spotless-plugin-gradle", ver
 plugin-versions = "com.github.ben-manes:gradle-versions-plugin:0.47.0"
 plugin-versions-update = "nl.littlerobots.vcu:plugin:0.8.0"
 plugin-violation = { module = "se.bjurr.violations:violation-comments-to-github-gradle-plugin", version = "1.70.0" }
+androidx-test-ext-junit115 = { group = "androidx.test.ext", name = "junit", version.ref = "junit" }
 
 [plugins]
 apollo = { id = "com.apollographql.apollo3", version.ref = "apollo" }
@@ -168,3 +174,5 @@ gradledoctor = { id = "com.osacky.doctor", version = "0.8.1" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 tripletplay = { id = "com.github.triplet.play", version = "3.7.0" }
+com-android-application = { id = "com.android.application", version.ref = "agp" }
+org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }

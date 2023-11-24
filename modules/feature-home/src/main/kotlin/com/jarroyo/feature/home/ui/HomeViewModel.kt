@@ -9,7 +9,7 @@ import com.jarroyo.feature.home.ui.HomeContract.Event
 import com.jarroyo.feature.home.ui.HomeContract.State
 import com.jarroyo.library.navigation.api.destination.Screens
 import com.jarroyo.library.navigation.api.navigator.AppNavigator
-import com.jarroyo.library.ui.base.BaseViewModel
+import com.jarroyo.library.ui.shared.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
