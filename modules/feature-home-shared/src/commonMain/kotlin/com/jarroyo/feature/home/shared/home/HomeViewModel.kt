@@ -1,15 +1,21 @@
 package com.jarroyo.feature.home.shared.home
 
+import com.apollographql.apollo3.cache.normalized.FetchPolicy
+import com.github.michaelbull.result.Err
+import com.github.michaelbull.result.Ok
+import com.jarroyo.feature.home.api.interactor.GetRocketsInteractor
+import com.jarroyo.feature.home.shared.di.FeatureHomeKoinComponent
 import com.jarroyo.feature.home.shared.home.HomeContract.Effect
 import com.jarroyo.feature.home.shared.home.HomeContract.Event
 import com.jarroyo.feature.home.shared.home.HomeContract.State
+import com.jarroyo.feature.home.shared.interactor.GetRocketsInteractorImpl
 import com.jarroyo.library.ui.shared.BaseViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 
 class HomeViewModel(
-    // private val getRocketsInteractorImpl: GetRocketsInteractorImpl = FeatureHomeKoinComponent().getRocketsInteractorImpl,
+    private val getRocketsInteractor: GetRocketsInteractor = FeatureHomeKoinComponent().getRocketsInteractor,
 ) : BaseViewModel<Event, State, Effect>() {
 
     init {
@@ -30,8 +36,11 @@ class HomeViewModel(
         updateState {  copy(loading = true) }
         viewModelScope.launch {
             delay(1000)
-            // val result = getRocketsInteractorImpl(0, 0, FetchPolicy.NetworkFirst)
-            updateState { copy(rocketList = List(40) { "Rocket "}) }
+            when (val result = getRocketsInteractor(0, 0, FetchPolicy.NetworkFirst)) {
+                is Err -> {}
+                is Ok -> updateState { copy(rocketList = result.value) }
+            }
+
         }
         updateState { copy(loading = false) }
     }

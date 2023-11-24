@@ -37,6 +37,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
+import com.jarroyo.composeapp.library.network.api.graphql.RocketsQuery
 import com.jarroyo.feature.home.shared.SafeArea
 import com.jarroyo.feature.home.shared.di.FeatureHomeKoinComponent
 import com.jarroyo.feature.home.shared.home.HomeContract.Effect
@@ -136,13 +137,17 @@ private fun HomeScreen(
                     }
                 }
             }
-            PullRefreshIndicator(state.loading, pullRefreshState, Modifier.align(Alignment.TopCenter))
+            PullRefreshIndicator(
+                state.loading,
+                pullRefreshState,
+                Modifier.align(Alignment.TopCenter)
+            )
         }
     }
 }
 
 private fun LazyListScope.rocketList(
-    data: List<String>,
+    data: List<RocketsQuery.Rocket>,
     sendEvent: (event: Event) -> Unit,
     placeholder: Boolean = false,
 ) {
@@ -151,6 +156,13 @@ private fun LazyListScope.rocketList(
     }
 }
 
-private fun getRocketListPlaceholderData(): List<String> = List(6) { "wikipedia" }
+private fun getRocketListPlaceholderData(): List<RocketsQuery.Rocket> = List(6) {
+    RocketsQuery.Rocket(
+        company = "company",
+        name = "name",
+        id = "id",
+        wikipedia = null
+    )
+}
 
 

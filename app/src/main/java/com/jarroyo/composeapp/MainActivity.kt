@@ -13,9 +13,9 @@ import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.navigation.material.ExperimentalMaterialNavigationApi
 import com.google.accompanist.navigation.material.ModalBottomSheetLayout
 import com.google.accompanist.navigation.material.rememberBottomSheetNavigator
+import com.jarroyo.composeapp.di.initKoin
 import com.jarroyo.composeapp.ui.navigation.NavGraph
 import com.jarroyo.composeapp.ui.theme.ComposeAppTheme
-import com.jarroyo.feature.home.shared.di.initKoin
 import com.jarroyo.library.navigation.api.navigator.AppNavigator
 import com.jarroyo.library.navigation.api.navigator.NavigatorEvent
 import dagger.hilt.android.AndroidEntryPoint

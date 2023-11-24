@@ -9,12 +9,13 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.jarroyo.composeapp.library.network.api.graphql.RocketsQuery
 import com.jarroyo.feature.home.shared.home.HomeContract.Event
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun HomeRocketItem(
-    item: String,
+    item: RocketsQuery.Rocket,
     sendEvent: (event: Event) -> Unit,
     modifier: Modifier = Modifier,
     placeholder: Boolean = false,
@@ -26,7 +27,7 @@ fun HomeRocketItem(
                 .fillMaxWidth(),
         ) {
             Text(
-                text = item.orEmpty(),
+                text = item.name.orEmpty(),
             )
         }
     }

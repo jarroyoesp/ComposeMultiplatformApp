@@ -19,9 +19,19 @@ android {
 }
 
 kotlin {
+    jvm("desktop")
+    androidTarget()
     targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget> {
         binaries.all {
             freeCompilerArgs += "-Xdisable-phases=VerifyBitcode"
+        }
+    }
+
+    sourceSets {
+        val commonMain by getting{
+            dependencies{
+                implementation (libs.kotlin.result)
+            }
         }
     }
 }

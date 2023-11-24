@@ -6,6 +6,9 @@ plugins {
 android {
     namespace = "com.jarroyo.feature.home.shared"
 }
+dependencies {
+    implementation(project(":modules:feature-home-api"))
+}
 
 kotlin {
     jvm("desktop")
