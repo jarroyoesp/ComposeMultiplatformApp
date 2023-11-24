@@ -28,7 +28,6 @@ android {
 
 dependencies {
     // Modules
-    implementation(projects.modules.featureHome)
     implementation(projects.modules.featureHomeShared)
     implementation(projects.modules.libraryNavigation)
     implementation(projects.modules.libraryNetwork)

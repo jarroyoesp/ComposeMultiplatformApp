@@ -1,6 +1,6 @@
 plugins {
-    id ("composeapp.android-library-conventions")
-    id ("com.google.dagger.hilt.android")
+    id ("composeapp.multiplatform-library-conventions")
+    // id ("com.google.dagger.hilt.android")
 }
 
 android {
@@ -11,10 +11,26 @@ android {
     }
 }
 
-dependencies {
-    api (projects.modules.libraryNavigationApi)
+// dependencies {
+//     api (projects.modules.libraryNavigationApi)
+//
+//     implementation (libs.hilt.android)
+//     implementation (libs.hilt.navigation.compose)
+//     kapt (libs.hilt.compiler)
+// }
 
-    implementation (libs.hilt.android)
-    implementation (libs.hilt.navigation.compose)
-    kapt (libs.hilt.compiler)
+kotlin {
+    jvm("desktop")
+    androidTarget()
+
+    sourceSets {
+        val commonMain by getting{
+            dependencies{
+                api (projects.modules.libraryNavigationApi)
+                implementation(libs.tlaster.precompose)
+                // implementation (libs.hilt.navigation.compose)
+                implementation(libs.koin.core)
+            }
+        }
+    }
 }

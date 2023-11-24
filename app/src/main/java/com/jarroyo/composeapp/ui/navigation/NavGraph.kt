@@ -5,9 +5,8 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.jarroyo.feature.home.shared.RootView
-import com.jarroyo.feature.home.ui.HomeScreen
-import com.jarroyo.feature.home.ui.rocketdetail.RocketDetailScreen
+import com.jarroyo.feature.home.shared.ui.RootView
+import com.jarroyo.feature.home.shared.ui.rocketdetail.RocketDetailScreen
 import com.jarroyo.library.navigation.api.destination.Screens
 
 @Composable

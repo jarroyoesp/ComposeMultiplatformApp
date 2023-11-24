@@ -25,7 +25,6 @@ include(
     ":desktop",
 
     // Modules
-    ":modules:feature-home",
     ":modules:feature-home-api",
     ":modules:feature-home-shared",
     ":modules:library-navigation",
@@ -36,4 +35,3 @@ include(
     ":modules:library-ui",
     ":modules:library-ui-shared",
 )
-include(":desktop")

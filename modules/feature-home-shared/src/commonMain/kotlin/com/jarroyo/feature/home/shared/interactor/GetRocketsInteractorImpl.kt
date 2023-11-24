@@ -18,13 +18,7 @@ class GetRocketsInteractorImpl(
         page: Int,
         pageSize: Int,
         fetchPolicy: FetchPolicy,
-    ): Result<List<RocketsQuery.Rocket>?, Exception> =  /*Ok(listOf(RocketsQuery.Rocket(
-        company = "company",
-        name = "name",
-        id = "id",
-        wikipedia = null
-
-    )))*/try {
+    ): Result<List<RocketsQuery.Rocket>?, Exception> = try {
         val response: ApolloResponse<RocketsQuery.Data> =
             apolloClient
                 .query(RocketsQuery())

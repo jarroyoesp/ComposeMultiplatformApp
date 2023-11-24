@@ -5,9 +5,9 @@ plugins {
 
 android {
     namespace = "com.jarroyo.feature.home.shared"
-}
-dependencies {
-    implementation(project(":modules:feature-home-api"))
+    sourceSets["main"].apply {
+        res.srcDirs("src/androidMain/res", "src/commonMain/resources")
+    }
 }
 
 kotlin {
@@ -28,8 +28,13 @@ kotlin {
                 implementation(compose.runtime)
                 implementation(libs.koin.core)
                 implementation(libs.coroutines.core)
+                implementation(libs.multiplatform.log)
+                implementation(libs.tlaster.precompose)
                 implementation(projects.modules.featureHomeApi)
+                implementation(projects.modules.libraryNavigationApi)
+                implementation(projects.modules.libraryNavigation)
                 implementation(projects.modules.libraryNetworkApi)
+                implementation(projects.modules.libraryNetwork)
                 implementation(projects.modules.libraryUiShared)
             }
         }

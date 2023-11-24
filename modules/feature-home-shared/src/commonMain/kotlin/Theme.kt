@@ -1,3 +1,5 @@
+package com.jarroyo
+
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
@@ -15,7 +17,7 @@ internal fun Theme(content: @Composable () -> Unit) {
     }
 
     MaterialTheme(
-        colors = colors
+        colors = colors,
     ) {
         content()
     }

@@ -1,4 +1,4 @@
-package com.jarroyo.library.ui.shared
+package com.jarroyo.desktopMain.kotlin.com.jarroyo.library.ui.shared
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

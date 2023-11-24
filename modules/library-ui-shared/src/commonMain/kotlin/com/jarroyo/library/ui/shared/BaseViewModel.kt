@@ -17,8 +17,6 @@ abstract class BaseViewModel<UiEvent : ViewEvent, UiState : ViewState, UiEffect 
     private val _viewState: MutableState<UiState> by lazy { mutableStateOf(initialState) }
     val viewState: State<UiState> by lazy { _viewState }
 
-    // JAE private val runningJobs = AtomicInteger(0)
-
     // Event (user actions)
     private val _event: MutableSharedFlow<UiEvent> = MutableSharedFlow()
 
@@ -52,15 +50,7 @@ abstract class BaseViewModel<UiEvent : ViewEvent, UiState : ViewState, UiEffect 
     }
 
     protected suspend fun load(block: suspend () -> Unit) {
-        // JAE require(runningJobs.get() >= 0)
-        // JAE if (runningJobs.get() == 0) {
-        // JAE     onLoadingChanged(true)
-        // JAE }
-        // JAE runningJobs.incrementAndGet()
         block()
-        // JAE if (runningJobs.decrementAndGet() == 0) {
-        // JAE     onLoadingChanged(false)
-        // JAE }
     }
 }
 

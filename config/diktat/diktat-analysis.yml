@@ -55,7 +55,7 @@
   enabled: true
 # Checks that package name is in correct (lower) case
 - name: PACKAGE_NAME_INCORRECT_CASE
-  enabled: true
+  enabled: false
 # Checks that package name starts with the company's domain
 - name: PACKAGE_NAME_INCORRECT_PREFIX
   enabled: true

@@ -48,26 +48,6 @@
                 android:value="" />
         </activity>
 
-        <provider
-            android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.jarroyo.composeapp.debug.androidx-startup"
-            android:exported="false" >
-
-            <!-- This entry makes ApolloInitializer discoverable. -->
-            <meta-data
-                android:name="com.apollographql.apollo3.cache.normalized.sql.ApolloInitializer"
-                android:value="androidx.startup" />
-            <meta-data
-                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-                android:value="androidx.startup" />
-            <meta-data
-                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-                android:value="androidx.startup" />
-            <meta-data
-                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-                android:value="androidx.startup" />
-        </provider>
-
         <uses-library
             android:name="androidx.window.extensions"
             android:required="false" />
@@ -76,10 +56,29 @@
             android:required="false" />
 
         <activity
-            android:name="androidx.compose.ui.tooling.PreviewActivity"
-            android:exported="true" />
-        <activity
             android:name="androidx.activity.ComponentActivity"
+            android:exported="true" />
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="com.jarroyo.composeapp.debug.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" /> <!-- This entry makes ApolloInitializer discoverable. -->
+            <meta-data
+                android:name="com.apollographql.apollo3.cache.normalized.sql.ApolloInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+                android:value="androidx.startup" />
+        </provider>
+
+        <activity
+            android:name="androidx.compose.ui.tooling.PreviewActivity"
             android:exported="true" />
 
         <provider

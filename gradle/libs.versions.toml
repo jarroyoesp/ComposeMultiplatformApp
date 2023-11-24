@@ -131,6 +131,7 @@ maps-utils-ktx = { module = "com.google.maps.android:maps-utils-ktx", version = 
 material = { module = "com.google.android.material:material", version = "1.9.0" }
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockk" }
+multiplatform-log = { module = "co.touchlab:kermit", version = "2.0.2" }
 okhttp3-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
 okhttp3-mockwebserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "okhttp" }
 play-core = { module = "com.google.android.play:core", version = "1.10.3" }
@@ -145,6 +146,9 @@ seismic = { module = "com.squareup:seismic", version = "1.0.3" }
 speeddial = { module = "com.leinardi.android:speed-dial.compose", version = "2.0.0-alpha01" }
 timber = { module = "com.jakewharton.timber:timber", version = "5.0.1" }
 tink = { module = "com.google.crypto.tink:tink-android", version = "1.10.0" }
+tlaster-precompose = { module = "moe.tlaster:precompose", version = "1.5.7" }
+tlaster-precompose-koin = { module = "moe.tlaster:precompose-koin", version = "1.5.7" }
+tlaster-precompose-viewmodel = { module = "moe.tlaster:precompose-viewmodel", version = "1.5.7" }
 
 # plugins
 plugin-aboutlibraries = { module = "com.mikepenz.aboutlibraries.plugin:aboutlibraries-plugin", version.ref = "aboutlibraries" }
