@@ -22,6 +22,7 @@ kotlinpoet = "1.14.2"
 kotlin-result = "1.1.18"
 ksp = "1.9.0-1.0.12"
 ktlint = "0.43.0"
+ktor = "2.3.6"
 mockk = "1.13.7"
 okhttp = "4.11.0"
 prettier = "2.7.1"
@@ -93,6 +94,7 @@ apollo-cache-sqlite = { module = "com.apollographql.apollo3:apollo-normalized-ca
 apollo-testing-support = { module = "com.apollographql.apollo3:apollo-testing-support", version.ref = "apollo" }
 coil-compose = { module = "io.coil-kt:coil-compose", version = "2.4.0" }
 composecharts = { module = "io.github.bytebeats:compose-charts", version = "0.1.2" }
+compose-webview = { module = "io.github.kevinnzou:compose-webview-multiplatform", version = "1.7.8" }
 coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
@@ -109,6 +111,7 @@ hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", vers
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
 hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version = "1.0.0" }
 junit = { module = "junit:junit", version = "4.13.2" }
+kamel = { module = "media.kamel:kamel-image", version = "0.9.0" }
 koin-android = {module = "io.insert-koin:koin-android", version = "3.2.0"}
 koin-core = {module = "io.insert-koin:koin-core", version = "3.2.0"}
 konfetti = { module = "nl.dionsegijn:konfetti-compose", version = "2.0.3" }
@@ -123,6 +126,12 @@ kotlinpoet-ksp = { module = "com.squareup:kotlinpoet-ksp", version.ref = "kotlin
 kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version = "0.3.5" }
 kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.6.0" }
 ksp-symbol-processing-api = { module = "com.google.devtools.ksp:symbol-processing-api", version.ref = "ksp" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
+ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
+ktor-client-js = { module = "io.ktor:ktor-client-js", version.ref = "ktor" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-client-mock = { module = "io.ktor:ktor-client-mock", version.ref = "ktor" }
 leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", version = "2.12" }
 lottie-compose = { module = "com.airbnb.android:lottie-compose", version = "6.1.0" }
 maps = { module = "com.google.maps.android:maps-ktx", version = "3.4.0" }

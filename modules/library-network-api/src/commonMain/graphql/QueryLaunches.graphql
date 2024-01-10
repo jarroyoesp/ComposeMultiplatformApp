@@ -1,0 +1,16 @@
+query LaunchesQuery {
+    launches {
+        id
+        mission_name
+        rocket {
+            rocket {
+                ...rocketFragment
+            }
+        }
+        links {
+            flickr_images
+            mission_patch_small
+            mission_patch
+        }
+    }
+}

@@ -37,7 +37,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import com.jarroyo.composeapp.library.network.api.graphql.RocketsQuery
+import com.jarroyo.composeapp.library.network.api.graphql.LaunchesQuery
+import com.jarroyo.composeapp.library.network.api.graphql.fragment.RocketFragment
 import com.jarroyo.feature.home.shared.di.FeatureHomeKoinComponent
 import com.jarroyo.feature.home.shared.ui.HomeContract.Effect
 import com.jarroyo.feature.home.shared.ui.HomeContract.Event
@@ -128,7 +129,7 @@ private fun HomeScreen(
             ) {
                 if (!state.rocketList.isNullOrEmpty() || state.loading) {
                     if (state.rocketList.isNullOrEmpty() && state.loading) {
-                        rocketList(getRocketListPlaceholderData(), sendEvent, placeholder = true)
+                        rocketList(getRocketListPlaceholderData(), sendEvent)
                     } else {
                         state.rocketList?.let { rockets ->
                             rocketList(rockets, sendEvent)
@@ -146,20 +147,29 @@ private fun HomeScreen(
 }
 
 private fun LazyListScope.rocketList(
-    data: List<RocketsQuery.Rocket>,
+    data: List<LaunchesQuery.Launch>,
     sendEvent: (event: Event) -> Unit,
-    placeholder: Boolean = false,
 ) {
     items(data.size) { index ->
-        HomeRocketItem(item = data[index], sendEvent = sendEvent, placeholder = placeholder)
+        HomeRocketItem(item = data[index], sendEvent = sendEvent)
     }
 }
 
-private fun getRocketListPlaceholderData(): List<RocketsQuery.Rocket> = List(6) {
-    RocketsQuery.Rocket(
-        company = "company",
-        name = "name",
-        id = "id",
-        wikipedia = null,
+private fun getRocketListPlaceholderData(): List<LaunchesQuery.Launch> = List(6) {
+    LaunchesQuery.Launch(
+        id = null,
+        mission_name = null,
+        rocket = LaunchesQuery.Rocket(
+            LaunchesQuery.Rocket1(
+                __typename = "",
+                rocketFragment = RocketFragment(
+                    company = "company",
+                    name = "name",
+                    id = "id",
+                    wikipedia = null,
+                    active = true,
+                ),
+            ),
+        ), links = null,
     )
 }

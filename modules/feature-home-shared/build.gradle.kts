@@ -18,6 +18,7 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 implementation(libs.androidx.lifecycle.viewmodel)
+                implementation(libs.ktor.client.android)
             }
         }
         val commonMain by getting{
@@ -28,8 +29,10 @@ kotlin {
                 implementation(compose.runtime)
                 implementation(libs.koin.core)
                 implementation(libs.coroutines.core)
+                implementation(libs.kamel)
                 implementation(libs.multiplatform.log)
                 implementation(libs.tlaster.precompose)
+                implementation(libs.tlaster.precompose.viewmodel)
                 implementation(projects.modules.featureHomeApi)
                 implementation(projects.modules.libraryNavigationApi)
                 implementation(projects.modules.libraryNavigation)
@@ -41,6 +44,7 @@ kotlin {
         val desktopMain by getting {
             dependencies {
                 implementation(libs.coroutines.core)
+                implementation(libs.ktor.client.cio)
             }
         }
     }

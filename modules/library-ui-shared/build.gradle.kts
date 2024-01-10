@@ -21,6 +21,7 @@ kotlin {
             dependencies{
                 implementation(compose.foundation)
                 implementation(libs.coroutines.core)
+                implementation(libs.tlaster.precompose.viewmodel)
             }
         }
     }

@@ -15,6 +15,7 @@ dependencyResolutionManagement {
         gradlePluginPortal()
         google()
         mavenCentral()
+        maven("https://jogamp.org/deployment/maven")
     }
 }
 rootProject.name = "ComposeApp"

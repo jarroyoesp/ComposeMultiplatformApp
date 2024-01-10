@@ -1,6 +1,6 @@
 package com.jarroyo.feature.home.shared.ui
 
-import com.jarroyo.composeapp.library.network.api.graphql.RocketsQuery
+import com.jarroyo.composeapp.library.network.api.graphql.LaunchesQuery
 import com.jarroyo.library.ui.shared.ViewEffect
 import com.jarroyo.library.ui.shared.ViewEvent
 import com.jarroyo.library.ui.shared.ViewState
@@ -8,7 +8,7 @@ import com.jarroyo.library.ui.shared.ViewState
 object HomeContract {
     data class State(
         val loading: Boolean = false,
-        val rocketList: List<RocketsQuery.Rocket>? = null,
+        val rocketList: List<LaunchesQuery.Launch>? = null,
         val text: String = "Hola que hace",
     ) : ViewState
 

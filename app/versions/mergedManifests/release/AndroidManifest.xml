@@ -63,6 +63,9 @@
             android:authorities="com.jarroyo.composeapp.androidx-startup"
             android:exported="false" >
             <meta-data
+                android:name="io.kamel.core.ApplicationContextInitializer"
+                android:value="androidx.startup" />
+            <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"
                 android:value="androidx.startup" />
             <meta-data

@@ -12,6 +12,7 @@ import com.jarroyo.library.navigation.api.navigator.AppNavigator
 import com.jarroyo.library.ui.shared.BaseViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import moe.tlaster.precompose.viewmodel.viewModelScope
 
 class HomeViewModel(
     private val appNavigator: AppNavigator,
@@ -25,21 +26,21 @@ class HomeViewModel(
 
     override fun handleEvent(event: Event) {
         when (event) {
-            is Event.OnItemClicked -> appNavigator.navigate(RocketDetailDestination().route)
+            is Event.OnItemClicked -> appNavigator.navigate(RocketDetailDestination().get(event.id))
             is Event.OnViewAttached -> {}
             is Event.OnSwipeToRefresh -> sendEffect { Effect.ShowSnackbar("Refresh") }
         }
     }
 
     private fun refreshData() {
-        updateState { copy(loading = true) }
         viewModelScope.launch {
+            updateState { copy(loading = true) }
             delay(1000)
             when (val result = getRocketsInteractor(0, 0, FetchPolicy.NetworkFirst)) {
-                is Err -> {}
+                is Err -> sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
                 is Ok -> updateState { copy(rocketList = result.value) }
             }
+            updateState { copy(loading = false) }
         }
-        updateState { copy(loading = false) }
     }
 }

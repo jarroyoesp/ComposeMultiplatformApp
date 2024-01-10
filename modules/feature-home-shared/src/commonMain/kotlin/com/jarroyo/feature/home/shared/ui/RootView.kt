@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.compositionLocalOf
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import co.touchlab.kermit.Logger
 import com.jarroyo.feature.home.shared.destination.HomeDestination
@@ -20,7 +21,6 @@ import moe.tlaster.precompose.navigation.NavHost
 import moe.tlaster.precompose.navigation.RouteBuilder
 import moe.tlaster.precompose.navigation.rememberNavigator
 import moe.tlaster.precompose.navigation.transition.NavTransition
-
 
 internal val darkmodeState = mutableStateOf(false)
 internal val safeAreaState = mutableStateOf(PaddingValues())
@@ -55,16 +55,16 @@ fun RootView() {
 }
 
 fun RouteBuilder.addComposableDestinations() {
-    val composableDestinations: Map<NavigationDestination, @Composable () -> Unit> = mapOf(
+    val composableDestinations: Map<NavigationDestination, @Composable (arguments: Map<String, String>) -> Unit> = mapOf(
         HomeDestination() to { HomeScreen() },
-        RocketDetailDestination() to { RocketDetailScreen() },
+        RocketDetailDestination() to { RocketDetailScreen(it) },
     )
     composableDestinations.forEach { entry ->
         scene(
             route = entry.key.route,
             navTransition = NavTransition(),
         ) {
-            entry.value()
+            entry.value(it.pathMap)
         }
     }
 }

@@ -8,24 +8,23 @@ import com.apollographql.apollo3.exception.ApolloException
 import com.github.michaelbull.result.Err
 import com.github.michaelbull.result.Ok
 import com.github.michaelbull.result.Result
-import com.jarroyo.composeapp.library.network.api.graphql.LaunchesQuery
-import com.jarroyo.feature.home.api.interactor.GetRocketsInteractor
+import com.jarroyo.composeapp.library.network.api.graphql.LaunchDetailQuery
+import com.jarroyo.feature.home.api.interactor.GetLaunchDetailInteractor
 
-class GetRocketsInteractorImpl(
+class GetLaunchDetailInteractorImpl(
     private val apolloClient: ApolloClient,
-) : GetRocketsInteractor {
+) : GetLaunchDetailInteractor {
     override suspend operator fun invoke(
-        page: Int,
-        pageSize: Int,
+        id: String,
         fetchPolicy: FetchPolicy,
-    ): Result<List<LaunchesQuery.Launch>?, Exception> = try {
-        val response: ApolloResponse<LaunchesQuery.Data> =
+    ): Result<LaunchDetailQuery.Launch?, Exception> = try {
+        val response: ApolloResponse<LaunchDetailQuery.Data> =
             apolloClient
-                .query(LaunchesQuery())
+                .query(LaunchDetailQuery(id))
                 .fetchPolicy(fetchPolicy)
                 .execute()
         if (!response.hasErrors()) {
-            Ok(response.data?.launches?.filterNotNull())
+            Ok(response.data?.launch)
         } else {
             Err(Exception(response.errors?.run { first().message }))
         }
