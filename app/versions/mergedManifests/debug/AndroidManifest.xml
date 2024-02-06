@@ -48,13 +48,6 @@
                 android:value="" />
         </activity>
 
-        <uses-library
-            android:name="androidx.window.extensions"
-            android:required="false" />
-        <uses-library
-            android:name="androidx.window.sidecar"
-            android:required="false" />
-
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.jarroyo.composeapp.debug.androidx-startup"
@@ -75,6 +68,13 @@
                 android:name="androidx.profileinstaller.ProfileInstallerInitializer"
                 android:value="androidx.startup" />
         </provider>
+
+        <uses-library
+            android:name="androidx.window.extensions"
+            android:required="false" />
+        <uses-library
+            android:name="androidx.window.sidecar"
+            android:required="false" />
 
         <activity
             android:name="androidx.activity.ComponentActivity"
