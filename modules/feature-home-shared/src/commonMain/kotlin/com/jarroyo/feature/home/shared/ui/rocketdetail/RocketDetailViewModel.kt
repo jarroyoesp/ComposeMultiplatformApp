@@ -18,6 +18,10 @@ class RocketDetailViewModel(
 ) : BaseViewModel<Event, State, Effect>() {
     private var rocketId: String? = null
 
+    init {
+        Logger.d("Init ${this}")
+    }
+
     override fun provideInitialState() = State()
 
     override fun handleEvent(event: Event) {

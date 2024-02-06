@@ -16,7 +16,6 @@ import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.Warning
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
@@ -26,17 +25,21 @@ import com.jarroyo.feature.home.shared.di.FeatureHomeKoinComponent
 import com.jarroyo.feature.home.shared.ui.rocketdetail.RocketDetailContract.Effect
 import com.jarroyo.feature.home.shared.ui.rocketdetail.RocketDetailContract.Event
 import com.jarroyo.feature.home.shared.ui.rocketdetail.RocketDetailContract.State
+import com.jarroyo.library.navigation.di.NavigationKoinComponent
 import io.kamel.image.KamelImage
 import io.kamel.image.asyncPainterResource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
+import moe.tlaster.precompose.viewmodel.viewModel
 
 @Composable
 fun RocketDetailScreen(
     arguments: Map<String, String>? = null,
-    viewModel: RocketDetailViewModel = FeatureHomeKoinComponent().rocketDetailViewModel,
+    viewModel: RocketDetailViewModel = viewModel {
+        RocketDetailViewModel(NavigationKoinComponent().appNavigator, FeatureHomeKoinComponent().getLaunchDetailInteractor)
+    },
 ) {
     LaunchedEffect(Unit) {
         arguments?.get("id")?.let {
@@ -81,9 +84,8 @@ private fun RocketDetailScreen(
                 .fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            Text(
-                text = state.launch?.details.orEmpty(),
-            )
+            Text(text = state.launch?.details.orEmpty(),)
+            Text(text = state.launch?.links?.article_link.orEmpty(),)
             KamelImage(
                 resource = asyncPainterResource(
                     state.launch?.links?.flickr_images?.firstOrNull().orEmpty(),
@@ -91,12 +93,6 @@ private fun RocketDetailScreen(
                 contentDescription = null,
                 modifier = Modifier.fillMaxWidth().heightIn(max = 200.dp),
                 onLoading = { CircularProgressIndicator() },
-                onFailure = {
-                    Icon(
-                        imageVector = Icons.Default.Warning,
-                        contentDescription = null,
-                    )
-                },
             )
         }
     }

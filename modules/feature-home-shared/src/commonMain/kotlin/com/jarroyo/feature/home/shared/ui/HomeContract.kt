@@ -9,7 +9,6 @@ object HomeContract {
     data class State(
         val loading: Boolean = false,
         val rocketList: List<LaunchesQuery.Launch>? = null,
-        val text: String = "Hola que hace",
     ) : ViewState
 
     sealed class Event : ViewEvent {

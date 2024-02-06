@@ -6,7 +6,7 @@ import com.jarroyo.feature.home.shared.ui.RootView
 import com.jarroyo.feature.home.shared.di.initKoin
 
 fun main() {
-    initKoin(enableNetworkLogs = false)
+    initKoin()
     application {
         Window(
             title = "Compose APP",

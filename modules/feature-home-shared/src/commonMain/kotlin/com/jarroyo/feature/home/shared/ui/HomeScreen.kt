@@ -43,13 +43,21 @@ import com.jarroyo.feature.home.shared.di.FeatureHomeKoinComponent
 import com.jarroyo.feature.home.shared.ui.HomeContract.Effect
 import com.jarroyo.feature.home.shared.ui.HomeContract.Event
 import com.jarroyo.feature.home.shared.ui.HomeContract.State
+import com.jarroyo.library.navigation.di.NavigationKoinComponent
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
+import java.time.Instant
 
 @Composable
-fun HomeScreen(viewModel: HomeViewModel = FeatureHomeKoinComponent().homeViewModel) {
+fun HomeScreen(viewModel: HomeViewModel = moe.tlaster.precompose.viewmodel.viewModel {
+    HomeViewModel(
+        NavigationKoinComponent().appNavigator,
+        FeatureHomeKoinComponent().getRocketsInteractor,
+    )
+},
+) {
     HomeScreen(
         state = viewModel.viewState.value,
         sendEvent = { viewModel.onUiEvent(it) },
@@ -90,7 +98,7 @@ private fun HomeScreen(
                         top = SafeArea.current.value.calculateTopPadding(),
                         end = SafeArea.current.value.calculateEndPadding(LayoutDirection.Ltr),
                     ),
-                    title = { Text(state.text) },
+                    title = { Text("Home") },
                     navigationIcon = {
                         Icon(
                             Icons.Default.Menu,
@@ -129,7 +137,7 @@ private fun HomeScreen(
             ) {
                 if (!state.rocketList.isNullOrEmpty() || state.loading) {
                     if (state.rocketList.isNullOrEmpty() && state.loading) {
-                        rocketList(getRocketListPlaceholderData(), sendEvent)
+                        rocketList(getRocketListPlaceholderData(), sendEvent, placeholder = true)
                     } else {
                         state.rocketList?.let { rockets ->
                             rocketList(rockets, sendEvent)
@@ -149,9 +157,10 @@ private fun HomeScreen(
 private fun LazyListScope.rocketList(
     data: List<LaunchesQuery.Launch>,
     sendEvent: (event: Event) -> Unit,
+    placeholder: Boolean = false,
 ) {
     items(data.size) { index ->
-        HomeRocketItem(item = data[index], sendEvent = sendEvent)
+        HomeItem(item = data[index], sendEvent = sendEvent, placeholder = placeholder)
     }
 }
 
@@ -159,6 +168,7 @@ private fun getRocketListPlaceholderData(): List<LaunchesQuery.Launch> = List(6)
     LaunchesQuery.Launch(
         id = null,
         mission_name = null,
+        launch_date_local = Instant.now(),
         rocket = LaunchesQuery.Rocket(
             LaunchesQuery.Rocket1(
                 __typename = "",
@@ -170,6 +180,7 @@ private fun getRocketListPlaceholderData(): List<LaunchesQuery.Launch> = List(6)
                     active = true,
                 ),
             ),
-        ), links = null,
+        ),
+        links = null,
     )
 }

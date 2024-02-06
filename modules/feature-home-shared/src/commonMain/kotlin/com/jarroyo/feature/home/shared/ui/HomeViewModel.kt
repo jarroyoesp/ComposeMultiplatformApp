@@ -10,7 +10,6 @@ import com.jarroyo.feature.home.shared.ui.HomeContract.Event
 import com.jarroyo.feature.home.shared.ui.HomeContract.State
 import com.jarroyo.library.navigation.api.navigator.AppNavigator
 import com.jarroyo.library.ui.shared.BaseViewModel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import moe.tlaster.precompose.viewmodel.viewModelScope
 
@@ -28,17 +27,21 @@ class HomeViewModel(
         when (event) {
             is Event.OnItemClicked -> appNavigator.navigate(RocketDetailDestination().get(event.id))
             is Event.OnViewAttached -> {}
-            is Event.OnSwipeToRefresh -> sendEffect { Effect.ShowSnackbar("Refresh") }
+            is Event.OnSwipeToRefresh -> handleOnSwipeToRefresh()
         }
     }
 
-    private fun refreshData() {
+    private fun handleOnSwipeToRefresh() {
+        refreshData(FetchPolicy.NetworkFirst)
+        sendEffect { Effect.ShowSnackbar("Refreshing data...") }
+    }
+
+    private fun refreshData(fetchPolicy: FetchPolicy = FetchPolicy.CacheFirst) {
         viewModelScope.launch {
             updateState { copy(loading = true) }
-            delay(1000)
-            when (val result = getRocketsInteractor(0, 0, FetchPolicy.NetworkFirst)) {
-                is Err -> sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
+            when (val result = getRocketsInteractor(0, 0, fetchPolicy)) {
                 is Ok -> updateState { copy(rocketList = result.value) }
+                is Err -> sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
             }
             updateState { copy(loading = false) }
         }

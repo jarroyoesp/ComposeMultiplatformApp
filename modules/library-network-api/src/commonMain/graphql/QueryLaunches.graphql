@@ -2,12 +2,14 @@ query LaunchesQuery {
     launches {
         id
         mission_name
+        launch_date_local
         rocket {
             rocket {
                 ...rocketFragment
             }
         }
         links {
+            article_link
             flickr_images
             mission_patch_small
             mission_patch

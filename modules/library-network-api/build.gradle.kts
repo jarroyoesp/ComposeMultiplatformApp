@@ -18,11 +18,9 @@ apollo {
     service("spacex") {
         packageName.set("com.jarroyo.composeapp.library.network.api.graphql")
         generateApolloMetadata.set(true)
-        // JAE  codegenModels = "experimental_operationBasedWithInterfaces"
-        // JAE decapitalizeFields = true
+        decapitalizeFields.set(true)
         generateDataBuilders.set(true)
-        // JAE mapScalar("ISODate", "java.time.LocalDate", "com.apollographql.apollo3.adapter.JavaLocalDateAdapter")
-        // JAE mapScalar("ISODateTime", "java.time.Instant", "com.apollographql.apollo3.adapter.JavaInstantAdapter")
+        mapScalar("Date", "java.time.Instant", "com.apollographql.apollo3.adapter.JavaInstantAdapter")
     }
 }
 

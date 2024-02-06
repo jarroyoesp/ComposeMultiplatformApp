@@ -4,6 +4,7 @@ query LaunchDetail($id: ID!) {
         mission_name
         details
         links {
+            article_link
             flickr_images
             mission_patch
             mission_patch_small
