@@ -1,7 +1,7 @@
 import io.gitlab.arturbosch.detekt.Detekt
 
 plugins {
-    id ("composeapp.multiplatform-library-conventions")
+    id("composeapp.multiplatform-library-conventions")
     alias(libs.plugins.apollo)
     alias(libs.plugins.kotlinx.serialization)
 }
@@ -10,7 +10,7 @@ android {
     namespace = "com.jarroyo.composeapp.library.network.api"
     resourcePrefix = "network_api_"
     defaultConfig {
-        consumerProguardFiles ("$projectDir/proguard-network-api-consumer-rules.pro")
+        consumerProguardFiles("$projectDir/proguard-network-api-consumer-rules.pro")
     }
 }
 
@@ -20,24 +20,23 @@ apollo {
         generateApolloMetadata.set(true)
         decapitalizeFields.set(true)
         generateDataBuilders.set(true)
-        mapScalar("Date", "java.time.Instant", "com.apollographql.apollo3.adapter.JavaInstantAdapter")
+        mapScalar(
+            "Date",
+            "java.time.Instant",
+            "com.apollographql.apollo3.adapter.JavaInstantAdapter"
+        )
     }
 }
 
 kotlin {
-    jvm("desktop")
-    androidTarget()
-
     sourceSets {
-        val commonMain by getting{
-            dependencies{
-                api (libs.apollo)
-                api (libs.apollo.adapters)
-                api (libs.apollo.cache)
-                api (libs.retrofit)
-                implementation (libs.apollo.cache.sqlite)
-                implementation (libs.kotlinx.serialization)
-            }
+        commonMain.dependencies {
+            api(libs.apollo)
+            api(libs.apollo.adapters)
+            api(libs.apollo.cache)
+            api(libs.retrofit)
+            implementation(libs.apollo.cache.sqlite)
+            implementation(libs.kotlinx.serialization)
         }
     }
 }

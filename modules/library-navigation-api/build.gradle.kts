@@ -11,16 +11,10 @@ android {
 }
 
 kotlin {
-    jvm("desktop")
-    androidTarget()
-
     sourceSets {
-        val commonMain by getting {
-            dependencies {
-                implementation(libs.coroutines.core)
-                implementation(libs.tlaster.precompose)
-                // api (libs.androidx.navigation.compose)
-            }
+        commonMain.dependencies {
+            implementation(libs.coroutines.core)
+            implementation(libs.tlaster.precompose)
         }
     }
 }

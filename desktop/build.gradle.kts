@@ -14,14 +14,11 @@ kotlin {
         withJava()
     }
     sourceSets {
-        val jvmMain by getting {
-            dependencies {
-                implementation(projects.modules.featureHomeShared)
-                implementation(compose.desktop.currentOs)
-                implementation(libs.koin.core)
-            }
+        jvmMain.dependencies {
+            implementation(projects.modules.featureHomeShared)
+            implementation(compose.desktop.currentOs)
+            implementation(libs.koin.core)
         }
-        val jvmTest by getting
     }
 }
 

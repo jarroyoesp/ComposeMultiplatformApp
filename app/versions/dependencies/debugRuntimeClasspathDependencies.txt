@@ -1179,7 +1179,6 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |    +--- io.insert-koin:koin-core:3.2.0 (*)
 |    |    \--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.22 (*)
 |    +--- project :modules:library-ui-shared
-|    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0 (*)
 |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
 |    |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.18 (*)
 |    |    +--- org.jetbrains.compose.foundation:foundation:1.5.12 (*)

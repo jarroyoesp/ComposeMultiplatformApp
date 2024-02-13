@@ -1,5 +1,5 @@
 plugins {
-    id ("composeapp.multiplatform-library-conventions")
+    id("composeapp.multiplatform-library-conventions")
     alias(libs.plugins.kotlinx.serialization)
 }
 
@@ -7,7 +7,7 @@ android {
     namespace = "com.jarroyo.library.network"
     resourcePrefix = "network_"
     defaultConfig {
-        consumerProguardFiles ("$projectDir/proguard-network-consumer-rules.pro")
+        consumerProguardFiles("$projectDir/proguard-network-consumer-rules.pro")
     }
     sourceSets {
         val main by getting
@@ -16,15 +16,10 @@ android {
 }
 
 kotlin {
-    jvm("desktop")
-    androidTarget()
-
     sourceSets {
-        val commonMain by getting{
-            dependencies{
-                api (projects.modules.libraryNetworkApi)
-                implementation(libs.koin.core)
-            }
+        commonMain.dependencies {
+            api(projects.modules.libraryNetworkApi)
+            implementation(libs.koin.core)
         }
     }
 }

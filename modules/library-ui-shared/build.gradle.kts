@@ -1,5 +1,5 @@
 plugins {
-    id ("composeapp.multiplatform-library-conventions")
+    id("composeapp.multiplatform-library-conventions")
     id("org.jetbrains.compose")
 }
 
@@ -8,21 +8,11 @@ android {
 }
 
 kotlin {
-    jvm("desktop")
-    androidTarget()
-
     sourceSets {
-        val androidMain by getting {
-            dependencies {
-                implementation(libs.androidx.lifecycle.viewmodel)
-            }
-        }
-        val commonMain by getting{
-            dependencies{
-                implementation(compose.foundation)
-                implementation(libs.coroutines.core)
-                implementation(libs.tlaster.precompose.viewmodel)
-            }
+        commonMain.dependencies {
+            implementation(compose.foundation)
+            implementation(libs.coroutines.core)
+            implementation(libs.tlaster.precompose.viewmodel)
         }
     }
 }

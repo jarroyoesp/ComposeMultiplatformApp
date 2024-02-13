@@ -28,10 +28,8 @@ kotlin {
     }
 
     sourceSets {
-        val commonMain by getting{
-            dependencies{
-                implementation (libs.kotlin.result)
-            }
+        commonMain.dependencies {
+            implementation(libs.kotlin.result)
         }
     }
 }
