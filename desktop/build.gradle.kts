@@ -4,8 +4,6 @@ plugins {
     kotlin("multiplatform")
     id("org.jetbrains.compose")
 }
-
-group = "com.mocoding"
 version = "1.0-SNAPSHOT"
 
 kotlin {

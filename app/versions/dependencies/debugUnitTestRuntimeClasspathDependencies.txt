@@ -1146,19 +1146,6 @@ debugUnitTestRuntimeClasspath - Runtime classpath of /debugUnitTest.
 |    |         |              \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20 -> 1.9.10 (*)
 |    |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.7.3 (*)
 |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
-|    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.18 (*)
-|    +--- org.jetbrains.compose.ui:ui:1.5.12
-|    |    \--- androidx.compose.ui:ui:1.5.4 -> 1.6.1 (*)
-|    +--- org.jetbrains.compose.foundation:foundation:1.5.12
-|    |    \--- androidx.compose.foundation:foundation:1.5.4 -> 1.6.1 (*)
-|    +--- org.jetbrains.compose.material:material:1.5.12
-|    |    \--- androidx.compose.material:material:1.5.4 -> 1.6.1 (*)
-|    +--- org.jetbrains.compose.runtime:runtime:1.5.12
-|    |    \--- androidx.compose.runtime:runtime:1.5.4 -> 1.6.1 (*)
-|    +--- io.insert-koin:koin-core:3.2.0
-|    |    \--- io.insert-koin:koin-core-jvm:3.2.0
-|    |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21 -> 1.9.10 (*)
-|    |         \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.6.21 -> 1.9.22 (*)
 |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
 |    +--- media.kamel:kamel-image:0.9.0
 |    |    \--- media.kamel:kamel-image-android-debug:0.9.0
@@ -1183,9 +1170,12 @@ debugUnitTestRuntimeClasspath - Runtime classpath of /debugUnitTest.
 |    |         |    \--- media.kamel:kamel-core-android-debug:0.9.0
 |    |         |         +--- androidx.startup:startup-runtime:1.1.1 (*)
 |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 1.9.22 (*)
-|    |         |         +--- org.jetbrains.compose.ui:ui:1.5.11 -> 1.5.12 (*)
-|    |         |         +--- org.jetbrains.compose.foundation:foundation:1.5.11 -> 1.5.12 (*)
-|    |         |         +--- org.jetbrains.compose.runtime:runtime:1.5.11 -> 1.5.12 (*)
+|    |         |         +--- org.jetbrains.compose.ui:ui:1.5.11 -> 1.5.12
+|    |         |         |    \--- androidx.compose.ui:ui:1.5.4 -> 1.6.1 (*)
+|    |         |         +--- org.jetbrains.compose.foundation:foundation:1.5.11 -> 1.5.12
+|    |         |         |    \--- androidx.compose.foundation:foundation:1.5.4 -> 1.6.1 (*)
+|    |         |         +--- org.jetbrains.compose.runtime:runtime:1.5.11 -> 1.5.12
+|    |         |         |    \--- androidx.compose.runtime:runtime:1.5.4 -> 1.6.1 (*)
 |    |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
 |    |         |         +--- io.ktor:ktor-client-core:2.3.6 (*)
 |    |         |         +--- com.squareup.okio:okio:3.6.0 (*)
@@ -1218,6 +1208,11 @@ debugUnitTestRuntimeClasspath - Runtime classpath of /debugUnitTest.
 |    |         +--- org.jetbrains.compose.foundation:foundation:1.5.11 -> 1.5.12 (*)
 |    |         +--- org.jetbrains.compose.runtime:runtime:1.5.11 -> 1.5.12 (*)
 |    |         \--- io.ktor:ktor-client-core:2.3.6 (*)
+|    +--- io.insert-koin:koin-core:3.2.0
+|    |    \--- io.insert-koin:koin-core-jvm:3.2.0
+|    |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21 -> 1.9.10 (*)
+|    |         \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.6.21 -> 1.9.22 (*)
+|    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.18 (*)
 |    +--- co.touchlab:kermit:2.0.2
 |    |    \--- co.touchlab:kermit-android-debug:2.0.2
 |    |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 (*)
@@ -1243,10 +1238,25 @@ debugUnitTestRuntimeClasspath - Runtime classpath of /debugUnitTest.
 |    |         +--- androidx.activity:activity-ktx:1.8.0 -> 1.8.2 (*)
 |    |         +--- androidx.compose.foundation:foundation:1.5.3 -> 1.6.1 (*)
 |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.20 -> 1.9.22 (*)
+|    +--- org.jetbrains.compose.ui:ui:1.5.12 (*)
+|    +--- org.jetbrains.compose.foundation:foundation:1.5.12 (*)
+|    +--- org.jetbrains.compose.material:material:1.5.12
+|    |    \--- androidx.compose.material:material:1.5.4 -> 1.6.1 (*)
+|    +--- org.jetbrains.compose.runtime:runtime:1.5.12 (*)
 |    +--- project :modules:feature-home-api
+|    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0 (*)
+|    |    +--- io.ktor:ktor-client-android:2.3.6 (*)
 |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
+|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
+|    |    +--- media.kamel:kamel-image:0.9.0 (*)
+|    |    +--- io.insert-koin:koin-core:3.2.0 (*)
 |    |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.18 (*)
+|    |    +--- co.touchlab:kermit:2.0.2 (*)
+|    |    +--- moe.tlaster:precompose:1.5.7 (*)
+|    |    +--- moe.tlaster:precompose-viewmodel:1.5.7 (*)
 |    |    +--- project :modules:library-network-api
+|    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0 (*)
+|    |    |    +--- io.ktor:ktor-client-android:2.3.6 (*)
 |    |    |    +--- com.apollographql.apollo3:apollo-runtime:3.8.2 (*)
 |    |    |    +--- com.apollographql.apollo3:apollo-adapters:3.8.2
 |    |    |    |    \--- com.apollographql.apollo3:apollo-adapters-jvm:3.8.2
@@ -1268,7 +1278,13 @@ debugUnitTestRuntimeClasspath - Runtime classpath of /debugUnitTest.
 |    |    |    +--- com.squareup.retrofit2:retrofit:2.9.0
 |    |    |    |    \--- com.squareup.okhttp3:okhttp:3.14.9 -> 4.12.0 (*)
 |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
+|    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
+|    |    |    +--- media.kamel:kamel-image:0.9.0 (*)
+|    |    |    +--- io.insert-koin:koin-core:3.2.0 (*)
 |    |    |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.18 (*)
+|    |    |    +--- co.touchlab:kermit:2.0.2 (*)
+|    |    |    +--- moe.tlaster:precompose:1.5.7 (*)
+|    |    |    +--- moe.tlaster:precompose-viewmodel:1.5.7 (*)
 |    |    |    +--- com.apollographql.apollo3:apollo-normalized-cache-sqlite:3.8.2
 |    |    |    |    \--- com.apollographql.apollo3:apollo-normalized-cache-sqlite-android-debug:3.8.2
 |    |    |    |         +--- androidx.sqlite:sqlite:2.1.0
@@ -1296,31 +1312,56 @@ debugUnitTestRuntimeClasspath - Runtime classpath of /debugUnitTest.
 |    |    |    \--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.22 (*)
 |    |    \--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.22 (*)
 |    +--- project :modules:library-navigation-api
+|    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0 (*)
+|    |    +--- io.ktor:ktor-client-android:2.3.6 (*)
 |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
-|    |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.18 (*)
 |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
+|    |    +--- media.kamel:kamel-image:0.9.0 (*)
+|    |    +--- io.insert-koin:koin-core:3.2.0 (*)
+|    |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.18 (*)
+|    |    +--- co.touchlab:kermit:2.0.2 (*)
 |    |    +--- moe.tlaster:precompose:1.5.7 (*)
+|    |    +--- moe.tlaster:precompose-viewmodel:1.5.7 (*)
 |    |    \--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.22 (*)
 |    +--- project :modules:library-navigation
+|    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0 (*)
+|    |    +--- io.ktor:ktor-client-android:2.3.6 (*)
 |    |    +--- project :modules:library-navigation-api (*)
 |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
-|    |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.18 (*)
-|    |    +--- moe.tlaster:precompose:1.5.7 (*)
+|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
+|    |    +--- media.kamel:kamel-image:0.9.0 (*)
 |    |    +--- io.insert-koin:koin-core:3.2.0 (*)
+|    |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.18 (*)
+|    |    +--- co.touchlab:kermit:2.0.2 (*)
+|    |    +--- moe.tlaster:precompose:1.5.7 (*)
+|    |    +--- moe.tlaster:precompose-viewmodel:1.5.7 (*)
 |    |    \--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.22 (*)
 |    +--- project :modules:library-network-api (*)
 |    +--- project :modules:library-network
+|    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0 (*)
+|    |    +--- io.ktor:ktor-client-android:2.3.6 (*)
 |    |    +--- project :modules:library-network-api (*)
 |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
-|    |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.18 (*)
+|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
+|    |    +--- media.kamel:kamel-image:0.9.0 (*)
 |    |    +--- io.insert-koin:koin-core:3.2.0 (*)
+|    |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.18 (*)
+|    |    +--- co.touchlab:kermit:2.0.2 (*)
+|    |    +--- moe.tlaster:precompose:1.5.7 (*)
+|    |    +--- moe.tlaster:precompose-viewmodel:1.5.7 (*)
 |    |    \--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.22 (*)
 |    +--- project :modules:library-ui-shared
+|    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0 (*)
+|    |    +--- io.ktor:ktor-client-android:2.3.6 (*)
 |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
-|    |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.18 (*)
-|    |    +--- org.jetbrains.compose.foundation:foundation:1.5.12 (*)
 |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
+|    |    +--- media.kamel:kamel-image:0.9.0 (*)
+|    |    +--- io.insert-koin:koin-core:3.2.0 (*)
+|    |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.18 (*)
+|    |    +--- co.touchlab:kermit:2.0.2 (*)
+|    |    +--- moe.tlaster:precompose:1.5.7 (*)
 |    |    +--- moe.tlaster:precompose-viewmodel:1.5.7 (*)
+|    |    +--- org.jetbrains.compose.foundation:foundation:1.5.12 (*)
 |    |    \--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.22 (*)
 |    \--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.22 (*)
 +--- project :modules:library-navigation (*)

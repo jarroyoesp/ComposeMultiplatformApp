@@ -19,8 +19,8 @@ android {
 }
 
 kotlin {
-    jvm("desktop")
     androidTarget()
+    jvm("desktop")
     targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget> {
         binaries.all {
             freeCompilerArgs += "-Xdisable-phases=VerifyBitcode"
@@ -28,8 +28,31 @@ kotlin {
     }
 
     sourceSets {
+        androidMain.dependencies {
+            implementation(libs.androidx.lifecycle.viewmodel)
+            implementation(libs.ktor.client.android)
+        }
+
         commonMain.dependencies {
+            implementation(libs.coroutines.core)
+            implementation(libs.kamel)
+            implementation(libs.koin.core)
             implementation(libs.kotlin.result)
+            implementation(libs.multiplatform.log)
+            implementation(libs.tlaster.precompose)
+            implementation(libs.tlaster.precompose.viewmodel)
+
+        }
+
+        commonTest.dependencies {
+            // implementation(project(":modules:library-test"))
+        }
+
+        val desktopMain by getting {
+            dependencies {
+                implementation(libs.coroutines.core)
+                implementation(libs.ktor.client.cio)
+            }
         }
     }
 }
