@@ -47,7 +47,13 @@ kotlin {
         }
 
         commonTest.dependencies {
-            implementation(project(":modules:library-test"))
+            api(libs.apollo.testing.support)
+            api(libs.coroutines.test)
+            api(libs.hilt.android.testing)
+            api(libs.junit)
+            api(libs.kotlin.test)
+            api(libs.kotlin.test.junit)
+            api(libs.mockk)
         }
 
         val desktopMain by getting {
