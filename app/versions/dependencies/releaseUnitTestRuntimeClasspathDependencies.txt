@@ -14,113 +14,21 @@ releaseUnitTestRuntimeClasspath - Runtime classpath of /releaseUnitTest.
 |    \--- org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.9.22
 |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
 +--- project :modules:library-test
-|    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0
-|    |    +--- androidx.lifecycle:lifecycle-viewmodel:2.7.0
-|    |    |    +--- androidx.annotation:annotation:1.1.0 -> 1.7.0
-|    |    |    |    \--- androidx.annotation:annotation-jvm:1.7.0
-|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.7.10 -> 1.9.22 (*)
-|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 1.9.22 (*)
-|    |    |    +--- androidx.lifecycle:lifecycle-common:2.7.0 (c)
-|    |    |    +--- androidx.lifecycle:lifecycle-common-java8:2.7.0 (c)
-|    |    |    +--- androidx.lifecycle:lifecycle-runtime:2.7.0 (c)
-|    |    |    +--- androidx.lifecycle:lifecycle-runtime-ktx:2.7.0 (c)
-|    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0 (c)
-|    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0 (c)
-|    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0 (c)
-|    |    |    +--- androidx.lifecycle:lifecycle-livedata-core:2.7.0 (c)
-|    |    |    +--- androidx.lifecycle:lifecycle-livedata:2.7.0 (c)
-|    |    |    +--- androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0 (c)
-|    |    |    \--- androidx.lifecycle:lifecycle-process:2.7.0 (c)
-|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 1.9.22 (*)
-|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1 -> 1.7.3
-|    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3
-|    |    |    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.7.3
-|    |    |    |         +--- org.jetbrains:annotations:23.0.0
-|    |    |    |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.7.3
-|    |    |    |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3 (c)
-|    |    |    |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.7.3 (c)
-|    |    |    |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (c)
-|    |    |    |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-test-jvm:1.7.3 (c)
-|    |    |    |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3 (c)
-|    |    |    |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.3 (c)
-|    |    |    |              \--- org.jetbrains.kotlinx:kotlinx-coroutines-slf4j:1.7.3 (c)
-|    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.7.3 (*)
-|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20 -> 1.9.10
-|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.10 -> 1.9.22 (*)
-|    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.10
-|    |    |              \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.10 -> 1.9.22 (*)
-|    |    +--- androidx.lifecycle:lifecycle-common:2.7.0 (c)
-|    |    +--- androidx.lifecycle:lifecycle-common-java8:2.7.0 (c)
-|    |    +--- androidx.lifecycle:lifecycle-runtime:2.7.0 (c)
-|    |    +--- androidx.lifecycle:lifecycle-runtime-ktx:2.7.0 (c)
-|    |    +--- androidx.lifecycle:lifecycle-viewmodel:2.7.0 (c)
-|    |    +--- androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0 (c)
-|    |    +--- androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0 (c)
-|    |    +--- androidx.lifecycle:lifecycle-livedata-core:2.7.0 (c)
-|    |    +--- androidx.lifecycle:lifecycle-livedata:2.7.0 (c)
-|    |    +--- androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0 (c)
-|    |    \--- androidx.lifecycle:lifecycle-process:2.7.0 (c)
-|    +--- androidx.test:core-ktx:1.5.0
-|    |    +--- androidx.test:core:1.5.0
-|    |    |    +--- androidx.annotation:annotation:1.2.0 -> 1.7.0 (*)
-|    |    |    +--- androidx.test:monitor:1.6.0 -> 1.6.1
-|    |    |    |    +--- androidx.annotation:annotation:1.2.0 -> 1.7.0 (*)
-|    |    |    |    +--- androidx.test:annotation:1.0.1
-|    |    |    |    |    +--- androidx.annotation:annotation:1.2.0 -> 1.7.0 (*)
-|    |    |    |    |    \--- androidx.annotation:annotation-experimental:1.1.0 -> 1.3.1
-|    |    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.7.10 -> 1.9.22 (*)
-|    |    |    |    \--- androidx.tracing:tracing:1.0.0
-|    |    |    |         \--- androidx.annotation:annotation:1.1.0 -> 1.7.0 (*)
-|    |    |    +--- androidx.test.services:storage:1.4.2
-|    |    |    |    +--- androidx.annotation:annotation:1.2.0 -> 1.7.0 (*)
-|    |    |    |    +--- androidx.test:monitor:1.6.0 -> 1.6.1 (*)
-|    |    |    |    +--- com.google.code.findbugs:jsr305:2.0.2 -> 3.0.2
-|    |    |    |    \--- androidx.test:annotation:1.0.1 (*)
-|    |    |    +--- androidx.lifecycle:lifecycle-common:2.3.1 -> 2.7.0
-|    |    |    |    +--- androidx.annotation:annotation:1.1.0 -> 1.7.0 (*)
-|    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 1.9.22 (*)
-|    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1 -> 1.7.3 (*)
-|    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.7.3 (*)
-|    |    |    |    +--- androidx.lifecycle:lifecycle-common-java8:2.7.0 (c)
-|    |    |    |    +--- androidx.lifecycle:lifecycle-livedata-core:2.7.0 (c)
-|    |    |    |    +--- androidx.lifecycle:lifecycle-runtime:2.7.0 (c)
-|    |    |    |    +--- androidx.lifecycle:lifecycle-runtime-ktx:2.7.0 (c)
-|    |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel:2.7.0 (c)
-|    |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0 (c)
-|    |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0 (c)
-|    |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0 (c)
-|    |    |    |    +--- androidx.lifecycle:lifecycle-livedata:2.7.0 (c)
-|    |    |    |    +--- androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0 (c)
-|    |    |    |    \--- androidx.lifecycle:lifecycle-process:2.7.0 (c)
-|    |    |    +--- androidx.tracing:tracing:1.0.0 (*)
-|    |    |    +--- com.google.guava:listenablefuture:1.0
-|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.7.10 -> 1.9.22 (*)
-|    |    |    \--- androidx.concurrent:concurrent-futures:1.1.0
-|    |    |         +--- androidx.annotation:annotation:1.1.0 -> 1.7.0 (*)
-|    |    |         \--- com.google.guava:listenablefuture:1.0
-|    |    +--- androidx.lifecycle:lifecycle-common:2.3.1 -> 2.7.0 (*)
-|    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.7.10 -> 1.9.22 (*)
-|    +--- androidx.test:runner:1.5.2
-|    |    +--- androidx.annotation:annotation:1.2.0 -> 1.7.0 (*)
-|    |    +--- androidx.test:annotation:1.0.1 (*)
-|    |    +--- androidx.test:monitor:1.6.1 (*)
-|    |    +--- androidx.test.services:storage:1.4.2 (*)
-|    |    +--- androidx.tracing:tracing:1.0.0 (*)
-|    |    \--- junit:junit:4.13.2
-|    |         \--- org.hamcrest:hamcrest-core:1.3
 |    +--- com.apollographql.apollo3:apollo-testing-support:3.8.2
 |    |    \--- com.apollographql.apollo3:apollo-testing-support-jvm:3.8.2
 |    |         +--- com.apollographql.apollo3:apollo-api:3.8.2
 |    |         |    \--- com.apollographql.apollo3:apollo-api-jvm:3.8.2
 |    |         |         +--- com.squareup.okio:okio:3.2.0 -> 3.6.0
 |    |         |         |    \--- com.squareup.okio:okio-jvm:3.6.0
-|    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 (*)
+|    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10
+|    |         |         |         |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.10 -> 1.9.22 (*)
+|    |         |         |         |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.10
+|    |         |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.10 -> 1.9.22 (*)
 |    |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.9.10 -> 1.9.22
 |    |         |         |              \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
 |    |         |         +--- com.benasher44:uuid:0.3.1
 |    |         |         |    \--- com.benasher44:uuid-jvm:0.3.1
-|    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.30 -> 1.9.10 (*)
-|    |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.5.30 -> 1.9.22 (*)
+|    |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.30 -> 1.9.10 (*)
 |    |         |         \--- com.apollographql.apollo3:apollo-annotations:3.8.2
 |    |         |              \--- com.apollographql.apollo3:apollo-annotations-jvm:3.8.2
 |    |         |                   +--- org.jetbrains.kotlin:kotlin-stdlib:1.6.21 -> 1.9.22 (*)
@@ -136,7 +44,17 @@ releaseUnitTestRuntimeClasspath - Runtime classpath of /releaseUnitTest.
 |    |         |         |         \--- com.apollographql.apollo3:apollo-annotations:3.8.2 (*)
 |    |         |         +--- com.squareup.okio:okio:3.2.0 -> 3.6.0 (*)
 |    |         |         +--- com.benasher44:uuid:0.3.1 (*)
-|    |         |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4 -> 1.7.3 (*)
+|    |         |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4 -> 1.7.3
+|    |         |              \--- org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.7.3
+|    |         |                   +--- org.jetbrains:annotations:23.0.0
+|    |         |                   \--- org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.7.3
+|    |         |                        +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3 (c)
+|    |         |                        +--- org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.7.3 (c)
+|    |         |                        +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (c)
+|    |         |                        +--- org.jetbrains.kotlinx:kotlinx-coroutines-test-jvm:1.7.3 (c)
+|    |         |                        +--- org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3 (c)
+|    |         |                        +--- org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.3 (c)
+|    |         |                        \--- org.jetbrains.kotlinx:kotlinx-coroutines-slf4j:1.7.3 (c)
 |    |         +--- com.apollographql.apollo3:apollo-mockserver:3.8.2
 |    |         |    \--- com.apollographql.apollo3:apollo-mockserver-jvm:3.8.2
 |    |         |         +--- com.apollographql.apollo3:apollo-annotations:3.8.2 (*)
@@ -144,8 +62,7 @@ releaseUnitTestRuntimeClasspath - Runtime classpath of /releaseUnitTest.
 |    |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4 -> 1.7.3 (*)
 |    |         |         \--- org.jetbrains.kotlinx:atomicfu:0.17.0 -> 0.21.0
 |    |         |              \--- org.jetbrains.kotlinx:atomicfu-jvm:0.21.0
-|    |         |                   +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.20 -> 1.9.22 (*)
-|    |         |                   \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.20 -> 1.9.22 (*)
+|    |         |                   \--- org.jetbrains.kotlin:kotlin-stdlib:1.8.20 -> 1.9.22 (*)
 |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4 -> 1.7.3 (*)
 |    |         +--- org.jetbrains.kotlinx:atomicfu:0.17.0 -> 0.21.0 (*)
 |    |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4 -> 1.7.3
@@ -153,8 +70,7 @@ releaseUnitTestRuntimeClasspath - Runtime classpath of /releaseUnitTest.
 |    |                   +--- org.jetbrains:annotations:23.0.0
 |    |                   +--- org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.7.3 (*)
 |    |                   +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20 -> 1.9.10 (*)
-|    |                   +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
-|    |                   \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.20 -> 1.9.22 (*)
+|    |                   \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
 |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3 (*)
 |    +--- com.google.dagger:hilt-android-testing:2.50
 |    |    +--- com.google.dagger:dagger:2.50
@@ -169,7 +85,9 @@ releaseUnitTestRuntimeClasspath - Runtime classpath of /releaseUnitTest.
 |    |    |    |    \--- javax.inject:javax.inject:1
 |    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
 |    |    |    +--- androidx.activity:activity:1.5.1 -> 1.8.2
-|    |    |    |    +--- androidx.annotation:annotation:1.1.0 -> 1.7.0 (*)
+|    |    |    |    +--- androidx.annotation:annotation:1.1.0 -> 1.7.0
+|    |    |    |    |    \--- androidx.annotation:annotation-jvm:1.7.0
+|    |    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.7.10 -> 1.9.22 (*)
 |    |    |    |    +--- androidx.collection:collection:1.0.0 -> 1.4.0
 |    |    |    |    |    \--- androidx.collection:collection-jvm:1.4.0
 |    |    |    |    |         +--- androidx.annotation:annotation:1.7.0 (*)
@@ -178,9 +96,12 @@ releaseUnitTestRuntimeClasspath - Runtime classpath of /releaseUnitTest.
 |    |    |    |    |         \--- androidx.collection:collection-ktx:1.3.0 -> 1.4.0 (c)
 |    |    |    |    +--- androidx.core:core:1.8.0 -> 1.12.0
 |    |    |    |    |    +--- androidx.annotation:annotation:1.6.0 -> 1.7.0 (*)
-|    |    |    |    |    +--- androidx.annotation:annotation-experimental:1.3.0 -> 1.3.1 (*)
+|    |    |    |    |    +--- androidx.annotation:annotation-experimental:1.3.0 -> 1.3.1
+|    |    |    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.7.10 -> 1.9.22 (*)
 |    |    |    |    |    +--- androidx.collection:collection:1.0.0 -> 1.4.0 (*)
-|    |    |    |    |    +--- androidx.concurrent:concurrent-futures:1.0.0 -> 1.1.0 (*)
+|    |    |    |    |    +--- androidx.concurrent:concurrent-futures:1.0.0 -> 1.1.0
+|    |    |    |    |    |    +--- androidx.annotation:annotation:1.1.0 -> 1.7.0 (*)
+|    |    |    |    |    |    \--- com.google.guava:listenablefuture:1.0
 |    |    |    |    |    +--- androidx.interpolator:interpolator:1.0.0
 |    |    |    |    |    |    \--- androidx.annotation:annotation:1.0.0 -> 1.7.0 (*)
 |    |    |    |    |    +--- androidx.lifecycle:lifecycle-runtime:2.3.1 -> 2.7.0
@@ -190,13 +111,32 @@ releaseUnitTestRuntimeClasspath - Runtime classpath of /releaseUnitTest.
 |    |    |    |    |    |    +--- androidx.arch.core:core-runtime:2.2.0
 |    |    |    |    |    |    |    +--- androidx.annotation:annotation:1.1.0 -> 1.7.0 (*)
 |    |    |    |    |    |    |    \--- androidx.arch.core:core-common:2.2.0 (*)
-|    |    |    |    |    |    +--- androidx.lifecycle:lifecycle-common:2.7.0 (*)
+|    |    |    |    |    |    +--- androidx.lifecycle:lifecycle-common:2.7.0
+|    |    |    |    |    |    |    +--- androidx.annotation:annotation:1.1.0 -> 1.7.0 (*)
+|    |    |    |    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 1.9.22 (*)
+|    |    |    |    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1 -> 1.7.3
+|    |    |    |    |    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
+|    |    |    |    |    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.7.3 (*)
+|    |    |    |    |    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20 -> 1.9.10 (*)
+|    |    |    |    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.7.3 (*)
+|    |    |    |    |    |    |    +--- androidx.lifecycle:lifecycle-common-java8:2.7.0 (c)
+|    |    |    |    |    |    |    +--- androidx.lifecycle:lifecycle-livedata-core:2.7.0 (c)
+|    |    |    |    |    |    |    +--- androidx.lifecycle:lifecycle-runtime:2.7.0 (c)
+|    |    |    |    |    |    |    +--- androidx.lifecycle:lifecycle-runtime-ktx:2.7.0 (c)
+|    |    |    |    |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel:2.7.0 (c)
+|    |    |    |    |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0 (c)
+|    |    |    |    |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0 (c)
+|    |    |    |    |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0 (c)
+|    |    |    |    |    |    |    +--- androidx.lifecycle:lifecycle-livedata:2.7.0 (c)
+|    |    |    |    |    |    |    +--- androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0 (c)
+|    |    |    |    |    |    |    \--- androidx.lifecycle:lifecycle-process:2.7.0 (c)
 |    |    |    |    |    |    +--- androidx.profileinstaller:profileinstaller:1.3.0 -> 1.3.1
 |    |    |    |    |    |    |    +--- androidx.annotation:annotation:1.2.0 -> 1.7.0 (*)
 |    |    |    |    |    |    |    +--- androidx.concurrent:concurrent-futures:1.1.0 (*)
 |    |    |    |    |    |    |    +--- androidx.startup:startup-runtime:1.1.1
 |    |    |    |    |    |    |    |    +--- androidx.annotation:annotation:1.1.0 -> 1.7.0 (*)
-|    |    |    |    |    |    |    |    \--- androidx.tracing:tracing:1.0.0 (*)
+|    |    |    |    |    |    |    |    \--- androidx.tracing:tracing:1.0.0
+|    |    |    |    |    |    |    |         \--- androidx.annotation:annotation:1.1.0 -> 1.7.0 (*)
 |    |    |    |    |    |    |    \--- com.google.guava:listenablefuture:1.0
 |    |    |    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 1.9.22 (*)
 |    |    |    |    |    |    +--- androidx.lifecycle:lifecycle-common:2.7.0 (c)
@@ -216,7 +156,20 @@ releaseUnitTestRuntimeClasspath - Runtime classpath of /releaseUnitTest.
 |    |    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 1.9.22 (*)
 |    |    |    |    |    \--- androidx.core:core-ktx:1.12.0 (c)
 |    |    |    |    +--- androidx.lifecycle:lifecycle-runtime:2.6.1 -> 2.7.0 (*)
-|    |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel:2.6.1 -> 2.7.0 (*)
+|    |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel:2.6.1 -> 2.7.0
+|    |    |    |    |    +--- androidx.annotation:annotation:1.1.0 -> 1.7.0 (*)
+|    |    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 1.9.22 (*)
+|    |    |    |    |    +--- androidx.lifecycle:lifecycle-common:2.7.0 (c)
+|    |    |    |    |    +--- androidx.lifecycle:lifecycle-common-java8:2.7.0 (c)
+|    |    |    |    |    +--- androidx.lifecycle:lifecycle-runtime:2.7.0 (c)
+|    |    |    |    |    +--- androidx.lifecycle:lifecycle-runtime-ktx:2.7.0 (c)
+|    |    |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0 (c)
+|    |    |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0 (c)
+|    |    |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0 (c)
+|    |    |    |    |    +--- androidx.lifecycle:lifecycle-livedata-core:2.7.0 (c)
+|    |    |    |    |    +--- androidx.lifecycle:lifecycle-livedata:2.7.0 (c)
+|    |    |    |    |    +--- androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0 (c)
+|    |    |    |    |    \--- androidx.lifecycle:lifecycle-process:2.7.0 (c)
 |    |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1 -> 2.7.0
 |    |    |    |    |    +--- androidx.annotation:annotation:1.0.0 -> 1.7.0 (*)
 |    |    |    |    |    +--- androidx.core:core-ktx:1.2.0 -> 1.12.0
@@ -339,9 +292,14 @@ releaseUnitTestRuntimeClasspath - Runtime classpath of /releaseUnitTest.
 |    |    +--- androidx.lifecycle:lifecycle-viewmodel:2.5.1 -> 2.7.0 (*)
 |    |    +--- androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1 -> 2.7.0 (*)
 |    |    +--- androidx.multidex:multidex:2.0.1
-|    |    +--- androidx.test:core:1.4.0 -> 1.5.0 (*)
+|    |    +--- androidx.test:core:1.4.0
+|    |    |    +--- androidx.annotation:annotation:1.0.0 -> 1.7.0 (*)
+|    |    |    +--- androidx.test:monitor:1.4.0
+|    |    |    |    \--- androidx.annotation:annotation:1.0.0 -> 1.7.0 (*)
+|    |    |    \--- androidx.lifecycle:lifecycle-common:2.0.0 -> 2.7.0 (*)
 |    |    +--- javax.inject:javax.inject:1
-|    |    \--- junit:junit:4.13.2 (*)
+|    |    \--- junit:junit:4.13.2
+|    |         \--- org.hamcrest:hamcrest-core:1.3
 |    +--- junit:junit:4.13.2 (*)
 |    +--- org.jetbrains.kotlin:kotlin-test:1.9.22
 |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
@@ -354,7 +312,6 @@ releaseUnitTestRuntimeClasspath - Runtime classpath of /releaseUnitTest.
 |    |         +--- io.mockk:mockk-dsl:1.13.7
 |    |         |    \--- io.mockk:mockk-dsl-jvm:1.13.7
 |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20 -> 1.9.10 (*)
-|    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.20 -> 1.9.22 (*)
 |    |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.6.4 -> 1.7.3 (*)
 |    |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core -> 1.7.3 (*)
 |    |         |         +--- org.jetbrains.kotlin:kotlin-reflect:1.8.20 -> 1.8.22
@@ -362,7 +319,6 @@ releaseUnitTestRuntimeClasspath - Runtime classpath of /releaseUnitTest.
 |    |         |         \--- io.mockk:mockk-core:1.13.7
 |    |         |              \--- io.mockk:mockk-core-jvm:1.13.7
 |    |         |                   +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20 -> 1.9.10 (*)
-|    |         |                   +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.20 -> 1.9.22 (*)
 |    |         |                   \--- org.jetbrains.kotlin:kotlin-reflect:1.8.20 -> 1.8.22 (*)
 |    |         +--- io.mockk:mockk-agent:1.13.7
 |    |         |    \--- io.mockk:mockk-agent-jvm:1.13.7
@@ -373,14 +329,11 @@ releaseUnitTestRuntimeClasspath - Runtime classpath of /releaseUnitTest.
 |    |         |         +--- io.mockk:mockk-agent-api:1.13.7
 |    |         |         |    \--- io.mockk:mockk-agent-api-jvm:1.13.7
 |    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20 -> 1.9.10 (*)
-|    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.20 -> 1.9.22 (*)
 |    |         |         |         \--- org.jetbrains.kotlin:kotlin-reflect:1.8.20 -> 1.8.22 (*)
-|    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.20 -> 1.9.22 (*)
 |    |         |         +--- org.jetbrains.kotlin:kotlin-reflect:1.8.20 -> 1.8.22 (*)
 |    |         |         \--- io.mockk:mockk-core:1.13.7 (*)
 |    |         +--- io.mockk:mockk-agent-api:1.13.7 (*)
 |    |         +--- io.mockk:mockk-core:1.13.7 (*)
-|    |         +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.20 -> 1.9.22 (*)
 |    |         +--- junit:junit:4.13.2 (*)
 |    |         +--- org.junit.jupiter:junit-jupiter:5.8.2
 |    |         |    +--- org.junit:junit-bom:5.8.2
@@ -422,16 +375,30 @@ releaseUnitTestRuntimeClasspath - Runtime classpath of /releaseUnitTest.
 |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1 -> 1.7.3 (*)
 |    |    |    +--- androidx.lifecycle:lifecycle-runtime:2.7.0 (c)
 |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel:2.7.0 (c)
-|    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0 (c)
 |    |    |    +--- androidx.lifecycle:lifecycle-common:2.7.0 (c)
 |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0 (c)
 |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0 (c)
+|    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0 (c)
 |    |    |    +--- androidx.lifecycle:lifecycle-common-java8:2.7.0 (c)
 |    |    |    +--- androidx.lifecycle:lifecycle-livedata-core:2.7.0 (c)
 |    |    |    +--- androidx.lifecycle:lifecycle-livedata:2.7.0 (c)
 |    |    |    +--- androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0 (c)
 |    |    |    \--- androidx.lifecycle:lifecycle-process:2.7.0 (c)
-|    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1 -> 2.7.0 (*)
+|    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1 -> 2.7.0
+|    |    |    +--- androidx.lifecycle:lifecycle-viewmodel:2.7.0 (*)
+|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 1.9.22 (*)
+|    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1 -> 1.7.3 (*)
+|    |    |    +--- androidx.lifecycle:lifecycle-common:2.7.0 (c)
+|    |    |    +--- androidx.lifecycle:lifecycle-common-java8:2.7.0 (c)
+|    |    |    +--- androidx.lifecycle:lifecycle-livedata-core:2.7.0 (c)
+|    |    |    +--- androidx.lifecycle:lifecycle-runtime:2.7.0 (c)
+|    |    |    +--- androidx.lifecycle:lifecycle-runtime-ktx:2.7.0 (c)
+|    |    |    +--- androidx.lifecycle:lifecycle-viewmodel:2.7.0 (c)
+|    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0 (c)
+|    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0 (c)
+|    |    |    +--- androidx.lifecycle:lifecycle-livedata:2.7.0 (c)
+|    |    |    +--- androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0 (c)
+|    |    |    \--- androidx.lifecycle:lifecycle-process:2.7.0 (c)
 |    |    +--- androidx.savedstate:savedstate-ktx:1.2.1
 |    |    |    +--- androidx.savedstate:savedstate:1.2.1 (*)
 |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.10 -> 1.9.22 (*)

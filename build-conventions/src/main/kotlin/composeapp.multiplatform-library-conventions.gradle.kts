@@ -1,3 +1,5 @@
+import gradle.kotlin.dsl.accessors._5a57100ac4c76e3931d64b835baf62f0.test
+import gradle.kotlin.dsl.accessors._5a57100ac4c76e3931d64b835baf62f0.testDebug
 import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.kotlin.dsl.the
 
@@ -45,7 +47,7 @@ kotlin {
         }
 
         commonTest.dependencies {
-            // implementation(project(":modules:library-test"))
+            implementation(project(":modules:library-test"))
         }
 
         val desktopMain by getting {
