@@ -1,5 +1,6 @@
 package com.jarroyo.library.navigation.navigator
 
+import com.jarroyo.feature.home.api.destination.HomeDestination
 import com.jarroyo.library.navigation.api.navigator.AppNavigator
 import com.jarroyo.library.navigation.api.navigator.NavigatorEvent
 import kotlinx.coroutines.channels.Channel
@@ -12,7 +13,7 @@ internal class AppNavigatorImpl : AppNavigator {
     private val navigationEvents = Channel<NavigatorEvent>(capacity = Channel.CONFLATED)
 
     override val destinations = navigationEvents.receiveAsFlow()
-    override val homeDestination = "NewsFeedDestination.get()"
+    override val homeDestination = HomeDestination().route
 
     /**
      * Checks the given Intent for a Navigation deep link and navigates to the deep link if present.

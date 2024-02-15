@@ -4,7 +4,7 @@ import com.apollographql.apollo3.cache.normalized.FetchPolicy
 import com.github.michaelbull.result.Err
 import com.github.michaelbull.result.Ok
 import com.jarroyo.feature.home.api.interactor.GetRocketsInteractor
-import com.jarroyo.feature.home.shared.destination.RocketDetailDestination
+import com.jarroyo.feature.home.api.destination.RocketDetailDestination
 import com.jarroyo.feature.home.shared.ui.HomeContract.Effect
 import com.jarroyo.feature.home.shared.ui.HomeContract.Event
 import com.jarroyo.feature.home.shared.ui.HomeContract.State

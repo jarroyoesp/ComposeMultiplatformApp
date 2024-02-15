@@ -19,7 +19,6 @@ kotlin {
             implementation(compose.runtime)
 
             implementation(projects.modules.featureHomeApi)
-            implementation(projects.modules.libraryNavigationApi)
             implementation(projects.modules.libraryNavigation)
             implementation(projects.modules.libraryNetworkApi)
             implementation(projects.modules.libraryNetwork)

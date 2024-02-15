@@ -4,11 +4,10 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.compositionLocalOf
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import co.touchlab.kermit.Logger
-import com.jarroyo.feature.home.shared.destination.HomeDestination
-import com.jarroyo.feature.home.shared.destination.RocketDetailDestination
+import com.jarroyo.feature.home.api.destination.HomeDestination
+import com.jarroyo.feature.home.api.destination.RocketDetailDestination
 import com.jarroyo.feature.home.shared.ui.rocketdetail.RocketDetailScreen
 import com.jarroyo.library.navigation.api.destination.NavigationDestination
 import kotlinx.coroutines.flow.launchIn
@@ -54,7 +53,7 @@ fun RootView() {
     }
 }
 
-fun RouteBuilder.addComposableDestinations() {
+private fun RouteBuilder.addComposableDestinations() {
     val composableDestinations: Map<NavigationDestination, @Composable (arguments: Map<String, String>) -> Unit> = mapOf(
         HomeDestination() to { HomeScreen() },
         RocketDetailDestination() to { RocketDetailScreen(it) },

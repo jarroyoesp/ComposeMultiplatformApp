@@ -13,6 +13,7 @@ android {
 kotlin {
     sourceSets {
         commonMain.dependencies {
+            implementation(projects.modules.libraryNavigationApi)
             implementation(projects.modules.libraryNetworkApi)
         }
     }
