@@ -1,3 +1,4 @@
+import io.gitlab.arturbosch.detekt.extensions.DetektExtension
 import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.kotlin.dsl.the
 
@@ -8,7 +9,16 @@ val libs = the<LibrariesForLibs>()
 
 detekt {
     toolVersion = libs.versions.detekt.get()
-    source = files("src/main/kotlin", "src/test/kotlin", "src/androidTest/kotlin")
+    source.setFrom(
+        DetektExtension.DEFAULT_SRC_DIR_KOTLIN,
+        DetektExtension.DEFAULT_TEST_SRC_DIR_KOTLIN,
+        "src/androidTest/kotlin",
+        "src/androidMain/kotlin",
+        "src/commonMain/kotlin",
+        "src/jvmMain/kotlin",
+        "src/nativeMain/kotlin",
+        "src/nativeTest/kotlin",
+    )
     parallel = true
     autoCorrect = true
 }

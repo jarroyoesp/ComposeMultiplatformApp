@@ -94,6 +94,7 @@ apollo-cache-sqlite = { module = "com.apollographql.apollo3:apollo-normalized-ca
 apollo-testing-support = { module = "com.apollographql.apollo3:apollo-testing-support", version.ref = "apollo" }
 coil-compose = { module = "io.coil-kt:coil-compose", version = "2.5.0" }
 composecharts = { module = "io.github.bytebeats:compose-charts", version = "0.1.2" }
+compose-placeholder = { module = "com.eygraber:compose-placeholder-material", version = "1.0.7" }
 compose-webview = { module = "io.github.kevinnzou:compose-webview-multiplatform", version = "1.7.8" }
 coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }

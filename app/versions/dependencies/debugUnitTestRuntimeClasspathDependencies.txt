@@ -1330,6 +1330,17 @@ debugUnitTestRuntimeClasspath - Runtime classpath of /debugUnitTest.
 |    |    +--- moe.tlaster:precompose:1.5.7 (*)
 |    |    +--- moe.tlaster:precompose-viewmodel:1.5.7 (*)
 |    |    +--- org.jetbrains.compose.foundation:foundation:1.5.12 (*)
+|    |    +--- com.eygraber:compose-placeholder-material:1.0.7
+|    |    |    \--- com.eygraber:compose-placeholder-material-android-debug:1.0.7
+|    |    |         +--- com.eygraber:compose-placeholder:1.0.7
+|    |    |         |    \--- com.eygraber:compose-placeholder-android-debug:1.0.7
+|    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 1.9.22 (*)
+|    |    |         |         +--- org.jetbrains.compose.foundation:foundation:1.5.11 -> 1.5.12 (*)
+|    |    |         |         +--- org.jetbrains.compose.ui:ui-util:1.5.11
+|    |    |         |         |    \--- androidx.compose.ui:ui-util:1.5.4 -> 1.6.1 (*)
+|    |    |         |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
+|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 1.9.22 (*)
+|    |    |         \--- org.jetbrains.compose.material:material:1.5.11 -> 1.5.12 (*)
 |    |    \--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.22 (*)
 |    \--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.22 (*)
 +--- project :modules:library-navigation (*)

@@ -167,7 +167,7 @@ private fun LazyListScope.rocketList(
 private fun getRocketListPlaceholderData(): List<LaunchesQuery.Launch> = List(6) {
     LaunchesQuery.Launch(
         id = null,
-        mission_name = null,
+        mission_name = "Lorem Ipsum",
         launch_date_local = Instant.now(),
         rocket = LaunchesQuery.Rocket(
             LaunchesQuery.Rocket1(

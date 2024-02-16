@@ -11,6 +11,7 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(compose.foundation)
+            implementation(libs.compose.placeholder)
             implementation(libs.coroutines.core)
             implementation(libs.tlaster.precompose.viewmodel)
         }
