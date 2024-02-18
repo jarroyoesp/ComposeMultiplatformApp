@@ -1,4 +1,4 @@
-package com.jarroyo.library.ui.theme
+package com.jarroyo.library.ui.shared.theme
 
 import androidx.compose.ui.unit.dp
 

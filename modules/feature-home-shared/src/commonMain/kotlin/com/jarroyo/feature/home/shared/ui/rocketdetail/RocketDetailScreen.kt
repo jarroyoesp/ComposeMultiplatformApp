@@ -21,12 +21,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.jarroyo.composeapp.library.network.api.graphql.LaunchDetailQuery
 import com.jarroyo.feature.home.shared.di.FeatureHomeKoinComponent
 import com.jarroyo.feature.home.shared.ui.rocketdetail.RocketDetailContract.Effect
 import com.jarroyo.feature.home.shared.ui.rocketdetail.RocketDetailContract.Event
 import com.jarroyo.feature.home.shared.ui.rocketdetail.RocketDetailContract.State
 import com.jarroyo.library.navigation.di.NavigationKoinComponent
 import com.jarroyo.library.ui.shared.component.placeholder
+import com.jarroyo.library.ui.shared.theme.Spacing
 import io.kamel.image.KamelImage
 import io.kamel.image.asyncPainterResource
 import kotlinx.coroutines.flow.Flow
@@ -86,28 +88,53 @@ private fun RocketDetailScreen(
             modifier = Modifier
                 .padding(16.dp)
                 .fillMaxWidth(),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
+            verticalArrangement = Arrangement.spacedBy(Spacing.x01),
         ) {
-            Text(
-                text = state.launch?.details.orEmpty(),
-                modifier = Modifier.placeholder(state.loading),
-            )
-            Text(
-                text = state.launch?.links?.article_link.orEmpty(),
-                modifier = Modifier.placeholder(state.loading),
-            )
-            KamelImage(
-                resource = asyncPainterResource(
-                    state.launch?.links?.flickr_images?.firstOrNull().orEmpty(),
-                ),
-                contentDescription = null,
-                modifier = Modifier.fillMaxWidth().placeholder(state.loading),
-                alignment = Alignment.TopCenter,
-                onLoading = { CircularProgressIndicator() },
-            )
+            if (state.loading) {
+                DetailItem(getPlaceholderData(), true)
+            } else {
+                DetailItem(state.launch)
+            }
         }
     }
 }
+
+@Composable
+private fun DetailItem(
+    launch: LaunchDetailQuery.Launch?,
+    placeholder: Boolean = false,
+) {
+    Text(
+        text = launch?.details.orEmpty(),
+        modifier = Modifier.placeholder(placeholder),
+    )
+    Text(
+        text = launch?.links?.article_link.orEmpty(),
+        modifier = Modifier.placeholder(placeholder),
+    )
+    KamelImage(
+        resource = asyncPainterResource(
+            launch?.links?.flickr_images?.firstOrNull().orEmpty(),
+        ),
+        contentDescription = null,
+        modifier = Modifier.fillMaxWidth().placeholder(placeholder),
+        alignment = Alignment.TopCenter,
+        onLoading = { CircularProgressIndicator() },
+    )
+}
+
+private fun getPlaceholderData(): LaunchDetailQuery.Launch = LaunchDetailQuery.Launch(
+    id = "id",
+    mission_name = "Mission",
+    links = LaunchDetailQuery.Links(
+        article_link = "Article Link",
+        flickr_images = null,
+        mission_patch = "",
+        mission_patch_small = "",
+        wikipedia = "Wikipedia",
+    ),
+    details = "Details",
+)
 
 @Composable
 private fun TopAppBar(

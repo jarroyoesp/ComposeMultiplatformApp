@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import com.jarroyo.composeapp.library.network.api.graphql.LaunchesQuery
 import com.jarroyo.feature.home.shared.ui.HomeContract.Event
 import com.jarroyo.library.ui.shared.component.placeholder
+import com.jarroyo.library.ui.shared.theme.Spacing
 import io.kamel.image.KamelImage
 import io.kamel.image.asyncPainterResource
 import java.time.LocalDateTime
@@ -37,7 +38,7 @@ fun HomeItem(
     ) {
         Column(
             modifier = Modifier
-                .padding(16.dp)
+                .padding(Spacing.x02)
                 .fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(4.dp),
         ) {

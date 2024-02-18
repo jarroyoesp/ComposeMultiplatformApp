@@ -44,6 +44,7 @@ import com.jarroyo.feature.home.shared.ui.HomeContract.Effect
 import com.jarroyo.feature.home.shared.ui.HomeContract.Event
 import com.jarroyo.feature.home.shared.ui.HomeContract.State
 import com.jarroyo.library.navigation.di.NavigationKoinComponent
+import com.jarroyo.library.ui.shared.theme.Spacing
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
@@ -132,8 +133,8 @@ private fun HomeScreen(
                     .fillMaxSize()
                     .padding(scaffoldPadding),
                 state = scrollState,
-                contentPadding = PaddingValues(16.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp),
+                contentPadding = PaddingValues(Spacing.x02),
+                verticalArrangement = Arrangement.spacedBy(Spacing.x01),
             ) {
                 if (!state.rocketList.isNullOrEmpty() || state.loading) {
                     if (state.rocketList.isNullOrEmpty() && state.loading) {
