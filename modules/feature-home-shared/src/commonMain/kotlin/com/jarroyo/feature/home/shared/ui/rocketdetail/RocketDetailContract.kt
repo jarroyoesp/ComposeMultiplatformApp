@@ -9,12 +9,14 @@ import com.jarroyo.library.ui.shared.ViewState
 @Immutable
 object RocketDetailContract {
     data class State(
+        val favorite: Boolean = false,
         val launch: LaunchDetailQuery.Launch? = null,
         val loading: Boolean = false,
     ) : ViewState
 
     sealed class Event : ViewEvent {
         data class OnViewAttached(val id: String): Event()
+        data object OnAddFavoritesButtonClicked: Event()
         data object OnUpButtonClicked: Event()
     }
 

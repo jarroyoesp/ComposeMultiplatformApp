@@ -4,6 +4,9 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.Button
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -42,8 +45,11 @@ fun RocketDetailScreen(
     arguments: Map<String, String>? = null,
     viewModel: RocketDetailViewModel = viewModel {
         RocketDetailViewModel(
+            FeatureHomeKoinComponent().addFavoriteInteractor,
             NavigationKoinComponent().appNavigator,
+            FeatureHomeKoinComponent().getFavoritesInteractor,
             FeatureHomeKoinComponent().getLaunchDetailInteractor,
+            FeatureHomeKoinComponent().removeFavoriteInteractor,
         )
     },
 ) {
@@ -83,9 +89,13 @@ private fun RocketDetailScreen(
             }
         }.collect()
     }
-    Scaffold(topBar = { TopAppBar(sendEvent, state) }) { scaffoldPadding ->
+
+    Scaffold(
+        topBar = { TopAppBar(sendEvent, state) },
+    ) { scaffoldPadding ->
         Column(
             modifier = Modifier
+                .verticalScroll(rememberScrollState())
                 .padding(16.dp)
                 .fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(Spacing.x01),
@@ -94,6 +104,16 @@ private fun RocketDetailScreen(
                 DetailItem(getPlaceholderData(), true)
             } else {
                 DetailItem(state.launch)
+            }
+            Button(
+                onClick = { sendEvent(Event.OnAddFavoritesButtonClicked) },
+                enabled = !state.loading,
+            ) {
+                if (state.favorite) {
+                    Text("Remove to Favorites")
+                } else {
+                    Text("Add to Favorites")
+                }
             }
         }
     }

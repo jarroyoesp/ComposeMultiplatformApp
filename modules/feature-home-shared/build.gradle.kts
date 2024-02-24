@@ -1,6 +1,7 @@
 plugins {
     id("composeapp.multiplatform-library-conventions")
     id("org.jetbrains.compose")
+    alias(libs.plugins.sqldelight)
 }
 
 android {
@@ -10,19 +11,36 @@ android {
     }
 }
 
+sqldelight {
+    databases {
+        create("Database") {
+            packageName.set("com.jarroyo.feature.home.shared.sqldelight")
+        }
+    }
+}
+
 kotlin {
     sourceSets {
+        androidMain.dependencies {
+            implementation(libs.sqldelight.androidDriver)
+        }
         commonMain.dependencies {
             implementation(compose.ui)
             implementation(compose.foundation)
             implementation(compose.material)
             implementation(compose.runtime)
+            implementation(libs.sqldelight.coroutines)
+            implementation(libs.sqldelight.primitiveAdapters)
 
             implementation(projects.modules.featureHomeApi)
             implementation(projects.modules.libraryNavigation)
             implementation(projects.modules.libraryNetworkApi)
             implementation(projects.modules.libraryNetwork)
             implementation(projects.modules.libraryUiShared)
+        }
+
+        desktopMain.dependencies {
+            implementation(libs.sqldelight.jvmDriver)
         }
     }
 }

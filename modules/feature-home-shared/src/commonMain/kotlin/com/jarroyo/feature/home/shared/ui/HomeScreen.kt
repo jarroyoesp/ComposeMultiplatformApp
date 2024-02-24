@@ -36,7 +36,6 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.LayoutDirection
-import androidx.compose.ui.unit.dp
 import com.jarroyo.composeapp.library.network.api.graphql.LaunchesQuery
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.RocketFragment
 import com.jarroyo.feature.home.shared.di.FeatureHomeKoinComponent

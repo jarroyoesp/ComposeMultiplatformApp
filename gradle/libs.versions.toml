@@ -27,6 +27,7 @@ mockk = "1.13.7"
 okhttp = "4.12.0"
 prettier = "2.7.1"
 retrofit = "2.9.0"
+sqlDelight = "2.0.1"
 agp = "8.1.4"
 org-jetbrains-kotlin-android = "1.9.20"
 junit = "1.1.5"
@@ -92,6 +93,7 @@ apollo-adapters = { module = "com.apollographql.apollo3:apollo-adapters", versio
 apollo-cache = { module = "com.apollographql.apollo3:apollo-normalized-cache", version.ref = "apollo" }
 apollo-cache-sqlite = { module = "com.apollographql.apollo3:apollo-normalized-cache-sqlite", version.ref = "apollo" }
 apollo-testing-support = { module = "com.apollographql.apollo3:apollo-testing-support", version.ref = "apollo" }
+cash-sqldelight-android = { module = "app.cash.sqldelight:android-driver", version = "2.0.1" }
 coil-compose = { module = "io.coil-kt:coil-compose", version = "2.5.0" }
 composecharts = { module = "io.github.bytebeats:compose-charts", version = "0.1.2" }
 compose-placeholder = { module = "com.eygraber:compose-placeholder-material", version = "1.0.7" }
@@ -154,6 +156,11 @@ retrofit-kotlinx-serialization = { module = "com.jakewharton.retrofit:retrofit2-
 robolectric = { module = "org.robolectric:robolectric", version = "4.11.1" }
 seismic = { module = "com.squareup:seismic", version = "1.0.3" }
 speeddial = { module = "com.leinardi.android:speed-dial.compose", version = "2.0.0-alpha01" }
+sqldelight-androidDriver = { module = "app.cash.sqldelight:android-driver", version.ref = "sqlDelight" }
+sqldelight-jvmDriver = { module = "app.cash.sqldelight:sqlite-driver", version.ref = "sqlDelight" }
+sqldelight-nativeDriver = { module = "app.cash.sqldelight:native-driver", version.ref = "sqlDelight" }
+sqldelight-coroutines = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqlDelight" }
+sqldelight-primitiveAdapters = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqlDelight" }
 timber = { module = "com.jakewharton.timber:timber", version = "5.0.1" }
 tink = { module = "com.google.crypto.tink:tink-android", version = "1.10.0" }
 tlaster-precompose = { module = "moe.tlaster:precompose", version = "1.5.7" }
@@ -188,6 +195,7 @@ gradledoctor = { id = "com.osacky.doctor", version = "0.8.1" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 multiplatform = { id = "org.jetbrains.compose", version = "1.5.12" }
+sqldelight = { id = "app.cash.sqldelight", version = "2.0.1" }
 tripletplay = { id = "com.github.triplet.play", version = "3.7.0" }
 com-android-application = { id = "com.android.application", version.ref = "agp" }
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }

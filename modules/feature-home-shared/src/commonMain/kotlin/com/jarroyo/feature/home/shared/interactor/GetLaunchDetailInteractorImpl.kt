@@ -10,10 +10,11 @@ import com.github.michaelbull.result.Ok
 import com.github.michaelbull.result.Result
 import com.jarroyo.composeapp.library.network.api.graphql.LaunchDetailQuery
 import com.jarroyo.feature.home.api.interactor.GetLaunchDetailInteractor
+import org.koin.core.component.KoinComponent
 
 class GetLaunchDetailInteractorImpl(
     private val apolloClient: ApolloClient,
-) : GetLaunchDetailInteractor {
+) : GetLaunchDetailInteractor, KoinComponent {
     override suspend operator fun invoke(
         id: String,
         fetchPolicy: FetchPolicy,

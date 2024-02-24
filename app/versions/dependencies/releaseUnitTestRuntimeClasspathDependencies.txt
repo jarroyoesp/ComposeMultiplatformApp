@@ -960,6 +960,21 @@ releaseUnitTestRuntimeClasspath - Runtime classpath of /releaseUnitTest.
 |    |         |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.7.3 (*)
 |    |         |              \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20 -> 1.9.10 (*)
 |    |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.7.3 (*)
+|    +--- app.cash.sqldelight:android-driver:2.0.1
+|    |    +--- androidx.sqlite:sqlite-framework:2.4.0
+|    |    |    +--- androidx.annotation:annotation:1.2.0 -> 1.7.0 (*)
+|    |    |    +--- androidx.sqlite:sqlite:2.4.0
+|    |    |    |    +--- androidx.annotation:annotation:1.0.0 -> 1.7.0 (*)
+|    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 1.9.22 (*)
+|    |    |    |    \--- androidx.sqlite:sqlite-framework:2.4.0 (c)
+|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 1.9.22 (*)
+|    |    |    \--- androidx.sqlite:sqlite:2.4.0 (c)
+|    |    +--- app.cash.sqldelight:runtime:2.0.1
+|    |    |    \--- app.cash.sqldelight:runtime-jvm:2.0.1
+|    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 1.9.22 (*)
+|    |    +--- androidx.sqlite:sqlite:2.4.0 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 1.9.22 (*)
+|    +--- app.cash.sqldelight:runtime:2.0.1 (*)
 |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
 |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
 |    +--- media.kamel:kamel-image:0.9.0
@@ -1103,6 +1118,16 @@ releaseUnitTestRuntimeClasspath - Runtime classpath of /releaseUnitTest.
 |    +--- org.jetbrains.compose.material:material:1.5.12
 |    |    \--- androidx.compose.material:material:1.5.4 -> 1.6.1 (*)
 |    +--- org.jetbrains.compose.runtime:runtime:1.5.12 (*)
+|    +--- app.cash.sqldelight:coroutines-extensions:2.0.1
+|    |    \--- app.cash.sqldelight:coroutines-extensions-jvm:2.0.1
+|    |         +--- app.cash.sqldelight:runtime:2.0.1 (*)
+|    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
+|    |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 1.9.22 (*)
+|    |         \--- app.cash.sqldelight:async-extensions:2.0.1
+|    |              \--- app.cash.sqldelight:async-extensions-jvm:2.0.1
+|    |                   +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
+|    |                   +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 1.9.22 (*)
+|    |                   \--- app.cash.sqldelight:runtime:2.0.1 (*)
 |    +--- project :modules:feature-home-api
 |    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0 (*)
 |    |    +--- io.ktor:ktor-client-android:2.3.6 (*)
@@ -1159,17 +1184,14 @@ releaseUnitTestRuntimeClasspath - Runtime classpath of /releaseUnitTest.
 |    |    |    +--- moe.tlaster:precompose-viewmodel:1.5.7 (*)
 |    |    |    +--- com.apollographql.apollo3:apollo-normalized-cache-sqlite:3.8.2
 |    |    |    |    \--- com.apollographql.apollo3:apollo-normalized-cache-sqlite-android:3.8.2
-|    |    |    |         +--- androidx.sqlite:sqlite:2.1.0
-|    |    |    |         |    \--- androidx.annotation:annotation:1.0.0 -> 1.7.0 (*)
+|    |    |    |         +--- androidx.sqlite:sqlite:2.1.0 -> 2.4.0 (*)
 |    |    |    |         +--- com.squareup.sqldelight:android-driver:1.5.5
 |    |    |    |         |    +--- com.squareup.sqldelight:runtime-jvm:1.5.5
 |    |    |    |         |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31 -> 1.9.10 (*)
-|    |    |    |         |    +--- androidx.sqlite:sqlite:2.1.0 (*)
+|    |    |    |         |    +--- androidx.sqlite:sqlite:2.1.0 -> 2.4.0 (*)
 |    |    |    |         |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31 -> 1.9.10 (*)
-|    |    |    |         |    \--- androidx.sqlite:sqlite-framework:2.1.0
-|    |    |    |         |         +--- androidx.annotation:annotation:1.0.0 -> 1.7.0 (*)
-|    |    |    |         |         \--- androidx.sqlite:sqlite:2.1.0 (*)
-|    |    |    |         +--- androidx.sqlite:sqlite-framework:2.1.0 (*)
+|    |    |    |         |    \--- androidx.sqlite:sqlite-framework:2.1.0 -> 2.4.0 (*)
+|    |    |    |         +--- androidx.sqlite:sqlite-framework:2.1.0 -> 2.4.0 (*)
 |    |    |    |         +--- androidx.startup:startup-runtime:1.1.1 (*)
 |    |    |    |         +--- com.apollographql.apollo3:apollo-api:3.8.2 (*)
 |    |    |    |         +--- com.apollographql.apollo3:apollo-normalized-cache-api:3.8.2 (*)
