@@ -1,5 +1,7 @@
 package com.jarroyo.library.navigation.api.destination
 
+import kotlin.random.Random
+
 abstract class NavigationDestination {
     abstract val route: String
 
@@ -12,7 +14,7 @@ abstract class NavigationDestination {
 
         companion object {
             val uniqueId
-                get() = System.currentTimeMillis()
+                get() = Random.nextInt()
         }
     }
 

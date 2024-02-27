@@ -5,6 +5,7 @@ import com.github.michaelbull.result.Err
 import com.github.michaelbull.result.Ok
 import com.jarroyo.feature.home.api.interactor.GetRocketsInteractor
 import com.jarroyo.feature.home.api.destination.RocketDetailDestination
+import com.jarroyo.feature.home.api.interactor.GetFavoritesInteractor
 import com.jarroyo.feature.home.shared.ui.HomeContract.Effect
 import com.jarroyo.feature.home.shared.ui.HomeContract.Event
 import com.jarroyo.feature.home.shared.ui.HomeContract.State
@@ -15,6 +16,7 @@ import moe.tlaster.precompose.viewmodel.viewModelScope
 
 class HomeViewModel(
     private val appNavigator: AppNavigator,
+    private val getFavoritesInteractor: GetFavoritesInteractor,
     private val getRocketsInteractor: GetRocketsInteractor,
 ) : BaseViewModel<Event, State, Effect>() {
     init {
@@ -41,6 +43,18 @@ class HomeViewModel(
             updateState { copy(loading = true) }
             when (val result = getRocketsInteractor(0, 0, fetchPolicy)) {
                 is Ok -> updateState { copy(rocketList = result.value) }
+                is Err -> sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
+            }
+            updateState { copy(loading = false) }
+        }
+        refreshFavorites()
+    }
+
+    private fun refreshFavorites(){
+        viewModelScope.launch {
+            updateState { copy(loading = true) }
+            when (val result = getFavoritesInteractor()) {
+                is Ok -> updateState { copy(favoritesList = result.value) }
                 is Err -> sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
             }
             updateState { copy(loading = false) }

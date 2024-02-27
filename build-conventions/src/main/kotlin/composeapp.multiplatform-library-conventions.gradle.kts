@@ -10,7 +10,7 @@ plugins {
 val libs = the<LibrariesForLibs>()
 
 android {
-    compileSdk = 34 // TODO
+    compileSdk = libs.versions.androidCompileSdk.get().toInt()
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -20,6 +20,16 @@ android {
 
 kotlin {
     androidTarget()
+    listOf(
+        iosX64(),
+        iosArm64(),
+        iosSimulatorArm64()
+    ).forEach { iosTarget ->
+        iosTarget.binaries.framework {
+            baseName = "ComposeApp"
+            isStatic = true
+        }
+    }
     jvm("desktop")
     targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget> {
         binaries.all {
@@ -47,11 +57,9 @@ kotlin {
         commonTest.dependencies {
             api(libs.apollo.testing.support)
             api(libs.coroutines.test)
-            api(libs.hilt.android.testing)
             api(libs.junit)
             api(libs.kotlin.test)
             api(libs.kotlin.test.junit)
-            api(libs.mockk)
         }
 
         val desktopMain by getting {
@@ -59,6 +67,10 @@ kotlin {
                 implementation(libs.coroutines.core)
                 implementation(libs.ktor.client.cio)
             }
+        }
+
+        iosMain.dependencies {
+            implementation(libs.ktor.client.darwin)
         }
     }
 }

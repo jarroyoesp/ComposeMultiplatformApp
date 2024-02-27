@@ -9,7 +9,7 @@ val libs = the<LibrariesForLibs>()
 spotless {
     kotlin {
         target("**/*.kt")
-        targetExclude("**/build/**/*.kt")
+        targetExclude("**/build/**/*.kt", "**/nativeMain/**/*.kt", "**/desktopMain/**/*.kt")
         diktat(libs.versions.diktat.get()).configFile("$rootDir/config/diktat/diktat-analysis.yml")
         trimTrailingWhitespace()
         indentWithSpaces()

@@ -43,7 +43,7 @@ import moe.tlaster.precompose.viewmodel.viewModel
 @Composable
 fun RocketDetailScreen(
     arguments: Map<String, String>? = null,
-    viewModel: RocketDetailViewModel = viewModel {
+    viewModel: RocketDetailViewModel = viewModel(modelClass = RocketDetailViewModel::class) {
         RocketDetailViewModel(
             FeatureHomeKoinComponent().addFavoriteInteractor,
             NavigationKoinComponent().appNavigator,
@@ -110,7 +110,7 @@ private fun RocketDetailScreen(
                 enabled = !state.loading,
             ) {
                 if (state.favorite) {
-                    Text("Remove to Favorites")
+                    Text("Remove from Favorites")
                 } else {
                     Text("Add to Favorites")
                 }

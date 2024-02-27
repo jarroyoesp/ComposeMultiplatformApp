@@ -48,15 +48,17 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
-import java.time.Instant
+import kotlinx.datetime.Clock
 
 @Composable
-fun HomeScreen(viewModel: HomeViewModel = moe.tlaster.precompose.viewmodel.viewModel {
-    HomeViewModel(
-        NavigationKoinComponent().appNavigator,
-        FeatureHomeKoinComponent().getRocketsInteractor,
-    )
-},
+fun HomeScreen(
+    viewModel: HomeViewModel = moe.tlaster.precompose.viewmodel.viewModel(modelClass = HomeViewModel::class) {
+        HomeViewModel(
+            NavigationKoinComponent().appNavigator,
+            FeatureHomeKoinComponent().getFavoritesInteractor,
+            FeatureHomeKoinComponent().getRocketsInteractor,
+        )
+    },
 ) {
     HomeScreen(
         state = viewModel.viewState.value,
@@ -140,7 +142,11 @@ private fun HomeScreen(
                         rocketList(getRocketListPlaceholderData(), sendEvent, placeholder = true)
                     } else {
                         state.rocketList?.let { rockets ->
-                            rocketList(rockets, sendEvent)
+                            rocketList(
+                                data = rockets,
+                                sendEvent = sendEvent,
+                                favoritesList = state.favoritesList,
+                            )
                         }
                     }
                 }
@@ -157,10 +163,16 @@ private fun HomeScreen(
 private fun LazyListScope.rocketList(
     data: List<LaunchesQuery.Launch>,
     sendEvent: (event: Event) -> Unit,
+    favoritesList: List<String>? = null,
     placeholder: Boolean = false,
 ) {
     items(data.size) { index ->
-        HomeItem(item = data[index], sendEvent = sendEvent, placeholder = placeholder)
+        HomeItem(
+            item = data[index],
+            sendEvent = sendEvent,
+            favoritesList = favoritesList,
+            placeholder = placeholder,
+        )
     }
 }
 
@@ -168,7 +180,7 @@ private fun getRocketListPlaceholderData(): List<LaunchesQuery.Launch> = List(6)
     LaunchesQuery.Launch(
         id = null,
         mission_name = "Lorem Ipsum",
-        launch_date_local = Instant.now(),
+        launch_date_local = Clock.System.now(),
         rocket = LaunchesQuery.Rocket(
             LaunchesQuery.Rocket1(
                 __typename = "",

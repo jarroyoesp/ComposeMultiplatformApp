@@ -7,6 +7,7 @@ import com.jarroyo.library.ui.shared.ViewState
 
 object HomeContract {
     data class State(
+        val favoritesList: List<String>? = null,
         val loading: Boolean = false,
         val rocketList: List<LaunchesQuery.Launch>? = null,
     ) : ViewState

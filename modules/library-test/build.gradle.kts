@@ -6,7 +6,7 @@ plugins {
 android {
     namespace = "com.jarroyo.library.test"
     resourcePrefix = "test_"
-    compileSdk = 34 // TODO
+    compileSdk = libs.versions.androidCompileSdk.get().toInt()
     defaultConfig {
         consumerProguardFiles("$projectDir/proguard-test-consumer-rules.pro")
     }

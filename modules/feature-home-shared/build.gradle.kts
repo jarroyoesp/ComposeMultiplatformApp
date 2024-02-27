@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
+
 plugins {
     id("composeapp.multiplatform-library-conventions")
     id("org.jetbrains.compose")
@@ -17,9 +19,18 @@ sqldelight {
             packageName.set("com.jarroyo.feature.home.shared.sqldelight")
         }
     }
+    linkSqlite.set(true)
 }
 
 kotlin {
+    targets.filterIsInstance<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget>()
+        .forEach {
+            it.binaries.filterIsInstance<org.jetbrains.kotlin.gradle.plugin.mpp.Framework>()
+                .forEach { lib ->
+                    lib.isStatic = false
+                    lib.linkerOpts.add("-lsqlite3")
+                }
+        }
     sourceSets {
         androidMain.dependencies {
             implementation(libs.sqldelight.androidDriver)
@@ -41,6 +52,10 @@ kotlin {
 
         desktopMain.dependencies {
             implementation(libs.sqldelight.jvmDriver)
+        }
+
+        iosMain.dependencies {
+            implementation(libs.sqldelight.nativeDriver)
         }
     }
 }

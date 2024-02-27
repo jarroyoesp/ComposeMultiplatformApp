@@ -4,6 +4,7 @@
 [versions]
 aboutlibraries = "10.10.0"
 accompanist = "0.33.1-alpha"
+androidCompileSdk = "34"
 androidx-compose = "1.6.1" ## TODO check last version for destok androidx.compose.runtime:runtime
 androidx-compose-compiler = "1.5.8"
 androidx-datastore = "1.0.0"
@@ -96,7 +97,7 @@ apollo-testing-support = { module = "com.apollographql.apollo3:apollo-testing-su
 cash-sqldelight-android = { module = "app.cash.sqldelight:android-driver", version = "2.0.1" }
 coil-compose = { module = "io.coil-kt:coil-compose", version = "2.5.0" }
 composecharts = { module = "io.github.bytebeats:compose-charts", version = "0.1.2" }
-compose-placeholder = { module = "com.eygraber:compose-placeholder-material", version = "1.0.7" }
+compose-placeholder = { module = "com.eygraber:compose-placeholder", version = "1.0.7" }
 compose-webview = { module = "io.github.kevinnzou:compose-webview-multiplatform", version = "1.7.8" }
 coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }

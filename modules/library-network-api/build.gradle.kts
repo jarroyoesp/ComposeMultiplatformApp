@@ -22,8 +22,8 @@ apollo {
         generateDataBuilders.set(true)
         mapScalar(
             "Date",
-            "java.time.Instant",
-            "com.apollographql.apollo3.adapter.JavaInstantAdapter"
+            "kotlinx.datetime.Instant",
+            "com.apollographql.apollo3.adapter.KotlinxInstantAdapter"
         )
     }
 }

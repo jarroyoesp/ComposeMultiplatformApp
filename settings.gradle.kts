@@ -24,6 +24,7 @@ include(
     // Apps
     ":app",
     ":desktop",
+    ":iosapp",
 
     // Modules
     ":modules:feature-home-api",

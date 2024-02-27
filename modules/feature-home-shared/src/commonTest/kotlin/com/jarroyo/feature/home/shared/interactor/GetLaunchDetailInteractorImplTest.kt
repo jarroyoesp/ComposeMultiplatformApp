@@ -11,7 +11,6 @@ import com.github.michaelbull.result.unwrap
 import com.github.michaelbull.result.unwrapError
 import com.jarroyo.composeapp.library.network.api.graphql.LaunchDetailQuery
 import com.jarroyo.feature.home.api.interactor.GetLaunchDetailInteractor
-import io.mockk.clearAllMocks
 import kotlinx.coroutines.test.runTest
 import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
@@ -35,7 +34,6 @@ class GetLaunchDetailInteractorImplTest {
 
     @AfterTest
     fun tearDown() {
-        clearAllMocks()
         apolloClient.close()
     }
 
