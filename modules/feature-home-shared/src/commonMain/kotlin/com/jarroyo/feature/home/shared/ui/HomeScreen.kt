@@ -1,7 +1,6 @@
 package com.jarroyo.feature.home.shared.ui
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -14,7 +13,6 @@ import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.DrawerValue
 import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.SnackbarDuration
@@ -22,8 +20,6 @@ import androidx.compose.material.SnackbarHost
 import androidx.compose.material.SnackbarHostState
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.pullrefresh.PullRefreshIndicator
 import androidx.compose.material.pullrefresh.pullRefresh
 import androidx.compose.material.pullrefresh.rememberPullRefreshState
@@ -32,23 +28,21 @@ import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.LayoutDirection
-import com.jarroyo.composeapp.library.network.api.graphql.LaunchesQuery
-import com.jarroyo.composeapp.library.network.api.graphql.fragment.RocketFragment
+import com.jarroyo.composeapp.library.network.api.graphql.fragment.LaunchFragment
 import com.jarroyo.feature.home.shared.di.FeatureHomeKoinComponent
 import com.jarroyo.feature.home.shared.ui.HomeContract.Effect
 import com.jarroyo.feature.home.shared.ui.HomeContract.Event
 import com.jarroyo.feature.home.shared.ui.HomeContract.State
+import com.jarroyo.feature.home.shared.ui.launchdetail.getPlaceholderData
 import com.jarroyo.library.navigation.di.NavigationKoinComponent
 import com.jarroyo.library.ui.shared.theme.Spacing
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
-import kotlinx.datetime.Clock
 
 @Composable
 fun HomeScreen(
@@ -56,10 +50,13 @@ fun HomeScreen(
         HomeViewModel(
             NavigationKoinComponent().appNavigator,
             FeatureHomeKoinComponent().getFavoritesInteractor,
-            FeatureHomeKoinComponent().getRocketsInteractor,
+            FeatureHomeKoinComponent().getLaunchesInteractor,
         )
     },
 ) {
+    LaunchedEffect(viewModel) {
+        viewModel.onUiEvent(Event.OnViewAttached)
+    }
     HomeScreen(
         state = viewModel.viewState.value,
         sendEvent = { viewModel.onUiEvent(it) },
@@ -87,8 +84,6 @@ private fun HomeScreen(
             }
         }.collect()
     }
-
-    val scope = rememberCoroutineScope()
     val scaffoldState = rememberScaffoldState(rememberDrawerState(DrawerValue.Closed))
     val scrollState = rememberLazyListState()
     Scaffold(
@@ -100,18 +95,7 @@ private fun HomeScreen(
                         top = SafeArea.current.value.calculateTopPadding(),
                         end = SafeArea.current.value.calculateEndPadding(LayoutDirection.Ltr),
                     ),
-                    title = { Text("Home") },
-                    navigationIcon = {
-                        Icon(
-                            Icons.Default.Menu,
-                            "test",
-                            modifier = Modifier.clickable(
-                                onClick = {
-                                    scope.launch { scaffoldState.drawerState.open() }
-                                },
-                            ),
-                        )
-                    },
+                    title = { Text("Space X launches") },
                 )
             }
         },
@@ -139,7 +123,7 @@ private fun HomeScreen(
             ) {
                 if (!state.rocketList.isNullOrEmpty() || state.loading) {
                     if (state.rocketList.isNullOrEmpty() && state.loading) {
-                        rocketList(getRocketListPlaceholderData(), sendEvent, placeholder = true)
+                        rocketList(getLaunchListPlaceholderData(), sendEvent, placeholder = true)
                     } else {
                         state.rocketList?.let { rockets ->
                             rocketList(
@@ -161,7 +145,7 @@ private fun HomeScreen(
 }
 
 private fun LazyListScope.rocketList(
-    data: List<LaunchesQuery.Launch>,
+    data: List<LaunchFragment>,
     sendEvent: (event: Event) -> Unit,
     favoritesList: List<String>? = null,
     placeholder: Boolean = false,
@@ -176,23 +160,6 @@ private fun LazyListScope.rocketList(
     }
 }
 
-private fun getRocketListPlaceholderData(): List<LaunchesQuery.Launch> = List(6) {
-    LaunchesQuery.Launch(
-        id = null,
-        mission_name = "Lorem Ipsum",
-        launch_date_local = Clock.System.now(),
-        rocket = LaunchesQuery.Rocket(
-            LaunchesQuery.Rocket1(
-                __typename = "",
-                rocketFragment = RocketFragment(
-                    company = "company",
-                    name = "name",
-                    id = "id",
-                    wikipedia = null,
-                    active = true,
-                ),
-            ),
-        ),
-        links = null,
-    )
+private fun getLaunchListPlaceholderData(): List<LaunchFragment> = List(6) {
+    getPlaceholderData()
 }

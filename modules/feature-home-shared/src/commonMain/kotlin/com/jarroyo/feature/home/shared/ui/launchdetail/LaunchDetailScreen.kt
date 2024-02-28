@@ -1,8 +1,9 @@
-package com.jarroyo.feature.home.shared.ui.rocketdetail
+package com.jarroyo.feature.home.shared.ui.launchdetail
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -12,8 +13,8 @@ import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Scaffold
 import androidx.compose.material.SnackbarDuration
+import androidx.compose.material.SnackbarHost
 import androidx.compose.material.SnackbarHostState
-import androidx.compose.material.SnackbarResult
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
@@ -23,12 +24,12 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
-import com.jarroyo.composeapp.library.network.api.graphql.LaunchDetailQuery
+import com.jarroyo.composeapp.library.network.api.graphql.fragment.LaunchFragment
+import com.jarroyo.composeapp.library.network.api.graphql.fragment.RocketFragment
 import com.jarroyo.feature.home.shared.di.FeatureHomeKoinComponent
-import com.jarroyo.feature.home.shared.ui.rocketdetail.RocketDetailContract.Effect
-import com.jarroyo.feature.home.shared.ui.rocketdetail.RocketDetailContract.Event
-import com.jarroyo.feature.home.shared.ui.rocketdetail.RocketDetailContract.State
+import com.jarroyo.feature.home.shared.ui.launchdetail.LaunchDetailContract.Effect
+import com.jarroyo.feature.home.shared.ui.launchdetail.LaunchDetailContract.Event
+import com.jarroyo.feature.home.shared.ui.launchdetail.LaunchDetailContract.State
 import com.jarroyo.library.navigation.di.NavigationKoinComponent
 import com.jarroyo.library.ui.shared.component.placeholder
 import com.jarroyo.library.ui.shared.theme.Spacing
@@ -38,13 +39,14 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
+import kotlinx.datetime.Clock
 import moe.tlaster.precompose.viewmodel.viewModel
 
 @Composable
-fun RocketDetailScreen(
+fun LaunchDetailScreen(
     arguments: Map<String, String>? = null,
-    viewModel: RocketDetailViewModel = viewModel(modelClass = RocketDetailViewModel::class) {
-        RocketDetailViewModel(
+    viewModel: LaunchDetailViewModel = viewModel(modelClass = LaunchDetailViewModel::class) {
+        LaunchDetailViewModel(
             FeatureHomeKoinComponent().addFavoriteInteractor,
             NavigationKoinComponent().appNavigator,
             FeatureHomeKoinComponent().getFavoritesInteractor,
@@ -59,7 +61,7 @@ fun RocketDetailScreen(
         }
     }
 
-    RocketDetailScreen(
+    LaunchDetailScreen(
         effectFlow = viewModel.effect,
         sendEvent = { viewModel.onUiEvent(it) },
         state = viewModel.viewState.value,
@@ -67,7 +69,7 @@ fun RocketDetailScreen(
 }
 
 @Composable
-private fun RocketDetailScreen(
+private fun LaunchDetailScreen(
     effectFlow: Flow<Effect>,
     sendEvent: (event: Event) -> Unit,
     state: State,
@@ -79,12 +81,8 @@ private fun RocketDetailScreen(
                 is Effect.ShowSnackbar -> launch {
                     snackbarHostState.showSnackbar(
                         message = effect.message,
-                        duration = SnackbarDuration.Indefinite,
-                    ).also { snackbarResult ->
-                        if (snackbarResult == SnackbarResult.ActionPerformed) {
-                            snackbarHostState.currentSnackbarData?.dismiss()
-                        }
-                    }
+                        duration = SnackbarDuration.Short,
+                    )
                 }
             }
         }.collect()
@@ -92,12 +90,15 @@ private fun RocketDetailScreen(
 
     Scaffold(
         topBar = { TopAppBar(sendEvent, state) },
+        bottomBar = { BottomBar(state, sendEvent) },
+        snackbarHost = { SnackbarHost(snackbarHostState) },
     ) { scaffoldPadding ->
         Column(
             modifier = Modifier
+                .fillMaxWidth()
                 .verticalScroll(rememberScrollState())
-                .padding(16.dp)
-                .fillMaxWidth(),
+                .padding(scaffoldPadding)
+                .navigationBarsPadding(),
             verticalArrangement = Arrangement.spacedBy(Spacing.x01),
         ) {
             if (state.loading) {
@@ -105,55 +106,58 @@ private fun RocketDetailScreen(
             } else {
                 DetailItem(state.launch)
             }
-            Button(
-                onClick = { sendEvent(Event.OnAddFavoritesButtonClicked) },
-                enabled = !state.loading,
-            ) {
-                if (state.favorite) {
-                    Text("Remove from Favorites")
-                } else {
-                    Text("Add to Favorites")
-                }
-            }
         }
     }
 }
 
 @Composable
 private fun DetailItem(
-    launch: LaunchDetailQuery.Launch?,
+    launch: LaunchFragment?,
     placeholder: Boolean = false,
 ) {
-    Text(
-        text = launch?.details.orEmpty(),
-        modifier = Modifier.placeholder(placeholder),
-    )
-    Text(
-        text = launch?.links?.article_link.orEmpty(),
-        modifier = Modifier.placeholder(placeholder),
-    )
-    KamelImage(
-        resource = asyncPainterResource(
-            launch?.links?.flickr_images?.firstOrNull().orEmpty(),
-        ),
-        contentDescription = null,
-        modifier = Modifier.fillMaxWidth().placeholder(placeholder),
-        alignment = Alignment.TopCenter,
-        onLoading = { CircularProgressIndicator() },
-    )
+    Column(
+        modifier = Modifier.padding(Spacing.x02),
+        verticalArrangement = Arrangement.spacedBy(Spacing.x01),
+    ) {
+        Text(
+            text = launch?.details.orEmpty(),
+            modifier = Modifier.placeholder(placeholder),
+        )
+        Text(
+            text = launch?.links?.article_link.orEmpty(),
+            modifier = Modifier.placeholder(placeholder),
+        )
+        KamelImage(
+            resource = asyncPainterResource(
+                launch?.links?.flickr_images?.firstOrNull().orEmpty(),
+            ),
+            contentDescription = null,
+            modifier = Modifier.fillMaxWidth().placeholder(placeholder),
+            alignment = Alignment.TopCenter,
+            onLoading = { CircularProgressIndicator() },
+        )
+    }
 }
 
-private fun getPlaceholderData(): LaunchDetailQuery.Launch = LaunchDetailQuery.Launch(
+internal fun getPlaceholderData(): LaunchFragment = LaunchFragment(
     id = "id",
-    mission_name = "Mission",
-    links = LaunchDetailQuery.Links(
-        article_link = "Article Link",
-        flickr_images = null,
-        mission_patch = "",
-        mission_patch_small = "",
-        wikipedia = "Wikipedia",
+    details = "details",
+    mission_name = "Lorem Ipsum",
+    launch_date_local = Clock.System.now(),
+    rocket = LaunchFragment.Rocket(
+        rocket = LaunchFragment.Rocket1(
+            __typename = "",
+            RocketFragment(
+                company = "company",
+                name = "name",
+                id = "id",
+                wikipedia = null,
+                active = true,
+            ),
+
+            ),
     ),
-    details = "Details",
+    links = null,
 )
 
 @Composable
@@ -175,4 +179,25 @@ private fun TopAppBar(
             }
         },
     )
+}
+
+@Composable
+private fun BottomBar(
+    state: State,
+    sendEvent: (event: Event) -> Unit,
+) {
+    Button(
+        onClick = { sendEvent(Event.OnAddFavoritesButtonClicked) },
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = Spacing.x01)
+            .navigationBarsPadding(),
+        enabled = !state.loading,
+    ) {
+        if (state.favorite) {
+            Text("Remove from Favorites")
+        } else {
+            Text("Add to Favorites")
+        }
+    }
 }

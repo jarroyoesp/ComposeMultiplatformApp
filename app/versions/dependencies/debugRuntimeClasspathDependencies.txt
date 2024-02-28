@@ -7,25 +7,20 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22
 |    +--- org.jetbrains:annotations:13.0 -> 23.0.0
 |    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.9.22 (c)
-|    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0 -> 1.9.10 (c)
-|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0 -> 1.9.10 (c)
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0 -> 1.9.21 (c)
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0 -> 1.9.21 (c)
 +--- com.squareup.leakcanary:leakcanary-android:2.12
 |    +--- com.squareup.leakcanary:leakcanary-android-core:2.12
 |    |    +--- com.squareup.leakcanary:shark-android:2.12
 |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.3.72 -> 1.9.22 (*)
 |    |    |    \--- com.squareup.leakcanary:shark:2.12
 |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.3.72 -> 1.9.22 (*)
-|    |    |         +--- com.squareup.okio:okio:2.2.2 -> 3.6.0
-|    |    |         |    \--- com.squareup.okio:okio-jvm:3.6.0
-|    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10
-|    |    |         |         |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.10 -> 1.9.22 (*)
-|    |    |         |         |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.10
-|    |    |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.10 -> 1.9.22 (*)
-|    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.9.10 -> 1.9.22
-|    |    |         |              \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
+|    |    |         +--- com.squareup.okio:okio:2.2.2 -> 3.8.0
+|    |    |         |    \--- com.squareup.okio:okio-jvm:3.8.0
+|    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 1.9.22 (*)
 |    |    |         \--- com.squareup.leakcanary:shark-graph:2.12
 |    |    |              +--- org.jetbrains.kotlin:kotlin-stdlib:1.3.72 -> 1.9.22 (*)
-|    |    |              +--- com.squareup.okio:okio:2.2.2 -> 3.6.0 (*)
+|    |    |              +--- com.squareup.okio:okio:2.2.2 -> 3.8.0 (*)
 |    |    |              \--- com.squareup.leakcanary:shark-hprof:2.12
 |    |    |                   +--- org.jetbrains.kotlin:kotlin-stdlib:1.3.72 -> 1.9.22 (*)
 |    |    |                   \--- com.squareup.leakcanary:shark-log:2.12
@@ -92,19 +87,19 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |         |    |    |    |    |    +--- androidx.lifecycle:lifecycle-common:2.7.0
 |         |    |    |    |    |    |    +--- androidx.annotation:annotation:1.1.0 -> 1.7.0 (*)
 |         |    |    |    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 1.9.22 (*)
-|         |    |    |    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1 -> 1.7.3
-|         |    |    |    |    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3
-|         |    |    |    |    |    |    |    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.7.3
+|         |    |    |    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1 -> 1.8.0
+|         |    |    |    |    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0
+|         |    |    |    |    |    |    |    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.0
 |         |    |    |    |    |    |    |    |         +--- org.jetbrains:annotations:23.0.0
-|         |    |    |    |    |    |    |    |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.7.3
-|         |    |    |    |    |    |    |    |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3 (c)
-|         |    |    |    |    |    |    |    |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.7.3 (c)
-|         |    |    |    |    |    |    |    |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (c)
-|         |    |    |    |    |    |    |    |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.3 (c)
-|         |    |    |    |    |    |    |    |              \--- org.jetbrains.kotlinx:kotlinx-coroutines-slf4j:1.7.3 (c)
-|         |    |    |    |    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.7.3 (*)
-|         |    |    |    |    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20 -> 1.9.10 (*)
-|         |    |    |    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.7.3 (*)
+|         |    |    |    |    |    |    |    |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.8.0
+|         |    |    |    |    |    |    |    |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0 (c)
+|         |    |    |    |    |    |    |    |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.0 (c)
+|         |    |    |    |    |    |    |    |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0 (c)
+|         |    |    |    |    |    |    |    |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.8.0 (c)
+|         |    |    |    |    |    |    |    |              \--- org.jetbrains.kotlinx:kotlinx-coroutines-slf4j:1.8.0 (c)
+|         |    |    |    |    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.8.0 (*)
+|         |    |    |    |    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 1.9.22 (*)
+|         |    |    |    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.8.0 (*)
 |         |    |    |    |    |    |    +--- androidx.lifecycle:lifecycle-common-java8:2.7.0 (c)
 |         |    |    |    |    |    |    +--- androidx.lifecycle:lifecycle-livedata-core:2.7.0 (c)
 |         |    |    |    |    |    |    +--- androidx.lifecycle:lifecycle-runtime:2.7.0 (c)
@@ -187,7 +182,7 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |         |    |    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.10 -> 1.9.22 (*)
 |         |    |    |    |    |    \--- androidx.savedstate:savedstate-ktx:1.2.1 (c)
 |         |    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 1.9.22 (*)
-|         |    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1 -> 1.7.3 (*)
+|         |    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1 -> 1.8.0 (*)
 |         |    |    |    |    +--- androidx.lifecycle:lifecycle-common:2.7.0 (c)
 |         |    |    |    |    +--- androidx.lifecycle:lifecycle-common-java8:2.7.0 (c)
 |         |    |    |    |    +--- androidx.lifecycle:lifecycle-livedata-core:2.7.0 (c)
@@ -210,7 +205,7 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |         |    |    |    +--- androidx.annotation:annotation:1.0.0 -> 1.7.0 (*)
 |         |    |    |    +--- androidx.lifecycle:lifecycle-runtime:2.7.0 (*)
 |         |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 1.9.22 (*)
-|         |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1 -> 1.7.3 (*)
+|         |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1 -> 1.8.0 (*)
 |         |    |    |    +--- androidx.lifecycle:lifecycle-runtime:2.7.0 (c)
 |         |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel:2.7.0 (c)
 |         |    |    |    +--- androidx.lifecycle:lifecycle-common:2.7.0 (c)
@@ -225,7 +220,7 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |         |    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1 -> 2.7.0
 |         |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel:2.7.0 (*)
 |         |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 1.9.22 (*)
-|         |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1 -> 1.7.3 (*)
+|         |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1 -> 1.8.0 (*)
 |         |    |    |    +--- androidx.lifecycle:lifecycle-common:2.7.0 (c)
 |         |    |    |    +--- androidx.lifecycle:lifecycle-common-java8:2.7.0 (c)
 |         |    |    |    +--- androidx.lifecycle:lifecycle-livedata-core:2.7.0 (c)
@@ -248,9 +243,10 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |         |    |    \--- androidx.compose.runtime:runtime-android:1.6.1
 |         |    |         +--- androidx.collection:collection:1.4.0 (*)
 |         |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 1.9.22 (*)
-|         |    |         +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22 -> 1.9.22 (*)
-|         |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1 -> 1.7.3 (*)
-|         |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.7.3 (*)
+|         |    |         +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22 -> 1.9.22
+|         |    |         |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
+|         |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1 -> 1.8.0 (*)
+|         |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.8.0 (*)
 |         |    |         +--- androidx.compose.runtime:runtime-livedata:1.6.1 (c)
 |         |    |         \--- androidx.compose.runtime:runtime-saveable:1.6.1 (c)
 |         |    +--- androidx.compose.runtime:runtime-saveable:1.0.1 -> 1.6.1
@@ -313,7 +309,6 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |         |    |         |         |         +--- androidx.compose.ui:ui-geometry:1.6.1 (*)
 |         |    |         |         |         +--- androidx.compose.ui:ui-util:1.6.1 (*)
 |         |    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 1.9.22 (*)
-|         |    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22 -> 1.9.22 (*)
 |         |    |         |         |         +--- androidx.compose.ui:ui:1.6.1 (c)
 |         |    |         |         |         +--- androidx.compose.ui:ui-geometry:1.6.1 (c)
 |         |    |         |         |         +--- androidx.compose.ui:ui-graphics:1.6.1 (c)
@@ -368,7 +363,7 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |         |    |         |         |    \--- androidx.emoji2:emoji2-views-helper:1.3.0 (c)
 |         |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 1.9.22 (*)
 |         |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22 -> 1.9.22 (*)
-|         |    |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.7.3 (*)
+|         |    |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.8.0 (*)
 |         |    |         |         +--- androidx.compose.ui:ui:1.6.1 (c)
 |         |    |         |         +--- androidx.compose.ui:ui-geometry:1.6.1 (c)
 |         |    |         |         +--- androidx.compose.ui:ui-graphics:1.6.1 (c)
@@ -391,8 +386,8 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |         |    |         +--- androidx.savedstate:savedstate-ktx:1.2.1 (*)
 |         |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 1.9.22 (*)
 |         |    |         +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22 -> 1.9.22 (*)
-|         |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1 -> 1.7.3 (*)
-|         |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.7.3 (*)
+|         |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1 -> 1.8.0 (*)
+|         |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.8.0 (*)
 |         |    |         +--- androidx.compose.ui:ui-geometry:1.6.1 (c)
 |         |    |         +--- androidx.compose.ui:ui-graphics:1.6.1 (c)
 |         |    |         +--- androidx.compose.ui:ui-test-manifest:1.6.1 (c)
@@ -421,7 +416,7 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |         |         |         +--- androidx.compose.ui:ui-util:1.6.1 (*)
 |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 1.9.22 (*)
 |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22 -> 1.9.22 (*)
-|         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.7.3 (*)
+|         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.8.0 (*)
 |         |         |         \--- androidx.compose.animation:animation:1.6.1 (c)
 |         |         +--- androidx.compose.foundation:foundation-layout:1.6.1
 |         |         |    \--- androidx.compose.foundation:foundation-layout-android:1.6.1
@@ -525,8 +520,8 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |         +--- androidx.compose.ui:ui-tooling-data:1.6.1 (c)
 |         +--- androidx.compose.ui:ui-tooling-preview:1.6.1 (c)
 |         +--- androidx.compose.ui:ui-util:1.6.1 (c)
-|         +--- androidx.compose.ui:ui-unit:1.6.1 (c)
-|         \--- androidx.compose.ui:ui-geometry:1.6.1 (c)
+|         +--- androidx.compose.ui:ui-geometry:1.6.1 (c)
+|         \--- androidx.compose.ui:ui-unit:1.6.1 (c)
 +--- androidx.compose.ui:ui-test-manifest:1.6.1
 |    +--- androidx.activity:activity:1.2.1 -> 1.8.2 (*)
 |    +--- androidx.compose.ui:ui:1.6.1 (c)
@@ -536,8 +531,8 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    +--- androidx.compose.ui:ui-util:1.6.1 (c)
 |    +--- androidx.compose.ui:ui-tooling-data:1.6.1 (c)
 |    +--- androidx.compose.ui:ui-tooling-preview:1.6.1 (c)
-|    +--- androidx.compose.ui:ui-unit:1.6.1 (c)
-|    \--- androidx.compose.ui:ui-geometry:1.6.1 (c)
+|    +--- androidx.compose.ui:ui-geometry:1.6.1 (c)
+|    \--- androidx.compose.ui:ui-unit:1.6.1 (c)
 +--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.22
 |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
 |    \--- org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.9.22
@@ -583,7 +578,7 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |    |    |    |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0 (c)
 |    |    |    |    |    |    |    \--- androidx.lifecycle:lifecycle-process:2.7.0 (c)
 |    |    |    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 1.9.22 (*)
-|    |    |    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.7.3 (*)
+|    |    |    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.8.0 (*)
 |    |    |    |    |    |    +--- androidx.lifecycle:lifecycle-common:2.7.0 (c)
 |    |    |    |    |    |    +--- androidx.lifecycle:lifecycle-common-java8:2.7.0 (c)
 |    |    |    |    |    |    +--- androidx.lifecycle:lifecycle-livedata-core:2.7.0 (c)
@@ -652,7 +647,7 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |    |    +--- androidx.core:core:1.1.0 -> 1.12.0 (*)
 |    |    |    +--- androidx.window:window:1.0.0
 |    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.6.0 -> 1.9.22 (*)
-|    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2 -> 1.7.3 (*)
+|    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2 -> 1.8.0 (*)
 |    |    |    |    +--- androidx.annotation:annotation:1.2.0 -> 1.7.0 (*)
 |    |    |    |    +--- androidx.collection:collection:1.1.0 -> 1.4.0 (*)
 |    |    |    |    \--- androidx.core:core:1.3.2 -> 1.12.0 (*)
@@ -711,8 +706,8 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |    +--- com.google.android.material:material:1.4.0-beta01 -> 1.11.0
 |    |    |    +--- org.jetbrains.kotlin:kotlin-bom:1.8.22
 |    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 1.9.22 (c)
-|    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22 -> 1.9.10 (c)
-|    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.10 (c)
+|    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22 -> 1.9.21 (c)
+|    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.21 (c)
 |    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22 -> 1.9.22 (c)
 |    |    |    |    +--- org.jetbrains.kotlin:kotlin-test-junit:1.8.22 -> 1.9.10 (c)
 |    |    |    |    \--- org.jetbrains.kotlin:kotlin-test:1.8.22 -> 1.9.10 (c)
@@ -814,7 +809,7 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    +--- androidx.navigation:navigation-runtime:2.7.7 (c)
 |    +--- androidx.navigation:navigation-common-ktx:2.7.7 (c)
 |    \--- androidx.navigation:navigation-common:2.7.7 (c)
-+--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
++--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 -> 1.8.0 (*)
 +--- com.google.dagger:hilt-android:2.50
 |    +--- com.google.dagger:dagger:2.50
 |    |    \--- javax.inject:javax.inject:1
@@ -895,7 +890,10 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 1.9.22 (*)
 +--- com.michael-bull.kotlin-result:kotlin-result:1.1.18
 |    \--- com.michael-bull.kotlin-result:kotlin-result-jvm:1.1.18
-|         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.10 -> 1.9.10 (*)
+|         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.10 -> 1.9.21
+|         |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 1.9.22 (*)
+|         |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.21
+|         |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 1.9.22 (*)
 |         \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.10 -> 1.9.22 (*)
 +--- org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5
 |    \--- org.jetbrains.kotlinx:kotlinx-collections-immutable-jvm:0.3.5
@@ -908,79 +906,79 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0 (*)
 |    +--- io.ktor:ktor-client-android:2.3.6
 |    |    \--- io.ktor:ktor-client-android-jvm:2.3.6
-|    |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22 -> 1.9.10 (*)
-|    |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.10 (*)
-|    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.1 -> 1.7.3
-|    |         |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
-|    |         |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.7.3 (*)
+|    |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22 -> 1.9.21 (*)
+|    |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.21 (*)
+|    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.1 -> 1.8.0
+|    |         |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0 (*)
+|    |         |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.8.0 (*)
 |    |         +--- org.slf4j:slf4j-api:1.7.36
-|    |         +--- io.ktor:ktor-client-core:2.3.6
-|    |         |    \--- io.ktor:ktor-client-core-jvm:2.3.6
-|    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22 -> 1.9.10 (*)
-|    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.10 (*)
-|    |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.1 -> 1.7.3 (*)
+|    |         +--- io.ktor:ktor-client-core:2.3.6 -> 2.3.8
+|    |         |    \--- io.ktor:ktor-client-core-jvm:2.3.8
+|    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22 -> 1.9.21 (*)
+|    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.21 (*)
+|    |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.1 -> 1.8.0 (*)
 |    |         |         +--- org.slf4j:slf4j-api:1.7.36
-|    |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.7.3 (*)
-|    |         |         +--- io.ktor:ktor-http:2.3.6
-|    |         |         |    \--- io.ktor:ktor-http-jvm:2.3.6
-|    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22 -> 1.9.10 (*)
-|    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.10 (*)
-|    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.1 -> 1.7.3 (*)
+|    |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.8.0 (*)
+|    |         |         +--- io.ktor:ktor-http:2.3.8
+|    |         |         |    \--- io.ktor:ktor-http-jvm:2.3.8
+|    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22 -> 1.9.21 (*)
+|    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.21 (*)
+|    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.1 -> 1.8.0 (*)
 |    |         |         |         +--- org.slf4j:slf4j-api:1.7.36
-|    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.7.3 (*)
-|    |         |         |         \--- io.ktor:ktor-utils:2.3.6
-|    |         |         |              \--- io.ktor:ktor-utils-jvm:2.3.6
-|    |         |         |                   +--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22 -> 1.9.10 (*)
-|    |         |         |                   +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.10 (*)
-|    |         |         |                   +--- org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.1 -> 1.7.3 (*)
+|    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.8.0 (*)
+|    |         |         |         \--- io.ktor:ktor-utils:2.3.8
+|    |         |         |              \--- io.ktor:ktor-utils-jvm:2.3.8
+|    |         |         |                   +--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22 -> 1.9.21 (*)
+|    |         |         |                   +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.21 (*)
+|    |         |         |                   +--- org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.1 -> 1.8.0 (*)
 |    |         |         |                   +--- org.slf4j:slf4j-api:1.7.36
-|    |         |         |                   +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.7.3 (*)
-|    |         |         |                   \--- io.ktor:ktor-io:2.3.6
-|    |         |         |                        \--- io.ktor:ktor-io-jvm:2.3.6
-|    |         |         |                             +--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22 -> 1.9.10 (*)
-|    |         |         |                             +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.10 (*)
-|    |         |         |                             +--- org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.1 -> 1.7.3 (*)
+|    |         |         |                   +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.8.0 (*)
+|    |         |         |                   \--- io.ktor:ktor-io:2.3.8
+|    |         |         |                        \--- io.ktor:ktor-io-jvm:2.3.8
+|    |         |         |                             +--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22 -> 1.9.21 (*)
+|    |         |         |                             +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.21 (*)
+|    |         |         |                             +--- org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.1 -> 1.8.0 (*)
 |    |         |         |                             +--- org.slf4j:slf4j-api:1.7.36
-|    |         |         |                             \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.7.3 (*)
-|    |         |         +--- io.ktor:ktor-events:2.3.6
-|    |         |         |    \--- io.ktor:ktor-events-jvm:2.3.6
-|    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22 -> 1.9.10 (*)
-|    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.10 (*)
-|    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.1 -> 1.7.3 (*)
+|    |         |         |                             \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.8.0 (*)
+|    |         |         +--- io.ktor:ktor-events:2.3.8
+|    |         |         |    \--- io.ktor:ktor-events-jvm:2.3.8
+|    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22 -> 1.9.21 (*)
+|    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.21 (*)
+|    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.1 -> 1.8.0 (*)
 |    |         |         |         +--- org.slf4j:slf4j-api:1.7.36
-|    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.7.3 (*)
-|    |         |         |         +--- io.ktor:ktor-http:2.3.6 (*)
-|    |         |         |         \--- io.ktor:ktor-utils:2.3.6 (*)
-|    |         |         +--- io.ktor:ktor-websocket-serialization:2.3.6
-|    |         |         |    \--- io.ktor:ktor-websocket-serialization-jvm:2.3.6
-|    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22 -> 1.9.10 (*)
-|    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.10 (*)
-|    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.1 -> 1.7.3 (*)
+|    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.8.0 (*)
+|    |         |         |         +--- io.ktor:ktor-http:2.3.8 (*)
+|    |         |         |         \--- io.ktor:ktor-utils:2.3.8 (*)
+|    |         |         +--- io.ktor:ktor-websocket-serialization:2.3.8
+|    |         |         |    \--- io.ktor:ktor-websocket-serialization-jvm:2.3.8
+|    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22 -> 1.9.21 (*)
+|    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.21 (*)
+|    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.1 -> 1.8.0 (*)
 |    |         |         |         +--- org.slf4j:slf4j-api:1.7.36
-|    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.7.3 (*)
-|    |         |         |         +--- io.ktor:ktor-http:2.3.6 (*)
-|    |         |         |         \--- io.ktor:ktor-serialization:2.3.6
-|    |         |         |              \--- io.ktor:ktor-serialization-jvm:2.3.6
-|    |         |         |                   +--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22 -> 1.9.10 (*)
-|    |         |         |                   +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.10 (*)
-|    |         |         |                   +--- org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.1 -> 1.7.3 (*)
+|    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.8.0 (*)
+|    |         |         |         +--- io.ktor:ktor-http:2.3.8 (*)
+|    |         |         |         \--- io.ktor:ktor-serialization:2.3.8
+|    |         |         |              \--- io.ktor:ktor-serialization-jvm:2.3.8
+|    |         |         |                   +--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22 -> 1.9.21 (*)
+|    |         |         |                   +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.21 (*)
+|    |         |         |                   +--- org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.1 -> 1.8.0 (*)
 |    |         |         |                   +--- org.slf4j:slf4j-api:1.7.36
-|    |         |         |                   +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.7.3 (*)
-|    |         |         |                   +--- io.ktor:ktor-http:2.3.6 (*)
-|    |         |         |                   \--- io.ktor:ktor-websockets:2.3.6
-|    |         |         |                        \--- io.ktor:ktor-websockets-jvm:2.3.6
-|    |         |         |                             +--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22 -> 1.9.10 (*)
-|    |         |         |                             +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.10 (*)
-|    |         |         |                             +--- org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.1 -> 1.7.3 (*)
+|    |         |         |                   +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.8.0 (*)
+|    |         |         |                   +--- io.ktor:ktor-http:2.3.8 (*)
+|    |         |         |                   \--- io.ktor:ktor-websockets:2.3.8
+|    |         |         |                        \--- io.ktor:ktor-websockets-jvm:2.3.8
+|    |         |         |                             +--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22 -> 1.9.21 (*)
+|    |         |         |                             +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22 -> 1.9.21 (*)
+|    |         |         |                             +--- org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.7.1 -> 1.8.0 (*)
 |    |         |         |                             +--- org.slf4j:slf4j-api:1.7.36
-|    |         |         |                             +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.7.3 (*)
-|    |         |         |                             \--- io.ktor:ktor-http:2.3.6 (*)
-|    |         |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-slf4j:1.7.1 -> 1.7.3
+|    |         |         |                             +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.8.0 (*)
+|    |         |         |                             \--- io.ktor:ktor-http:2.3.8 (*)
+|    |         |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-slf4j:1.7.1 -> 1.8.0
 |    |         |              +--- org.slf4j:slf4j-api:1.7.32 -> 1.7.36
-|    |         |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
-|    |         |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.7.3 (*)
-|    |         |              \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.20 -> 1.9.10 (*)
-|    |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.7.3 (*)
+|    |         |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0 (*)
+|    |         |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.8.0 (*)
+|    |         |              \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 1.9.22 (*)
+|    |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.8.0 (*)
 |    +--- app.cash.sqldelight:android-driver:2.0.1
 |    |    +--- androidx.sqlite:sqlite-framework:2.4.0
 |    |    |    +--- androidx.annotation:annotation:1.2.0 -> 1.7.0 (*)
@@ -997,81 +995,78 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 1.9.22 (*)
 |    +--- app.cash.sqldelight:runtime:2.0.1 (*)
 |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
-|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
-|    +--- media.kamel:kamel-image:0.9.0
-|    |    \--- media.kamel:kamel-image-android-debug:0.9.0
+|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 -> 1.8.0 (*)
+|    +--- media.kamel:kamel-image:0.9.3
+|    |    \--- media.kamel:kamel-image-android-debug:0.9.3
 |    |         +--- com.caverock:androidsvg-aar:1.4
-|    |         +--- io.github.pdvrieze.xmlutil:serialization:0.86.2
-|    |         |    \--- io.github.pdvrieze.xmlutil:serialization-android:0.86.2
-|    |         |         +--- io.github.pdvrieze.xmlutil:core:0.86.2
-|    |         |         |    \--- io.github.pdvrieze.xmlutil:core-android:0.86.2
-|    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 (*)
-|    |         |         |         \--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.6.0
-|    |         |         |              \--- org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.6.0
-|    |         |         |                   +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.0 -> 1.9.22 (*)
-|    |         |         |                   \--- org.jetbrains.kotlinx:kotlinx-serialization-bom:1.6.0
-|    |         |         |                        +--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.6.0 (c)
-|    |         |         |                        +--- org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.6.0 (c)
-|    |         |         |                        +--- org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0 (c)
-|    |         |         |                        \--- org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.6.0 (c)
-|    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 (*)
-|    |         |         +--- io.github.pdvrieze.xmlutil:core:0.86.2 (*)
-|    |         |         \--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.6.0 (*)
-|    |         +--- media.kamel:kamel-core:0.9.0
-|    |         |    \--- media.kamel:kamel-core-android-debug:0.9.0
+|    |         +--- io.github.pdvrieze.xmlutil:serialization:0.86.3
+|    |         |    \--- io.github.pdvrieze.xmlutil:serialization-android:0.86.3
+|    |         |         +--- io.github.pdvrieze.xmlutil:core:0.86.3
+|    |         |         |    \--- io.github.pdvrieze.xmlutil:core-android:0.86.3
+|    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 1.9.22 (*)
+|    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.21 (*)
+|    |         |         |         \--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.6.2
+|    |         |         |              \--- org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.6.2
+|    |         |         |                   +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 1.9.22 (*)
+|    |         |         |                   \--- org.jetbrains.kotlinx:kotlinx-serialization-bom:1.6.2
+|    |         |         |                        +--- org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.6.2 (c)
+|    |         |         |                        +--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.6.2 (c)
+|    |         |         |                        +--- org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2 (c)
+|    |         |         |                        \--- org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.6.2 (c)
+|    |         |         +--- io.github.pdvrieze.xmlutil:core:0.86.3 (*)
+|    |         |         +--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.6.2 (*)
+|    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 1.9.22 (*)
+|    |         +--- media.kamel:kamel-core:0.9.3
+|    |         |    \--- media.kamel:kamel-core-android-debug:0.9.3
 |    |         |         +--- androidx.startup:startup-runtime:1.1.1 (*)
-|    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 1.9.22 (*)
-|    |         |         +--- org.jetbrains.compose.ui:ui:1.5.11 -> 1.5.12
+|    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
+|    |         |         +--- org.jetbrains.compose.ui:ui:1.5.12
 |    |         |         |    \--- androidx.compose.ui:ui:1.5.4 -> 1.6.1 (*)
-|    |         |         +--- org.jetbrains.compose.foundation:foundation:1.5.11 -> 1.5.12
+|    |         |         +--- org.jetbrains.compose.foundation:foundation:1.5.12
 |    |         |         |    \--- androidx.compose.foundation:foundation:1.5.4 -> 1.6.1 (*)
-|    |         |         +--- org.jetbrains.compose.runtime:runtime:1.5.11 -> 1.5.12
+|    |         |         +--- org.jetbrains.compose.runtime:runtime:1.5.12
 |    |         |         |    \--- androidx.compose.runtime:runtime:1.5.4 -> 1.6.1 (*)
-|    |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
-|    |         |         +--- io.ktor:ktor-client-core:2.3.6 (*)
-|    |         |         +--- com.squareup.okio:okio:3.6.0 (*)
-|    |         |         +--- io.github.reactivecircus.cache4k:cache4k:0.12.0
-|    |         |         |    \--- io.github.reactivecircus.cache4k:cache4k-jvm:0.12.0
-|    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 (*)
-|    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.2 -> 1.7.3 (*)
-|    |         |         |         +--- co.touchlab:stately-iso-collections:2.0.5
-|    |         |         |         |    \--- co.touchlab:stately-iso-collections-jvm:2.0.5
-|    |         |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 (*)
-|    |         |         |         |         \--- co.touchlab:stately-isolate:2.0.5
-|    |         |         |         |              \--- co.touchlab:stately-isolate-jvm:2.0.5
-|    |         |         |         |                   +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 (*)
-|    |         |         |         |                   +--- co.touchlab:stately-common:2.0.5
-|    |         |         |         |                   |    \--- co.touchlab:stately-common-jvm:2.0.5
-|    |         |         |         |                   |         \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 (*)
-|    |         |         |         |                   \--- co.touchlab:stately-concurrency:2.0.5
-|    |         |         |         |                        \--- co.touchlab:stately-concurrency-jvm:2.0.5
-|    |         |         |         |                             +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 (*)
-|    |         |         |         |                             \--- co.touchlab:stately-strict:2.0.5
-|    |         |         |         |                                  \--- co.touchlab:stately-strict-jvm:2.0.5
-|    |         |         |         |                                       \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 (*)
-|    |         |         |         \--- org.jetbrains.kotlinx:atomicfu:0.21.0
-|    |         |         |              \--- org.jetbrains.kotlinx:atomicfu-jvm:0.21.0
-|    |         |         |                   \--- org.jetbrains.kotlin:kotlin-stdlib:1.8.20 -> 1.9.22 (*)
-|    |         |         \--- co.touchlab:stately-concurrent-collections:2.0.5
-|    |         |              \--- co.touchlab:stately-concurrent-collections-jvm:2.0.5
-|    |         |                   +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 (*)
-|    |         |                   \--- co.touchlab:stately-concurrency:2.0.5 (*)
-|    |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 1.9.22 (*)
-|    |         +--- org.jetbrains.compose.ui:ui:1.5.11 -> 1.5.12 (*)
-|    |         +--- org.jetbrains.compose.foundation:foundation:1.5.11 -> 1.5.12 (*)
-|    |         +--- org.jetbrains.compose.runtime:runtime:1.5.11 -> 1.5.12 (*)
-|    |         \--- io.ktor:ktor-client-core:2.3.6 (*)
+|    |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0 (*)
+|    |         |         +--- io.ktor:ktor-client-core:2.3.8 (*)
+|    |         |         +--- com.squareup.okio:okio:3.8.0 (*)
+|    |         |         \--- io.github.reactivecircus.cache4k:cache4k:0.13.0
+|    |         |              \--- io.github.reactivecircus.cache4k:cache4k-jvm:0.13.0
+|    |         |                   +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
+|    |         |                   +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0 (*)
+|    |         |                   +--- co.touchlab:stately-iso-collections:2.0.6
+|    |         |                   |    \--- co.touchlab:stately-iso-collections-jvm:2.0.6
+|    |         |                   |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 -> 1.9.21 (*)
+|    |         |                   |         \--- co.touchlab:stately-isolate:2.0.6
+|    |         |                   |              \--- co.touchlab:stately-isolate-jvm:2.0.6
+|    |         |                   |                   +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 -> 1.9.21 (*)
+|    |         |                   |                   +--- co.touchlab:stately-common:2.0.6
+|    |         |                   |                   |    \--- co.touchlab:stately-common-jvm:2.0.6
+|    |         |                   |                   |         \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 -> 1.9.21 (*)
+|    |         |                   |                   \--- co.touchlab:stately-concurrency:2.0.6
+|    |         |                   |                        \--- co.touchlab:stately-concurrency-jvm:2.0.6
+|    |         |                   |                             +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 -> 1.9.21 (*)
+|    |         |                   |                             \--- co.touchlab:stately-strict:2.0.6
+|    |         |                   |                                  \--- co.touchlab:stately-strict-jvm:2.0.6
+|    |         |                   |                                       \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 -> 1.9.21 (*)
+|    |         |                   \--- org.jetbrains.kotlinx:atomicfu:0.23.2
+|    |         |                        \--- org.jetbrains.kotlinx:atomicfu-jvm:0.23.2
+|    |         |                             \--- org.jetbrains.kotlin:kotlin-stdlib:{prefer 1.9.21} -> 1.9.22 (*)
+|    |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
+|    |         +--- org.jetbrains.compose.ui:ui:1.5.12 (*)
+|    |         +--- org.jetbrains.compose.foundation:foundation:1.5.12 (*)
+|    |         +--- org.jetbrains.compose.runtime:runtime:1.5.12 (*)
+|    |         \--- io.ktor:ktor-client-core:2.3.8 (*)
 |    +--- io.insert-koin:koin-core:3.2.0
 |    |    \--- io.insert-koin:koin-core-jvm:3.2.0
-|    |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21 -> 1.9.10 (*)
+|    |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21 -> 1.9.21 (*)
 |    |         \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.6.21 -> 1.9.22 (*)
 |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.18 (*)
 |    +--- co.touchlab:kermit:2.0.2
 |    |    \--- co.touchlab:kermit-android-debug:2.0.2
-|    |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 (*)
+|    |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 -> 1.9.21 (*)
 |    |         +--- co.touchlab:kermit-core:2.0.2
 |    |         |    \--- co.touchlab:kermit-core-android-debug:2.0.2
-|    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 (*)
+|    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 -> 1.9.21 (*)
 |    |         \--- org.jetbrains.kotlin:kotlin-test-junit:1.9.10
 |    |              +--- org.jetbrains.kotlin:kotlin-test:1.9.10
 |    |              |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.10 -> 1.9.22 (*)
@@ -1088,7 +1083,7 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |         +--- androidx.lifecycle:lifecycle-runtime-ktx:2.6.2 -> 2.7.0 (*)
 |    |         +--- androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2 -> 2.7.0 (*)
 |    |         +--- androidx.activity:activity-compose:1.8.0 -> 1.8.2 (*)
-|    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
+|    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 -> 1.8.0 (*)
 |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.20 -> 1.9.22 (*)
 |    +--- moe.tlaster:precompose-viewmodel:1.5.7
 |    |    \--- moe.tlaster:precompose-viewmodel-android-debug:1.5.7
@@ -1103,19 +1098,19 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    +--- app.cash.sqldelight:coroutines-extensions:2.0.1
 |    |    \--- app.cash.sqldelight:coroutines-extensions-jvm:2.0.1
 |    |         +--- app.cash.sqldelight:runtime:2.0.1 (*)
-|    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
+|    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 -> 1.8.0 (*)
 |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 1.9.22 (*)
 |    |         \--- app.cash.sqldelight:async-extensions:2.0.1
 |    |              \--- app.cash.sqldelight:async-extensions-jvm:2.0.1
-|    |                   +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
+|    |                   +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 -> 1.8.0 (*)
 |    |                   +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 1.9.22 (*)
 |    |                   \--- app.cash.sqldelight:runtime:2.0.1 (*)
 |    +--- project :modules:feature-home-api
 |    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0 (*)
 |    |    +--- io.ktor:ktor-client-android:2.3.6 (*)
 |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
-|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
-|    |    +--- media.kamel:kamel-image:0.9.0 (*)
+|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 -> 1.8.0 (*)
+|    |    +--- media.kamel:kamel-image:0.9.3 (*)
 |    |    +--- io.insert-koin:koin-core:3.2.0 (*)
 |    |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.18 (*)
 |    |    +--- co.touchlab:kermit:2.0.2 (*)
@@ -1125,8 +1120,8 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0 (*)
 |    |    |    +--- io.ktor:ktor-client-android:2.3.6 (*)
 |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
-|    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
-|    |    |    +--- media.kamel:kamel-image:0.9.0 (*)
+|    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 -> 1.8.0 (*)
+|    |    |    +--- media.kamel:kamel-image:0.9.3 (*)
 |    |    |    +--- io.insert-koin:koin-core:3.2.0 (*)
 |    |    |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.18 (*)
 |    |    |    +--- co.touchlab:kermit:2.0.2 (*)
@@ -1139,14 +1134,14 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |    |    +--- com.apollographql.apollo3:apollo-runtime:3.8.2
 |    |    |    |    \--- com.apollographql.apollo3:apollo-runtime-jvm:3.8.2
 |    |    |    |         +--- com.squareup.okhttp3:okhttp:4.9.3 -> 4.12.0
-|    |    |    |         |    +--- com.squareup.okio:okio:3.6.0 (*)
-|    |    |    |         |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21 -> 1.9.10 (*)
+|    |    |    |         |    +--- com.squareup.okio:okio:3.6.0 -> 3.8.0 (*)
+|    |    |    |         |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21 -> 1.9.21 (*)
 |    |    |    |         +--- com.apollographql.apollo3:apollo-api:3.8.2
 |    |    |    |         |    \--- com.apollographql.apollo3:apollo-api-jvm:3.8.2
-|    |    |    |         |         +--- com.squareup.okio:okio:3.2.0 -> 3.6.0 (*)
+|    |    |    |         |         +--- com.squareup.okio:okio:3.2.0 -> 3.8.0 (*)
 |    |    |    |         |         +--- com.benasher44:uuid:0.3.1
 |    |    |    |         |         |    \--- com.benasher44:uuid-jvm:0.3.1
-|    |    |    |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.30 -> 1.9.10 (*)
+|    |    |    |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.30 -> 1.9.21 (*)
 |    |    |    |         |         \--- com.apollographql.apollo3:apollo-annotations:3.8.2
 |    |    |    |         |              \--- com.apollographql.apollo3:apollo-annotations-jvm:3.8.2
 |    |    |    |         |                   +--- org.jetbrains.kotlin:kotlin-stdlib:1.6.21 -> 1.9.22 (*)
@@ -1154,9 +1149,9 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |    |    |         +--- com.apollographql.apollo3:apollo-mpp-utils:3.8.2
 |    |    |    |         |    \--- com.apollographql.apollo3:apollo-mpp-utils-jvm:3.8.2
 |    |    |    |         |         \--- com.apollographql.apollo3:apollo-annotations:3.8.2 (*)
-|    |    |    |         +--- com.squareup.okio:okio:3.2.0 -> 3.6.0 (*)
+|    |    |    |         +--- com.squareup.okio:okio:3.2.0 -> 3.8.0 (*)
 |    |    |    |         +--- com.benasher44:uuid:0.3.1 (*)
-|    |    |    |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4 -> 1.7.3 (*)
+|    |    |    |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4 -> 1.8.0 (*)
 |    |    |    +--- com.apollographql.apollo3:apollo-adapters:3.8.2
 |    |    |    |    \--- com.apollographql.apollo3:apollo-adapters-jvm:3.8.2
 |    |    |    |         +--- com.apollographql.apollo3:apollo-api:3.8.2 (*)
@@ -1171,14 +1166,14 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |    |    |         |         +--- com.apollographql.apollo3:apollo-api:3.8.2 (*)
 |    |    |    |         |         +--- com.apollographql.apollo3:apollo-mpp-utils:3.8.2 (*)
 |    |    |    |         |         +--- com.benasher44:uuid:0.3.1 (*)
-|    |    |    |         |         \--- com.squareup.okio:okio:3.2.0 -> 3.6.0 (*)
-|    |    |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4 -> 1.7.3 (*)
-|    |    |    |         \--- org.jetbrains.kotlinx:atomicfu:0.17.0 -> 0.21.0 (*)
+|    |    |    |         |         \--- com.squareup.okio:okio:3.2.0 -> 3.8.0 (*)
+|    |    |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4 -> 1.8.0 (*)
+|    |    |    |         \--- org.jetbrains.kotlinx:atomicfu:0.17.0 -> 0.23.2 (*)
 |    |    |    +--- com.squareup.retrofit2:retrofit:2.9.0
 |    |    |    |    \--- com.squareup.okhttp3:okhttp:3.14.9 -> 4.12.0 (*)
 |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
-|    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
-|    |    |    +--- media.kamel:kamel-image:0.9.0 (*)
+|    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 -> 1.8.0 (*)
+|    |    |    +--- media.kamel:kamel-image:0.9.3 (*)
 |    |    |    +--- io.insert-koin:koin-core:3.2.0 (*)
 |    |    |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.18 (*)
 |    |    |    +--- co.touchlab:kermit:2.0.2 (*)
@@ -1189,9 +1184,9 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |    |    |         +--- androidx.sqlite:sqlite:2.1.0 -> 2.4.0 (*)
 |    |    |    |         +--- com.squareup.sqldelight:android-driver:1.5.5
 |    |    |    |         |    +--- com.squareup.sqldelight:runtime-jvm:1.5.5
-|    |    |    |         |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31 -> 1.9.10 (*)
+|    |    |    |         |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31 -> 1.9.21 (*)
 |    |    |    |         |    +--- androidx.sqlite:sqlite:2.1.0 -> 2.4.0 (*)
-|    |    |    |         |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31 -> 1.9.10 (*)
+|    |    |    |         |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31 -> 1.9.21 (*)
 |    |    |    |         |    \--- androidx.sqlite:sqlite-framework:2.1.0 -> 2.4.0 (*)
 |    |    |    |         +--- androidx.sqlite:sqlite-framework:2.1.0 -> 2.4.0 (*)
 |    |    |    |         +--- androidx.startup:startup-runtime:1.1.1 (*)
@@ -1200,11 +1195,11 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |    |    |         +--- com.apollographql.apollo3:apollo-normalized-cache:3.8.2 (*)
 |    |    |    |         \--- com.squareup.sqldelight:runtime:1.5.5
 |    |    |    |              \--- com.squareup.sqldelight:runtime-jvm:1.5.5 (*)
-|    |    |    +--- org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0
-|    |    |    |    \--- org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.6.0
-|    |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.0 -> 1.9.22 (*)
-|    |    |    |         +--- org.jetbrains.kotlinx:kotlinx-serialization-bom:1.6.0 (*)
-|    |    |    |         \--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.6.0 (*)
+|    |    |    +--- org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0 -> 1.6.2
+|    |    |    |    \--- org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.6.2
+|    |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 1.9.22 (*)
+|    |    |    |         +--- org.jetbrains.kotlinx:kotlinx-serialization-bom:1.6.2 (*)
+|    |    |    |         \--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.6.2 (*)
 |    |    |    \--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.22 (*)
 |    |    \--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.22 (*)
 |    +--- project :modules:library-navigation
@@ -1212,8 +1207,8 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |    +--- io.ktor:ktor-client-android:2.3.6 (*)
 |    |    +--- project :modules:library-navigation-api (*)
 |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
-|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
-|    |    +--- media.kamel:kamel-image:0.9.0 (*)
+|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 -> 1.8.0 (*)
+|    |    +--- media.kamel:kamel-image:0.9.3 (*)
 |    |    +--- io.insert-koin:koin-core:3.2.0 (*)
 |    |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.18 (*)
 |    |    +--- co.touchlab:kermit:2.0.2 (*)
@@ -1227,8 +1222,8 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |    +--- io.ktor:ktor-client-android:2.3.6 (*)
 |    |    +--- project :modules:library-network-api (*)
 |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
-|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
-|    |    +--- media.kamel:kamel-image:0.9.0 (*)
+|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 -> 1.8.0 (*)
+|    |    +--- media.kamel:kamel-image:0.9.3 (*)
 |    |    +--- io.insert-koin:koin-core:3.2.0 (*)
 |    |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.18 (*)
 |    |    +--- co.touchlab:kermit:2.0.2 (*)
@@ -1239,8 +1234,8 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0 (*)
 |    |    +--- io.ktor:ktor-client-android:2.3.6 (*)
 |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 (*)
-|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
-|    |    +--- media.kamel:kamel-image:0.9.0 (*)
+|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 -> 1.8.0 (*)
+|    |    +--- media.kamel:kamel-image:0.9.3 (*)
 |    |    +--- io.insert-koin:koin-core:3.2.0 (*)
 |    |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.18 (*)
 |    |    +--- co.touchlab:kermit:2.0.2 (*)
@@ -1253,7 +1248,7 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |    |         +--- org.jetbrains.compose.foundation:foundation:1.5.11 -> 1.5.12 (*)
 |    |    |         +--- org.jetbrains.compose.ui:ui-util:1.5.11
 |    |    |         |    \--- androidx.compose.ui:ui-util:1.5.4 -> 1.6.1 (*)
-|    |    |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 (*)
+|    |    |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 -> 1.8.0 (*)
 |    |    \--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.22 (*)
 |    \--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.22 (*)
 +--- project :modules:library-navigation (*)
@@ -1262,40 +1257,40 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    +--- com.google.accompanist:accompanist-flowlayout:0.33.1-alpha
 |    |    +--- androidx.compose.foundation:foundation:1.6.0-alpha02 -> 1.6.1 (*)
 |    |    +--- androidx.compose.ui:ui-util:1.6.0-alpha02 -> 1.6.1 (*)
-|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4 -> 1.7.3 (*)
-|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0 -> 1.9.10 (*)
+|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4 -> 1.8.0 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0 -> 1.9.21 (*)
 |    +--- com.google.accompanist:accompanist-navigation-material:0.33.1-alpha
 |    |    +--- androidx.compose.foundation:foundation:1.6.0-alpha02 -> 1.6.1 (*)
 |    |    +--- androidx.compose.material:material:1.6.0-alpha02 -> 1.6.1 (*)
-|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4 -> 1.7.3 (*)
+|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4 -> 1.8.0 (*)
 |    |    +--- androidx.navigation:navigation-compose:2.7.0-alpha01 -> 2.7.7 (*)
-|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0 -> 1.9.10 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0 -> 1.9.21 (*)
 |    +--- com.google.accompanist:accompanist-pager:0.33.1-alpha
-|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4 -> 1.7.3 (*)
+|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4 -> 1.8.0 (*)
 |    |    +--- androidx.compose.foundation:foundation:1.6.0-alpha02 -> 1.6.1 (*)
 |    |    +--- dev.chrisbanes.snapper:snapper:0.2.2
 |    |    |    +--- androidx.compose.foundation:foundation:1.1.1 -> 1.6.1 (*)
-|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10 -> 1.9.10 (*)
-|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0 -> 1.9.10 (*)
+|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10 -> 1.9.21 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0 -> 1.9.21 (*)
 |    +--- com.google.accompanist:accompanist-pager-indicators:0.33.1-alpha
-|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4 -> 1.7.3 (*)
+|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4 -> 1.8.0 (*)
 |    |    +--- com.google.accompanist:accompanist-pager:0.33.1-alpha (*)
 |    |    +--- androidx.compose.material:material:1.6.0-alpha02 -> 1.6.1 (*)
-|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0 -> 1.9.10 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0 -> 1.9.21 (*)
 |    +--- com.google.accompanist:accompanist-placeholder-material:0.33.1-alpha
 |    |    +--- androidx.compose.material:material:1.6.0-alpha02 -> 1.6.1 (*)
-|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4 -> 1.7.3 (*)
+|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4 -> 1.8.0 (*)
 |    |    +--- com.google.accompanist:accompanist-placeholder:0.33.1-alpha
 |    |    |    +--- androidx.compose.foundation:foundation:1.6.0-alpha02 -> 1.6.1 (*)
 |    |    |    +--- androidx.compose.ui:ui-util:1.6.0-alpha02 -> 1.6.1 (*)
-|    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4 -> 1.7.3 (*)
-|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0 -> 1.9.10 (*)
-|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0 -> 1.9.10 (*)
+|    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4 -> 1.8.0 (*)
+|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0 -> 1.9.21 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0 -> 1.9.21 (*)
 |    +--- com.google.accompanist:accompanist-systemuicontroller:0.33.1-alpha
 |    |    +--- androidx.core:core-ktx:1.8.0 -> 1.12.0 (*)
 |    |    +--- androidx.compose.ui:ui:1.6.0-alpha02 -> 1.6.1 (*)
-|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4 -> 1.7.3 (*)
-|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0 -> 1.9.10 (*)
+|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4 -> 1.8.0 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0 -> 1.9.21 (*)
 |    +--- androidx.appcompat:appcompat:1.6.1 (*)
 |    +--- androidx.compose.material:material:1.6.1 (*)
 |    +--- androidx.compose.material3:material3:1.1.2
@@ -1326,15 +1321,6 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |    \--- androidx.compose.runtime:runtime-saveable:1.6.1 (c)
 |    +--- androidx.compose.ui:ui-tooling:1.6.1 (*)
 |    +--- androidx.compose.ui:ui:1.6.1 (*)
-|    +--- androidx.constraintlayout:constraintlayout-compose:1.0.1
-|    |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.10 -> 1.9.10 (*)
-|    |    +--- androidx.compose.ui:ui:1.0.0 -> 1.6.1 (*)
-|    |    +--- androidx.compose.ui:ui-unit:1.0.0 -> 1.6.1 (*)
-|    |    +--- androidx.compose.ui:ui-util:1.0.0 -> 1.6.1 (*)
-|    |    +--- androidx.compose.foundation:foundation-layout:1.0.0 -> 1.6.1 (*)
-|    |    +--- androidx.compose.foundation:foundation:1.0.0 -> 1.6.1 (*)
-|    |    +--- androidx.compose.material:material:1.0.0 -> 1.6.1 (*)
-|    |    \--- androidx.constraintlayout:constraintlayout-core:1.0.4
 |    +--- androidx.core:core-splashscreen:1.0.1
 |    |    +--- androidx.annotation:annotation:1.2.0 -> 1.7.0 (*)
 |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.6.21 -> 1.9.22 (*)
@@ -1347,7 +1333,7 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |    |    +--- androidx.annotation:annotation:1.3.0 -> 1.7.0 (*)
 |    |    |    +--- androidx.arch.core:core-common:2.2.0 (*)
 |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.21 -> 1.9.22 (*)
-|    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4 -> 1.7.3 (*)
+|    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4 -> 1.8.0 (*)
 |    |    |    \--- androidx.paging:paging-compose:3.2.1 (c)
 |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.21 -> 1.9.22 (*)
 |    |    \--- androidx.paging:paging-common:3.2.1 (c)
@@ -1356,8 +1342,8 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |    |    +--- androidx.core:core-ktx:1.12.0 (*)
 |    |    |    +--- com.google.accompanist:accompanist-drawablepainter:0.32.0
 |    |    |    |    +--- androidx.compose.ui:ui:1.5.0 -> 1.6.1 (*)
-|    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4 -> 1.7.3 (*)
-|    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0 -> 1.9.10 (*)
+|    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4 -> 1.8.0 (*)
+|    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0 -> 1.9.21 (*)
 |    |    |    +--- io.coil-kt:coil-base:2.5.0
 |    |    |    |    +--- androidx.annotation:annotation:1.7.0 (*)
 |    |    |    |    +--- androidx.appcompat:appcompat-resources:1.6.1 (*)
@@ -1367,21 +1353,21 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    |    |    |    |    \--- androidx.annotation:annotation:1.2.0 -> 1.7.0 (*)
 |    |    |    |    +--- androidx.profileinstaller:profileinstaller:1.3.1 (*)
 |    |    |    |    +--- androidx.lifecycle:lifecycle-runtime:2.6.2 -> 2.7.0 (*)
-|    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3 (*)
+|    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3 -> 1.8.0 (*)
 |    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.10 -> 1.9.22 (*)
 |    |    |    |    +--- com.squareup.okhttp3:okhttp:4.12.0 (*)
-|    |    |    |    \--- com.squareup.okio:okio:3.6.0 (*)
+|    |    |    |    \--- com.squareup.okio:okio:3.6.0 -> 3.8.0 (*)
 |    |    |    +--- androidx.compose.foundation:foundation:1.5.4 -> 1.6.1 (*)
-|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 (*)
+|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 -> 1.9.21 (*)
 |    |    +--- io.coil-kt:coil:2.5.0
 |    |    |    +--- io.coil-kt:coil-base:2.5.0 (*)
-|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 (*)
-|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 (*)
+|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 -> 1.9.21 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 -> 1.9.21 (*)
 |    +--- com.google.android.material:material:1.11.0 (*)
 |    +--- com.leinardi.android:speed-dial.compose:2.0.0-alpha01
 |    |    +--- androidx.compose.material:material:1.3.0-beta02 -> 1.6.1 (*)
 |    |    +--- androidx.compose.material3:material3:1.0.0-beta01 -> 1.1.2 (*)
-|    |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10 -> 1.9.10 (*)
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10 -> 1.9.21 (*)
 |    |    +--- androidx.appcompat:appcompat:1.5.1 -> 1.6.1 (*)
 |    |    +--- androidx.compose.runtime:runtime:1.3.0-beta02 -> 1.6.1 (*)
 |    |    +--- androidx.compose.ui:ui-tooling:1.3.0-beta02 -> 1.6.1 (*)
@@ -1393,10 +1379,10 @@ debugRuntimeClasspath - Runtime classpath of /debug.
 |    +--- com.michael-bull.kotlin-result:kotlin-result:1.1.18 (*)
 |    +--- com.michael-bull.kotlin-result:kotlin-result-coroutines:1.1.18
 |    |    \--- com.michael-bull.kotlin-result:kotlin-result-coroutines-jvm:1.1.18
-|    |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.10 -> 1.9.10 (*)
+|    |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.10 -> 1.9.21 (*)
 |    |         +--- com.michael-bull.kotlin-result:kotlin-result:1.1.18 (*)
 |    |         +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.10 -> 1.9.22 (*)
-|    |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4 -> 1.7.3 (*)
+|    |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4 -> 1.8.0 (*)
 |    +--- com.jakewharton.timber:timber:5.0.1 (*)
 |    +--- project :modules:library-navigation-api (*)
 |    \--- com.google.dagger:hilt-android:2.50 (*)
@@ -1413,7 +1399,7 @@ debugRuntimeClasspath - Runtime classpath of /debug.
      |    +--- androidx.lifecycle:lifecycle-common:2.2.0 -> 2.7.0 (*)
      |    \--- androidx.lifecycle:lifecycle-viewmodel:2.2.0 -> 2.7.0 (*)
      +--- androidx.lifecycle:lifecycle-common-java8:2.4.1 -> 2.7.0 (*)
-     +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21 -> 1.9.10 (*)
+     +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21 -> 1.9.21 (*)
      +--- androidx.appcompat:appcompat:1.4.1 -> 1.6.1 (*)
      \--- androidx.fragment:fragment-ktx:1.4.1 -> 1.6.2 (*)
 

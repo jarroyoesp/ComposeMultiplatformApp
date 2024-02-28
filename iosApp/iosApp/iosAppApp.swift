@@ -12,7 +12,7 @@ import ComposeApp
 struct iosAppApp: App {
     init() {
         KoinAppModuleKt.doInitKoin(appDeclaration: {_ in })
-        }
+    }
     var body: some Scene {
         WindowGroup {
             ContentView()

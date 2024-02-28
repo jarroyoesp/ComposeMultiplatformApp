@@ -1,0 +1,17 @@
+fragment launchFragment on Launch {
+    id
+    details
+    launch_date_local
+    mission_name
+    rocket {
+        rocket {
+            ...rocketFragment
+        }
+    }
+    links {
+        article_link
+        flickr_images
+        mission_patch_small
+        mission_patch
+    }
+}

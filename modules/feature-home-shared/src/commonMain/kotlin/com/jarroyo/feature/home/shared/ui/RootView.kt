@@ -7,8 +7,8 @@ import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.mutableStateOf
 import co.touchlab.kermit.Logger
 import com.jarroyo.feature.home.api.destination.HomeDestination
-import com.jarroyo.feature.home.api.destination.RocketDetailDestination
-import com.jarroyo.feature.home.shared.ui.rocketdetail.RocketDetailScreen
+import com.jarroyo.feature.home.api.destination.LaunchDetailDestination
+import com.jarroyo.feature.home.shared.ui.launchdetail.LaunchDetailScreen
 import com.jarroyo.library.navigation.api.destination.NavigationDestination
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -56,7 +56,7 @@ fun RootView() {
 private fun RouteBuilder.addComposableDestinations() {
     val composableDestinations: Map<NavigationDestination, @Composable (arguments: Map<String, String>) -> Unit> = mapOf(
         HomeDestination() to { HomeScreen() },
-        RocketDetailDestination() to { RocketDetailScreen(it) },
+        LaunchDetailDestination() to { LaunchDetailScreen(it) },
     )
     composableDestinations.forEach { entry ->
         scene(

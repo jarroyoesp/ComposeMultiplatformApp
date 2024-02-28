@@ -1,16 +1,16 @@
-package com.jarroyo.feature.home.shared.ui.rocketdetail
+package com.jarroyo.feature.home.shared.ui.launchdetail
 
 import androidx.compose.runtime.Immutable
-import com.jarroyo.composeapp.library.network.api.graphql.LaunchDetailQuery
+import com.jarroyo.composeapp.library.network.api.graphql.fragment.LaunchFragment
 import com.jarroyo.library.ui.shared.ViewEffect
 import com.jarroyo.library.ui.shared.ViewEvent
 import com.jarroyo.library.ui.shared.ViewState
 
 @Immutable
-object RocketDetailContract {
+object LaunchDetailContract {
     data class State(
         val favorite: Boolean = false,
-        val launch: LaunchDetailQuery.Launch? = null,
+        val launch: LaunchFragment? = null,
         val loading: Boolean = false,
     ) : ViewState
 

@@ -16,29 +16,6 @@ internal class AppNavigatorImpl : AppNavigator {
     override val homeDestination = HomeDestination().route
 
     /**
-     * Checks the given Intent for a Navigation deep link and navigates to the deep link if present.
-     * This is called automatically for you the first time you set the graph if you've passed in an
-     * [Activity] as the context when constructing this NavController, but should be manually
-     * called if your Activity receives new Intents in [Activity.onNewIntent].
-     *
-     * The types of Intents that are supported include:
-     *
-     * Intents created by [NavDeepLinkBuilder] or
-     * [createDeepLink]. This assumes that the current graph shares
-     * the same hierarchy to get to the deep linked destination as when the deep link was
-     * constructed.
-     * Intents that include a [data Uri][Intent.getData]. This Uri will be checked
-     * against the Uri patterns in the [NavDeepLinks][NavDeepLink] added via
-     * [NavDestination.addDeepLink].
-     *
-     * The [navigation graph][graph] should be set before calling this method.
-     *
-     * @param intent The Intent that may contain a valid deep link
-     * @return true if the navigation request was successfully delivered to the View, false otherwise.
-     */
-    // override fun handleDeepLink(intent: Intent): Boolean = navigationEvents.trySend(NavigatorEvent.HandleDeepLink(intent)).isSuccess
-
-    /**
      * Attempts to navigate up in the navigation hierarchy. Suitable for when the user presses the
      * "Up" button marked with a left (or start)-facing arrow in the upper left (or starting)
      * corner of the app UI.

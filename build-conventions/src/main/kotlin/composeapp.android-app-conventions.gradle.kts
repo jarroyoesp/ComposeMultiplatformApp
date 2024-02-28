@@ -60,7 +60,6 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime)
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui.ktx)
-    // TODO implementation(libs.coroutines.android)
     implementation(libs.coroutines.core)
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)

@@ -1,6 +1,5 @@
 plugins {
     id("composeapp.multiplatform-library-conventions")
-    // id ("com.google.dagger.hilt.android")
 }
 
 android {

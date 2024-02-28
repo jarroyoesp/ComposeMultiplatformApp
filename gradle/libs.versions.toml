@@ -4,6 +4,7 @@
 [versions]
 aboutlibraries = "10.10.0"
 accompanist = "0.33.1-alpha"
+agp = "8.1.4"
 androidCompileSdk = "34"
 androidx-compose = "1.6.1" ## TODO check last version for destok androidx.compose.runtime:runtime
 androidx-compose-compiler = "1.5.8"
@@ -18,6 +19,7 @@ diktat = "1.2.5"
 gradle = "8.1.1"
 greclipse = "4.19.0"
 hilt = "2.50"
+junit = "1.1.5"
 kotlin = "1.9.22"
 kotlinpoet = "1.15.3"
 kotlin-result = "1.1.18"
@@ -26,12 +28,11 @@ ktlint = "0.43.0"
 ktor = "2.3.6"
 mockk = "1.13.7"
 okhttp = "4.12.0"
+org-jetbrains-kotlin-android = "1.9.20"
 prettier = "2.7.1"
+precompose = "1.5.7"
 retrofit = "2.9.0"
 sqlDelight = "2.0.1"
-agp = "8.1.4"
-org-jetbrains-kotlin-android = "1.9.20"
-junit = "1.1.5"
 
 [libraries]
 aboutlibraries = { module = "com.mikepenz:aboutlibraries-compose", version.ref = "aboutlibraries" }
@@ -59,7 +60,6 @@ androidx-compose-tooling = { module = "androidx.compose.ui:ui-tooling", version.
 androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "androidx-compose" }
 androidx-compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "androidx-compose" }
 androidx-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "androidx-compose" }
-androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version = "1.0.1" }
 androidx-core-ktx = { module = "androidx.core:core-ktx", version = "1.12.0" }
 androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version = "1.0.1" }
 androidx-customview = { module = "androidx.customview:customview", version = "1.2.0-alpha02" }
@@ -115,7 +115,7 @@ hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", vers
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
 hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version = "1.1.0" }
 junit = { module = "junit:junit", version = "4.13.2" }
-kamel = { module = "media.kamel:kamel-image", version = "0.9.0" }
+kamel = { module = "media.kamel:kamel-image", version = "0.9.3" }
 koin-android = {module = "io.insert-koin:koin-android", version = "3.2.0"}
 koin-core = {module = "io.insert-koin:koin-core", version = "3.2.0"}
 konfetti = { module = "nl.dionsegijn:konfetti-compose", version = "2.0.3" }
@@ -145,6 +145,7 @@ material = { module = "com.google.android.material:material", version = "1.11.0"
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockk" }
 multiplatform-log = { module = "co.touchlab:kermit", version = "2.0.2" }
+multiplatform-constraintlayout-compose = { module = "tech.annexflow.compose:constraintlayout-compose-multiplatform", version = "0.3.0-rc02" }
 okhttp3-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
 okhttp3-mockwebserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "okhttp" }
 play-core = { module = "com.google.android.play:core", version = "1.10.3" }
@@ -164,9 +165,9 @@ sqldelight-coroutines = { module = "app.cash.sqldelight:coroutines-extensions", 
 sqldelight-primitiveAdapters = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqlDelight" }
 timber = { module = "com.jakewharton.timber:timber", version = "5.0.1" }
 tink = { module = "com.google.crypto.tink:tink-android", version = "1.10.0" }
-tlaster-precompose = { module = "moe.tlaster:precompose", version = "1.5.7" }
-tlaster-precompose-koin = { module = "moe.tlaster:precompose-koin", version = "1.5.7" }
-tlaster-precompose-viewmodel = { module = "moe.tlaster:precompose-viewmodel", version = "1.5.7" }
+tlaster-precompose = { module = "moe.tlaster:precompose", version.ref = "precompose" }
+tlaster-precompose-koin = { module = "moe.tlaster:precompose-koin", version.ref = "precompose" }
+tlaster-precompose-viewmodel = { module = "moe.tlaster:precompose-viewmodel", version.ref = "precompose" }
 
 # plugins
 plugin-aboutlibraries = { module = "com.mikepenz.aboutlibraries.plugin:aboutlibraries-plugin", version.ref = "aboutlibraries" }

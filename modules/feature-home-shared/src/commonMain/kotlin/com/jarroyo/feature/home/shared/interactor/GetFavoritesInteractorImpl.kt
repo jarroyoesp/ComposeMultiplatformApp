@@ -7,7 +7,7 @@ import com.jarroyo.feature.home.api.interactor.GetFavoritesInteractor
 import com.jarroyo.feature.home.shared.di.DatabaseWrapper
 import com.jarroyo.feature.home.shared.sqldelight.dao.FavoriteRocketsDao
 
-class GetFavoritesInteractorImpl(
+internal class GetFavoritesInteractorImpl(
     private val databaseWrapper: DatabaseWrapper,
 ) : GetFavoritesInteractor {
     override suspend operator fun invoke(): Result<List<String>, Exception> = try {

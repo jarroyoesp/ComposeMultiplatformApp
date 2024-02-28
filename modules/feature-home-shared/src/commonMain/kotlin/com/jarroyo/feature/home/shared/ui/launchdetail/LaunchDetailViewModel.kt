@@ -1,4 +1,4 @@
-package com.jarroyo.feature.home.shared.ui.rocketdetail
+package com.jarroyo.feature.home.shared.ui.launchdetail
 
 import co.touchlab.kermit.Logger
 import com.github.michaelbull.result.Err
@@ -7,15 +7,15 @@ import com.jarroyo.feature.home.api.interactor.AddFavoriteInteractor
 import com.jarroyo.feature.home.api.interactor.GetFavoritesInteractor
 import com.jarroyo.feature.home.api.interactor.GetLaunchDetailInteractor
 import com.jarroyo.feature.home.api.interactor.RemoveFavoriteInteractor
-import com.jarroyo.feature.home.shared.ui.rocketdetail.RocketDetailContract.Effect
-import com.jarroyo.feature.home.shared.ui.rocketdetail.RocketDetailContract.Event
-import com.jarroyo.feature.home.shared.ui.rocketdetail.RocketDetailContract.State
+import com.jarroyo.feature.home.shared.ui.launchdetail.LaunchDetailContract.Effect
+import com.jarroyo.feature.home.shared.ui.launchdetail.LaunchDetailContract.Event
+import com.jarroyo.feature.home.shared.ui.launchdetail.LaunchDetailContract.State
 import com.jarroyo.library.navigation.api.navigator.AppNavigator
 import com.jarroyo.library.ui.shared.BaseViewModel
 import kotlinx.coroutines.launch
 import moe.tlaster.precompose.viewmodel.viewModelScope
 
-class RocketDetailViewModel(
+class LaunchDetailViewModel(
     private val addFavoriteInteractor: AddFavoriteInteractor,
     private val appNavigator: AppNavigator,
     private val getFavoritesInteractor: GetFavoritesInteractor,
@@ -42,12 +42,12 @@ class RocketDetailViewModel(
         viewModelScope.launch {
             if (viewState.value.favorite) {
                 when (val result = removeFavoriteInteractor(checkNotNull(rocketId))) {
-                    is Ok -> sendEffect { Effect.ShowSnackbar("Rocket removed from Favorites") }
+                    is Ok -> sendEffect { Effect.ShowSnackbar("Launch removed from Favorites") }
                     is Err -> sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
                 }
             } else {
                 when (val result = addFavoriteInteractor(checkNotNull(viewState.value.launch))) {
-                    is Ok -> sendEffect { Effect.ShowSnackbar("Rocket added to Favorites") }
+                    is Ok -> sendEffect { Effect.ShowSnackbar("Launch added to Favorites") }
                     is Err -> sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
                 }
             }

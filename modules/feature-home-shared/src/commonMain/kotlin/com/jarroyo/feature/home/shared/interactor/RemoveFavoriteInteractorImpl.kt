@@ -7,7 +7,7 @@ import com.jarroyo.feature.home.api.interactor.RemoveFavoriteInteractor
 import com.jarroyo.feature.home.shared.di.DatabaseWrapper
 import com.jarroyo.feature.home.shared.sqldelight.dao.FavoriteRocketsDao
 
-class RemoveFavoriteInteractorImpl(
+internal class RemoveFavoriteInteractorImpl(
     private val databaseWrapper: DatabaseWrapper,
 ) : RemoveFavoriteInteractor {
     override suspend operator fun invoke(

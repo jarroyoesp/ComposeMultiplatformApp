@@ -7,9 +7,7 @@ import org.koin.dsl.module
 
 actual fun platformModule() = module {
     single {
-        val driver =
-            AndroidSqliteDriver(Database.Schema, get(), "Rockets.db")
-
+        val driver = AndroidSqliteDriver(Database.Schema, get(), "Rockets.db")
         DatabaseWrapper(Database(driver))
     }
     single { Android.create() }
