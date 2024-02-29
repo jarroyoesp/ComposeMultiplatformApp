@@ -4,9 +4,8 @@ plugins {
     id("composeapp.buildlog-conventions")
     id("composeapp.spotless-conventions")
     id("composeapp.versions-conventions")
-    //JAE id 'composeapp.dependency-graph-conventions'
     id("composeapp.violation-comments-to-github-conventions")
-    //JAE alias(libs.plugins.gradledoctor)
+    alias(libs.plugins.multiplatform)
 }
 
 subprojects {

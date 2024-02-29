@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS FavoriteRockets (
+  id TEXT NOT NULL PRIMARY KEY,
+  title TEXT
+);
+
+insertFavorite:
+INSERT INTO FavoriteRockets(id, title)
+VALUES(?, ?);
+
+removeFavorite:
+DELETE FROM FavoriteRockets WHERE id = ?;
+
+removeAllFavoritesRockets:
+DELETE FROM FavoriteRockets;
+
+selectFavorites:
+SELECT * FROM FavoriteRockets;

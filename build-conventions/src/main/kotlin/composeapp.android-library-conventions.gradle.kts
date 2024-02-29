@@ -13,7 +13,6 @@ dependencies {
     implementation (libs.kotlin.result.coroutines)
     implementation (libs.timber)
 
-    // androidTestImplementation projects.modules.libraryTestAndroid
     androidTestUtil (libs.androidx.test.orchestrator)
     testImplementation(project(":modules:library-test"))
     androidTestImplementation(project(":modules:library-test"))

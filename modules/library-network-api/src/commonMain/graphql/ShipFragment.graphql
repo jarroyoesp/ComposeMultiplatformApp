@@ -1,0 +1,7 @@
+fragment shipFragment on Ship {
+    id
+    name
+    image
+    active
+    home_port
+}

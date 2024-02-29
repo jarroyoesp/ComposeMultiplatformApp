@@ -1,7 +1,7 @@
 import io.gitlab.arturbosch.detekt.Detekt
 
 plugins {
-    id ("composeapp.android-library-conventions")
+    id("composeapp.multiplatform-library-conventions")
     alias(libs.plugins.apollo)
     alias(libs.plugins.kotlinx.serialization)
 }
@@ -10,7 +10,7 @@ android {
     namespace = "com.jarroyo.composeapp.library.network.api"
     resourcePrefix = "network_api_"
     defaultConfig {
-        consumerProguardFiles ("$projectDir/proguard-network-api-consumer-rules.pro")
+        consumerProguardFiles("$projectDir/proguard-network-api-consumer-rules.pro")
     }
 }
 
@@ -18,23 +18,27 @@ apollo {
     service("spacex") {
         packageName.set("com.jarroyo.composeapp.library.network.api.graphql")
         generateApolloMetadata.set(true)
-        // JAE  codegenModels = "experimental_operationBasedWithInterfaces"
-        // JAE decapitalizeFields = true
+        decapitalizeFields.set(true)
         generateDataBuilders.set(true)
-        // JAE mapScalar("ISODate", "java.time.LocalDate", "com.apollographql.apollo3.adapter.JavaLocalDateAdapter")
-        // JAE mapScalar("ISODateTime", "java.time.Instant", "com.apollographql.apollo3.adapter.JavaInstantAdapter")
+        mapScalar(
+            "Date",
+            "kotlinx.datetime.Instant",
+            "com.apollographql.apollo3.adapter.KotlinxInstantAdapter"
+        )
     }
 }
 
-dependencies {
-    // JAE implementation projects.modules.libraryAndroidApi
-
-    api (libs.apollo)
-    api (libs.apollo.adapters)
-    api (libs.apollo.cache)
-    api (libs.retrofit)
-    implementation (libs.apollo.cache.sqlite)
-    implementation (libs.kotlinx.serialization)
+kotlin {
+    sourceSets {
+        commonMain.dependencies {
+            api(libs.apollo)
+            api(libs.apollo.adapters)
+            api(libs.apollo.cache)
+            api(libs.retrofit)
+            implementation(libs.apollo.cache.sqlite)
+            implementation(libs.kotlinx.serialization)
+        }
+    }
 }
 
 // Workaround for https://github.com/detekt/detekt/issues/4743

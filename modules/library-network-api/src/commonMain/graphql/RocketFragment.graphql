@@ -1,0 +1,7 @@
+fragment rocketFragment on Rocket {
+    id
+    name
+    company
+    active
+    wikipedia
+}

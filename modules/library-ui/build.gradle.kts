@@ -26,11 +26,7 @@ android {
 }
 
 dependencies {
-    //api projects.modules.libraryUiApi
-    //implementation projects.modules.libraryAndroidApi
-    //implementation projects.modules.libraryI18n
     implementation (projects.modules.libraryNavigationApi)
-    //implementation projects.modules.libraryPreferencesApi
     api (libs.accompanist.flowlayout)
     api (libs.accompanist.navigation.material)
     api (libs.accompanist.pager)
@@ -44,7 +40,6 @@ dependencies {
     api (libs.androidx.compose.runtime.livedata)
     api (libs.androidx.compose.tooling)
     api (libs.androidx.compose.ui)
-    api (libs.androidx.constraintlayout.compose)
     api (libs.androidx.core.splashscreen)
     api (libs.androidx.lifecycle.viewmodel)
     api (libs.androidx.navigation.compose)

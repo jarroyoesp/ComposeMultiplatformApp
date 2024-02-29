@@ -28,7 +28,7 @@ android {
 
 dependencies {
     // Modules
-    implementation(projects.modules.featureHome)
+    implementation(projects.modules.featureHomeShared)
     implementation(projects.modules.libraryNavigation)
     implementation(projects.modules.libraryNetwork)
     implementation(projects.modules.libraryUi)
@@ -38,6 +38,7 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.material3)
+    implementation(libs.koin.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.espresso.core)

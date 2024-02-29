@@ -1,15 +1,20 @@
 plugins {
-    id ("composeapp.android-library-conventions")
+    id("composeapp.multiplatform-library-conventions")
 }
 
 android {
     namespace = "com.jarroyo.feature.home.api"
     resourcePrefix = "home_api_"
     defaultConfig {
-        consumerProguardFiles ("$projectDir/proguard-home-api-consumer-rules.pro")
+        consumerProguardFiles("$projectDir/proguard-home-api-consumer-rules.pro")
     }
 }
 
-dependencies {
-    implementation (projects.modules.libraryNetworkApi)
+kotlin {
+    sourceSets {
+        commonMain.dependencies {
+            implementation(projects.modules.libraryNavigationApi)
+            implementation(projects.modules.libraryNetworkApi)
+        }
+    }
 }

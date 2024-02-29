@@ -1,0 +1,5 @@
+query LaunchDetail($id: ID!) {
+    launch(id: $id) {
+        ...launchFragment
+    }
+}
