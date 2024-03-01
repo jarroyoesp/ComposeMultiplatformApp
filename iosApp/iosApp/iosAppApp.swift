@@ -11,7 +11,7 @@ import ComposeApp
 @main
 struct iosAppApp: App {
     init() {
-        KoinAppModuleKt.doInitKoin(appDeclaration: {_ in })
+        KoinAppModuleKt.doInitKoin(additionalModules: [])
     }
     var body: some Scene {
         WindowGroup {

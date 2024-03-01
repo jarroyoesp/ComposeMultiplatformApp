@@ -25,11 +25,36 @@ jobs:
   unit_tests:
     name: Unit tests
     runs-on: [ubuntu-latest]
+    timeout-minutes: 20
+    env:
+      TERM: dumb
+
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: 17.0.6
+
+      - name: Copy CI gradle.properties
+        run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
+
+      - name: Validate gradle wrapper
+        uses: gradle/wrapper-validation-action@v1
+
+      - name: Build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: assembleDebug -PsaveBuildLogToFile=true
 
       - name: Unit tests
-        run: ./gradlew test
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: testDebugUnitTest
+
   ## 4
   instrumentation_tests:
     name: Instrumentation tests

@@ -3,16 +3,16 @@ package com.jarroyo.feature.home.shared.di
 import com.jarroyo.library.navigation.di.navigationModule
 import com.jarroyo.library.network.di.networkModule
 import org.koin.core.context.startKoin
-import org.koin.dsl.KoinAppDeclaration
 import com.jarroyo.feature.home.shared.sqldelight.platformModule
+import org.koin.core.module.Module
 
-fun initKoin(appDeclaration: KoinAppDeclaration = {}) =
+fun initKoin(additionalModules: List<Module> = emptyList()) =
     startKoin {
-        appDeclaration()
         modules(
-            featureHomeModule,
-            navigationModule,
-            networkModule,
-            platformModule(),
+            additionalModules +
+                    featureHomeModule +
+                    navigationModule +
+                    networkModule +
+                    platformModule(),
         )
     }
