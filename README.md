@@ -1,6 +1,9 @@
-<h5 align="center">
-🚀 Example project to show SpaceX data built with Kotlin Multiplatform and Compose UI Multiplatform
-</h5>
+<div align="center">
+    <img alt="Compose multiplatform charts" src="./screenshots/compose_multiplatform_logo.png"/>
+    <h1>🚀 Example project to show SpaceX data built with Kotlin Multiplatform and Compose UI Multiplatform</h1>
+</div>
+
+[Compose Multiplatform](https://www.jetbrains.com/lp/compose-multiplatform/) Sample (KMP) that serves as a comprehensive example demonstrating the integration of Compose Multiplatform, GraphQL data consumption, and SQLDelight for local data persistence.
 
 Using data from the GraphQL endpoint [SpaceX-GraphQL](https://studio.apollographql.com/public/SpaceX-pxxbxen/variant/current/explorer)
 
@@ -66,6 +69,8 @@ Steps to setup your iOS app:
 cd "$SRCROOT/.."
 ./gradlew :modules:feature-home-shared:embedAndSignAppleFrameworkForXcode
 ```
+
+<img width="800" src="./screenshots/ios/buildPhases.png" />
 
 3. Add to Search Paths:
 ```
