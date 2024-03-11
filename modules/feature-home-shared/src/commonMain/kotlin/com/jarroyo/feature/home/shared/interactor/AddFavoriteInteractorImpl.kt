@@ -6,7 +6,7 @@ import com.github.michaelbull.result.Result
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.LaunchFragment
 import com.jarroyo.feature.home.api.interactor.AddFavoriteInteractor
 import com.jarroyo.feature.home.shared.FavoriteRockets
-import com.jarroyo.feature.home.shared.di.DatabaseWrapper
+import com.jarroyo.feature.home.shared.sqldelight.DatabaseWrapper
 import com.jarroyo.feature.home.shared.sqldelight.dao.FavoriteRocketsDao
 import org.koin.core.component.KoinComponent
 

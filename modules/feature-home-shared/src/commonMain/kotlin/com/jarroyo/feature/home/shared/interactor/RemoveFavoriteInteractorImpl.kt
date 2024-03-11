@@ -4,7 +4,7 @@ import com.github.michaelbull.result.Err
 import com.github.michaelbull.result.Ok
 import com.github.michaelbull.result.Result
 import com.jarroyo.feature.home.api.interactor.RemoveFavoriteInteractor
-import com.jarroyo.feature.home.shared.di.DatabaseWrapper
+import com.jarroyo.feature.home.shared.sqldelight.DatabaseWrapper
 import com.jarroyo.feature.home.shared.sqldelight.dao.FavoriteRocketsDao
 
 internal class RemoveFavoriteInteractorImpl(

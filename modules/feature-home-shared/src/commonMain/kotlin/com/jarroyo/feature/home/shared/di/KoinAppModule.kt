@@ -3,7 +3,6 @@ package com.jarroyo.feature.home.shared.di
 import com.jarroyo.library.navigation.di.navigationModule
 import com.jarroyo.library.network.di.networkModule
 import org.koin.core.context.startKoin
-import com.jarroyo.feature.home.shared.sqldelight.platformModule
 import org.koin.core.module.Module
 
 fun initKoin(additionalModules: List<Module> = emptyList()) =

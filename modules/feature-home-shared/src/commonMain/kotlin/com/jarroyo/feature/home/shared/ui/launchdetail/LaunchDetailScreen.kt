@@ -1,5 +1,6 @@
 package com.jarroyo.feature.home.shared.ui.launchdetail
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -18,6 +19,7 @@ import androidx.compose.material.SnackbarHostState
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -51,6 +53,7 @@ fun LaunchDetailScreen(
             NavigationKoinComponent().appNavigator,
             FeatureHomeKoinComponent().getFavoritesInteractor,
             FeatureHomeKoinComponent().getLaunchDetailInteractor,
+            FeatureHomeKoinComponent().openUrlInBrowserInteractor,
             FeatureHomeKoinComponent().removeFavoriteInteractor,
         )
     },
@@ -102,9 +105,9 @@ private fun LaunchDetailScreen(
             verticalArrangement = Arrangement.spacedBy(Spacing.x01),
         ) {
             if (state.loading) {
-                DetailItem(getPlaceholderData(), true)
+                DetailItem(getPlaceholderData(), sendEvent = {}, true)
             } else {
-                DetailItem(state.launch)
+                DetailItem(state.launch, sendEvent)
             }
         }
     }
@@ -113,6 +116,7 @@ private fun LaunchDetailScreen(
 @Composable
 private fun DetailItem(
     launch: LaunchFragment?,
+    sendEvent: (event: Event) -> Unit,
     placeholder: Boolean = false,
 ) {
     Column(
@@ -125,7 +129,7 @@ private fun DetailItem(
         )
         Text(
             text = launch?.links?.article_link.orEmpty(),
-            modifier = Modifier.placeholder(placeholder),
+            modifier = Modifier.placeholder(placeholder).clickable { sendEvent(Event.OnOpenUrl(launch?.links?.article_link.orEmpty())) },
         )
         KamelImage(
             resource = asyncPainterResource(
@@ -173,7 +177,7 @@ private fun TopAppBar(
                 onClick = { sendEvent(Event.OnUpButtonClicked) },
             ) {
                 Icon(
-                    imageVector = Icons.Default.ArrowBack,
+                    imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                     contentDescription = null,
                 )
             }

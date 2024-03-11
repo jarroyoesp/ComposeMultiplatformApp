@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="11">
       <module name="ComposeApp.modules.feature-home" target="17" />
+      <module name="ComposeApp.web" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -15,6 +15,7 @@ object LaunchDetailContract {
     ) : ViewState
 
     sealed class Event : ViewEvent {
+        data class OnOpenUrl(val url: String): Event()
         data class OnViewAttached(val id: String): Event()
         data object OnAddFavoritesButtonClicked: Event()
         data object OnUpButtonClicked: Event()
