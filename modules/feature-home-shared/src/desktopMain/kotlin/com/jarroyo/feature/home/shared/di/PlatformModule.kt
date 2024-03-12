@@ -1,8 +1,9 @@
-package com.jarroyo.feature.home.shared.sqldelight
+package com.jarroyo.feature.home.shared.di
 
 import app.cash.sqldelight.driver.jdbc.sqlite.JdbcSqliteDriver
+import com.jarroyo.feature.home.shared.sqldelight.Database
+import com.jarroyo.feature.home.shared.sqldelight.DatabaseWrapper
 import org.koin.dsl.module
-import com.jarroyo.feature.home.shared.di.DatabaseWrapper
 
 actual fun platformModule() = module {
     single {

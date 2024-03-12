@@ -6,6 +6,7 @@ import com.github.michaelbull.result.Ok
 import com.jarroyo.feature.home.api.interactor.AddFavoriteInteractor
 import com.jarroyo.feature.home.api.interactor.GetFavoritesInteractor
 import com.jarroyo.feature.home.api.interactor.GetLaunchDetailInteractor
+import com.jarroyo.feature.home.api.interactor.OpenUrlInBrowserInteractor
 import com.jarroyo.feature.home.api.interactor.RemoveFavoriteInteractor
 import com.jarroyo.feature.home.shared.ui.launchdetail.LaunchDetailContract.Effect
 import com.jarroyo.feature.home.shared.ui.launchdetail.LaunchDetailContract.Event
@@ -20,6 +21,7 @@ class LaunchDetailViewModel(
     private val appNavigator: AppNavigator,
     private val getFavoritesInteractor: GetFavoritesInteractor,
     private val getLaunchDetailInteractor: GetLaunchDetailInteractor,
+    private val openUrlInBrowserInteractor: OpenUrlInBrowserInteractor,
     private val removeFavoriteInteractor: RemoveFavoriteInteractor,
 ) : BaseViewModel<Event, State, Effect>() {
     private var rocketId: String? = null
@@ -33,6 +35,7 @@ class LaunchDetailViewModel(
     override fun handleEvent(event: Event) {
         when (event) {
             is Event.OnAddFavoritesButtonClicked -> handleOnAddFavoritesButtonClicked()
+            is Event.OnOpenUrl -> viewModelScope.launch { openUrlInBrowserInteractor(event.url) }
             is Event.OnUpButtonClicked -> appNavigator.navigateBack()
             is Event.OnViewAttached -> handleOnViewAttached(event.id)
         }
