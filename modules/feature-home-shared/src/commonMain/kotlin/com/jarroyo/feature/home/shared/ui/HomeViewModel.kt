@@ -1,8 +1,6 @@
 package com.jarroyo.feature.home.shared.ui
 
 import com.apollographql.apollo3.cache.normalized.FetchPolicy
-import com.github.michaelbull.result.Err
-import com.github.michaelbull.result.Ok
 import com.jarroyo.feature.home.api.interactor.GetLaunchesInteractor
 import com.jarroyo.feature.home.api.destination.LaunchDetailDestination
 import com.jarroyo.feature.home.api.interactor.GetFavoritesInteractor
@@ -38,9 +36,11 @@ class HomeViewModel(
     private fun refreshData(fetchPolicy: FetchPolicy = FetchPolicy.CacheFirst) {
         viewModelScope.launch {
             updateState { copy(loading = true) }
-            when (val result = getLaunchesInteractor(0, 0, fetchPolicy)) {
-                is Ok -> updateState { copy(rocketList = result.value) }
-                is Err -> sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
+            val result = getLaunchesInteractor(0, 0, fetchPolicy)
+            if (result.isOk) {
+                updateState { copy(rocketList = result.value) }
+            } else {
+                sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
             }
             refreshFavorites()
             updateState { copy(loading = false) }
@@ -48,9 +48,11 @@ class HomeViewModel(
     }
 
     private suspend fun refreshFavorites() {
-        when (val result = getFavoritesInteractor()) {
-            is Ok -> updateState { copy(favoritesList = result.value) }
-            is Err -> sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
+        val result = getFavoritesInteractor()
+        if (result.isOk) {
+            updateState { copy(favoritesList = result.value) }
+        } else {
+            sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
         }
     }
 }
