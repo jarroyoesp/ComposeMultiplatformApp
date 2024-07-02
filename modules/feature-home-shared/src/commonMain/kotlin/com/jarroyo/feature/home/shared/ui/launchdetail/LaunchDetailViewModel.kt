@@ -1,8 +1,6 @@
 package com.jarroyo.feature.home.shared.ui.launchdetail
 
 import co.touchlab.kermit.Logger
-import com.github.michaelbull.result.Err
-import com.github.michaelbull.result.Ok
 import com.jarroyo.feature.home.api.interactor.AddFavoriteInteractor
 import com.jarroyo.feature.home.api.interactor.GetFavoritesInteractor
 import com.jarroyo.feature.home.api.interactor.GetLaunchDetailInteractor
@@ -44,14 +42,18 @@ class LaunchDetailViewModel(
     private fun handleOnAddFavoritesButtonClicked() {
         viewModelScope.launch {
             if (viewState.value.favorite) {
-                when (val result = removeFavoriteInteractor(checkNotNull(rocketId))) {
-                    is Ok -> sendEffect { Effect.ShowSnackbar("Launch removed from Favorites") }
-                    is Err -> sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
+                val result = removeFavoriteInteractor(checkNotNull(rocketId))
+                if (result.isOk) {
+                    sendEffect { Effect.ShowSnackbar("Launch removed from Favorites") }
+                } else {
+                    sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
                 }
             } else {
-                when (val result = addFavoriteInteractor(checkNotNull(viewState.value.launch))) {
-                    is Ok -> sendEffect { Effect.ShowSnackbar("Launch added to Favorites") }
-                    is Err -> sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
+                val result = addFavoriteInteractor(checkNotNull(viewState.value.launch))
+                if (result.isOk) {
+                    sendEffect { Effect.ShowSnackbar("Launch added to Favorites") }
+                } else {
+                    sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
                 }
             }
             refreshFavorites()
@@ -67,9 +69,11 @@ class LaunchDetailViewModel(
 
     private fun refreshFavorites() {
         viewModelScope.launch {
-            when (val result = getFavoritesInteractor()) {
-                is Ok -> updateState { copy(favorite = result.value.contains(rocketId)) }
-                is Err -> sendEffect { Effect.ShowSnackbar(result.error.toString()) }
+            val result = getFavoritesInteractor()
+            if (result.isOk) {
+                updateState { copy(favorite = result.value.contains(rocketId)) }
+            } else {
+                sendEffect { Effect.ShowSnackbar(result.error.toString()) }
             }
         }
     }
@@ -77,9 +81,11 @@ class LaunchDetailViewModel(
     private fun refreshData() {
         viewModelScope.launch {
             updateState { copy(loading = true) }
-            when (val result = getLaunchDetailInteractor(checkNotNull(rocketId))) {
-                is Ok -> updateState { copy(launch = result.value) }
-                is Err -> sendEffect { Effect.ShowSnackbar(result.error.toString()) }
+            val result = getLaunchDetailInteractor(checkNotNull(rocketId))
+            if (result.isOk) {
+                updateState { copy(launch = result.value) }
+            } else {
+                sendEffect { Effect.ShowSnackbar(result.error.toString()) }
             }
             updateState { copy(loading = false) }
         }
