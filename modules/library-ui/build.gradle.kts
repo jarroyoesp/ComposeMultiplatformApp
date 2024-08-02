@@ -6,7 +6,9 @@ plugins {
 android {
     namespace = "com.jarroyo.library.ui"
     resourcePrefix = "ui_"
+    compileSdk = libs.versions.androidCompileSdk.get().toInt()
     defaultConfig {
+        minSdk = config.android.minSdk.get()
         consumerProguardFiles ("$projectDir/proguard-ui-consumer-rules.pro")
     }
     buildFeatures {
