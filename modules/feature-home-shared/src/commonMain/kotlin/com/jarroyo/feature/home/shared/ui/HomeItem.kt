@@ -22,6 +22,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.LaunchFragment
+import com.jarroyo.feature.home.shared.ext.format
 import com.jarroyo.feature.home.shared.ui.HomeContract.Event
 import com.jarroyo.library.ui.shared.component.placeholder
 import com.jarroyo.library.ui.shared.theme.Spacing
@@ -96,7 +97,7 @@ fun HomeItem(
                     modifier = Modifier.placeholder(placeholder),
                 )
                 Text(
-                    "- Date: ${item.launch_date_local?.toLocalDateTime(TimeZone.UTC)}",
+                    "- Date: ${item.launch_date_local?.toLocalDateTime(TimeZone.UTC)?.format()}",
                     modifier = Modifier.placeholder(placeholder),
                 )
             }

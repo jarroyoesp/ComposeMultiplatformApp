@@ -4,9 +4,11 @@ import com.jarroyo.composeapp.library.network.api.graphql.fragment.LaunchFragmen
 import com.jarroyo.library.ui.shared.ViewEffect
 import com.jarroyo.library.ui.shared.ViewEvent
 import com.jarroyo.library.ui.shared.ViewState
+import kotlinx.datetime.LocalDateTime
 
 object HomeContract {
     data class State(
+        val currentLocalDateTime: LocalDateTime? = null,
         val favoritesList: List<String>? = null,
         val loading: Boolean = false,
         val rocketList: List<LaunchFragment>? = null,

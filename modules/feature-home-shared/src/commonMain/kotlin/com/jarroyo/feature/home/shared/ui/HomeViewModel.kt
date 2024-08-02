@@ -9,7 +9,11 @@ import com.jarroyo.feature.home.shared.ui.HomeContract.Event
 import com.jarroyo.feature.home.shared.ui.HomeContract.State
 import com.jarroyo.library.navigation.api.navigator.AppNavigator
 import com.jarroyo.library.ui.shared.BaseViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.datetime.Clock
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toLocalDateTime
 import moe.tlaster.precompose.viewmodel.viewModelScope
 
 class HomeViewModel(
@@ -45,6 +49,7 @@ class HomeViewModel(
             refreshFavorites()
             updateState { copy(loading = false) }
         }
+        refreshCurrentLocalDateTime()
     }
 
     private suspend fun refreshFavorites() {
@@ -53,6 +58,19 @@ class HomeViewModel(
             updateState { copy(favoritesList = result.value) }
         } else {
             sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
+        }
+    }
+
+    private fun refreshCurrentLocalDateTime() {
+        viewModelScope.launch {
+            while (true) {
+                delay(1000)
+                updateState {
+                    copy(
+                        currentLocalDateTime = Clock.System.now().toLocalDateTime(TimeZone.UTC),
+                    )
+                }
+            }
         }
     }
 }

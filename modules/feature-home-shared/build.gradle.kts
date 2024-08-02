@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
-
 plugins {
     id("composeapp.multiplatform-library-conventions")
     id("org.jetbrains.compose")
@@ -40,6 +38,7 @@ kotlin {
             implementation(compose.foundation)
             implementation(compose.material)
             implementation(compose.runtime)
+            implementation(libs.kotlin.datetime)
             implementation(libs.sqldelight.coroutines)
             implementation(libs.sqldelight.primitiveAdapters)
 
