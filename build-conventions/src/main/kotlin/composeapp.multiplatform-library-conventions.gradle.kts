@@ -1,3 +1,5 @@
+import com.jarroyo.composeapp.ext.android
+import com.jarroyo.composeapp.ext.config
 import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.kotlin.dsl.the
 
@@ -5,6 +7,7 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     id("kotlin-parcelize")
+    id ("composeapp.config-conventions")
 }
 
 val libs = the<LibrariesForLibs>()
@@ -15,6 +18,9 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+    }
+    defaultConfig{
+        minSdk = config.android.minSdk.get()
     }
 }
 

@@ -1,6 +1,7 @@
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
+    id ("composeapp.config-conventions")
 }
 
 android {
@@ -8,7 +9,16 @@ android {
     resourcePrefix = "test_"
     compileSdk = libs.versions.androidCompileSdk.get().toInt()
     defaultConfig {
+        minSdk = config.android.minSdk.get()
         consumerProguardFiles("$projectDir/proguard-test-consumer-rules.pro")
+    }
+    packaging {
+        resources {
+            // Use this block to exclude conflicting files that breaks your APK assemble task
+            excludes.add("META-INF/LICENSE-notice.md")
+            excludes.add("META-INF/LICENSE.md")
+            excludes.add("META-INF/NOTICE.md")
+        }
     }
 }
 
