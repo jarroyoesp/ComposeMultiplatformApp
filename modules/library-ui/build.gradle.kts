@@ -9,6 +9,7 @@ android {
     compileSdk = libs.versions.androidCompileSdk.get().toInt()
     defaultConfig {
         minSdk = config.android.minSdk.get()
+        testOptions.targetSdk = config.android.targetSdk.get()
         consumerProguardFiles ("$projectDir/proguard-ui-consumer-rules.pro")
     }
     buildFeatures {
