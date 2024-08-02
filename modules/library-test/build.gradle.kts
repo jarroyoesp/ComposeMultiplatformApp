@@ -1,7 +1,7 @@
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
-    id ("composeapp.config-conventions")
+    id("composeapp.config-conventions")
 }
 
 android {
@@ -20,12 +20,21 @@ android {
             excludes.add("META-INF/NOTICE.md")
         }
     }
+    // Configuración para usar Java 17
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
 }
 
 kotlin {
     androidTarget()
     jvm("desktop")
     sourceSets {
+        androidMain.dependencies {
+            api(libs.androidx.test.core)
+            api(libs.androidx.test.runner)
+        }
         commonMain.dependencies {
             api(libs.apollo.testing.support)
             api(libs.coroutines.test)
