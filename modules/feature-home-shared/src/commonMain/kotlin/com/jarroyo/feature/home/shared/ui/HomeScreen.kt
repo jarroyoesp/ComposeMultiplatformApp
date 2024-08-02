@@ -33,6 +33,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.LayoutDirection
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.LaunchFragment
 import com.jarroyo.feature.home.shared.di.FeatureHomeKoinComponent
+import com.jarroyo.feature.home.shared.ext.format
 import com.jarroyo.feature.home.shared.ui.HomeContract.Effect
 import com.jarroyo.feature.home.shared.ui.HomeContract.Event
 import com.jarroyo.feature.home.shared.ui.HomeContract.State
@@ -43,6 +44,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
+import kotlinx.datetime.format
 
 @Composable
 fun HomeScreen(
@@ -121,6 +123,9 @@ private fun HomeScreen(
                 contentPadding = PaddingValues(Spacing.x02),
                 verticalArrangement = Arrangement.spacedBy(Spacing.x01),
             ) {
+                item {
+                    Text(state.currentLocalDateTime?.format().orEmpty())
+                }
                 if (!state.rocketList.isNullOrEmpty() || state.loading) {
                     if (state.rocketList.isNullOrEmpty() && state.loading) {
                         rocketList(getLaunchListPlaceholderData(), sendEvent, placeholder = true)
