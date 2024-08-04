@@ -60,7 +60,7 @@ jobs:
     name: Instrumentation tests
     # Android emulators require hardware acceleration (HAXM on Mac & Windows, QEMU on Linux) from the host to run fast.
     # The macOS VM provided by GitHub Actions is the only one that currently supports it.
-    runs-on: macos-latest
+    runs-on: macos-13
     timeout-minutes: 45
     env:
       JAVA_TOOL_OPTIONS: -Xmx4g
@@ -71,7 +71,7 @@ jobs:
       matrix:
         api-level: [29, 33]
         target: [google_apis]
-        arch: [x86_64]
+        arch: [arm64-v8a]
 
     steps:
       - name: Checkout
