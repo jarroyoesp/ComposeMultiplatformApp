@@ -15,7 +15,9 @@ import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
 import moe.tlaster.precompose.viewmodel.viewModelScope
+import org.koin.android.annotation.KoinViewModel
 
+@KoinViewModel
 class HomeViewModel(
     private val appNavigator: AppNavigator,
     private val getFavoritesInteractor: GetFavoritesInteractor,

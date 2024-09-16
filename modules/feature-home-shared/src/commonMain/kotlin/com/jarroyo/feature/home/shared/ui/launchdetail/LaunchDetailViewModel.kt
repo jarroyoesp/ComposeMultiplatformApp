@@ -13,7 +13,10 @@ import com.jarroyo.library.navigation.api.navigator.AppNavigator
 import com.jarroyo.library.ui.shared.BaseViewModel
 import kotlinx.coroutines.launch
 import moe.tlaster.precompose.viewmodel.viewModelScope
+import org.koin.android.annotation.KoinViewModel
+import org.koin.core.component.KoinComponent
 
+@KoinViewModel
 class LaunchDetailViewModel(
     private val addFavoriteInteractor: AddFavoriteInteractor,
     private val appNavigator: AppNavigator,
@@ -21,11 +24,10 @@ class LaunchDetailViewModel(
     private val getLaunchDetailInteractor: GetLaunchDetailInteractor,
     private val openUrlInBrowserInteractor: OpenUrlInBrowserInteractor,
     private val removeFavoriteInteractor: RemoveFavoriteInteractor,
-) : BaseViewModel<Event, State, Effect>() {
+) : BaseViewModel<Event, State, Effect>(), KoinComponent {
     private var rocketId: String? = null
-
     init {
-        Logger.d("Init ${this}")
+        Logger.d("Init $this")
     }
 
     override fun provideInitialState() = State()

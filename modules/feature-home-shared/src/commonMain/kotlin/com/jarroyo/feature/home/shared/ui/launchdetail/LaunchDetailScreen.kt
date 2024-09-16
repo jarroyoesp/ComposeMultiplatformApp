@@ -20,7 +20,6 @@ import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
@@ -28,11 +27,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.LaunchFragment
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.RocketFragment
-import com.jarroyo.feature.home.shared.di.FeatureHomeKoinComponent
+import com.jarroyo.feature.home.api.destination.LaunchDetailDestination.Companion.ID_PARAM
 import com.jarroyo.feature.home.shared.ui.launchdetail.LaunchDetailContract.Effect
 import com.jarroyo.feature.home.shared.ui.launchdetail.LaunchDetailContract.Event
 import com.jarroyo.feature.home.shared.ui.launchdetail.LaunchDetailContract.State
-import com.jarroyo.library.navigation.di.NavigationKoinComponent
 import com.jarroyo.library.ui.shared.component.placeholder
 import com.jarroyo.library.ui.shared.theme.Spacing
 import io.kamel.image.KamelImage
@@ -42,24 +40,15 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import kotlinx.datetime.Clock
-import moe.tlaster.precompose.viewmodel.viewModel
+import org.koin.compose.koinInject
 
 @Composable
 fun LaunchDetailScreen(
     arguments: Map<String, String>? = null,
-    viewModel: LaunchDetailViewModel = viewModel(modelClass = LaunchDetailViewModel::class) {
-        LaunchDetailViewModel(
-            FeatureHomeKoinComponent().addFavoriteInteractor,
-            NavigationKoinComponent().appNavigator,
-            FeatureHomeKoinComponent().getFavoritesInteractor,
-            FeatureHomeKoinComponent().getLaunchDetailInteractor,
-            FeatureHomeKoinComponent().openUrlInBrowserInteractor,
-            FeatureHomeKoinComponent().removeFavoriteInteractor,
-        )
-    },
+    viewModel: LaunchDetailViewModel = koinInject<LaunchDetailViewModel>(),
 ) {
     LaunchedEffect(Unit) {
-        arguments?.get("id")?.let {
+        arguments?.get(ID_PARAM)?.let {
             viewModel.onUiEvent(Event.OnViewAttached(it))
         }
     }
@@ -129,7 +118,8 @@ private fun DetailItem(
         )
         Text(
             text = launch?.links?.article_link.orEmpty(),
-            modifier = Modifier.placeholder(placeholder).clickable { sendEvent(Event.OnOpenUrl(launch?.links?.article_link.orEmpty())) },
+            modifier = Modifier.placeholder(placeholder)
+                .clickable { sendEvent(Event.OnOpenUrl(launch?.links?.article_link.orEmpty())) },
         )
         KamelImage(
             resource = asyncPainterResource(

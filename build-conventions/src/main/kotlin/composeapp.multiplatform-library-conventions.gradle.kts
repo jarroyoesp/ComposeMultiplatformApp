@@ -52,12 +52,13 @@ kotlin {
         commonMain.dependencies {
             implementation(libs.coroutines.core)
             implementation(libs.kamel)
+            implementation(libs.koin.annotations)
+            implementation(libs.koin.compose)
             implementation(libs.koin.core)
             implementation(libs.kotlin.result)
             implementation(libs.multiplatform.log)
             implementation(libs.tlaster.precompose)
             implementation(libs.tlaster.precompose.viewmodel)
-
         }
 
         commonTest.dependencies {

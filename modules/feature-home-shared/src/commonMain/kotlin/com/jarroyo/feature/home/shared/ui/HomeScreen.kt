@@ -32,30 +32,20 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.LayoutDirection
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.LaunchFragment
-import com.jarroyo.feature.home.shared.di.FeatureHomeKoinComponent
 import com.jarroyo.feature.home.shared.ext.format
 import com.jarroyo.feature.home.shared.ui.HomeContract.Effect
 import com.jarroyo.feature.home.shared.ui.HomeContract.Event
 import com.jarroyo.feature.home.shared.ui.HomeContract.State
 import com.jarroyo.feature.home.shared.ui.launchdetail.getPlaceholderData
-import com.jarroyo.library.navigation.di.NavigationKoinComponent
 import com.jarroyo.library.ui.shared.theme.Spacing
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
-import kotlinx.datetime.format
+import org.koin.compose.koinInject
 
 @Composable
-fun HomeScreen(
-    viewModel: HomeViewModel = moe.tlaster.precompose.viewmodel.viewModel(modelClass = HomeViewModel::class) {
-        HomeViewModel(
-            NavigationKoinComponent().appNavigator,
-            FeatureHomeKoinComponent().getFavoritesInteractor,
-            FeatureHomeKoinComponent().getLaunchesInteractor,
-        )
-    },
-) {
+fun HomeScreen(viewModel: HomeViewModel = koinInject<HomeViewModel>()) {
     LaunchedEffect(viewModel) {
         viewModel.onUiEvent(Event.OnViewAttached)
     }
