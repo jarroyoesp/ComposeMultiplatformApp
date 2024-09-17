@@ -198,13 +198,13 @@ debugUnitTestRuntimeClasspath - Runtime classpath of /debugUnitTest.
 |    |    |    |    |         +--- androidx.lifecycle:lifecycle-livedata:2.8.5 (c)
 |    |    |    |    |         +--- androidx.lifecycle:lifecycle-livedata-core:2.8.5 (c)
 |    |    |    |    |         +--- androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.5 (c)
-|    |    |    |    |         +--- androidx.lifecycle:lifecycle-process:2.8.5 (c)
 |    |    |    |    |         +--- androidx.lifecycle:lifecycle-runtime:2.8.5 (c)
 |    |    |    |    |         +--- androidx.lifecycle:lifecycle-runtime-compose:2.8.5 (c)
 |    |    |    |    |         +--- androidx.lifecycle:lifecycle-runtime-ktx:2.8.5 (c)
 |    |    |    |    |         +--- androidx.lifecycle:lifecycle-viewmodel-compose:2.8.5 (c)
 |    |    |    |    |         +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.5 (c)
-|    |    |    |    |         \--- androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.5 (c)
+|    |    |    |    |         +--- androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.5 (c)
+|    |    |    |    |         \--- androidx.lifecycle:lifecycle-process:2.8.5 (c)
 |    |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1 -> 2.8.5
 |    |    |    |    |    +--- androidx.annotation:annotation:1.0.0 -> 1.8.1 (*)
 |    |    |    |    |    +--- androidx.core:core-ktx:1.2.0 -> 1.13.1
@@ -469,13 +469,13 @@ debugUnitTestRuntimeClasspath - Runtime classpath of /debugUnitTest.
 |         |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3 -> 1.8.1 (*)
 |         |    |    |    +--- androidx.lifecycle:lifecycle-common:2.8.5 (c)
 |         |    |    |    +--- androidx.lifecycle:lifecycle-common-java8:2.8.5 (c)
+|         |    |    |    +--- androidx.lifecycle:lifecycle-livedata:2.8.5 (c)
 |         |    |    |    +--- androidx.lifecycle:lifecycle-runtime:2.8.5 (c)
+|         |    |    |    +--- androidx.lifecycle:lifecycle-runtime-compose:2.8.5 (c)
 |         |    |    |    +--- androidx.lifecycle:lifecycle-runtime-ktx:2.8.5 (c)
 |         |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel:2.8.5 (c)
 |         |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-compose:2.8.5 (c)
 |         |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.5 (c)
-|         |    |    |    +--- androidx.lifecycle:lifecycle-livedata:2.8.5 (c)
-|         |    |    |    +--- androidx.lifecycle:lifecycle-runtime-compose:2.8.5 (c)
 |         |    |    |    +--- androidx.lifecycle:lifecycle-livedata-core:2.8.5 (c)
 |         |    |    |    +--- androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.5 (c)
 |         |    |    |    \--- androidx.lifecycle:lifecycle-process:2.8.5 (c)
@@ -1097,7 +1097,7 @@ debugUnitTestRuntimeClasspath - Runtime classpath of /debugUnitTest.
 |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.5.21 -> 2.0.0 (*)
 |    \--- org.jetbrains:annotations:20.1.0 -> 23.0.0
 +--- project :modules:feature-home-shared
-|    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.5 (*)
+|    +--- androidx.lifecycle:lifecycle-viewmodel:2.8.5 (*)
 |    +--- io.ktor:ktor-client-android:2.3.11
 |    |    \--- io.ktor:ktor-client-android-jvm:2.3.11
 |    |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22 -> 1.9.21 (*)
@@ -1276,12 +1276,6 @@ debugUnitTestRuntimeClasspath - Runtime classpath of /debugUnitTest.
 |    |         +--- androidx.activity:activity-compose:1.8.0 -> 1.9.2 (*)
 |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 -> 1.8.1 (*)
 |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 2.0.0 (*)
-|    +--- moe.tlaster:precompose-viewmodel:1.5.11
-|    |    \--- moe.tlaster:precompose-viewmodel-android-debug:1.5.11
-|    |         +--- androidx.activity:activity-ktx:1.8.0 -> 1.9.2 (*)
-|    |         +--- androidx.compose.foundation:foundation:1.5.3 -> 1.7.1 (*)
-|    |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 2.0.0 (*)
-|    |         \--- moe.tlaster:precompose:1.5.11 (*)
 |    +--- org.jetbrains.compose.ui:ui:1.6.11 (*)
 |    +--- org.jetbrains.compose.foundation:foundation:1.6.11 (*)
 |    +--- org.jetbrains.compose.material:material:1.6.11
@@ -1301,7 +1295,7 @@ debugUnitTestRuntimeClasspath - Runtime classpath of /debugUnitTest.
 |    |                   +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 2.0.0 (*)
 |    |                   \--- app.cash.sqldelight:runtime:2.0.1 (*)
 |    +--- project :modules:feature-home-api
-|    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.5 (*)
+|    |    +--- androidx.lifecycle:lifecycle-viewmodel:2.8.5 (*)
 |    |    +--- io.ktor:ktor-client-android:2.3.11 (*)
 |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 -> 2.0.0 (*)
 |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1 (*)
@@ -1312,9 +1306,8 @@ debugUnitTestRuntimeClasspath - Runtime classpath of /debugUnitTest.
 |    |    +--- com.michael-bull.kotlin-result:kotlin-result:2.0.0 (*)
 |    |    +--- co.touchlab:kermit:2.0.2 (*)
 |    |    +--- moe.tlaster:precompose:1.5.11 (*)
-|    |    +--- moe.tlaster:precompose-viewmodel:1.5.11 (*)
 |    |    +--- project :modules:library-navigation-api
-|    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.5 (*)
+|    |    |    +--- androidx.lifecycle:lifecycle-viewmodel:2.8.5 (*)
 |    |    |    +--- io.ktor:ktor-client-android:2.3.11 (*)
 |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 -> 2.0.0 (*)
 |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1 (*)
@@ -1325,10 +1318,9 @@ debugUnitTestRuntimeClasspath - Runtime classpath of /debugUnitTest.
 |    |    |    +--- com.michael-bull.kotlin-result:kotlin-result:2.0.0 (*)
 |    |    |    +--- co.touchlab:kermit:2.0.2 (*)
 |    |    |    +--- moe.tlaster:precompose:1.5.11 (*)
-|    |    |    +--- moe.tlaster:precompose-viewmodel:1.5.11 (*)
 |    |    |    \--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.24 (*)
 |    |    +--- project :modules:library-network-api
-|    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.5 (*)
+|    |    |    +--- androidx.lifecycle:lifecycle-viewmodel:2.8.5 (*)
 |    |    |    +--- io.ktor:ktor-client-android:2.3.11 (*)
 |    |    |    +--- com.apollographql.apollo3:apollo-runtime:3.8.2 (*)
 |    |    |    +--- com.apollographql.apollo3:apollo-adapters:3.8.2
@@ -1357,7 +1349,6 @@ debugUnitTestRuntimeClasspath - Runtime classpath of /debugUnitTest.
 |    |    |    +--- com.michael-bull.kotlin-result:kotlin-result:2.0.0 (*)
 |    |    |    +--- co.touchlab:kermit:2.0.2 (*)
 |    |    |    +--- moe.tlaster:precompose:1.5.11 (*)
-|    |    |    +--- moe.tlaster:precompose-viewmodel:1.5.11 (*)
 |    |    |    +--- com.apollographql.apollo3:apollo-normalized-cache-sqlite:3.8.2
 |    |    |    |    \--- com.apollographql.apollo3:apollo-normalized-cache-sqlite-android-debug:3.8.2
 |    |    |    |         +--- androidx.sqlite:sqlite:2.1.0 -> 2.4.0 (*)
@@ -1382,7 +1373,7 @@ debugUnitTestRuntimeClasspath - Runtime classpath of /debugUnitTest.
 |    |    |    \--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.24 (*)
 |    |    \--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.24 (*)
 |    +--- project :modules:library-navigation
-|    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.5 (*)
+|    |    +--- androidx.lifecycle:lifecycle-viewmodel:2.8.5 (*)
 |    |    +--- io.ktor:ktor-client-android:2.3.11 (*)
 |    |    +--- project :modules:library-navigation-api (*)
 |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 -> 2.0.0 (*)
@@ -1394,12 +1385,11 @@ debugUnitTestRuntimeClasspath - Runtime classpath of /debugUnitTest.
 |    |    +--- com.michael-bull.kotlin-result:kotlin-result:2.0.0 (*)
 |    |    +--- co.touchlab:kermit:2.0.2 (*)
 |    |    +--- moe.tlaster:precompose:1.5.11 (*)
-|    |    +--- moe.tlaster:precompose-viewmodel:1.5.11 (*)
 |    |    +--- project :modules:feature-home-api (*)
 |    |    \--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.24 (*)
 |    +--- project :modules:library-network-api (*)
 |    +--- project :modules:library-network
-|    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.5 (*)
+|    |    +--- androidx.lifecycle:lifecycle-viewmodel:2.8.5 (*)
 |    |    +--- io.ktor:ktor-client-android:2.3.11 (*)
 |    |    +--- project :modules:library-network-api (*)
 |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 -> 2.0.0 (*)
@@ -1411,10 +1401,9 @@ debugUnitTestRuntimeClasspath - Runtime classpath of /debugUnitTest.
 |    |    +--- com.michael-bull.kotlin-result:kotlin-result:2.0.0 (*)
 |    |    +--- co.touchlab:kermit:2.0.2 (*)
 |    |    +--- moe.tlaster:precompose:1.5.11 (*)
-|    |    +--- moe.tlaster:precompose-viewmodel:1.5.11 (*)
 |    |    \--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.24 (*)
 |    +--- project :modules:library-ui-shared
-|    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.5 (*)
+|    |    +--- androidx.lifecycle:lifecycle-viewmodel:2.8.5 (*)
 |    |    +--- io.ktor:ktor-client-android:2.3.11 (*)
 |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 -> 2.0.0 (*)
 |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1 (*)
@@ -1425,7 +1414,6 @@ debugUnitTestRuntimeClasspath - Runtime classpath of /debugUnitTest.
 |    |    +--- com.michael-bull.kotlin-result:kotlin-result:2.0.0 (*)
 |    |    +--- co.touchlab:kermit:2.0.2 (*)
 |    |    +--- moe.tlaster:precompose:1.5.11 (*)
-|    |    +--- moe.tlaster:precompose-viewmodel:1.5.11 (*)
 |    |    +--- org.jetbrains.compose.foundation:foundation:1.6.11 (*)
 |    |    +--- com.eygraber:compose-placeholder:1.0.7
 |    |    |    \--- com.eygraber:compose-placeholder-android-debug:1.0.7
@@ -1434,6 +1422,12 @@ debugUnitTestRuntimeClasspath - Runtime classpath of /debugUnitTest.
 |    |    |         +--- org.jetbrains.compose.ui:ui-util:1.5.11
 |    |    |         |    \--- androidx.compose.ui:ui-util:1.5.4 -> 1.7.1 (*)
 |    |    |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 -> 1.8.1 (*)
+|    |    +--- moe.tlaster:precompose-viewmodel:1.5.11
+|    |    |    \--- moe.tlaster:precompose-viewmodel-android-debug:1.5.11
+|    |    |         +--- androidx.activity:activity-ktx:1.8.0 -> 1.9.2 (*)
+|    |    |         +--- androidx.compose.foundation:foundation:1.5.3 -> 1.7.1 (*)
+|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 2.0.0 (*)
+|    |    |         \--- moe.tlaster:precompose:1.5.11 (*)
 |    |    \--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.24 (*)
 |    \--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.24 (*)
 +--- project :modules:library-navigation (*)
@@ -1528,7 +1522,6 @@ debugUnitTestRuntimeClasspath - Runtime classpath of /debugUnitTest.
 |    +--- androidx.core:core-splashscreen:1.0.1
 |    |    +--- androidx.annotation:annotation:1.2.0 -> 1.8.1 (*)
 |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.6.21 -> 2.0.0 (*)
-|    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.5 (*)
 |    +--- androidx.navigation:navigation-compose:2.8.0 (*)
 |    +--- androidx.paging:paging-compose:3.3.2
 |    |    \--- androidx.paging:paging-compose-android:3.3.2

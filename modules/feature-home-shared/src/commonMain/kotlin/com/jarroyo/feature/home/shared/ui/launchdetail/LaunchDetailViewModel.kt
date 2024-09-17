@@ -1,5 +1,6 @@
 package com.jarroyo.feature.home.shared.ui.launchdetail
 
+import androidx.lifecycle.viewModelScope
 import co.touchlab.kermit.Logger
 import com.jarroyo.feature.home.api.interactor.AddFavoriteInteractor
 import com.jarroyo.feature.home.api.interactor.GetFavoritesInteractor
@@ -12,9 +13,7 @@ import com.jarroyo.feature.home.shared.ui.launchdetail.LaunchDetailContract.Stat
 import com.jarroyo.library.navigation.api.navigator.AppNavigator
 import com.jarroyo.library.ui.shared.BaseViewModel
 import kotlinx.coroutines.launch
-import moe.tlaster.precompose.viewmodel.viewModelScope
 import org.koin.android.annotation.KoinViewModel
-import org.koin.core.component.KoinComponent
 
 @KoinViewModel
 class LaunchDetailViewModel(
@@ -24,7 +23,7 @@ class LaunchDetailViewModel(
     private val getLaunchDetailInteractor: GetLaunchDetailInteractor,
     private val openUrlInBrowserInteractor: OpenUrlInBrowserInteractor,
     private val removeFavoriteInteractor: RemoveFavoriteInteractor,
-) : BaseViewModel<Event, State, Effect>(), KoinComponent {
+) : BaseViewModel<Event, State, Effect>() {
     private var rocketId: String? = null
     init {
         Logger.d("Init $this")
