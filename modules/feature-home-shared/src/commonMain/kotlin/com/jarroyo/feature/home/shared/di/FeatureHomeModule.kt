@@ -12,8 +12,9 @@ import com.jarroyo.feature.home.shared.interactor.GetLaunchDetailInteractorImpl
 import com.jarroyo.feature.home.shared.interactor.GetLaunchesInteractorImpl
 import com.jarroyo.feature.home.shared.interactor.OpenUrlInBrowserInteractorImpl
 import com.jarroyo.feature.home.shared.interactor.RemoveFavoriteInteractorImpl
-import org.koin.core.component.KoinComponent
-import org.koin.core.component.get
+import com.jarroyo.feature.home.shared.ui.HomeViewModel
+import com.jarroyo.feature.home.shared.ui.launchdetail.LaunchDetailViewModel
+import org.koin.core.module.dsl.factoryOf
 import org.koin.dsl.module
 
 val featureHomeModule = module {
@@ -23,13 +24,7 @@ val featureHomeModule = module {
     factory<GetLaunchDetailInteractor> { GetLaunchDetailInteractorImpl(get()) }
     factory<OpenUrlInBrowserInteractor> { OpenUrlInBrowserInteractorImpl() }
     factory<RemoveFavoriteInteractor> { RemoveFavoriteInteractorImpl(get()) }
-}
 
-class FeatureHomeKoinComponent : KoinComponent {
-    val addFavoriteInteractor: AddFavoriteInteractor = get()
-    val getFavoritesInteractor: GetFavoritesInteractor = get()
-    val getLaunchDetailInteractor: GetLaunchDetailInteractor = get()
-    val getLaunchesInteractor: GetLaunchesInteractor = get()
-    val openUrlInBrowserInteractor: OpenUrlInBrowserInteractor = get()
-    val removeFavoriteInteractor: RemoveFavoriteInteractor = get()
+    factoryOf(::HomeViewModel)
+    factoryOf(::LaunchDetailViewModel)
 }

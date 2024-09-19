@@ -33,7 +33,7 @@ kotlin {
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
             baseName = "ComposeApp"
-            isStatic = true
+            export(libs.androidx.lifecycle.viewmodel)
         }
     }
     jvm("desktop")
@@ -50,14 +50,15 @@ kotlin {
         }
 
         commonMain.dependencies {
+            api(libs.androidx.lifecycle.viewmodel)
             implementation(libs.coroutines.core)
             implementation(libs.kamel)
+            implementation(libs.koin.annotations)
+            implementation(libs.koin.compose)
             implementation(libs.koin.core)
             implementation(libs.kotlin.result)
             implementation(libs.multiplatform.log)
             implementation(libs.tlaster.precompose)
-            implementation(libs.tlaster.precompose.viewmodel)
-
         }
 
         commonTest.dependencies {
@@ -76,7 +77,7 @@ kotlin {
         }
 
         iosMain.dependencies {
-            implementation(libs.ktor.client.darwin)
+            implementation(libs.ktor.client.ios)
         }
     }
 }

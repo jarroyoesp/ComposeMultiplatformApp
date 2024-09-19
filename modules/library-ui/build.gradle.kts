@@ -44,7 +44,6 @@ dependencies {
     api (libs.androidx.compose.tooling)
     api (libs.androidx.compose.ui)
     api (libs.androidx.core.splashscreen)
-    api (libs.androidx.lifecycle.viewmodel)
     api (libs.androidx.navigation.compose)
     api (libs.androidx.paging)
     api (libs.coil.compose)

@@ -1,5 +1,6 @@
 package com.jarroyo.feature.home.shared.ui
 
+import androidx.lifecycle.viewModelScope
 import com.apollographql.apollo3.cache.normalized.FetchPolicy
 import com.jarroyo.feature.home.api.interactor.GetLaunchesInteractor
 import com.jarroyo.feature.home.api.destination.LaunchDetailDestination
@@ -14,8 +15,9 @@ import kotlinx.coroutines.launch
 import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
-import moe.tlaster.precompose.viewmodel.viewModelScope
+import org.koin.android.annotation.KoinViewModel
 
+@KoinViewModel
 class HomeViewModel(
     private val appNavigator: AppNavigator,
     private val getFavoritesInteractor: GetFavoritesInteractor,

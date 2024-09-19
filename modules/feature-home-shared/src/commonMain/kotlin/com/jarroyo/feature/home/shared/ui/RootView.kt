@@ -14,12 +14,12 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import com.jarroyo.library.navigation.api.navigator.AppNavigator
 import com.jarroyo.library.navigation.api.navigator.NavigatorEvent
-import com.jarroyo.library.navigation.di.NavigationKoinComponent
 import moe.tlaster.precompose.PreComposeApp
 import moe.tlaster.precompose.navigation.NavHost
 import moe.tlaster.precompose.navigation.RouteBuilder
 import moe.tlaster.precompose.navigation.rememberNavigator
 import moe.tlaster.precompose.navigation.transition.NavTransition
+import org.koin.compose.getKoin
 
 internal val darkmodeState = mutableStateOf(false)
 internal val safeAreaState = mutableStateOf(PaddingValues())
@@ -29,7 +29,7 @@ internal val DarkMode = compositionLocalOf { darkmodeState }
 @Composable
 fun RootView() {
     PreComposeApp {
-        val appNavigator: AppNavigator = NavigationKoinComponent().appNavigator
+        val appNavigator: AppNavigator = getKoin().get()
         val navigator = rememberNavigator()
         NavHost(
             navigator = navigator,
