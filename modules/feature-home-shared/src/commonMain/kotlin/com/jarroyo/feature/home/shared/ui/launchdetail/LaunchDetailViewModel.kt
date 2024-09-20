@@ -1,7 +1,9 @@
 package com.jarroyo.feature.home.shared.ui.launchdetail
 
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import co.touchlab.kermit.Logger
+import com.jarroyo.feature.home.api.destination.LaunchDetailDestination
 import com.jarroyo.feature.home.api.interactor.AddFavoriteInteractor
 import com.jarroyo.feature.home.api.interactor.GetFavoritesInteractor
 import com.jarroyo.feature.home.api.interactor.GetLaunchDetailInteractor
@@ -23,10 +25,12 @@ class LaunchDetailViewModel(
     private val getLaunchDetailInteractor: GetLaunchDetailInteractor,
     private val openUrlInBrowserInteractor: OpenUrlInBrowserInteractor,
     private val removeFavoriteInteractor: RemoveFavoriteInteractor,
+    savedStateHandle: SavedStateHandle,
 ) : BaseViewModel<Event, State, Effect>() {
-    private var rocketId: String? = null
+    private var rocketId: String? = LaunchDetailDestination.Arguments.getId(savedStateHandle)
     init {
         Logger.d("Init $this")
+        refreshData()
     }
 
     override fun provideInitialState() = State()
@@ -62,10 +66,6 @@ class LaunchDetailViewModel(
     }
 
     private fun handleOnViewAttached(id: String) {
-        Logger.d("RocketDetailViewModel - OnViewAttached id: $id")
-        rocketId = id
-        refreshFavorites()
-        refreshData()
     }
 
     private fun refreshFavorites() {
@@ -82,6 +82,7 @@ class LaunchDetailViewModel(
     private fun refreshData() {
         viewModelScope.launch {
             updateState { copy(loading = true) }
+            refreshFavorites()
             val result = getLaunchDetailInteractor(checkNotNull(rocketId))
             if (result.isOk) {
                 updateState { copy(launch = result.value) }

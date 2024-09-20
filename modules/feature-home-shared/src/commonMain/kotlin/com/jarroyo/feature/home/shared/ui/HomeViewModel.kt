@@ -28,7 +28,7 @@ class HomeViewModel(
     override fun handleEvent(event: Event) {
         when (event) {
             is Event.FavoritesUpdated -> refreshData(FetchPolicy.NetworkFirst)
-            is Event.OnItemClicked -> appNavigator.navigate(LaunchDetailDestination().get(event.id))
+            is Event.OnItemClicked -> appNavigator.navigate(LaunchDetailDestination.get(event.id))
             is Event.OnViewAttached -> refreshData(FetchPolicy.NetworkFirst)
             is Event.OnSwipeToRefresh -> handleOnSwipeToRefresh()
         }

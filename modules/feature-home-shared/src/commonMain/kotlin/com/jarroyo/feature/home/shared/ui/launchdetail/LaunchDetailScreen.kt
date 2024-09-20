@@ -27,7 +27,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.LaunchFragment
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.RocketFragment
-import com.jarroyo.feature.home.api.destination.LaunchDetailDestination.Companion.ID_PARAM
 import com.jarroyo.feature.home.shared.ui.launchdetail.LaunchDetailContract.Effect
 import com.jarroyo.feature.home.shared.ui.launchdetail.LaunchDetailContract.Event
 import com.jarroyo.feature.home.shared.ui.launchdetail.LaunchDetailContract.State
@@ -40,19 +39,10 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import kotlinx.datetime.Clock
-import org.koin.compose.koinInject
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
-fun LaunchDetailScreen(
-    arguments: Map<String, String>? = null,
-    viewModel: LaunchDetailViewModel = koinInject<LaunchDetailViewModel>(),
-) {
-    LaunchedEffect(Unit) {
-        arguments?.get(ID_PARAM)?.let {
-            viewModel.onUiEvent(Event.OnViewAttached(it))
-        }
-    }
-
+fun LaunchDetailScreen(viewModel: LaunchDetailViewModel = koinViewModel<LaunchDetailViewModel>()) {
     LaunchDetailScreen(
         effectFlow = viewModel.effect,
         sendEvent = { viewModel.onUiEvent(it) },

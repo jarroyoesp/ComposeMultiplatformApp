@@ -9,8 +9,8 @@ androidCompileSdk = "34"
 androidx-compose = "1.7.1" ## TODO check last version for destok androidx.compose.runtime:runtime
 androidx-compose-compiler = "1.5.14"
 androidx-datastore = "1.1.1"
-androidx-lifecycle = "2.8.5"
-androidx-navigation = "2.8.0"
+androidx-lifecycle = "2.8.4"
+androidx-navigation = "2.8.0"#"2.7.0-alpha07"
 androidx-room = "2.6.1"
 apollo = "3.8.2"
 coroutines = "1.8.1"
@@ -34,6 +34,11 @@ prettier = "2.7.1"
 precompose = "1.5.11"
 retrofit = "2.9.0"
 sqlDelight = "2.0.1"
+
+# @pin until fix  No class found for symbol 'kotlin.uuid/Uuid.Companion|null[0] in 4.0.0-RC2
+# @pin until fix https://github.com/InsertKoinIO/koin/issues/1985 & https://github.com/InsertKoinIO/koin/issues/1929
+koin = "4.0.0-RC1"
+koin-ksp = "1.4.0-RC4"
 
 [libraries]
 aboutlibraries = { module = "com.mikepenz:aboutlibraries-compose", version.ref = "aboutlibraries" }
@@ -69,11 +74,12 @@ androidx-datastore = { module = "androidx.datastore:datastore", version.ref = "a
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "androidx-datastore" }
 androidx-lifecycle-livedata = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-process = { module = "androidx.lifecycle:lifecycle-process", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-runtime-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version = "2.8.2" } # 2.8.0-rc03
 androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-savedstate = { module = "androidx.lifecycle:lifecycle-viewmodel-savedstate", version.ref = "androidx-lifecycle" }
-androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
-androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
-androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidx-navigation" }
+androidx-lifecycle-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel", version = "2.8.2" }
+androidx-lifecycle-viewmodel-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version = "2.8.2" } # 2.8.0-rc03
+androidx-navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version = "2.7.0-alpha07" } # 2.7.0-alpha06
 androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "androidx-navigation" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "androidx-navigation" }
 androidx-paging = { module = "androidx.paging:paging-compose", version = "3.3.2" }
@@ -117,13 +123,12 @@ hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hil
 hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version = "1.2.0" }
 junit = { module = "junit:junit", version = "4.13.2" }
 kamel = { module = "media.kamel:kamel-image", version = "0.9.3" }
-koin-android = {module = "io.insert-koin:koin-android", version = "3.2.0"}
-koin-annotations = {module = "io.insert-koin:koin-annotations", version = "1.4.0-RC4"}
-koin-compiler = {module = "io.insert-koin:koin-ksp-compiler", version = "1.4.0-RC4"}
-# @pin until fil  No class found for symbol 'kotlin.uuid/Uuid.Companion|null[0] in 4.0.0-RC2
-koin-compose = {module = "io.insert-koin:koin-compose", version = "3.6.0-alpha1"}
-# @pin until fil  No class found for symbol 'kotlin.uuid/Uuid.Companion|null[0] in 4.0.0-RC2
-koin-core = {module = "io.insert-koin:koin-core", version = "3.5.6"}
+koin-android = {module = "io.insert-koin:koin-android", version = "3.5.3"}
+koin-annotations = {module = "io.insert-koin:koin-annotations", version.ref = "koin-ksp"}
+koin-compose-viewmodel = {module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin"}
+koin-compiler = {module = "io.insert-koin:koin-ksp-compiler", version = "koin-ksp"}
+koin-compose = {module = "io.insert-koin:koin-compose", version = "koin"}
+koin-core = {module = "io.insert-koin:koin-core", version.ref = "koin"}
 konfetti = { module = "nl.dionsegijn:konfetti-compose", version = "2.0.4" }
 kotlin-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
 kotlin-extensions = { module = "org.jetbrains.kotlin:kotlin-android-extensions", version.ref = "kotlin" }

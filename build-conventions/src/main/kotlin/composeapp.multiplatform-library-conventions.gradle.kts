@@ -51,10 +51,13 @@ kotlin {
 
         commonMain.dependencies {
             api(libs.androidx.lifecycle.viewmodel)
+            implementation(libs.androidx.lifecycle.runtime.compose)
+            implementation(libs.androidx.navigation.compose)
             implementation(libs.coroutines.core)
             implementation(libs.kamel)
             implementation(libs.koin.annotations)
             implementation(libs.koin.compose)
+            implementation(libs.koin.compose.viewmodel)
             implementation(libs.koin.core)
             implementation(libs.kotlin.result)
             implementation(libs.multiplatform.log)

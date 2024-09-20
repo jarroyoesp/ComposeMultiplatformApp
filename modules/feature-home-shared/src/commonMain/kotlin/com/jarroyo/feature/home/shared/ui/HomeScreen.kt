@@ -42,10 +42,10 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
-import org.koin.compose.koinInject
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
-fun HomeScreen(viewModel: HomeViewModel = koinInject<HomeViewModel>()) {
+fun HomeScreen(viewModel: HomeViewModel = koinViewModel<HomeViewModel>()) {
     LaunchedEffect(viewModel) {
         viewModel.onUiEvent(Event.OnViewAttached)
     }
