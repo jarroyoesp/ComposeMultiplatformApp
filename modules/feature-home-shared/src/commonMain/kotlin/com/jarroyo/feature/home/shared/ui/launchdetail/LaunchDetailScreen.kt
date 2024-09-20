@@ -25,6 +25,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.LaunchFragment
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.RocketFragment
 import com.jarroyo.feature.home.shared.ui.launchdetail.LaunchDetailContract.Effect
@@ -83,10 +84,18 @@ private fun LaunchDetailScreen(
                 .navigationBarsPadding(),
             verticalArrangement = Arrangement.spacedBy(Spacing.x01),
         ) {
-            if (state.loading) {
+            if (state.loading && state.launch == null) {
                 DetailItem(getPlaceholderData(), sendEvent = {}, true)
             } else {
-                DetailItem(state.launch, sendEvent)
+                if (state.launch != null) {
+                    DetailItem(state.launch, sendEvent)
+                } else {
+                    Text(
+                        text = "NO data available",
+                        modifier = Modifier.fillMaxWidth(),
+                        textAlign = TextAlign.Center,
+                    )
+                }
             }
         }
     }
@@ -170,18 +179,20 @@ private fun BottomBar(
     state: State,
     sendEvent: (event: Event) -> Unit,
 ) {
-    Button(
-        onClick = { sendEvent(Event.OnAddFavoritesButtonClicked) },
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = Spacing.x01)
-            .navigationBarsPadding(),
-        enabled = !state.loading,
-    ) {
-        if (state.favorite) {
-            Text("Remove from Favorites")
-        } else {
-            Text("Add to Favorites")
+    if (state.favorite != null) {
+        Button(
+            onClick = { sendEvent(Event.OnAddFavoritesButtonClicked) },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = Spacing.x01)
+                .navigationBarsPadding(),
+            enabled = !state.loading,
+        ) {
+            if (state.favorite) {
+                Text("Remove from Favorites")
+            } else {
+                Text("Add to Favorites")
+            }
         }
     }
 }

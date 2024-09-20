@@ -40,13 +40,13 @@ class LaunchDetailViewModel(
             is Event.OnAddFavoritesButtonClicked -> handleOnAddFavoritesButtonClicked()
             is Event.OnOpenUrl -> viewModelScope.launch { openUrlInBrowserInteractor(event.url) }
             is Event.OnUpButtonClicked -> appNavigator.navigateBack()
-            is Event.OnViewAttached -> handleOnViewAttached(event.id)
+            is Event.OnViewAttached -> {}
         }
     }
 
     private fun handleOnAddFavoritesButtonClicked() {
         viewModelScope.launch {
-            if (viewState.value.favorite) {
+            if (viewState.value.favorite == true) {
                 val result = removeFavoriteInteractor(checkNotNull(rocketId))
                 if (result.isOk) {
                     sendEffect { Effect.ShowSnackbar("Launch removed from Favorites") }
@@ -65,9 +65,6 @@ class LaunchDetailViewModel(
         }
     }
 
-    private fun handleOnViewAttached(id: String) {
-    }
-
     private fun refreshFavorites() {
         viewModelScope.launch {
             val result = getFavoritesInteractor()
@@ -82,10 +79,10 @@ class LaunchDetailViewModel(
     private fun refreshData() {
         viewModelScope.launch {
             updateState { copy(loading = true) }
-            refreshFavorites()
             val result = getLaunchDetailInteractor(checkNotNull(rocketId))
             if (result.isOk) {
                 updateState { copy(launch = result.value) }
+                refreshFavorites()
             } else {
                 sendEffect { Effect.ShowSnackbar(result.error.toString()) }
             }

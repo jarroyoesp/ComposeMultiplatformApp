@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.calculateEndPadding
 import androidx.compose.foundation.layout.calculateStartPadding
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
@@ -30,6 +31,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.LayoutDirection
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.LaunchFragment
 import com.jarroyo.feature.home.shared.ext.format
@@ -105,6 +107,11 @@ private fun HomeScreen(
                 .padding(scaffoldPadding)
                 .pullRefresh(pullRefreshState),
         ) {
+            PullRefreshIndicator(
+                state.loading,
+                pullRefreshState,
+                Modifier.align(Alignment.TopCenter),
+            )
             LazyColumn(
                 modifier = Modifier
                     .fillMaxSize()
@@ -116,25 +123,26 @@ private fun HomeScreen(
                 item {
                     Text(state.currentLocalDateTime?.format().orEmpty())
                 }
-                if (!state.rocketList.isNullOrEmpty() || state.loading) {
-                    if (state.rocketList.isNullOrEmpty() && state.loading) {
-                        rocketList(getLaunchListPlaceholderData(), sendEvent, placeholder = true)
+                if (state.rocketList.isNullOrEmpty() && state.loading) {
+                    rocketList(getLaunchListPlaceholderData(), sendEvent, placeholder = true)
+                } else {
+                    if (!state.rocketList.isNullOrEmpty()) {
+                        rocketList(
+                            data = state.rocketList,
+                            sendEvent = sendEvent,
+                            favoritesList = state.favoritesList,
+                        )
                     } else {
-                        state.rocketList?.let { rockets ->
-                            rocketList(
-                                data = rockets,
-                                sendEvent = sendEvent,
-                                favoritesList = state.favoritesList,
+                        item {
+                            Text(
+                                text = "NO data available",
+                                modifier = Modifier.fillMaxWidth(),
+                                textAlign = TextAlign.Center,
                             )
                         }
                     }
                 }
             }
-            PullRefreshIndicator(
-                state.loading,
-                pullRefreshState,
-                Modifier.align(Alignment.TopCenter),
-            )
         }
     }
 }

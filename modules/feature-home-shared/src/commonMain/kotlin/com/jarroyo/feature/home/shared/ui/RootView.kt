@@ -59,10 +59,10 @@ fun RootView() {
 fun NavGraphBuilder.addComposableDestinations() {
     composable(
         route = LaunchDetailDestination.route,
-        arguments = LaunchDetailDestination.arguments
+        arguments = LaunchDetailDestination.arguments,
     ) { LaunchDetailScreen() }
     composable(
         route = HomeDestination.route,
-        arguments = HomeDestination.arguments
+        arguments = HomeDestination.arguments,
     ) { HomeScreen() }
 }

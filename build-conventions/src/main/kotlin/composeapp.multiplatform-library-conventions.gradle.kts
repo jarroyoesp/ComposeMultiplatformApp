@@ -53,6 +53,7 @@ kotlin {
             api(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
             implementation(libs.androidx.navigation.compose)
+            implementation(libs.calendar)
             implementation(libs.coroutines.core)
             implementation(libs.kamel)
             implementation(libs.koin.annotations)

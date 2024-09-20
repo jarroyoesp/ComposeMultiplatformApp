@@ -6,13 +6,13 @@ aboutlibraries = "11.2.2"
 accompanist = "0.34.0"
 agp = "8.1.4"
 androidCompileSdk = "34"
-androidx-compose = "1.7.1" ## TODO check last version for destok androidx.compose.runtime:runtime
+androidx-compose = "1.7.2" ## TODO check last version for destok androidx.compose.runtime:runtime
 androidx-compose-compiler = "1.5.14"
 androidx-datastore = "1.1.1"
-androidx-lifecycle = "2.8.4"
-androidx-navigation = "2.8.0"#"2.7.0-alpha07"
+androidx-lifecycle = "2.8.6"
+androidx-navigation = "2.8.1"#"2.7.0-alpha07"
 androidx-room = "2.6.1"
-apollo = "3.8.2"
+apollo = "4.0.0"
 coroutines = "1.8.1"
 detekt = "1.23.6"
 diktat = "1.2.5"
@@ -96,11 +96,12 @@ androidx-test-ext-junit = { module = "androidx.test.ext:junit-ktx", version = "1
 androidx-test-orchestrator = { module = "androidx.test:orchestrator", version = "1.5.0" }
 androidx-test-rules = { module = "androidx.test:rules", version = "1.6.1" }
 androidx-test-runner = { module = "androidx.test:runner", version = "1.6.2" }
-apollo = { module = "com.apollographql.apollo3:apollo-runtime", version.ref = "apollo" }
-apollo-adapters = { module = "com.apollographql.apollo3:apollo-adapters", version.ref = "apollo" }
-apollo-cache = { module = "com.apollographql.apollo3:apollo-normalized-cache", version.ref = "apollo" }
-apollo-cache-sqlite = { module = "com.apollographql.apollo3:apollo-normalized-cache-sqlite", version.ref = "apollo" }
-apollo-testing-support = { module = "com.apollographql.apollo3:apollo-testing-support", version.ref = "apollo" }
+apollo = { module = "com.apollographql.apollo:apollo-runtime", version.ref = "apollo" }
+apollo-adapters = { module = "com.apollographql.apollo:apollo-adapters", version.ref = "apollo" }
+apollo-cache = { module = "com.apollographql.apollo:apollo-normalized-cache", version.ref = "apollo" }
+apollo-cache-sqlite = { module = "com.apollographql.apollo:apollo-normalized-cache-sqlite", version.ref = "apollo" }
+apollo-testing-support = { module = "com.apollographql.apollo:apollo-testing-support", version.ref = "apollo" }
+calendar = { module = "com.kizitonwose.calendar:compose-multiplatform", version = "2.5.4" }
 cash-sqldelight-android = { module = "app.cash.sqldelight:android-driver", version = "2.0.1" }
 coil-compose = { module = "io.coil-kt:coil-compose", version = "2.7.0" }
 composecharts = { module = "io.github.bytebeats:compose-charts", version = "0.2.1" }
@@ -202,7 +203,7 @@ plugin-violation = { module = "se.bjurr.violations:violation-comments-to-github-
 androidx-test-ext-junit115 = { group = "androidx.test.ext", name = "junit", version.ref = "junit" }
 
 [plugins]
-apollo = { id = "com.apollographql.apollo3", version.ref = "apollo" }
+apollo = { id = "com.apollographql.apollo", version.ref = "apollo" }
 google-secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version = "2.0.1" }
 gradledoctor = { id = "com.osacky.doctor", version = "0.10.0" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

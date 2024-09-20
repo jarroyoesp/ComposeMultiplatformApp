@@ -9,7 +9,7 @@ import com.jarroyo.library.ui.shared.ViewState
 @Immutable
 object LaunchDetailContract {
     data class State(
-        val favorite: Boolean = false,
+        val favorite: Boolean? = null,
         val launch: LaunchFragment? = null,
         val loading: Boolean = false,
     ) : ViewState

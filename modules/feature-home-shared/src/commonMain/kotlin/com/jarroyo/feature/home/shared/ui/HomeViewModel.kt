@@ -1,7 +1,7 @@
 package com.jarroyo.feature.home.shared.ui
 
 import androidx.lifecycle.viewModelScope
-import com.apollographql.apollo3.cache.normalized.FetchPolicy
+import com.apollographql.apollo.cache.normalized.FetchPolicy
 import com.jarroyo.feature.home.api.interactor.GetLaunchesInteractor
 import com.jarroyo.feature.home.api.destination.LaunchDetailDestination
 import com.jarroyo.feature.home.api.interactor.GetFavoritesInteractor

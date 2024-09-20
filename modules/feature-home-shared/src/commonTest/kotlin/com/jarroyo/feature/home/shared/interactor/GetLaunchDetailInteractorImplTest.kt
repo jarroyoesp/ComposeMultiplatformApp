@@ -2,17 +2,16 @@
 
 package com.jarroyo.feature.home.shared.interactor
 
-import com.apollographql.apollo3.ApolloClient
-import com.apollographql.apollo3.annotations.ApolloExperimental
-import com.apollographql.apollo3.api.DefaultFakeResolver
-import com.apollographql.apollo3.api.FakeResolverContext
-import com.apollographql.apollo3.testing.QueueTestNetworkTransport
-import com.apollographql.apollo3.testing.enqueueTestNetworkError
-import com.apollographql.apollo3.testing.enqueueTestResponse
+import com.apollographql.apollo.ApolloClient
+import com.apollographql.apollo.annotations.ApolloExperimental
+import com.apollographql.apollo.api.DefaultFakeResolver
+import com.apollographql.apollo.api.FakeResolverContext
+import com.apollographql.apollo.testing.QueueTestNetworkTransport
+import com.apollographql.apollo.testing.enqueueTestNetworkError
+import com.apollographql.apollo.testing.enqueueTestResponse
 import com.github.michaelbull.result.unwrap
 import com.github.michaelbull.result.unwrapError
 import com.jarroyo.composeapp.library.network.api.graphql.LaunchDetailQuery
-import com.jarroyo.composeapp.library.network.api.graphql.type.__Schema
 import com.jarroyo.feature.home.api.interactor.GetLaunchDetailInteractor
 import kotlinx.coroutines.test.runTest
 import kotlinx.datetime.Clock
@@ -72,7 +71,7 @@ class GetLaunchDetailInteractorImplTest {
 }
 
 class FakeResolver : DefaultFakeResolver(
-    __Schema.all,
+    com.jarroyo.composeapp.library.network.api.graphql.schema.__Schema.all,
 ) {
     override fun resolveLeaf(context: FakeResolverContext): Any =
         when (context.mergedField.type.rawType().name) {

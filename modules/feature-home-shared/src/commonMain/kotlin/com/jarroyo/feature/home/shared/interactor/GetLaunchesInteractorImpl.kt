@@ -1,16 +1,14 @@
 package com.jarroyo.feature.home.shared.interactor
 
-import com.apollographql.apollo3.ApolloClient
-import com.apollographql.apollo3.api.ApolloResponse
-import com.apollographql.apollo3.cache.normalized.FetchPolicy
-import com.apollographql.apollo3.cache.normalized.fetchPolicy
-import com.apollographql.apollo3.exception.ApolloException
-import com.github.michaelbull.result.Err
+import com.apollographql.apollo.ApolloClient
+import com.apollographql.apollo.cache.normalized.FetchPolicy
+import com.apollographql.apollo.cache.normalized.fetchPolicy
 import com.github.michaelbull.result.Ok
 import com.github.michaelbull.result.Result
 import com.jarroyo.composeapp.library.network.api.graphql.LaunchesQuery
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.LaunchFragment
 import com.jarroyo.feature.home.api.interactor.GetLaunchesInteractor
+import com.jarroyo.library.network.api.ext.executeAndHandleErrors
 
 internal class GetLaunchesInteractorImpl(
     private val apolloClient: ApolloClient,
@@ -19,18 +17,10 @@ internal class GetLaunchesInteractorImpl(
         page: Int,
         pageSize: Int,
         fetchPolicy: FetchPolicy,
-    ): Result<List<LaunchFragment>?, Exception> = try {
-        val response: ApolloResponse<LaunchesQuery.Data> =
-            apolloClient
-                .query(LaunchesQuery())
-                .fetchPolicy(fetchPolicy)
-                .execute()
-        if (!response.hasErrors()) {
+    ): Result<List<LaunchFragment>?, Exception> = apolloClient
+        .query(LaunchesQuery())
+        .fetchPolicy(fetchPolicy)
+        .executeAndHandleErrors { response ->
             Ok(response.data?.launches?.filterNotNull()?.map { it.launchFragment })
-        } else {
-            Err(Exception(response.errors?.run { first().message }))
         }
-    } catch (e: ApolloException) {
-        Err(e)
-    }
 }

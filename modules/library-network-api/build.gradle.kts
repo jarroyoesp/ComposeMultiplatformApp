@@ -23,7 +23,7 @@ apollo {
         mapScalar(
             "Date",
             "kotlinx.datetime.Instant",
-            "com.apollographql.apollo3.adapter.KotlinxInstantAdapter"
+            "com.apollographql.apollo.adapter.KotlinxInstantAdapter"
         )
     }
 }
