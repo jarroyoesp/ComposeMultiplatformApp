@@ -1,19 +1,18 @@
 package com.jarroyo.library.navigation.navigator
 
+import androidx.navigation.NavOptionsBuilder
 import com.jarroyo.feature.home.api.destination.HomeDestination
 import com.jarroyo.library.navigation.api.navigator.AppNavigator
 import com.jarroyo.library.navigation.api.navigator.NavigatorEvent
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
-import moe.tlaster.precompose.navigation.NavOptions
-import moe.tlaster.precompose.navigation.PopUpTo
 
 internal class AppNavigatorImpl : AppNavigator {
     // A capacity > 0 is required to not lose an event sent before the nav host starts collecting (e.g. Add account from System settings)
     private val navigationEvents = Channel<NavigatorEvent>(capacity = Channel.CONFLATED)
 
     override val destinations = navigationEvents.receiveAsFlow()
-    override val homeDestination = HomeDestination().route
+    override val homeDestination = HomeDestination.route
 
     /**
      * Attempts to navigate up in the navigation hierarchy. Suitable for when the user presses the
@@ -40,18 +39,19 @@ internal class AppNavigatorImpl : AppNavigator {
     override fun navigateBack(): Boolean =
         navigationEvents.trySend(NavigatorEvent.NavigateBack).isSuccess
 
-    override fun navigateHome(): Boolean = navigate(
-        homeDestination,
-        NavOptions(
-            // Launch the scene as single top
-            launchSingleTop = true,
-            popUpTo = PopUpTo.First(),
-        ),
-    )
-
-    override fun navigateToLogin(builder: NavOptions): Boolean =
+    override fun navigateHome(): Boolean {
+        val builder: NavOptionsBuilder.() -> Unit = {
+            launchSingleTop = true
+            popUpTo(homeDestination) { inclusive = true }
+        }
+        return navigate(
+            homeDestination,
+            builder,
+        )
+    }
+    override fun navigateToLogin(builder: (NavOptionsBuilder.() -> Unit)): Boolean =
         navigate("", builder)
 
-    override fun navigate(route: String, builder: NavOptions?): Boolean =
+    override fun navigate(route: String, builder: NavOptionsBuilder.() -> Unit): Boolean =
         navigationEvents.trySend(NavigatorEvent.Directions(route, builder)).isSuccess
 }

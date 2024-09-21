@@ -1,7 +1,7 @@
 package com.jarroyo.library.navigation.api.navigator
 
+import androidx.navigation.NavOptionsBuilder
 import kotlinx.coroutines.flow.Flow
-import moe.tlaster.precompose.navigation.NavOptions
 
 interface AppNavigator {
     val destinations: Flow<NavigatorEvent>
@@ -30,6 +30,6 @@ interface AppNavigator {
      */
     fun navigateBack(): Boolean
     fun navigateHome(): Boolean
-    fun navigateToLogin(builder: NavOptions): Boolean
-    fun navigate(route: String, builder: NavOptions? = null): Boolean
+    fun navigateToLogin(builder: NavOptionsBuilder.() -> Unit): Boolean
+    fun navigate(route: String, builder: NavOptionsBuilder.() -> Unit = { launchSingleTop = true }): Boolean
 }

@@ -1,11 +1,12 @@
 package com.jarroyo.library.navigation.api.destination
 
+import androidx.navigation.NamedNavArgument
 import kotlin.random.Random
 
 abstract class NavigationDestination {
     abstract val route: String
 
-    open val arguments: List<String>
+    open val arguments: List<NamedNavArgument>
         get() = emptyList()
 
     abstract class Result {

@@ -1,6 +1,6 @@
 package com.jarroyo.feature.home.api.interactor
 
-import com.apollographql.apollo3.cache.normalized.FetchPolicy
+import com.apollographql.apollo.cache.normalized.FetchPolicy
 import com.github.michaelbull.result.Result
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.LaunchFragment
 
