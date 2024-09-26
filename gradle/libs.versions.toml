@@ -12,7 +12,7 @@ androidx-lifecycle = "2.8.6"
 androidx-navigation = "2.8.1"#"2.7.0-alpha07"
 androidx-room = "2.6.1"
 apollo = "4.0.0"
-coroutines = "1.8.1"
+coroutines = "1.9.0"
 detekt = "1.23.6"
 diktat = "1.2.5"
 gradle = "8.1.1"
@@ -25,14 +25,12 @@ kotlin-result = "2.0.0"
 kotlinx-datetime="0.6.0"
 ksp = "2.0.20-1.0.25"
 ktlint = "0.43.0"
-ktor = "2.3.11"
+ktor = "2.3.12"
 mockk = "1.13.12"
 okhttp = "4.12.0"
 prettier = "2.7.1"
-# @pin until fix https://github.com/Tlaster/PreCompose/issues/354
-precompose = "1.5.11"
 retrofit = "2.9.0"
-sqlDelight = "2.0.1"
+sqlDelight = "2.0.2"
 
 # @pin until fix  No class found for symbol 'kotlin.uuid/Uuid.Companion|null[0] in 4.0.0-RC2
 # @pin until fix https://github.com/InsertKoinIO/koin/issues/1985 & https://github.com/InsertKoinIO/koin/issues/1929
@@ -101,10 +99,9 @@ apollo-cache = { module = "com.apollographql.apollo:apollo-normalized-cache", ve
 apollo-cache-sqlite = { module = "com.apollographql.apollo:apollo-normalized-cache-sqlite", version.ref = "apollo" }
 apollo-testing-support = { module = "com.apollographql.apollo:apollo-testing-support", version.ref = "apollo" }
 calendar = { module = "com.kizitonwose.calendar:compose-multiplatform", version = "2.5.4" }
-cash-sqldelight-android = { module = "app.cash.sqldelight:android-driver", version = "2.0.1" }
 coil-compose = { module = "io.coil-kt:coil-compose", version = "2.7.0" }
 composecharts = { module = "io.github.bytebeats:compose-charts", version = "0.2.1" }
-compose-placeholder = { module = "com.eygraber:compose-placeholder", version = "1.0.7" }
+compose-placeholder = { module = "com.eygraber:compose-placeholder", version = "1.0.8" }
 compose-webview = { module = "io.github.kevinnzou:compose-webview-multiplatform", version = "1.7.8" }
 coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
@@ -173,12 +170,9 @@ sqldelight-androidDriver = { module = "app.cash.sqldelight:android-driver", vers
 sqldelight-jvmDriver = { module = "app.cash.sqldelight:sqlite-driver", version.ref = "sqlDelight" }
 sqldelight-nativeDriver = { module = "app.cash.sqldelight:native-driver", version.ref = "sqlDelight" }
 sqldelight-coroutines = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqlDelight" }
-sqldelight-primitiveAdapters = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqlDelight" }
+sqldelight-webDriver = { module = "app.cash.sqldelight:web-worker-driver", version.ref = "sqlDelight" }
 timber = { module = "com.jakewharton.timber:timber", version = "5.0.1" }
 tink = { module = "com.google.crypto.tink:tink-android", version = "1.14.1" }
-tlaster-precompose = { module = "moe.tlaster:precompose", version.ref = "precompose" }
-tlaster-precompose-koin = { module = "moe.tlaster:precompose-koin", version.ref = "precompose" }
-tlaster-precompose-viewmodel = { module = "moe.tlaster:precompose-viewmodel", version.ref = "precompose" }
 
 # plugins
 plugin-aboutlibraries = { module = "com.mikepenz.aboutlibraries.plugin:aboutlibraries-plugin", version.ref = "aboutlibraries" }

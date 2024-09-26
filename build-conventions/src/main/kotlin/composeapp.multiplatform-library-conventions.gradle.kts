@@ -62,7 +62,6 @@ kotlin {
             implementation(libs.koin.core)
             implementation(libs.kotlin.result)
             implementation(libs.multiplatform.log)
-            implementation(libs.tlaster.precompose)
         }
 
         commonTest.dependencies {

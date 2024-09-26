@@ -14,7 +14,6 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             api(projects.modules.libraryNavigationApi)
-            implementation(libs.tlaster.precompose)
             implementation(libs.koin.core)
             implementation(projects.modules.featureHomeApi)
         }

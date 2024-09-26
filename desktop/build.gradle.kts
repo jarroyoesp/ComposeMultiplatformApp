@@ -17,7 +17,6 @@ kotlin {
             implementation(projects.modules.featureHomeShared)
             implementation(compose.desktop.currentOs)
             implementation(libs.koin.core)
-            implementation(libs.tlaster.precompose)
         }
     }
 }

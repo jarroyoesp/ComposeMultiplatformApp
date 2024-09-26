@@ -41,7 +41,6 @@ kotlin {
             implementation(compose.runtime)
             implementation(libs.kotlin.datetime)
             implementation(libs.sqldelight.coroutines)
-            implementation(libs.sqldelight.primitiveAdapters)
 
             implementation(projects.modules.featureHomeApi)
             implementation(projects.modules.libraryNavigation)
