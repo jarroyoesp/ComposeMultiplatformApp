@@ -1,6 +1,7 @@
 plugins {
     id("composeapp.multiplatform-library-conventions")
     id("org.jetbrains.compose")
+    id("org.jetbrains.kotlin.plugin.compose")
 }
 
 android {

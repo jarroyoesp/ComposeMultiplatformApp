@@ -7,7 +7,6 @@ accompanist = "0.34.0"
 agp = "8.1.4"
 androidCompileSdk = "34"
 androidx-compose = "1.7.2" ## TODO check last version for destok androidx.compose.runtime:runtime
-androidx-compose-compiler = "1.5.14"
 androidx-datastore = "1.1.1"
 androidx-lifecycle = "2.8.6"
 androidx-navigation = "2.8.1"#"2.7.0-alpha07"
@@ -20,11 +19,11 @@ gradle = "8.1.1"
 greclipse = "4.19.0"
 hilt = "2.52"
 junit = "1.2.1"
-kotlin = "1.9.24"
+kotlin = "2.0.20"
 kotlinpoet = "1.18.1"
 kotlin-result = "2.0.0"
 kotlinx-datetime="0.6.0"
-ksp = "1.9.24-1.0.20"
+ksp = "2.0.20-1.0.25"
 ktlint = "0.43.0"
 ktor = "2.3.11"
 mockk = "1.13.12"
@@ -187,6 +186,7 @@ plugin-android-gradle = { module = "com.android.tools.build:gradle", version = "
 plugin-androidcachefix = { module = "gradle.plugin.org.gradle.android:android-cache-fix-gradle-plugin", version = "3.0" }
 plugin-androidx-navigation-safeargs = { module = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "androidx-navigation" }
 plugin-appversioning = { module = "io.github.reactivecircus.appversioning:app-versioning-gradle-plugin", version = "1.3.2" }
+plugin-compose-compiler = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
 plugin-detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 plugin-easylauncher = { module = "com.project.starter:easylauncher", version = "6.4.0" }
 plugin-firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics-gradle", version = "3.0.2" }

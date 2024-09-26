@@ -1,5 +1,9 @@
+import com.jarroyo.composeapp.ext.android
+import com.jarroyo.composeapp.ext.config
 import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.kotlin.dsl.the
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 
 plugins {
     id ("composeapp.android-library-conventions")
@@ -12,17 +16,18 @@ android {
     buildFeatures {
         compose = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.androidx.compose.compiler.get()
-    }
-    kotlinOptions {
-        freeCompilerArgs = freeCompilerArgs + listOf(
-                "-opt-in=androidx.compose.foundation.ExperimentalFoundationApi",
-                "-opt-in=androidx.compose.foundation.layout.ExperimentalLayoutApi",
-                "-opt-in=androidx.compose.material.ExperimentalMaterialApi",
-                "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api",
-                "-opt-in=androidx.compose.ui.ExperimentalComposeUiApi"
-        )
+    configure<KotlinAndroidProjectExtension> {
+        compilerOptions {
+            freeCompilerArgs.set(
+                freeCompilerArgs.get() + listOf(
+                    "-opt-in=androidx.compose.foundation.ExperimentalFoundationApi",
+                    "-opt-in=androidx.compose.foundation.layout.ExperimentalLayoutApi",
+                    "-opt-in=androidx.compose.material.ExperimentalMaterialApi",
+                    "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api",
+                    "-opt-in=androidx.compose.ui.ExperimentalComposeUiApi"
+                )
+            )
+        }
     }
 }
 
@@ -49,9 +54,7 @@ dependencies {
     androidTestImplementation (libs.androidx.test.espresso.core)
     androidTestImplementation (libs.androidx.test.ext.junit)
     androidTestImplementation (libs.androidx.test.runner)
-    //androidTestImplementation projects.modules.libraryTestAndroid
     androidTestUtil (libs.androidx.test.orchestrator)
-    //testImplementation projects.modules.libraryTestFeature
     testImplementation(project(":modules:library-test"))
     androidTestImplementation(project(":modules:library-test"))
 }

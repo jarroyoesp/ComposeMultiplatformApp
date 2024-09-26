@@ -70,7 +70,7 @@ kotlin {
             api(libs.coroutines.test)
             api(libs.junit)
             api(libs.kotlin.test)
-            api(libs.kotlin.test.junit)
+            // api(libs.kotlin.test.junit)
         }
 
         val desktopMain by getting {

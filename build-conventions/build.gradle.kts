@@ -11,6 +11,7 @@ dependencies {
     implementation (libs.plugin.android.gradle)
     implementation (libs.plugin.androidcachefix)
     implementation (libs.plugin.appversioning)
+    implementation(libs.plugin.compose.compiler)
     implementation (libs.plugin.detekt)
     implementation (libs.plugin.easylauncher)
     implementation (libs.plugin.firebase.crashlytics)

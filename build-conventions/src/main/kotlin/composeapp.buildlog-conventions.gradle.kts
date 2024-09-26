@@ -7,7 +7,7 @@ import java.util.Date
 
 if (config.params.saveBuildLogToFile.get()) {
     val datetime = SimpleDateFormat("yyyy-MM-dd-HH-mm-ss").format(Date())
-    val buildLogDir = "${buildDir}/logs"
+    val buildLogDir = layout.buildDirectory.dir("logs")
     mkdir(buildLogDir)
     val buildLog = File("${buildLogDir}/buildlog-${datetime}.txt")
 

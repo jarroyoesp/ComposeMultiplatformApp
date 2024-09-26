@@ -69,3 +69,10 @@ fastlane/readme.md
 
 # Reports
 reports/
+
+prebuilds/fullsdk-linux
+prebuilds/fullsdk-darwin
+
+.cxx
+*.klib
+.kotlin/
