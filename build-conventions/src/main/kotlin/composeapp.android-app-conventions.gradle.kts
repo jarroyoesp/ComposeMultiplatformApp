@@ -1,4 +1,5 @@
 import com.android.build.gradle.internal.tasks.factory.dependsOn
+import com.jarroyo.composeapp.gmd.configureGradleManagedDevices
 import com.mikepenz.aboutlibraries.plugin.DuplicateMode
 import com.mikepenz.aboutlibraries.plugin.DuplicateRule
 import com.project.starter.easylauncher.filter.ChromeLikeFilter
@@ -27,6 +28,7 @@ android {
     compileOptions {
         isCoreLibraryDesugaringEnabled = true  // https://developer.android.com/studio/write/java8-support#library-desugaring
     }
+    configureGradleManagedDevices(this)
     configure<KotlinAndroidProjectExtension> {
         compilerOptions {
             freeCompilerArgs.set(
