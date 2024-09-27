@@ -1,10 +1,13 @@
 import com.android.build.gradle.internal.tasks.factory.dependsOn
+import com.jarroyo.composeapp.gmd.configureGradleManagedDevices
 import com.mikepenz.aboutlibraries.plugin.DuplicateMode
 import com.mikepenz.aboutlibraries.plugin.DuplicateRule
 import com.project.starter.easylauncher.filter.ChromeLikeFilter
 import org.gradle.accessors.dm.LibrariesForLibs
+import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 
 plugins {
+    id("org.jetbrains.kotlin.plugin.compose")
     id("com.android.application")
     id("composeapp.android-conventions")
     id("kotlin-parcelize")
@@ -22,19 +25,21 @@ android {
     buildFeatures {
         compose = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.androidx.compose.compiler.get()
-    }
     compileOptions {
         isCoreLibraryDesugaringEnabled = true  // https://developer.android.com/studio/write/java8-support#library-desugaring
     }
-    kotlinOptions {
-        freeCompilerArgs = freeCompilerArgs + listOf(
-                "-opt-in=androidx.compose.material.ExperimentalMaterialApi",
-                "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api",
-                "-opt-in=androidx.compose.ui.ExperimentalComposeUiApi",
-                "-opt-in=androidx.compose.ui.test.ExperimentalTestApi",
-        )
+    configureGradleManagedDevices(this)
+    configure<KotlinAndroidProjectExtension> {
+        compilerOptions {
+            freeCompilerArgs.set(
+                freeCompilerArgs.get() + listOf(
+                    "-opt-in=androidx.compose.foundation.ExperimentalFoundationApi",
+                    "-opt-in=androidx.compose.material.ExperimentalMaterialApi",
+                    "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api",
+                    "-opt-in=androidx.compose.ui.ExperimentalComposeUiApi",
+                )
+            )
+        }
     }
 }
 

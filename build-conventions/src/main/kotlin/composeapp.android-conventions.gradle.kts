@@ -2,17 +2,17 @@ import com.android.build.api.dsl.CommonExtension
 import com.android.build.gradle.BaseExtension
 import com.android.build.gradle.api.AndroidBasePlugin
 import com.jarroyo.composeapp.ext.android
-import com.jarroyo.composeapp.ext.app
 import com.jarroyo.composeapp.ext.config
-import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.gradle.accessors.dm.LibrariesForLibs
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 
 plugins {
-    id ("kotlin-android")
-    id ("kotlin-kapt")
-    id ("composeapp.detekt-conventions")
-    id ("composeapp.config-conventions")
+    id("kotlin-android")
+    id("kotlin-kapt")
+    id("composeapp.detekt-conventions")
+    id("composeapp.config-conventions")
 }
 
 val libs = the<LibrariesForLibs>()
@@ -21,7 +21,7 @@ kapt {
     useBuildCache = true
     correctErrorTypes = true
     javacOptions {
-        option("-Xmaxerrs", Integer.MAX_VALUE)
+        option("-Xmaxerrs", Integer.MAX_VALUE.toString())
     }
 }
 
@@ -54,7 +54,7 @@ plugins.withType<AndroidBasePlugin>().configureEach {
                 }
             }
         }
-        
+
         testOptions {
             execution = "ANDROIDX_TEST_ORCHESTRATOR"
             animationsDisabled = true
@@ -75,42 +75,45 @@ plugins.withType<AndroidBasePlugin>().configureEach {
                 lintConfig = file("${project.rootDir}/config/lint/lint.xml")
             }
 
-            kotlinOptions {
-                freeCompilerArgs = freeCompilerArgs + listOf(
-                    "-opt-in=kotlin.RequiresOptIn",
-                    "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
-                    "-opt-in=kotlinx.coroutines.FlowPreview",
+            configure<KotlinAndroidProjectExtension> {
+                compilerOptions {
+                    freeCompilerArgs.set(
+                        freeCompilerArgs.get() + listOf(
+                            "-opt-in=kotlin.RequiresOptIn",
+                            "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+                            "-opt-in=kotlinx.coroutines.FlowPreview",
+                        )
+                    )
+                    jvmTarget.set(JvmTarget.fromTarget(config.android.javaVersion.get().toString()))
+                }
+            }
+            packaging {
+                resources {
+                    // Use this block to exclude conflicting files that breaks your APK assemble task
+                    excludes.add("META-INF/LICENSE.md")
+                    excludes.add("META-INF/LICENSE-notice.md")
+                }
+            }
+        }
+    }
+
+    kotlin {
+        sourceSets.all {
+            languageSettings.progressiveMode =
+                true // deprecations and bug fixes for unstable code take effect immediately
+        }
+    }
+    tasks {
+        withType<KotlinCompile> {
+            compilerOptions.jvmTarget.set(
+                JvmTarget.fromTarget(
+                    config.android.javaVersion.get().toString()
                 )
-                jvmTarget = config.android.javaVersion.get().toString()
-            }
+            )
         }
-        packagingOptions {
-            resources {
-                // Use this block to exclude conflicting files that breaks your APK assemble task
-                excludes.add("META-INF/LICENSE.md")
-                excludes.add("META-INF/LICENSE-notice.md")
-            }
+
+        withType<Test> {
+            testLogging.events("skipped", "failed")
         }
-    }
-}
-
-fun CommonExtension<*, *, *, *, *, *>.kotlinOptions(block: KotlinJvmOptions.() -> Unit) {
-    (this as ExtensionAware).extensions.configure("kotlinOptions", block)
-}
-
-kotlin {
-    sourceSets.all {
-        languageSettings.progressiveMode = true // deprecations and bug fixes for unstable code take effect immediately
-    }
-}
-tasks {
-    withType<KotlinCompile> {
-        kotlinOptions {
-            jvmTarget = config.android.javaVersion.get().toString()
-        }
-    }
-
-    withType<Test> {
-        testLogging.events("skipped", "failed")
     }
 }

@@ -1,6 +1,7 @@
 plugins {
     id("composeapp.multiplatform-library-conventions")
     id("org.jetbrains.compose")
+    id("org.jetbrains.kotlin.plugin.compose")
     alias(libs.plugins.sqldelight)
 }
 
@@ -40,7 +41,6 @@ kotlin {
             implementation(compose.runtime)
             implementation(libs.kotlin.datetime)
             implementation(libs.sqldelight.coroutines)
-            implementation(libs.sqldelight.primitiveAdapters)
 
             implementation(projects.modules.featureHomeApi)
             implementation(projects.modules.libraryNavigation)

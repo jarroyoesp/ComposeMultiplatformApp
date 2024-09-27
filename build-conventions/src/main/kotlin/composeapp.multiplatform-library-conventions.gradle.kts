@@ -62,7 +62,6 @@ kotlin {
             implementation(libs.koin.core)
             implementation(libs.kotlin.result)
             implementation(libs.multiplatform.log)
-            implementation(libs.tlaster.precompose)
         }
 
         commonTest.dependencies {
@@ -70,7 +69,7 @@ kotlin {
             api(libs.coroutines.test)
             api(libs.junit)
             api(libs.kotlin.test)
-            api(libs.kotlin.test.junit)
+            // api(libs.kotlin.test.junit)
         }
 
         val desktopMain by getting {

@@ -41,7 +41,7 @@ kotlin {
             api(libs.hilt.android.testing)
             api(libs.junit)
             api(libs.kotlin.test)
-            api(libs.kotlin.test.junit)
+            // api(libs.kotlin.test.junit)
             api(libs.mockk)
         }
 
@@ -51,7 +51,7 @@ kotlin {
             api(libs.hilt.android.testing)
             api(libs.junit)
             api(libs.kotlin.test)
-            api(libs.kotlin.test.junit)
+            // api(libs.kotlin.test.junit)
             api(libs.mockk)
         }
     }
