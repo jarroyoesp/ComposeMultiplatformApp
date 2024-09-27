@@ -14,7 +14,6 @@ dependencies {
     implementation(libs.plugin.compose.compiler)
     implementation (libs.plugin.detekt)
     implementation (libs.plugin.easylauncher)
-    implementation (libs.plugin.firebase.crashlytics)
     implementation (libs.plugin.firebase.perf)
     implementation (libs.plugin.google.services)
     implementation (libs.plugin.hilt)
