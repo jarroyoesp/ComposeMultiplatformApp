@@ -124,7 +124,7 @@ jobs:
           java-version: 17.0.6
 
       - name: Create release tag
-        uses: actions/github-script@v5
+        uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -153,6 +153,8 @@ jobs:
           alias: ${{ secrets.SIGNING_KEY_ALIAS }}
           keyStorePassword: ${{ secrets.SIGNING_KEY_PASSWORD }}
           keyPassword: ${{ secrets.SIGNING_KEY_PASSWORD }}
+        env:
+          BUILD_TOOLS_VERSION: "34.0.0"
       # 4
       - name: Upload
         uses: actions/upload-artifact@v4
