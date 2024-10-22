@@ -2,18 +2,18 @@
 # https://docs.gradle.org/current/userguide/platforms.html
 
 [versions]
-aboutlibraries = "11.2.2"
-accompanist = "0.34.0"
+aboutlibraries = "11.2.3"
+accompanist = "0.36.0"
 agp = "8.1.4"
 androidCompileSdk = "34"
-androidx-compose = "1.7.2" ## TODO check last version for destok androidx.compose.runtime:runtime
+androidx-compose = "1.7.4" ## TODO check last version for destok androidx.compose.runtime:runtime
 androidx-datastore = "1.1.1"
 androidx-lifecycle = "2.8.6"
-androidx-navigation = "2.8.1"#"2.7.0-alpha07"
+androidx-navigation = "2.8.3"
 androidx-room = "2.6.1"
 apollo = "4.0.0"
 coroutines = "1.9.0"
-detekt = "1.23.6"
+detekt = "1.23.7"
 diktat = "1.2.5"
 gradle = "8.1.1"
 greclipse = "4.19.0"
@@ -23,7 +23,7 @@ kotlin = "2.0.20"
 kotlinpoet = "1.18.1"
 kotlin-result = "2.0.0"
 kotlinx-datetime="0.6.0"
-ksp = "2.0.20-1.0.25"
+ksp = "2.0.21-1.0.25"
 ktlint = "0.43.0"
 ktor = "2.3.12"
 mockk = "1.13.12"
@@ -34,8 +34,8 @@ sqlDelight = "2.0.2"
 
 # @pin until fix  No class found for symbol 'kotlin.uuid/Uuid.Companion|null[0] in 4.0.0-RC2
 # @pin until fix https://github.com/InsertKoinIO/koin/issues/1985 & https://github.com/InsertKoinIO/koin/issues/1929
-koin = "4.0.0-RC1"
-koin-ksp = "1.4.0-RC4"
+koin = "4.0.0"
+koin-ksp = "1.4.0"
 
 [libraries]
 aboutlibraries = { module = "com.mikepenz:aboutlibraries-compose", version.ref = "aboutlibraries" }
@@ -49,7 +49,7 @@ accompanist-permissions = { module = "com.google.accompanist:accompanist-permiss
 accompanist-placeholder = { module = "com.google.accompanist:accompanist-placeholder-material", version.ref = "accompanist" }
 accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanist" }
 android-maps-utils = { module = "com.google.maps.android:android-maps-utils", version = "3.8.2" }
-androidx-activity-compose = { module = "androidx.activity:activity-compose", version = "1.9.2" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version = "1.9.3" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version = "1.7.0" }
 androidx-compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "androidx-compose" }
 androidx-compose-layout = { module = "androidx.compose.foundation:foundation-layout", version.ref = "androidx-compose" }
@@ -71,12 +71,12 @@ androidx-datastore = { module = "androidx.datastore:datastore", version.ref = "a
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "androidx-datastore" }
 androidx-lifecycle-livedata = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-process = { module = "androidx.lifecycle:lifecycle-process", version.ref = "androidx-lifecycle" }
-androidx-lifecycle-runtime-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version = "2.8.2" } # 2.8.0-rc03
+androidx-lifecycle-runtime-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version = "2.8.3" }
 androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-savedstate = { module = "androidx.lifecycle:lifecycle-viewmodel-savedstate", version.ref = "androidx-lifecycle" }
-androidx-lifecycle-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel", version = "2.8.2" }
-androidx-lifecycle-viewmodel-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version = "2.8.2" } # 2.8.0-rc03
-androidx-navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version = "2.7.0-alpha07" } # 2.7.0-alpha06
+androidx-lifecycle-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel", version = "2.8.3" }
+androidx-lifecycle-viewmodel-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version = "2.8.3" }
+androidx-navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version = "2.8.0-alpha10" }
 androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "androidx-navigation" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "androidx-navigation" }
 androidx-paging = { module = "androidx.paging:paging-compose", version = "3.3.2" }
@@ -86,11 +86,11 @@ androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "androidx
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "androidx-room" }
 androidx-room-testing = { module = "androidx.room:room-testing", version.ref = "androidx-room" }
 androidx-security = { module = "androidx.security:security-crypto", version = "1.0.0" }
-androidx-startup = { module = "androidx.startup:startup-runtime", version = "1.1.1" }
+androidx-startup = { module = "androidx.startup:startup-runtime", version = "1.2.0" }
 androidx-test-core = { module = "androidx.test:core-ktx", version = "1.6.1" }
 androidx-test-espresso-core = { module = "androidx.test.espresso:espresso-core", version = "3.6.1" }
 androidx-test-ext-junit = { module = "androidx.test.ext:junit-ktx", version = "1.2.1" }
-androidx-test-orchestrator = { module = "androidx.test:orchestrator", version = "1.5.0" }
+androidx-test-orchestrator = { module = "androidx.test:orchestrator", version = "1.5.1" }
 androidx-test-rules = { module = "androidx.test:rules", version = "1.6.1" }
 androidx-test-runner = { module = "androidx.test:runner", version = "1.6.2" }
 apollo = { module = "com.apollographql.apollo:apollo-runtime", version.ref = "apollo" }
@@ -105,13 +105,14 @@ compose-placeholder = { module = "com.eygraber:compose-placeholder", version = "
 compose-webview = { module = "io.github.kevinnzou:compose-webview-multiplatform", version = "1.7.8" }
 coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "coroutines" }
 coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 desugar = { module = "com.android.tools:desugar_jdk_libs", version = "2.1.2" }
 detekt = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
 detekt-rules-compose = { module = "ru.kode:detekt-rules-compose", version = "1.4.0" }
 detekt-twitter-compose-rules = { module = "com.twitter.compose.rules:detekt", version = "0.0.26" }
-firebase-analytics = { module = "com.google.firebase:firebase-analytics-ktx", version = "22.1.0" }
-firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics-ktx", version = "19.1.0" }
+firebase-analytics = { module = "com.google.firebase:firebase-analytics-ktx", version = "22.1.2" }
+firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics-ktx", version = "19.2.0" }
 firebase-perf = { module = "com.google.firebase:firebase-perf-ktx", version = "21.0.1" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
@@ -119,7 +120,7 @@ hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", vers
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
 hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version = "1.2.0" }
 junit = { module = "junit:junit", version = "4.13.2" }
-kamel = { module = "media.kamel:kamel-image", version = "0.9.3" }
+kamel = { module = "media.kamel:kamel-image", version = "0.9.5" }
 koin-android = {module = "io.insert-koin:koin-android", version = "3.5.3"}
 koin-annotations = {module = "io.insert-koin:koin-annotations", version.ref = "koin-ksp"}
 koin-compose-viewmodel = {module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin"}
@@ -136,8 +137,8 @@ kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotl
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 kotlinpoet = { module = "com.squareup:kotlinpoet", version.ref = "kotlinpoet" }
 kotlinpoet-ksp = { module = "com.squareup:kotlinpoet-ksp", version.ref = "kotlinpoet" }
-kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version = "0.3.7" }
-kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.6.3" }
+kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version = "0.3.8" }
+kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.7.3" }
 ksp-symbol-processing-api = { module = "com.google.devtools.ksp:symbol-processing-api", version.ref = "ksp" }
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
@@ -146,9 +147,9 @@ ktor-client-js = { module = "io.ktor:ktor-client-js", version.ref = "ktor" }
 ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
 ktor-client-mock = { module = "io.ktor:ktor-client-mock", version.ref = "ktor" }
 leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", version = "2.14" }
-lottie-compose = { module = "com.airbnb.android:lottie-compose", version = "6.5.1" }
+lottie-compose = { module = "com.airbnb.android:lottie-compose", version = "6.5.2" }
 maps = { module = "com.google.maps.android:maps-ktx", version = "5.1.1" }
-maps-compose = { module = "com.google.maps.android:maps-compose", version = "6.1.1" }
+maps-compose = { module = "com.google.maps.android:maps-compose", version = "6.1.2" }
 maps-utils-ktx = { module = "com.google.maps.android:maps-utils-ktx", version = "5.1.1" }
 material = { module = "com.google.android.material:material", version = "1.12.0" }
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
@@ -172,11 +173,11 @@ sqldelight-nativeDriver = { module = "app.cash.sqldelight:native-driver", versio
 sqldelight-coroutines = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqlDelight" }
 sqldelight-webDriver = { module = "app.cash.sqldelight:web-worker-driver", version.ref = "sqlDelight" }
 timber = { module = "com.jakewharton.timber:timber", version = "5.0.1" }
-tink = { module = "com.google.crypto.tink:tink-android", version = "1.14.1" }
+tink = { module = "com.google.crypto.tink:tink-android", version = "1.15.0" }
 
 # plugins
 plugin-aboutlibraries = { module = "com.mikepenz.aboutlibraries.plugin:aboutlibraries-plugin", version.ref = "aboutlibraries" }
-plugin-android-gradle = { module = "com.android.tools.build:gradle", version = "8.5.2" }
+plugin-android-gradle = { module = "com.android.tools.build:gradle", version = "8.7.1" }
 plugin-androidcachefix = { module = "gradle.plugin.org.gradle.android:android-cache-fix-gradle-plugin", version = "3.0" }
 plugin-androidx-navigation-safeargs = { module = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "androidx-navigation" }
 plugin-appversioning = { module = "io.github.reactivecircus.appversioning:app-versioning-gradle-plugin", version = "1.3.2" }
@@ -190,7 +191,7 @@ plugin-hilt = { module = "com.google.dagger:hilt-android-gradle-plugin", version
 plugin-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 plugin-ksp = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 plugin-ruler = { module = "com.spotify.ruler:ruler-gradle-plugin", version = "1.4.0" }
-plugin-spotless = { module = "com.diffplug.spotless:spotless-plugin-gradle", version = "6.23.2" }
+plugin-spotless = { module = "com.diffplug.spotless:spotless-plugin-gradle", version = "6.25.0" }
 plugin-versions = "com.github.ben-manes:gradle-versions-plugin:0.51.0"
 plugin-versions-update = "nl.littlerobots.vcu:plugin:0.8.4"
 plugin-violation = { module = "se.bjurr.violations:violation-comments-to-github-gradle-plugin", version = "1.70.0" }
@@ -202,7 +203,7 @@ google-secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradl
 gradledoctor = { id = "com.osacky.doctor", version = "0.10.0" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-multiplatform = { id = "org.jetbrains.compose", version = "1.6.11" }
+multiplatform = { id = "org.jetbrains.compose", version = "1.7.0" }
 sqldelight = { id = "app.cash.sqldelight", version = "2.0.1" }
 tripletplay = { id = "com.github.triplet.play", version = "3.11.0" }
 com-android-application = { id = "com.android.application", version.ref = "agp" }

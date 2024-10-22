@@ -2,12 +2,14 @@ import com.jarroyo.composeapp.ext.android
 import com.jarroyo.composeapp.ext.config
 import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.kotlin.dsl.the
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
     id("kotlin-parcelize")
-    id ("composeapp.config-conventions")
+    id("composeapp.config-conventions")
 }
 
 val libs = the<LibrariesForLibs>()
@@ -16,16 +18,21 @@ android {
     compileSdk = libs.versions.androidCompileSdk.get().toInt()
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = config.android.javaVersion.get()
+        targetCompatibility = config.android.javaVersion.get()
     }
-    defaultConfig{
+    defaultConfig {
         minSdk = config.android.minSdk.get()
     }
 }
 
 kotlin {
-    androidTarget()
+    androidTarget {
+        @OptIn(ExperimentalKotlinGradlePluginApi::class)
+        compilerOptions {
+            jvmTarget.set(JvmTarget.fromTarget(config.android.javaVersion.get().toString()))
+        }
+    }
     listOf(
         iosX64(),
         iosArm64(),
@@ -74,7 +81,7 @@ kotlin {
 
         val desktopMain by getting {
             dependencies {
-                implementation(libs.coroutines.core)
+                implementation(libs.coroutines.swing)
                 implementation(libs.ktor.client.cio)
             }
         }

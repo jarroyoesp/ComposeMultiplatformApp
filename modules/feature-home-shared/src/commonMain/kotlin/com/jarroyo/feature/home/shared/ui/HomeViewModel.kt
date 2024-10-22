@@ -23,13 +23,16 @@ class HomeViewModel(
     private val getFavoritesInteractor: GetFavoritesInteractor,
     private val getLaunchesInteractor: GetLaunchesInteractor,
 ) : BaseViewModel<Event, State, Effect>() {
+    init {
+        refreshData()
+    }
+
     override fun provideInitialState() = State()
 
     override fun handleEvent(event: Event) {
         when (event) {
             is Event.FavoritesUpdated -> refreshData(FetchPolicy.NetworkFirst)
             is Event.OnItemClicked -> appNavigator.navigate(LaunchDetailDestination.get(event.id))
-            is Event.OnViewAttached -> refreshData(FetchPolicy.NetworkFirst)
             is Event.OnSwipeToRefresh -> handleOnSwipeToRefresh()
         }
     }
