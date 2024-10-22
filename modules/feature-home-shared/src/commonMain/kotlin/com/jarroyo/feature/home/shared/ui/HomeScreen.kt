@@ -48,9 +48,6 @@ import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun HomeScreen(viewModel: HomeViewModel = koinViewModel<HomeViewModel>()) {
-    LaunchedEffect(viewModel) {
-        viewModel.onUiEvent(Event.OnViewAttached)
-    }
     HomeScreen(
         state = viewModel.viewState.value,
         sendEvent = { viewModel.onUiEvent(it) },

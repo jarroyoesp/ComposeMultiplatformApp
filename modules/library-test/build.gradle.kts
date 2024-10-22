@@ -1,3 +1,6 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
@@ -20,10 +23,9 @@ android {
             excludes.add("META-INF/NOTICE.md")
         }
     }
-    // Configuración para usar Java 17
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = config.android.javaVersion.get()
+        targetCompatibility = config.android.javaVersion.get()
     }
 }
 

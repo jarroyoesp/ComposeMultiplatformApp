@@ -18,7 +18,6 @@ object HomeContract {
         data class OnItemClicked(val id: String) : Event()
         data object FavoritesUpdated: Event()
         data object OnSwipeToRefresh: Event()
-        data object OnViewAttached: Event()
     }
 
     sealed class Effect : ViewEffect {
