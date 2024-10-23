@@ -40,8 +40,8 @@ Current supported Platforms are:
 - [Kotlin Coroutines](https://github.com/Kotlin/kotlinx.coroutines): Provides asynchronous programming utilities in Kotlin.
 - [SQLDelight](https://github.com/cashapp/sqldelight): Generates Kotlin APIs from SQL statements for safer database interactions.
 - [Apollo GraphQL](https://github.com/apollographql): Offers client-side tools for consuming GraphQL APIs.
-- [PreCompose Navigation](https://github.com/Tlaster/PreCompose/blob/master/docs/component/navigation.md): Provides navigation components for Kotlin Multiplatform projects using Compose.
-- [PreCompose ViewModel](https://github.com/Tlaster/PreCompose/blob/master/docs/component/view_model.md): Manages UI-related data and state in Kotlin Multiplatform projects using Compose.
+- [Kotlin Multiplatform Navigation](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-navigation-routing.html): Provides navigation components for Kotlin Multiplatform projects using Compose.
+- [Kotlin Multiplatform ViewModel](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-viewmodel.html): Manages UI-related data and state in Kotlin Multiplatform projects using Compose.
 - [ConstraintLayout Multiplatform](https://github.com/Lavmee/constraintlayout-compose-multiplatform): Brings ConstraintLayout functionality to Kotlin Multiplatform projects with Compose.
 - [Image Loader - Kamel](https://github.com/Kamel-Media/Kamel): Efficient image loading library for Compose multiplatform projects.
 - [Logger](https://github.com/touchlab/Kermit): Logging library for Kotlin Multiplatform projects.
@@ -84,6 +84,12 @@ More details [JetBrains official documentation](https://www.jetbrains.com/help/k
 
 | <img width="240" src="./screenshots/ios/home.png" /> | <img width="240" src="./screenshots/ios/detail.png" /> | <img width="240" src="./screenshots/ios/loading.png" /> |
 |------------------------------------------------------|--------------------------------------------------------|---------------------------------------------------------|
+
+
+### Get the latest version of the GraphQL schema
+```bash
+./gradlew :module:library-network-api:downloadApolloSchemaFromIntrospection
+```
 
 ## Contributing 🤝
 

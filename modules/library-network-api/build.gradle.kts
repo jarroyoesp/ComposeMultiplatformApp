@@ -25,6 +25,10 @@ apollo {
             "kotlinx.datetime.Instant",
             "com.apollographql.apollo.adapter.KotlinxInstantAdapter"
         )
+        introspection {
+            endpointUrl.set("https://spacex-production.up.railway.app/")
+            schemaFile.set(file("src/commonMain/graphql/schema.graphqls"))
+        }
     }
 }
 
@@ -38,23 +42,5 @@ kotlin {
             implementation(libs.apollo.cache.sqlite)
             implementation(libs.kotlinx.serialization)
         }
-    }
-}
-
-// Workaround for https://github.com/detekt/detekt/issues/4743
-tasks {
-    withType<Detekt>().configureEach {
-        exclude("com/jarroyo/composeapp/library/network/api/graphql/**/*.kt")
-    }
-    register<Exec>("refreshGraphQlSchema") {
-        val endpoint = "https://spacex-production.up.railway.app/"
-        val schemaPath = "modules/library-network-api/src/main/graphql/schema.graphqls"
-        workingDir(rootDir)
-        commandLine(
-            "./gradlew",
-            ":module:library-network-api:downloadApolloSchema",
-            "--endpoint=$endpoint",
-            "--schema=$schemaPath",
-        )
     }
 }

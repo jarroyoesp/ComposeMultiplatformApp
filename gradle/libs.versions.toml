@@ -6,36 +6,36 @@ aboutlibraries = "11.2.3"
 accompanist = "0.36.0"
 agp = "8.1.4"
 androidCompileSdk = "34"
-androidx-compose = "1.7.4" ## TODO check last version for destok androidx.compose.runtime:runtime
+androidx-compose = "1.7.4"
 androidx-datastore = "1.1.1"
 androidx-lifecycle = "2.8.6"
 androidx-navigation = "2.8.3"
 androidx-room = "2.6.1"
-apollo = "4.0.0"
+apollo = "4.0.1"
 coroutines = "1.9.0"
 detekt = "1.23.7"
 diktat = "1.2.5"
 gradle = "8.1.1"
 greclipse = "4.19.0"
 hilt = "2.52"
+jetbrains-lifecycle = "2.8.3"
+jetbrains-navigation = "2.8.0-alpha10"
 junit = "1.2.1"
-kotlin = "2.0.20"
+koin = "4.0.0"
+koin-ksp = "1.4.0"
+kotlin = "2.0.21"
 kotlinpoet = "1.18.1"
+kotlin-multiplatform = "1.7.0"
 kotlin-result = "2.0.0"
 kotlinx-datetime="0.6.0"
 ksp = "2.0.21-1.0.25"
 ktlint = "0.43.0"
 ktor = "2.3.12"
-mockk = "1.13.12"
+mockk = "1.13.13"
 okhttp = "4.12.0"
 prettier = "2.7.1"
 retrofit = "2.9.0"
 sqlDelight = "2.0.2"
-
-# @pin until fix  No class found for symbol 'kotlin.uuid/Uuid.Companion|null[0] in 4.0.0-RC2
-# @pin until fix https://github.com/InsertKoinIO/koin/issues/1985 & https://github.com/InsertKoinIO/koin/issues/1929
-koin = "4.0.0"
-koin-ksp = "1.4.0"
 
 [libraries]
 aboutlibraries = { module = "com.mikepenz:aboutlibraries-compose", version.ref = "aboutlibraries" }
@@ -71,12 +71,12 @@ androidx-datastore = { module = "androidx.datastore:datastore", version.ref = "a
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "androidx-datastore" }
 androidx-lifecycle-livedata = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-process = { module = "androidx.lifecycle:lifecycle-process", version.ref = "androidx-lifecycle" }
-androidx-lifecycle-runtime-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version = "2.8.3" }
+androidx-lifecycle-runtime-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version.ref = "jetbrains-lifecycle" }
 androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-savedstate = { module = "androidx.lifecycle:lifecycle-viewmodel-savedstate", version.ref = "androidx-lifecycle" }
-androidx-lifecycle-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel", version = "2.8.3" }
-androidx-lifecycle-viewmodel-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version = "2.8.3" }
-androidx-navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version = "2.8.0-alpha10" }
+androidx-lifecycle-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel", version.ref = "jetbrains-lifecycle" }
+androidx-lifecycle-viewmodel-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "jetbrains-lifecycle" }
+androidx-navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "jetbrains-navigation" }
 androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "androidx-navigation" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "androidx-navigation" }
 androidx-paging = { module = "androidx.paging:paging-compose", version = "3.3.2" }
@@ -111,9 +111,6 @@ desugar = { module = "com.android.tools:desugar_jdk_libs", version = "2.1.2" }
 detekt = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
 detekt-rules-compose = { module = "ru.kode:detekt-rules-compose", version = "1.4.0" }
 detekt-twitter-compose-rules = { module = "com.twitter.compose.rules:detekt", version = "0.0.26" }
-firebase-analytics = { module = "com.google.firebase:firebase-analytics-ktx", version = "22.1.2" }
-firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics-ktx", version = "19.2.0" }
-firebase-perf = { module = "com.google.firebase:firebase-perf-ktx", version = "21.0.1" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
 hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "hilt" }
@@ -203,7 +200,7 @@ google-secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradl
 gradledoctor = { id = "com.osacky.doctor", version = "0.10.0" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-multiplatform = { id = "org.jetbrains.compose", version = "1.7.0" }
+multiplatform = { id = "org.jetbrains.compose", version.ref = "kotlin-multiplatform" }
 sqldelight = { id = "app.cash.sqldelight", version = "2.0.1" }
 tripletplay = { id = "com.github.triplet.play", version = "3.11.0" }
 com-android-application = { id = "com.android.application", version.ref = "agp" }
