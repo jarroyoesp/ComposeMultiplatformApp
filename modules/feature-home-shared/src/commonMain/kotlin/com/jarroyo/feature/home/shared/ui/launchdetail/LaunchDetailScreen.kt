@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
-import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Scaffold
@@ -23,9 +22,9 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
+import coil3.compose.AsyncImage
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.LaunchFragment
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.RocketFragment
 import com.jarroyo.feature.home.shared.ui.launchdetail.LaunchDetailContract.Effect
@@ -33,8 +32,6 @@ import com.jarroyo.feature.home.shared.ui.launchdetail.LaunchDetailContract.Even
 import com.jarroyo.feature.home.shared.ui.launchdetail.LaunchDetailContract.State
 import com.jarroyo.library.ui.shared.component.placeholder
 import com.jarroyo.library.ui.shared.theme.Spacing
-import io.kamel.image.KamelImage
-import io.kamel.image.asyncPainterResource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
@@ -120,14 +117,9 @@ private fun DetailItem(
             modifier = Modifier.placeholder(placeholder)
                 .clickable { sendEvent(Event.OnOpenUrl(launch?.links?.article_link.orEmpty())) },
         )
-        KamelImage(
-            resource = asyncPainterResource(
-                launch?.links?.flickr_images?.firstOrNull().orEmpty(),
-            ),
-            contentDescription = null,
-            modifier = Modifier.fillMaxWidth().placeholder(placeholder),
-            alignment = Alignment.TopCenter,
-            onLoading = { CircularProgressIndicator() },
+        AsyncImage(
+            model = launch?.links?.flickr_images?.firstOrNull().orEmpty(),
+            contentDescription = "",
         )
     }
 }

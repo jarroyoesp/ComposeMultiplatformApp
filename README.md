@@ -1,5 +1,5 @@
 [![CI-MASTER](https://github.com/jarroyoesp/ComposeMultiplatformApp/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/jarroyoesp/ComposeMultiplatformApp/actions/workflows/ci.yml)
-[![Latest release](https://img.shields.io/github/v/release/JetBrains/compose-multiplatform?color=blue&label=Compose%20multiplatform)](https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.7.0)
+[![Latest release](https://img.shields.io/github/v/release/JetBrains/compose-multiplatform?color=blue&label=Compose%20multiplatform)](https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.7.1)
 ![Kotlin Version](https://img.shields.io/badge/Kotlin-2.0.21-blue?logo=kotlin&logoColor=white)
 <div align="center">
     <img alt="Compose multiplatform charts" src="./screenshots/compose_multiplatform_logo.png"/>
@@ -43,7 +43,7 @@ Current supported Platforms are:
 - [Kotlin Multiplatform Navigation](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-navigation-routing.html): Provides navigation components for Kotlin Multiplatform projects using Compose.
 - [Kotlin Multiplatform ViewModel](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-viewmodel.html): Manages UI-related data and state in Kotlin Multiplatform projects using Compose.
 - [ConstraintLayout Multiplatform](https://github.com/Lavmee/constraintlayout-compose-multiplatform): Brings ConstraintLayout functionality to Kotlin Multiplatform projects with Compose.
-- [Image Loader - Kamel](https://github.com/Kamel-Media/Kamel): Efficient image loading library for Compose multiplatform projects.
+- [Coil](https://coil-kt.github.io/coil/): Efficient image loading library for Compose multiplatform projects.
 - [Logger](https://github.com/touchlab/Kermit): Logging library for Kotlin Multiplatform projects.
 - [Unit Tests](https://github.com/junit-team/junit5): Automated tests to verify the behavior of individual code units.
 

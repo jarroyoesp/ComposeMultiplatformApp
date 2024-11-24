@@ -50,7 +50,6 @@ dependencies {
     api (libs.androidx.core.splashscreen)
     api (libs.androidx.navigation.compose)
     api (libs.androidx.paging)
-    api (libs.coil.compose)
     api (libs.material)
     api (libs.speeddial)
     implementation (libs.hilt.android)

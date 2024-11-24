@@ -61,14 +61,18 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtime.compose)
             implementation(libs.androidx.navigation.compose)
             implementation(libs.calendar)
+            implementation(libs.coil.compose)
             implementation(libs.coroutines.core)
-            implementation(libs.kamel)
             implementation(libs.koin.annotations)
             implementation(libs.koin.compose)
             implementation(libs.koin.compose.viewmodel)
             implementation(libs.koin.core)
             implementation(libs.kotlin.result)
             implementation(libs.multiplatform.log)
+
+            implementation(libs.coil.compose.core)
+            implementation(libs.coil.compose)
+            implementation(libs.coil.network)
         }
 
         commonTest.dependencies {
@@ -76,7 +80,6 @@ kotlin {
             api(libs.coroutines.test)
             api(libs.junit)
             api(libs.kotlin.test)
-            // api(libs.kotlin.test.junit)
         }
 
         val desktopMain by getting {
