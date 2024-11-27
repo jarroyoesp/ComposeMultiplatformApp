@@ -6,12 +6,13 @@ aboutlibraries = "11.2.3"
 accompanist = "0.36.0"
 agp = "8.1.4"
 androidCompileSdk = "34"
-androidx-compose = "1.7.4"
+androidx-compose = "1.7.5"
 androidx-datastore = "1.1.1"
-androidx-lifecycle = "2.8.6"
-androidx-navigation = "2.8.3"
+androidx-lifecycle = "2.8.7"
+androidx-navigation = "2.8.4"
 androidx-room = "2.6.1"
-apollo = "4.0.1"
+apollo = "4.1.0"
+coil3 = "3.0.3"
 coroutines = "1.9.0"
 detekt = "1.23.7"
 diktat = "1.2.5"
@@ -25,16 +26,15 @@ koin = "4.0.0"
 koin-ksp = "1.4.0"
 kotlin = "2.0.21"
 kotlinpoet = "1.18.1"
-kotlin-multiplatform = "1.7.0"
+kotlin-multiplatform = "1.7.1"
 kotlin-result = "2.0.0"
 kotlinx-datetime="0.6.0"
-ksp = "2.0.21-1.0.25"
+ksp = "2.0.21-1.0.26"
 ktlint = "0.43.0"
-ktor = "2.3.12"
+ktor = "3.0.0"
 mockk = "1.13.13"
 okhttp = "4.12.0"
 prettier = "2.7.1"
-retrofit = "2.9.0"
 sqlDelight = "2.0.2"
 
 [libraries]
@@ -48,14 +48,14 @@ accompanist-pager-indicators = { module = "com.google.accompanist:accompanist-pa
 accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanist" }
 accompanist-placeholder = { module = "com.google.accompanist:accompanist-placeholder-material", version.ref = "accompanist" }
 accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanist" }
-android-maps-utils = { module = "com.google.maps.android:android-maps-utils", version = "3.8.2" }
+android-maps-utils = { module = "com.google.maps.android:android-maps-utils", version = "3.9.0" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version = "1.9.3" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version = "1.7.0" }
 androidx-compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "androidx-compose" }
 androidx-compose-layout = { module = "androidx.compose.foundation:foundation-layout", version.ref = "androidx-compose" }
 androidx-compose-material = { module = "androidx.compose.material:material", version.ref = "androidx-compose" }
 androidx-compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "androidx-compose" }
-androidx-compose-material3 = { module = "androidx.compose.material3:material3", version = "1.3.0" }
+androidx-compose-material3 = { module = "androidx.compose.material3:material3", version = "1.3.1" }
 androidx-compose-runtime = { module = "androidx.compose.runtime:runtime", version.ref = "androidx-compose" }
 androidx-compose-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata", version.ref = "androidx-compose" }
 androidx-compose-test = { module = "androidx.compose.test:test-core", version.ref = "androidx-compose" }
@@ -63,7 +63,7 @@ androidx-compose-tooling = { module = "androidx.compose.ui:ui-tooling", version.
 androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "androidx-compose" }
 androidx-compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "androidx-compose" }
 androidx-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "androidx-compose" }
-androidx-core-ktx = { module = "androidx.core:core-ktx", version = "1.13.1" }
+androidx-core-ktx = { module = "androidx.core:core-ktx", version = "1.15.0" }
 androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version = "1.0.1" }
 androidx-customview = { module = "androidx.customview:customview", version = "1.2.0-alpha02" }
 androidx-customview-poolingcontainer = { module = "androidx.customview:customview-poolingcontainer", version = "1.0.0" }
@@ -79,7 +79,7 @@ androidx-lifecycle-viewmodel-compose = { module = "org.jetbrains.androidx.lifecy
 androidx-navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "jetbrains-navigation" }
 androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "androidx-navigation" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "androidx-navigation" }
-androidx-paging = { module = "androidx.paging:paging-compose", version = "3.3.2" }
+androidx-paging = { module = "androidx.paging:paging-compose", version = "3.3.4" }
 androidx-palette = { module = "androidx.palette:palette", version = "1.0.0" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "androidx-room" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "androidx-room" }
@@ -99,7 +99,9 @@ apollo-cache = { module = "com.apollographql.apollo:apollo-normalized-cache", ve
 apollo-cache-sqlite = { module = "com.apollographql.apollo:apollo-normalized-cache-sqlite", version.ref = "apollo" }
 apollo-testing-support = { module = "com.apollographql.apollo:apollo-testing-support", version.ref = "apollo" }
 calendar = { module = "com.kizitonwose.calendar:compose-multiplatform", version = "2.5.4" }
-coil-compose = { module = "io.coil-kt:coil-compose", version = "2.7.0" }
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil3" }
+coil-compose-core = { module = "io.coil-kt.coil3:coil-compose-core", version.ref = "coil3" }
+coil-network = { module = "io.coil-kt.coil3:coil-network-ktor3", version = "3.0.4" }
 composecharts = { module = "io.github.bytebeats:compose-charts", version = "0.2.1" }
 compose-placeholder = { module = "com.eygraber:compose-placeholder", version = "1.0.8" }
 compose-webview = { module = "io.github.kevinnzou:compose-webview-multiplatform", version = "1.7.8" }
@@ -107,7 +109,7 @@ coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-androi
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "coroutines" }
 coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
-desugar = { module = "com.android.tools:desugar_jdk_libs", version = "2.1.2" }
+desugar = { module = "com.android.tools:desugar_jdk_libs", version = "2.1.3" }
 detekt = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
 detekt-rules-compose = { module = "ru.kode:detekt-rules-compose", version = "1.4.0" }
 detekt-twitter-compose-rules = { module = "com.twitter.compose.rules:detekt", version = "0.0.26" }
@@ -117,7 +119,6 @@ hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", vers
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
 hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version = "1.2.0" }
 junit = { module = "junit:junit", version = "4.13.2" }
-kamel = { module = "media.kamel:kamel-image", version = "0.9.5" }
 koin-android = {module = "io.insert-koin:koin-android", version = "3.5.3"}
 koin-annotations = {module = "io.insert-koin:koin-annotations", version.ref = "koin-ksp"}
 koin-compose-viewmodel = {module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin"}
@@ -158,9 +159,6 @@ okhttp3-mockwebserver = { module = "com.squareup.okhttp3:mockwebserver", version
 play-core-ktx = { module = "com.google.android.play:core-ktx", version = "1.8.1" }
 play-services-maps = { module = "com.google.android.gms:play-services-maps", version = "19.0.0" }
 process-phoenix = { module = "com.jakewharton:process-phoenix", version = "3.0.0" }
-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
-retrofit-converter-scalars = { module = "com.squareup.retrofit2:converter-scalars", version = "2.11.0" }
-retrofit-kotlinx-serialization = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version = "1.0.0" }
 robolectric = { module = "org.robolectric:robolectric", version = "4.13" }
 seismic = { module = "com.squareup:seismic", version = "1.0.3" }
 speeddial = { module = "com.leinardi.android:speed-dial.compose", version = "2.0.0-alpha01" }
@@ -174,7 +172,7 @@ tink = { module = "com.google.crypto.tink:tink-android", version = "1.15.0" }
 
 # plugins
 plugin-aboutlibraries = { module = "com.mikepenz.aboutlibraries.plugin:aboutlibraries-plugin", version.ref = "aboutlibraries" }
-plugin-android-gradle = { module = "com.android.tools.build:gradle", version = "8.7.1" }
+plugin-android-gradle = { module = "com.android.tools.build:gradle", version = "8.7.2" }
 plugin-androidcachefix = { module = "gradle.plugin.org.gradle.android:android-cache-fix-gradle-plugin", version = "3.0" }
 plugin-androidx-navigation-safeargs = { module = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "androidx-navigation" }
 plugin-appversioning = { module = "io.github.reactivecircus.appversioning:app-versioning-gradle-plugin", version = "1.3.2" }
@@ -192,7 +190,6 @@ plugin-spotless = { module = "com.diffplug.spotless:spotless-plugin-gradle", ver
 plugin-versions = "com.github.ben-manes:gradle-versions-plugin:0.51.0"
 plugin-versions-update = "nl.littlerobots.vcu:plugin:0.8.4"
 plugin-violation = { module = "se.bjurr.violations:violation-comments-to-github-gradle-plugin", version = "1.70.0" }
-androidx-test-ext-junit115 = { group = "androidx.test.ext", name = "junit", version.ref = "junit" }
 
 [plugins]
 apollo = { id = "com.apollographql.apollo", version.ref = "apollo" }

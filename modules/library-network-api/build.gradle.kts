@@ -38,7 +38,6 @@ kotlin {
             api(libs.apollo)
             api(libs.apollo.adapters)
             api(libs.apollo.cache)
-            api(libs.retrofit)
             implementation(libs.apollo.cache.sqlite)
             implementation(libs.kotlinx.serialization)
         }
