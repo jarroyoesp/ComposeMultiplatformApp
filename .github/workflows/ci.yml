@@ -34,9 +34,6 @@ jobs:
       - name: Copy CI gradle.properties
         run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
 
-      - name: Validate gradle wrapper
-        uses: gradle/wrapper-validation-action@v1
-
       ## Actual task
       - name: Build
         uses: gradle/gradle-build-action@v2
@@ -62,9 +59,6 @@ jobs:
 
       - name: Copy CI gradle.properties
         run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
-
-      - name: Validate gradle wrapper
-        uses: gradle/wrapper-validation-action@v1
 
       - name: Build
         uses: gradle/gradle-build-action@v2

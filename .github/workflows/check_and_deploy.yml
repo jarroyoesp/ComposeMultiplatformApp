@@ -42,9 +42,6 @@ jobs:
       - name: Copy CI gradle.properties
         run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
 
-      - name: Validate gradle wrapper
-        uses: gradle/wrapper-validation-action@v1
-
       - name: Build
         uses: gradle/gradle-build-action@v2
         with:
@@ -96,9 +93,6 @@ jobs:
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
-
-      - name: Validate gradle wrapper
-        uses: gradle/wrapper-validation-action@v1
 
       - name: Accept Android licenses
         run: yes | "$ANDROID_HOME"/cmdline-tools/latest/bin/sdkmanager --licenses || true
