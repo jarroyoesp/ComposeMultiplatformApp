@@ -1,5 +1,5 @@
 [![CI-MASTER](https://github.com/jarroyoesp/ComposeMultiplatformApp/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/jarroyoesp/ComposeMultiplatformApp/actions/workflows/ci.yml)
-[![Latest release](https://img.shields.io/github/v/release/JetBrains/compose-multiplatform?color=blue&label=Compose%20multiplatform)](https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.7.1)
+[![Latest release](https://img.shields.io/github/v/release/JetBrains/compose-multiplatform?color=blue&label=Compose%20multiplatform)](https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.7.3)
 ![Kotlin Version](https://img.shields.io/badge/Kotlin-2.1.0-blue?logo=kotlin&logoColor=white)
 <div align="center">
     <img alt="Compose multiplatform charts" src="./screenshots/compose_multiplatform_logo.png"/>
