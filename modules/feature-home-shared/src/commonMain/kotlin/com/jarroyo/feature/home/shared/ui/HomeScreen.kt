@@ -45,6 +45,7 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import org.koin.compose.viewmodel.koinViewModel
+import org.koin.core.component.getScopeName
 
 @Composable
 fun HomeScreen(viewModel: HomeViewModel = koinViewModel<HomeViewModel>()) {
@@ -119,6 +120,9 @@ private fun HomeScreen(
             ) {
                 item {
                     Text(state.currentLocalDateTime?.format().orEmpty())
+                }
+                item {
+                    Text("${state.scheduleList}")
                 }
                 if (state.rocketList.isNullOrEmpty() && state.loading) {
                     rocketList(getLaunchListPlaceholderData(), sendEvent, placeholder = true)

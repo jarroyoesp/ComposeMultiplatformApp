@@ -16,6 +16,7 @@ kotlin {
         jvmMain.dependencies {
             implementation(projects.modules.featureHomeShared)
             implementation(compose.desktop.currentOs)
+            implementation(libs.gitlive.firebase.java)
             implementation(libs.koin.core)
         }
     }

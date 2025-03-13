@@ -16,6 +16,7 @@ coil3 = "3.0.4"
 coroutines = "1.10.1"
 detekt = "1.23.7"
 diktat = "1.2.5"
+gitlive = "2.1.0"
 gradle = "8.1.1"
 greclipse = "4.19.0"
 hilt = "2.55"
@@ -107,6 +108,10 @@ desugar = { module = "com.android.tools:desugar_jdk_libs", version = "2.1.5" }
 detekt = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
 detekt-rules-compose = { module = "ru.kode:detekt-rules-compose", version = "1.4.0" }
 detekt-twitter-compose-rules = { module = "com.twitter.compose.rules:detekt", version = "0.0.26" }
+firebase-bom =  { module = "com.google.firebase:firebase-bom", version = "33.10.0" }
+gitlive-firebase-firestore = { module = "dev.gitlive:firebase-firestore", version.ref = "gitlive" }
+gitlive-firebase-common = { module = "dev.gitlive:firebase-common", version.ref = "gitlive" }
+gitlive-firebase-java = { module = "dev.gitlive:firebase-java-sdk", version = "0.4.6" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
 hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "hilt" }

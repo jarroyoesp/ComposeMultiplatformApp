@@ -17,6 +17,7 @@ plugins {
     id("composeapp.dependencies-conventions")
     id("com.starter.easylauncher")
     id("composeapp.ruler-conventions")
+    id("com.google.gms.google-services")
 }
 
 val libs = the<LibrariesForLibs>()
