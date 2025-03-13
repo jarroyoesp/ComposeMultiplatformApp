@@ -40,9 +40,12 @@ kotlin {
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
             baseName = "ComposeApp"
+            isStatic = true
+            linkerOpts("-ObjC")
             export(libs.androidx.lifecycle.viewmodel)
         }
     }
+
     jvm("desktop")
     targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget> {
         binaries.all {
