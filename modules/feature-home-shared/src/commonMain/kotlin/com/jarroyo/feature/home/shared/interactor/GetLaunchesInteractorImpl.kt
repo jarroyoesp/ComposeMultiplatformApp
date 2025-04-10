@@ -26,14 +26,6 @@ internal class GetLaunchesInteractorImpl(
         .query(LaunchesQuery())
         .fetchPolicy(fetchPolicy)
         .executeAndHandleErrors { response ->
-
-            val id = firestore.collection("Schedules").get().documents.get(0).data<String>()
-            Logger.d("Firestore: $id")
-            //firestore.collection("Schedules").snapshots.collect {
-            //    it.documents.map {  document ->
-            //        document.id
-            //    }
-            //}
             Ok(response.data?.launches?.filterNotNull()?.map { it.launchFragment })
         }
 }

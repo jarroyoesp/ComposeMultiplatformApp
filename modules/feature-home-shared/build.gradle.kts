@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.compose")
     id("org.jetbrains.kotlin.plugin.compose")
     alias(libs.plugins.sqldelight)
+    //id("org.jetbrains.kotlin.native.cocoapods")
 }
 
 android {
@@ -22,11 +23,17 @@ sqldelight {
 }
 
 kotlin {
+    //cocoapods {
+    //    ios.deploymentTarget = "16.0"
+    //    pod("FirebaseCore", linkOnly = true)
+    //    noPodspec()
+    //}
+
     targets.filterIsInstance<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget>()
         .forEach {
             it.binaries.filterIsInstance<org.jetbrains.kotlin.gradle.plugin.mpp.Framework>()
                 .forEach { lib ->
-                    lib.isStatic = false
+                    lib.isStatic = true
                     lib.linkerOpts.add("-lsqlite3")
                 }
         }
