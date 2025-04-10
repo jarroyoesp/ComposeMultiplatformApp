@@ -33,11 +33,9 @@
             <option value="$PROJECT_DIR$/modules/library-network" />
             <option value="$PROJECT_DIR$/modules/library-network-api" />
             <option value="$PROJECT_DIR$/modules/library-test" />
-            <option value="$PROJECT_DIR$/modules/library-ui" />
             <option value="$PROJECT_DIR$/modules/library-ui-shared" />
           </set>
         </option>
-        <option name="resolveExternalAnnotations" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

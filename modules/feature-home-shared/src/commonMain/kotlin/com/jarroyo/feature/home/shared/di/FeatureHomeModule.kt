@@ -24,7 +24,7 @@ val featureHomeModule = module {
     factory<GetFavoritesInteractor> { GetFavoritesInteractorImpl(get()) }
     factory<GetLaunchesInteractor> { GetLaunchesInteractorImpl(get()) }
     factory<GetLaunchDetailInteractor> { GetLaunchDetailInteractorImpl(get()) }
-    factory<GetSchedulesInteractor> { GetSchedulesInteractorImpl() }
+    factory<GetSchedulesInteractor> { GetSchedulesInteractorImpl(get()) }
     factory<OpenUrlInBrowserInteractor> { OpenUrlInBrowserInteractorImpl() }
     factory<RemoveFavoriteInteractor> { RemoveFavoriteInteractorImpl(get()) }
 

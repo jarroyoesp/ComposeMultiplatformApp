@@ -11,9 +11,9 @@ object HomeContract {
     data class State(
         val currentLocalDateTime: LocalDateTime? = null,
         val favoritesList: List<String>? = null,
-        val scheduleList: List<String>? = null,
         val loading: Boolean = false,
         val rocketList: List<LaunchFragment>? = null,
+        val scheduleList: List<Schedule>? = null,
     ) : ViewState
 
     sealed class Event : ViewEvent {

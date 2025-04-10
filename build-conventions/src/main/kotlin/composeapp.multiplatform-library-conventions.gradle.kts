@@ -28,7 +28,6 @@ android {
 
 kotlin {
     androidTarget {
-        @OptIn(ExperimentalKotlinGradlePluginApi::class)
         compilerOptions {
             jvmTarget.set(JvmTarget.fromTarget(config.android.javaVersion.get().toString()))
         }
@@ -66,6 +65,7 @@ kotlin {
             implementation(libs.calendar)
             implementation(libs.coil.compose)
             implementation(libs.coroutines.core)
+            implementation(libs.gitlive.firebase.common)
             implementation(libs.gitlive.firebase.firestore)
             implementation(libs.koin.annotations)
             implementation(libs.koin.compose)

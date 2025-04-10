@@ -28,16 +28,11 @@ fun main() {
 fun initializeFirebase() {
     FirebasePlatform.initializeFirebasePlatform(
         object : FirebasePlatform() {
-            override fun store(key: String, value: String) {
-                // TODO
-            }
+            override fun store(key: String, value: String) { }
             override fun retrieve(key: String) = ""
-            // TODO
-            override fun clear(key: String) {
-                // TODO
-            }
-            override fun log(msg: String) = println(msg)
-        }
+            override fun clear(key: String) { }
+            override fun log(msg: String) { }
+        },
     )
 
     val options: FirebaseOptions = FirebaseOptions.Builder()
