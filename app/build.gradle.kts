@@ -31,7 +31,6 @@ dependencies {
     implementation(projects.modules.featureHomeShared)
     implementation(projects.modules.libraryNavigation)
     implementation(projects.modules.libraryNetwork)
-    implementation(projects.modules.libraryUi)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime)
