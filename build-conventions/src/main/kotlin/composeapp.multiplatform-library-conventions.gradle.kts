@@ -28,7 +28,6 @@ android {
 
 kotlin {
     androidTarget {
-        @OptIn(ExperimentalKotlinGradlePluginApi::class)
         compilerOptions {
             jvmTarget.set(JvmTarget.fromTarget(config.android.javaVersion.get().toString()))
         }
@@ -40,9 +39,12 @@ kotlin {
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
             baseName = "ComposeApp"
+            isStatic = true
+            linkerOpts("-ObjC")
             export(libs.androidx.lifecycle.viewmodel)
         }
     }
+
     jvm("desktop")
     targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget> {
         binaries.all {
@@ -63,6 +65,8 @@ kotlin {
             implementation(libs.calendar)
             implementation(libs.coil.compose)
             implementation(libs.coroutines.core)
+            implementation(libs.gitlive.firebase.common)
+            implementation(libs.gitlive.firebase.firestore)
             implementation(libs.koin.annotations)
             implementation(libs.koin.compose)
             implementation(libs.koin.compose.viewmodel)

@@ -4,6 +4,9 @@ import com.apollographql.apollo.ApolloClient
 import com.apollographql.apollo.cache.normalized.api.MemoryCacheFactory
 import com.apollographql.apollo.cache.normalized.api.NormalizedCacheFactory
 import com.apollographql.apollo.cache.normalized.normalizedCache
+import dev.gitlive.firebase.Firebase
+import dev.gitlive.firebase.firestore.FirebaseFirestore
+import dev.gitlive.firebase.firestore.firestore
 import org.koin.dsl.module
 
 val networkModule = module {
@@ -19,6 +22,10 @@ val networkModule = module {
             .serverUrl("https://spacex-production.up.railway.app/")
             .apply { normalizedCache(chainedCacheFactory) }
             .build()
+    }
+
+    single<FirebaseFirestore> {
+        Firebase.firestore
     }
 }
 

@@ -31,7 +31,7 @@ android {
 
 kotlin {
     androidTarget()
-    jvm("desktop")
+    // jvm("desktop")
     sourceSets {
         androidMain.dependencies {
             api(libs.androidx.test.core)

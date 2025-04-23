@@ -9,13 +9,13 @@ version = "1.0-SNAPSHOT"
 
 kotlin {
     jvm {
-        //jvmToolchain(11)
         withJava()
     }
     sourceSets {
         jvmMain.dependencies {
             implementation(projects.modules.featureHomeShared)
             implementation(compose.desktop.currentOs)
+            implementation(libs.gitlive.firebase.java)
             implementation(libs.koin.core)
         }
     }

@@ -16,6 +16,7 @@ coil3 = "3.0.4"
 coroutines = "1.10.1"
 detekt = "1.23.7"
 diktat = "1.2.5"
+gitlive = "2.1.0"
 gradle = "8.1.1"
 greclipse = "4.19.0"
 hilt = "2.55"
@@ -24,12 +25,12 @@ jetbrains-navigation = "2.8.0-alpha10"
 junit = "1.2.1"
 koin = "4.0.0"
 koin-ksp = "1.4.0"
-kotlin = "2.1.0"
+kotlin = "2.1.20"
 kotlinpoet = "2.0.0"
 kotlin-multiplatform = "1.7.3"
 kotlin-result = "2.0.1"
 kotlinx-datetime="0.6.0"
-ksp = "2.1.0-1.0.29"
+ksp = "2.1.20-2.0.0"
 ktlint = "0.43.0"
 ktor = "3.0.1"
 mockk = "1.13.16"
@@ -107,6 +108,11 @@ desugar = { module = "com.android.tools:desugar_jdk_libs", version = "2.1.5" }
 detekt = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
 detekt-rules-compose = { module = "ru.kode:detekt-rules-compose", version = "1.4.0" }
 detekt-twitter-compose-rules = { module = "com.twitter.compose.rules:detekt", version = "0.0.26" }
+firebase-bom =  { module = "com.google.firebase:firebase-bom", version = "33.10.0" }
+firebase-common-ktx =  { module = "com.google.firebase:firebase-common-ktx", version = "21.0.0" }
+gitlive-firebase-firestore = { module = "dev.gitlive:firebase-firestore", version.ref = "gitlive" }
+gitlive-firebase-common = { module = "dev.gitlive:firebase-common", version.ref = "gitlive" }
+gitlive-firebase-java = { module = "dev.gitlive:firebase-java-sdk", version = "0.4.6" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
 hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "hilt" }

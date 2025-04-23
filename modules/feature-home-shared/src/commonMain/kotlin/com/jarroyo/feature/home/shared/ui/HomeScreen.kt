@@ -120,6 +120,9 @@ private fun HomeScreen(
                 item {
                     Text(state.currentLocalDateTime?.format().orEmpty())
                 }
+                item {
+                    Text("${state.scheduleList}")
+                }
                 if (state.rocketList.isNullOrEmpty() && state.loading) {
                     rocketList(getLaunchListPlaceholderData(), sendEvent, placeholder = true)
                 } else {

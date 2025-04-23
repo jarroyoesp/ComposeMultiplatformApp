@@ -37,11 +37,13 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.material3)
+    implementation(libs.gitlive.firebase.firestore)
     implementation(libs.koin.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.espresso.core)
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
+    androidTestImplementation(libs.gitlive.firebase.firestore)
     debugImplementation(libs.androidx.compose.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 

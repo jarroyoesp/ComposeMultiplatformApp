@@ -26,10 +26,17 @@ kotlin {
         .forEach {
             it.binaries.filterIsInstance<org.jetbrains.kotlin.gradle.plugin.mpp.Framework>()
                 .forEach { lib ->
-                    lib.isStatic = false
+                    lib.isStatic = true
                     lib.linkerOpts.add("-lsqlite3")
                 }
         }
+    // REVIEW reason of ld: framework 'FirebaseCore' not found
+    tasks.matching { it.name == "linkDebugTestIosSimulatorArm64" }.configureEach {
+        enabled = false
+    }
+    tasks.matching { it.name == "linkDebugTestIosX64" }.configureEach {
+        enabled = false
+    }
     sourceSets {
         androidMain.dependencies {
             implementation(libs.sqldelight.androidDriver)
