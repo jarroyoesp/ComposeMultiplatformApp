@@ -102,6 +102,11 @@ jobs:
       - name: Accept Android licenses
         run: yes | "$ANDROID_HOME"/cmdline-tools/latest/bin/sdkmanager --licenses || true
 
+      - name: Restore google-services.json
+        run: |
+          mkdir -p app
+          echo "${{ secrets.GOOGLE_SERVICES_JSON_BASE64 }}" | base64 --decode > app/google-services.json
+
       - name: Run Espresso tests on Pixel6 Api${{ matrix.api-level }} AOSP
         run: ./gradlew pixel6Api${{ matrix.api-level }}aospDebugAndroidTest
           -Pandroid.experimental.testOptions.managedDevices.emulator.showKernelLogging=true
@@ -138,6 +143,12 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Restore google-services.json
+        run: |
+          mkdir -p app
+          echo "${{ secrets.GOOGLE_SERVICES_JSON_BASE64 }}" | base64 --decode > app/google-services.json
+
       # 2
       - name: Generate Release APK
         run: ./gradlew assembleRelease
