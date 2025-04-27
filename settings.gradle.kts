@@ -29,6 +29,9 @@ include(
     // Modules
     ":modules:feature-home-api",
     ":modules:feature-home-shared",
+    ":modules:feature-schedules",
+    ":modules:feature-schedules-api",
+    ":modules:library-feature",
     ":modules:library-navigation",
     ":modules:library-navigation-api",
     ":modules:library-network",
@@ -36,3 +39,6 @@ include(
     ":modules:library-test",
     ":modules:library-ui-shared",
 )
+include(":feature-schedules-api")
+include(":modules:feature-schedules")
+include(":modules:library-feature")

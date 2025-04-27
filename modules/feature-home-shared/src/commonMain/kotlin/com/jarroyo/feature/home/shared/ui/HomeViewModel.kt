@@ -5,10 +5,10 @@ import com.apollographql.apollo.cache.normalized.FetchPolicy
 import com.jarroyo.feature.home.api.interactor.GetLaunchesInteractor
 import com.jarroyo.feature.home.api.destination.LaunchDetailDestination
 import com.jarroyo.feature.home.api.interactor.GetFavoritesInteractor
-import com.jarroyo.feature.home.api.interactor.GetSchedulesInteractor
 import com.jarroyo.feature.home.shared.ui.HomeContract.Effect
 import com.jarroyo.feature.home.shared.ui.HomeContract.Event
 import com.jarroyo.feature.home.shared.ui.HomeContract.State
+import com.jarroyo.feature.schedules.api.destination.ScheduleListDestination
 import com.jarroyo.library.navigation.api.navigator.AppNavigator
 import com.jarroyo.library.ui.shared.BaseViewModel
 import kotlinx.coroutines.delay
@@ -23,7 +23,6 @@ class HomeViewModel(
     private val appNavigator: AppNavigator,
     private val getFavoritesInteractor: GetFavoritesInteractor,
     private val getLaunchesInteractor: GetLaunchesInteractor,
-    private val getSchedulesInteractor: GetSchedulesInteractor,
 ) : BaseViewModel<Event, State, Effect>() {
     init {
         refreshData()
@@ -35,6 +34,7 @@ class HomeViewModel(
         when (event) {
             is Event.FavoritesUpdated -> refreshData(FetchPolicy.NetworkFirst)
             is Event.OnItemClicked -> appNavigator.navigate(LaunchDetailDestination.get(event.id))
+            is Event.OnScheduleListButtonClicked -> appNavigator.navigate(ScheduleListDestination.route)
             is Event.OnSwipeToRefresh -> handleOnSwipeToRefresh()
         }
     }
@@ -54,7 +54,6 @@ class HomeViewModel(
                 sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
             }
             refreshFavorites()
-            refreshSchedules()
             updateState { copy(loading = false) }
         }
         refreshCurrentLocalDateTime()
@@ -64,14 +63,6 @@ class HomeViewModel(
         val result = getFavoritesInteractor()
         if (result.isOk) {
             updateState { copy(favoritesList = result.value) }
-        } else {
-            sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
-        }
-    }
-    private suspend fun refreshSchedules() {
-        val result = getSchedulesInteractor()
-        if (result.isOk) {
-            updateState { copy(scheduleList = result.value) }
         } else {
             sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
         }

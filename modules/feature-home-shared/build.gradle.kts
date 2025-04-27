@@ -1,5 +1,5 @@
 plugins {
-    id("composeapp.multiplatform-library-conventions")
+    id("composeapp.multiplatform-feature-conventions")
     id("org.jetbrains.compose")
     id("org.jetbrains.kotlin.plugin.compose")
     alias(libs.plugins.sqldelight)
@@ -50,10 +50,11 @@ kotlin {
             implementation(libs.sqldelight.coroutines)
 
             implementation(projects.modules.featureHomeApi)
+            implementation(projects.modules.featureSchedules)
+            implementation(projects.modules.featureSchedulesApi)
             implementation(projects.modules.libraryNavigation)
             implementation(projects.modules.libraryNetworkApi)
             implementation(projects.modules.libraryNetwork)
-            implementation(projects.modules.libraryUiShared)
         }
 
         desktopMain.dependencies {

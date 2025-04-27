@@ -1,5 +1,6 @@
 package com.jarroyo.feature.home.shared.di
 
+import com.jarroyo.feature.schedules.SchedulesFeature
 import com.jarroyo.library.navigation.di.navigationModule
 import com.jarroyo.library.network.di.networkModule
 import org.koin.core.component.get
@@ -13,6 +14,8 @@ fun initKoin(additionalModules: List<Module> = emptyList()) =
                     featureHomeModule +
                     navigationModule +
                     networkModule +
+                    featuresModule +
+                    SchedulesFeature.module +
                     platformModule(),
         )
     }

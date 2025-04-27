@@ -8,10 +8,12 @@ import androidx.compose.foundation.layout.calculateEndPadding
 import androidx.compose.foundation.layout.calculateStartPadding
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material.Button
 import androidx.compose.material.DrawerValue
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
@@ -38,6 +40,7 @@ import com.jarroyo.feature.home.shared.ext.format
 import com.jarroyo.feature.home.shared.ui.HomeContract.Effect
 import com.jarroyo.feature.home.shared.ui.HomeContract.Event
 import com.jarroyo.feature.home.shared.ui.HomeContract.State
+import com.jarroyo.feature.home.shared.ui.launchdetail.LaunchDetailContract
 import com.jarroyo.feature.home.shared.ui.launchdetail.getPlaceholderData
 import com.jarroyo.library.ui.shared.theme.Spacing
 import kotlinx.coroutines.flow.Flow
@@ -121,7 +124,15 @@ private fun HomeScreen(
                     Text(state.currentLocalDateTime?.format().orEmpty())
                 }
                 item {
-                    Text("${state.scheduleList}")
+                    Button(
+                        onClick = { sendEvent(Event.OnScheduleListButtonClicked) },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = Spacing.x01),
+                        enabled = !state.loading,
+                    ) {
+                        Text("Show Schedules")
+                    }
                 }
                 if (state.rocketList.isNullOrEmpty() && state.loading) {
                     rocketList(getLaunchListPlaceholderData(), sendEvent, placeholder = true)

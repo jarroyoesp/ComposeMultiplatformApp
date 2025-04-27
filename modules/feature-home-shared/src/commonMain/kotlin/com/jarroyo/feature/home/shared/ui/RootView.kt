@@ -22,6 +22,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.compose.ui.Modifier
+import com.jarroyo.library.feature.Feature
 
 internal val darkmodeState = mutableStateOf(false)
 internal val safeAreaState = mutableStateOf(PaddingValues())
@@ -32,12 +33,18 @@ internal val DarkMode = compositionLocalOf { darkmodeState }
 fun RootView() {
     val appNavigator: AppNavigator = getKoin().get()
     val navHostController: NavHostController = rememberNavController()
-    Scaffold(modifier = Modifier.fillMaxSize()) { scaffoldPadding: PaddingValues ->
+    val features: List<Feature> = getKoin().get<List<Feature>>()
+    val mainNavigationBarEntries: Map<String, Feature.NavigationSuiteEntry> = populateNavigationBar(features)
+
+    Scaffold(
+        modifier = Modifier.fillMaxSize(),
+        bottomBar = { MainNavigationBar(navHostController, mainNavigationBarEntries) },
+    ) { scaffoldPadding: PaddingValues ->
         NavHost(
             navController = navHostController,
             startDestination = HomeDestination.route,
             builder = {
-                addComposableDestinations()
+                addComposableDestinations(features = features)
             },
         )
         LaunchedEffect(navHostController) {
@@ -56,13 +63,20 @@ fun RootView() {
     }
 }
 
-fun NavGraphBuilder.addComposableDestinations() {
-    composable(
-        route = LaunchDetailDestination.route,
-        arguments = LaunchDetailDestination.arguments,
-    ) { LaunchDetailScreen() }
-    composable(
-        route = HomeDestination.route,
-        arguments = HomeDestination.arguments,
-    ) { HomeScreen() }
+fun NavGraphBuilder.addComposableDestinations(features: List<Feature>) {
+    features.forEach { feature ->
+        feature.composableDestinations.forEach { entry ->
+            val destination = entry.key
+            composable(destination.route, destination.arguments) { entry.value() }
+        }
+    }
+}
+private fun populateNavigationBar(features: List<Feature>): Map<String, Feature.NavigationSuiteEntry> {
+    val navigationEntryMap = mutableMapOf<String, Feature.NavigationSuiteEntry>()
+    features
+        .filter { it.navigationSuiteEntry?.enabled == true }
+        .forEach { feature ->
+            feature.navigationSuiteEntry?.let { entry -> navigationEntryMap[entry.route] = entry }
+        }
+    return navigationEntryMap
 }

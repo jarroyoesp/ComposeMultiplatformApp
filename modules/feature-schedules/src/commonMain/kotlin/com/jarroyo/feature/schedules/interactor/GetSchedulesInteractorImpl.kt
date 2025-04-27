@@ -1,10 +1,10 @@
-package com.jarroyo.feature.home.shared.interactor
+package com.jarroyo.feature.schedules.interactor
 
 import com.github.michaelbull.result.Err
 import com.github.michaelbull.result.Ok
 import com.github.michaelbull.result.Result
-import com.jarroyo.feature.home.api.interactor.GetSchedulesInteractor
-import com.jarroyo.feature.home.api.interactor.Schedule
+import com.jarroyo.feature.schedules.api.interactor.GetSchedulesInteractor
+import com.jarroyo.feature.schedules.api.interactor.Schedule
 import dev.gitlive.firebase.firestore.FirebaseFirestore
 import dev.gitlive.firebase.firestore.FirebaseFirestoreException
 

@@ -77,6 +77,12 @@
             android:directBootAware="true"
             android:exported="false"
             android:initOrder="100" />
+        <provider
+            android:name="org.jetbrains.compose.resources.AndroidContextProvider"
+            android:authorities="com.jarroyo.composeapp.resources.AndroidContextProvider"
+            android:enabled="true"
+            android:exported="false" >
+        </provider>
 
         <uses-library
             android:name="androidx.window.extensions"

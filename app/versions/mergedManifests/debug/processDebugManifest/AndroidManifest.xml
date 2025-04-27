@@ -47,6 +47,13 @@
                 android:value="" />
         </activity>
 
+        <provider
+            android:name="org.jetbrains.compose.resources.AndroidContextProvider"
+            android:authorities="com.jarroyo.composeapp.debug.resources.AndroidContextProvider"
+            android:enabled="true"
+            android:exported="false" >
+        </provider>
+
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"
             android:directBootAware="true"
