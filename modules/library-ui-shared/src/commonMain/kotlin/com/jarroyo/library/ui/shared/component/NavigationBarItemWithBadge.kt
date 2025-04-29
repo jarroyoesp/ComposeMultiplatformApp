@@ -24,22 +24,22 @@ fun RowScope.NavigationBarItemWithBadge(
         selected = selected,
         onClick = onClick,
         icon = {
-           //BadgedBox(
-           //    badge = {
-           //        badgeCount?.let { count ->
-           //            Badge(
-           //                modifier = Modifier.padding(top = Spacing.x01),
-           //            ) {
-           //                Text(count.toString())
-           //            }
-           //        }
-           //    },
-           //) {
-           //    Icon(
-           //        painter = icon,
-           //        contentDescription = label,
-           //    )
-           //}
+           // BadgedBox(
+           // badge = {
+           // badgeCount?.let { count ->
+           // Badge(
+           // modifier = Modifier.padding(top = Spacing.x01),
+           // ) {
+           // Text(count.toString())
+           // }
+           // }
+           // },
+           // ) {
+           // Icon(
+           // painter = icon,
+           // contentDescription = label,
+           // )
+           // }
         },
         modifier = modifier,
         label = label?.let {

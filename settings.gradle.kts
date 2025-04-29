@@ -27,8 +27,14 @@ include(
     ":iosapp",
 
     // Modules
+    ":modules:feature-common",
+    ":modules:feature-common-api",
+    ":modules:feature-electricity",
+    ":modules:feature-electricity-api",
     ":modules:feature-home-api",
     ":modules:feature-home-shared",
+    ":modules:feature-launches",
+    ":modules:feature-launches-api",
     ":modules:feature-schedules",
     ":modules:feature-schedules-api",
     ":modules:library-feature",
@@ -39,6 +45,3 @@ include(
     ":modules:library-test",
     ":modules:library-ui-shared",
 )
-include(":feature-schedules-api")
-include(":modules:feature-schedules")
-include(":modules:library-feature")

@@ -8,9 +8,6 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.mutableStateOf
 import co.touchlab.kermit.Logger
-import com.jarroyo.feature.home.api.destination.HomeDestination
-import com.jarroyo.feature.home.api.destination.LaunchDetailDestination
-import com.jarroyo.feature.home.shared.ui.launchdetail.LaunchDetailScreen
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import com.jarroyo.library.navigation.api.navigator.AppNavigator
@@ -42,7 +39,7 @@ fun RootView() {
     ) { scaffoldPadding: PaddingValues ->
         NavHost(
             navController = navHostController,
-            startDestination = HomeDestination.route,
+            startDestination = appNavigator.homeDestination,
             builder = {
                 addComposableDestinations(features = features)
             },

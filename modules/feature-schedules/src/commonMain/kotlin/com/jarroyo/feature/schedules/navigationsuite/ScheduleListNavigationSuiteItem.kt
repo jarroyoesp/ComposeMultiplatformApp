@@ -18,7 +18,7 @@ fun RowScope.ScheduleListNavigationBarItem(
     MainNavigationBarItem(
         selected = selected,
         onClick = onClick,
-        icon = painter, //painterResource(resource = painter),
+        icon = painter,  // painterResource(resource = painter),
         modifier = modifier,
         label = label,
     )

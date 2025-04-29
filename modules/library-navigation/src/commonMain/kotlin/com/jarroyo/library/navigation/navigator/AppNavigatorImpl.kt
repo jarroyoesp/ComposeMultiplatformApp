@@ -1,7 +1,7 @@
 package com.jarroyo.library.navigation.navigator
 
 import androidx.navigation.NavOptionsBuilder
-import com.jarroyo.feature.home.api.destination.HomeDestination
+import com.jarroyo.feature.launches.api.destination.LaunchListDestination
 import com.jarroyo.library.navigation.api.navigator.AppNavigator
 import com.jarroyo.library.navigation.api.navigator.NavigatorEvent
 import kotlinx.coroutines.channels.Channel
@@ -12,7 +12,7 @@ internal class AppNavigatorImpl : AppNavigator {
     private val navigationEvents = Channel<NavigatorEvent>(capacity = Channel.CONFLATED)
 
     override val destinations = navigationEvents.receiveAsFlow()
-    override val homeDestination = HomeDestination.route
+    override val homeDestination = LaunchListDestination.route
 
     /**
      * Attempts to navigate up in the navigation hierarchy. Suitable for when the user presses the
