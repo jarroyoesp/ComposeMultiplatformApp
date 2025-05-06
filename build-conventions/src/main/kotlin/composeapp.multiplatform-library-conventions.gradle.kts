@@ -89,7 +89,8 @@ kotlin {
         val desktopMain by getting {
             dependencies {
                 implementation(libs.coroutines.swing)
-                implementation(libs.ktor.client.cio)
+                implementation(libs.ktor.client.java)
+
             }
         }
 

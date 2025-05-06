@@ -35,6 +35,7 @@ import com.jarroyo.composeapp.library.network.api.graphql.fragment.RocketFragmen
 import com.jarroyo.feature.launches.ui.launchlist.LaunchListContract.Effect
 import com.jarroyo.feature.launches.ui.launchlist.LaunchListContract.Event
 import com.jarroyo.feature.launches.ui.launchlist.LaunchListContract.State
+import com.jarroyo.library.ui.shared.component.LocalMainScaffoldPadding
 import com.jarroyo.library.ui.shared.theme.Spacing
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
@@ -75,14 +76,10 @@ private fun LaunchListScreen(
     val scaffoldState = rememberScaffoldState(rememberDrawerState(DrawerValue.Closed))
     val scrollState = rememberLazyListState()
     Scaffold(
+        modifier = Modifier.padding(LocalMainScaffoldPadding.current.value),
         topBar = {
             Box(modifier = Modifier.background(MaterialTheme.colors.primary)) {
                 TopAppBar(
-                    modifier = Modifier.padding(
-                        // start = SafeArea.current.value.calculateStartPadding(LayoutDirection.Ltr),
-                        // top = SafeArea.current.value.calculateTopPadding(),
-                        // end = SafeArea.current.value.calculateEndPadding(LayoutDirection.Ltr),
-                    ),
                     title = { Text("Space X launches") },
                 )
             }

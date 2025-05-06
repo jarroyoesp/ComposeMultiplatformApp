@@ -20,6 +20,19 @@ kotlin {
         commonMain.dependencies {
             api(projects.modules.libraryNetworkApi)
             implementation(libs.koin.core)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.cio)
+            implementation(libs.ktor.serialization.kotlinx.json)
         }
+
+        iosMain.dependencies {
+            implementation(libs.ktor.client.darwin)
+        }
+
+        desktopMain.dependencies {
+            implementation(libs.ktor.client.java)
+        }
+
     }
 }

@@ -18,6 +18,7 @@ kotlin {
 
             implementation(projects.modules.libraryNavigationApi)
             implementation(projects.modules.libraryNetworkApi)
+            implementation(projects.modules.libraryNetwork)
         }
     }
 }

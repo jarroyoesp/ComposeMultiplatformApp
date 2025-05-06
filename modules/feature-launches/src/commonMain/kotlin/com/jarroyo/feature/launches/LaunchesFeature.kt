@@ -8,6 +8,7 @@ import com.jarroyo.feature.launches.api.destination.LaunchDestination
 import com.jarroyo.feature.launches.api.destination.LaunchListDestination
 import com.jarroyo.feature.launches.api.interactor.GetFavoritesInteractor
 import com.jarroyo.feature.launches.api.interactor.GetLaunchesInteractor
+import com.jarroyo.feature.launches.di.launchesModule
 import com.jarroyo.feature.launches.interactor.AddFavoriteInteractorImpl
 import com.jarroyo.feature.launches.interactor.GetFavoritesInteractorImpl
 import com.jarroyo.feature.launches.interactor.GetLaunchDetailInteractorImpl
@@ -38,7 +39,7 @@ class LaunchesFeature : Feature() {
     )
 
     companion object {
-        val module: Module = module {
+        val module: List<Module> = module {
             factory<AddFavoriteInteractor> { AddFavoriteInteractorImpl(get()) }
             factory<GetFavoritesInteractor> { GetFavoritesInteractorImpl(get()) }
             factory<GetLaunchesInteractor> { GetLaunchesInteractorImpl(get()) }
@@ -47,6 +48,6 @@ class LaunchesFeature : Feature() {
 
             factoryOf(::LaunchDetailViewModel)
             factoryOf(::LaunchListViewModel)
-        }
+        } + launchesModule()
     }
 }

@@ -6,8 +6,6 @@ plugins {
     id("composeapp.versions-conventions")
     id("composeapp.violation-comments-to-github-conventions")
     alias(libs.plugins.multiplatform)
-    alias(libs.plugins.android.library) apply false
-    alias(libs.plugins.kotlin.android) apply false
 }
 
 subprojects {

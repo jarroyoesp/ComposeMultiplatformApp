@@ -1,8 +1,8 @@
 package com.jarroyo.feature.home.shared.di
 
 import com.jarroyo.feature.common.CommonFeature
+import com.jarroyo.feature.electricity.ElectricityFeature
 import com.jarroyo.feature.launches.LaunchesFeature
-import com.jarroyo.feature.launches.di.launchesModule
 import com.jarroyo.feature.schedules.SchedulesFeature
 import com.jarroyo.library.navigation.di.navigationModule
 import com.jarroyo.library.network.di.networkModule
@@ -13,12 +13,12 @@ fun initKoin(additionalModules: List<Module> = emptyList()) =
     startKoin {
         modules(
             additionalModules +
+                    featuresModule +
                     navigationModule +
                     networkModule +
-                    featuresModule +
                     CommonFeature.module +
+                    ElectricityFeature.module +
                     LaunchesFeature.module +
-                    SchedulesFeature.module +
-                    launchesModule(),
+                    SchedulesFeature.module,
         )
     }

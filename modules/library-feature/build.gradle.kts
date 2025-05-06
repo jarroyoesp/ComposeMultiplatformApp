@@ -7,9 +7,6 @@ android {
     defaultConfig {
         consumerProguardFiles("$projectDir/proguard-feature-consumer-rules.pro")
     }
-    //buildFeatures {
-    //    compose = true
-    //}
 }
 
 kotlin {

@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.jarroyo.launches.schedules"
+    namespace = "com.jarroyo.feature.electricity"
     sourceSets["main"].apply {
         res.srcDirs("src/androidMain/res", "src/commonMain/resources")
     }
@@ -27,6 +27,8 @@ kotlin {
             implementation(compose.foundation)
             implementation(compose.material)
             implementation(compose.runtime)
+            implementation(libs.composemultiplatformcharts)
+            implementation(libs.composemultiplatformcharts2)
             implementation(libs.kotlin.datetime)
             implementation(libs.sqldelight.coroutines)
 

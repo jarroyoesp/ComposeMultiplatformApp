@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import com.jarroyo.feature.schedules.ui.list.ScheduleListContract.Effect
 import com.jarroyo.feature.schedules.ui.list.ScheduleListContract.Event
 import com.jarroyo.feature.schedules.ui.list.ScheduleListContract.State
+import com.jarroyo.library.ui.shared.component.LocalMainScaffoldPadding
 import com.jarroyo.library.ui.shared.theme.Spacing
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
@@ -64,6 +65,7 @@ private fun ScheduleListScreen(
     Scaffold(
         topBar = { TopAppBar(sendEvent, state) },
         snackbarHost = { SnackbarHost(snackbarHostState) },
+        modifier = Modifier.padding(LocalMainScaffoldPadding.current.value),
     ) { scaffoldPadding ->
         Column(
             modifier = Modifier

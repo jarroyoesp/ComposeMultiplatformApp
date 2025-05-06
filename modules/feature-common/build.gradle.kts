@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.jarroyo.launches.schedules"
+    namespace = "com.jarroyo.feature.common"
     sourceSets["main"].apply {
         res.srcDirs("src/androidMain/res", "src/commonMain/resources")
     }
