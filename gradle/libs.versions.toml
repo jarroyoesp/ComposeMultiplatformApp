@@ -33,10 +33,13 @@ kotlinx-datetime="0.6.0"
 ksp = "2.1.20-2.0.0"
 ktlint = "0.43.0"
 ktor = "3.0.1"
+material3 = "1.7.3"
 mockk = "1.13.16"
 okhttp = "4.12.0"
 prettier = "2.7.1"
 sqlDelight = "2.0.2"
+kotlinVersion = "2.1.20"
+junitVersion = "1.2.1"
 
 [libraries]
 aboutlibraries = { module = "com.mikepenz:aboutlibraries-compose", version.ref = "aboutlibraries" }
@@ -50,12 +53,14 @@ androidx-compose-foundation = { module = "androidx.compose.foundation:foundation
 androidx-compose-layout = { module = "androidx.compose.foundation:foundation-layout", version.ref = "androidx-compose" }
 androidx-compose-material = { module = "androidx.compose.material:material", version.ref = "androidx-compose" }
 androidx-compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "androidx-compose" }
-androidx-compose-material3 = { module = "androidx.compose.material3:material3", version = "1.3.2" }
+androidx-compose-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "material3" }
+androidx-compose-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "kotlin-multiplatform" }
+androidx-compose-ui-graphics = { module = "org.jetbrains.compose.ui:ui-graphics", version.ref = "kotlin-multiplatform" }
+androidx-compose-ui-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "kotlin-multiplatform" }
 androidx-compose-runtime = { module = "androidx.compose.runtime:runtime", version.ref = "androidx-compose" }
 androidx-compose-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata", version.ref = "androidx-compose" }
 androidx-compose-test = { module = "androidx.compose.test:test-core", version.ref = "androidx-compose" }
 androidx-compose-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "androidx-compose" }
-androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "androidx-compose" }
 androidx-compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "androidx-compose" }
 androidx-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "androidx-compose" }
 androidx-core-ktx = { module = "androidx.core:core-ktx", version = "1.16.0" }
@@ -94,6 +99,8 @@ apollo-cache = { module = "com.apollographql.apollo:apollo-normalized-cache", ve
 apollo-cache-sqlite = { module = "com.apollographql.apollo:apollo-normalized-cache-sqlite", version.ref = "apollo" }
 apollo-testing-support = { module = "com.apollographql.apollo:apollo-testing-support", version.ref = "apollo" }
 calendar = { module = "com.kizitonwose.calendar:compose-multiplatform", version = "2.5.4" }
+composemultiplatformcharts = { module = "io.github.koalaplot:koalaplot-core", version = "0.6.3" }
+composemultiplatformcharts2 = { module = "io.github.thechance101:chart", version = "Beta-0.0.5" }
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil3" }
 coil-compose-core = { module = "io.coil-kt.coil3:coil-compose-core", version.ref = "coil3" }
 coil-network = { module = "io.coil-kt.coil3:coil-network-ktor3", version = "3.0.4" }
@@ -138,10 +145,14 @@ kotlinpoet-ksp = { module = "com.squareup:kotlinpoet-ksp", version.ref = "kotlin
 kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version = "0.3.8" }
 kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.8.0" }
 ksp-symbol-processing-api = { module = "com.google.devtools.ksp:symbol-processing-api", version.ref = "ksp" }
-ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
 ktor-client-ios = { group = "io.ktor", name = "ktor-client-ios", version.ref = "ktor" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
+ktor-client-java = { module = "io.ktor:ktor-client-java", version.ref = "ktor" }
 ktor-client-js = { module = "io.ktor:ktor-client-js", version.ref = "ktor" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
 ktor-client-mock = { module = "io.ktor:ktor-client-mock", version.ref = "ktor" }
 leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", version = "2.14" }
@@ -190,6 +201,7 @@ plugin-spotless = { module = "com.diffplug.spotless:spotless-plugin-gradle", ver
 plugin-versions = "com.github.ben-manes:gradle-versions-plugin:0.51.0"
 plugin-versions-update = "nl.littlerobots.vcu:plugin:0.8.4"
 plugin-violation = { module = "se.bjurr.violations:violation-comments-to-github-gradle-plugin", version = "1.70.0" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 
 [plugins]
 apollo = { id = "com.apollographql.apollo", version.ref = "apollo" }
@@ -201,3 +213,5 @@ multiplatform = { id = "org.jetbrains.compose", version.ref = "kotlin-multiplatf
 sqldelight = { id = "app.cash.sqldelight", version = "2.0.1" }
 tripletplay = { id = "com.github.triplet.play", version = "3.12.1" }
 com-android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinVersion" }

@@ -15,7 +15,7 @@ kotlin {
         commonMain.dependencies {
             api(projects.modules.libraryNavigationApi)
             implementation(libs.koin.core)
-            implementation(projects.modules.featureHomeApi)
+            implementation(projects.modules.featureLaunchesApi)
         }
     }
 }

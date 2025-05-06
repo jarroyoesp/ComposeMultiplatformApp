@@ -1,8 +1,7 @@
 plugins {
-    id("composeapp.multiplatform-library-conventions")
+    id("composeapp.multiplatform-feature-conventions")
     id("org.jetbrains.compose")
     id("org.jetbrains.kotlin.plugin.compose")
-    alias(libs.plugins.sqldelight)
 }
 
 android {
@@ -10,15 +9,6 @@ android {
     sourceSets["main"].apply {
         res.srcDirs("src/androidMain/res", "src/commonMain/resources")
     }
-}
-
-sqldelight {
-    databases {
-        create("Database") {
-            packageName.set("com.jarroyo.feature.home.shared.sqldelight")
-        }
-    }
-    linkSqlite.set(true)
 }
 
 kotlin {
@@ -39,7 +29,6 @@ kotlin {
     }
     sourceSets {
         androidMain.dependencies {
-            implementation(libs.sqldelight.androidDriver)
         }
         commonMain.dependencies {
             implementation(compose.ui)
@@ -47,21 +36,23 @@ kotlin {
             implementation(compose.material)
             implementation(compose.runtime)
             implementation(libs.kotlin.datetime)
-            implementation(libs.sqldelight.coroutines)
 
+            implementation(projects.modules.featureCommon)
+            implementation(projects.modules.featureElectricity)
             implementation(projects.modules.featureHomeApi)
+            implementation(projects.modules.featureLaunches)
+            implementation(projects.modules.featureLaunchesApi)
+            implementation(projects.modules.featureSchedules)
+            implementation(projects.modules.featureSchedulesApi)
             implementation(projects.modules.libraryNavigation)
             implementation(projects.modules.libraryNetworkApi)
             implementation(projects.modules.libraryNetwork)
-            implementation(projects.modules.libraryUiShared)
         }
 
         desktopMain.dependencies {
-            implementation(libs.sqldelight.jvmDriver)
         }
 
         iosMain.dependencies {
-            implementation(libs.sqldelight.nativeDriver)
         }
     }
 }

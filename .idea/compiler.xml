@@ -2,8 +2,6 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="11">
-      <module name="ComposeApp.modules.feature-electricity" target="21" />
-      <module name="ComposeApp.modules.feature-electricity-api" target="21" />
       <module name="ComposeApp.modules.feature-home" target="17" />
       <module name="ComposeApp.modules.library-ui" target="21" />
       <module name="ComposeApp.web" target="17" />
