@@ -41,7 +41,7 @@ kotlin {
             baseName = "ComposeApp"
             isStatic = true
             linkerOpts("-ObjC")
-            export(libs.androidx.lifecycle.viewmodel)
+            export(libs.jetbrains.lifecycle.viewmodel)
         }
     }
 
@@ -54,19 +54,19 @@ kotlin {
 
     sourceSets {
         androidMain.dependencies {
-            implementation(libs.androidx.lifecycle.viewmodel)
+            implementation(libs.jetbrains.lifecycle.viewmodel)
             implementation(libs.ktor.client.android)
         }
 
         commonMain.dependencies {
-            api(libs.androidx.lifecycle.viewmodel)
-            implementation(libs.androidx.lifecycle.runtime.compose)
-            implementation(libs.androidx.navigation.compose)
+            api(libs.jetbrains.lifecycle.viewmodel)
             implementation(libs.calendar)
             implementation(libs.coil.compose)
             implementation(libs.coroutines.core)
             implementation(libs.gitlive.firebase.common)
             implementation(libs.gitlive.firebase.firestore)
+            implementation(libs.jetbrains.lifecycle.runtime.compose)
+            implementation(libs.jetbrains.navigation.compose)
             implementation(libs.koin.annotations)
             implementation(libs.koin.compose)
             implementation(libs.koin.compose.viewmodel)
@@ -82,8 +82,8 @@ kotlin {
         commonTest.dependencies {
             api(libs.apollo.testing.support)
             api(libs.coroutines.test)
+            api(libs.jetbrains.kotlin.test)
             api(libs.junit)
-            api(libs.kotlin.test)
         }
 
         val desktopMain by getting {

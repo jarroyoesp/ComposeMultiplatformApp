@@ -83,14 +83,6 @@
             android:enabled="true"
             android:exported="false" >
         </provider>
-
-        <uses-library
-            android:name="androidx.window.extensions"
-            android:required="false" />
-        <uses-library
-            android:name="androidx.window.sidecar"
-            android:required="false" />
-
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.jarroyo.composeapp.androidx-startup"
@@ -108,6 +100,13 @@
                 android:name="androidx.profileinstaller.ProfileInstallerInitializer"
                 android:value="androidx.startup" />
         </provider>
+
+        <uses-library
+            android:name="androidx.window.extensions"
+            android:required="false" />
+        <uses-library
+            android:name="androidx.window.sidecar"
+            android:required="false" />
 
         <meta-data
             android:name="com.google.android.gms.version"

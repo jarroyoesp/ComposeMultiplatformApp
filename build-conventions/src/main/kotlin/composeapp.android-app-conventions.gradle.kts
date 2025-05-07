@@ -69,8 +69,8 @@ dependencies {
     implementation(libs.coroutines.core)
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
+    implementation(libs.jetbrains.kotlinx.collections.immutable)
     implementation(libs.kotlin.result)
-    implementation(libs.kotlinx.collections.immutable)
     implementation(libs.timber)
     kapt(libs.hilt.compiler)
 

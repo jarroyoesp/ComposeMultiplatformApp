@@ -41,8 +41,8 @@ kotlin {
             api(libs.apollo.testing.support)
             api(libs.coroutines.test)
             api(libs.hilt.android.testing)
+            api(libs.jetbrains.kotlin.test)
             api(libs.junit)
-            api(libs.kotlin.test)
             api(libs.mockk)
         }
 
@@ -50,8 +50,8 @@ kotlin {
             api(libs.apollo.testing.support)
             api(libs.coroutines.test)
             api(libs.hilt.android.testing)
+            api(libs.jetbrains.kotlin.test)
             api(libs.junit)
-            api(libs.kotlin.test)
             api(libs.mockk)
         }
     }

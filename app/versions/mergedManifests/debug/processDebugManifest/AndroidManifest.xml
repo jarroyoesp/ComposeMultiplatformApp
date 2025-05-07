@@ -83,14 +83,6 @@
             android:directBootAware="true"
             android:exported="false"
             android:initOrder="100" />
-
-        <uses-library
-            android:name="androidx.window.extensions"
-            android:required="false" />
-        <uses-library
-            android:name="androidx.window.sidecar"
-            android:required="false" />
-
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.jarroyo.composeapp.debug.androidx-startup"
@@ -109,13 +101,21 @@
                 android:value="androidx.startup" />
         </provider>
 
+        <uses-library
+            android:name="androidx.window.extensions"
+            android:required="false" />
+        <uses-library
+            android:name="androidx.window.sidecar"
+            android:required="false" />
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
         <activity
             android:name="androidx.activity.ComponentActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@android:style/Theme.Material.Light.NoActionBar" />
         <activity
             android:name="androidx.compose.ui.tooling.PreviewActivity"
             android:exported="true" />

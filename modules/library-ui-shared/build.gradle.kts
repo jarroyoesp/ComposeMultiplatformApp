@@ -17,13 +17,15 @@ kotlin {
         }
 
         commonMain.dependencies {
+            api(compose.materialIconsExtended)
+
             implementation(compose.components.resources)
             implementation(compose.foundation)
             implementation(compose.material)
-            implementation(libs.androidx.compose.material3)
-            implementation(libs.androidx.compose.ui)
-            implementation(libs.androidx.compose.ui.graphics)
-            implementation(libs.androidx.compose.ui.resources)
+            implementation(libs.jetbrains.compose.material3)
+            implementation(libs.jetbrains.compose.ui)
+            implementation(libs.jetbrains.compose.ui.graphics)
+            implementation(libs.jetbrains.compose.ui.resources)
             implementation(libs.compose.placeholder)
             implementation(libs.coroutines.core)
         }
