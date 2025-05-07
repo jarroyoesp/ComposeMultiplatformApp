@@ -39,7 +39,7 @@ kotlin {
             api(libs.apollo.adapters)
             api(libs.apollo.cache)
             implementation(libs.apollo.cache.sqlite)
-            implementation(libs.kotlinx.serialization)
+            implementation(libs.jetbrains.kotlinx.serialization)
         }
     }
 }

@@ -14,7 +14,7 @@ android {
 kotlin {
     sourceSets {
         commonMain.dependencies {
-            api(libs.kotlinx.serialization)
+            api(libs.jetbrains.kotlinx.serialization)
 
             implementation(projects.modules.libraryNavigationApi)
             implementation(projects.modules.libraryNetworkApi)

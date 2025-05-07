@@ -29,7 +29,7 @@ kotlin {
             implementation(compose.runtime)
             implementation(libs.composemultiplatformcharts)
             implementation(libs.composemultiplatformcharts2)
-            implementation(libs.kotlin.datetime)
+            implementation(libs.jetbrains.kotlin.datetime)
             implementation(libs.sqldelight.coroutines)
 
             implementation(projects.modules.featureElectricityApi)

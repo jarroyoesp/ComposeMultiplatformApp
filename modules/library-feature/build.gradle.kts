@@ -2,7 +2,7 @@ plugins {
     id("composeapp.multiplatform-library-conventions")
 }
 android {
-    namespace = "com.veeva.link.library.feature"
+    namespace = "com.jarroyo.library.feature"
     resourcePrefix = "feature_"
     defaultConfig {
         consumerProguardFiles("$projectDir/proguard-feature-consumer-rules.pro")

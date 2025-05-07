@@ -15,7 +15,7 @@ kotlin {
             api(project(":modules:library-feature"))
 
             implementation(project(":modules:library-ui-shared"))
-            implementation(libs.androidx.compose.material3)
+            implementation(libs.jetbrains.compose.material3)
         }
     }
 }
