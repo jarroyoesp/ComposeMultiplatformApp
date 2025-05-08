@@ -49,8 +49,9 @@ Current supported Platforms are:
 
 ## Android 🤖
 
-| <img width="240" src="./screenshots/android/home.png" /> | <img width="240" src="./screenshots/android/detail.png" /> | <img width="240" src="./screenshots/android/loading.png" /> |
-|----------------------------------------------------------|------------------------------------------------------------|-------------------------------------------------------------|
+| <img width="240" src="./screenshots/android/home.png" />    | <img width="240" src="./screenshots/android/detail.png" />   | <img width="240" src="./screenshots/android/loading.png" />   |
+|-------------------------------------------------------------|--------------------------------------------------------------|---------------------------------------------------------------|
+| <img width="240" src="./screenshots/android/graph.png" />   |                                                              |                                                               |
 
 ## Desktop 🖥️
 
@@ -60,8 +61,9 @@ To execute the Desktop app run this `gradle` command:
 ./gradlew desktop:run
 ```
 
-| <img width="240" src="./screenshots/desktop/home.png" /> | <img width="240" src="./screenshots/desktop/detail.png" /> | <img width="240" src="./screenshots/desktop/loading.png" /> |
-|----------------------------------------------------------|------------------------------------------------------------|-------------------------------------------------------------|
+| <img width="240" src="./screenshots/desktop/home.png" />    | <img width="240" src="./screenshots/desktop/detail.png" />   | <img width="240" src="./screenshots/desktop/loading.png" />   |
+|-------------------------------------------------------------|--------------------------------------------------------------|---------------------------------------------------------------|
+| <img width="240" src="./screenshots/desktop/graph.png" />   |                                                              |                                                               |
 
 ## iOS 🍎
 Steps to setup your iOS app:
@@ -82,8 +84,9 @@ $(SRCROOT)/../modules/feature-home-shared/build/xcode-frameworks/$(CONFIGURATION
 
 More details [JetBrains official documentation](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-integrate-in-existing-app.html#make-your-cross-platform-application-work-on-ios)
 
-| <img width="240" src="./screenshots/ios/home.png" /> | <img width="240" src="./screenshots/ios/detail.png" /> | <img width="240" src="./screenshots/ios/loading.png" /> |
-|------------------------------------------------------|--------------------------------------------------------|---------------------------------------------------------|
+| <img width="240" src="./screenshots/ios/home.png" />        | <img width="240" src="./screenshots/ios/detail.png" />       | <img width="240" src="./screenshots/ios/loading.png" />       |
+|-------------------------------------------------------------|--------------------------------------------------------------|---------------------------------------------------------------|
+| <img width="240" src="./screenshots/ios/graph.png" />       |                                                              |                                                               |
 
 
 ### Get the latest version of the GraphQL schema

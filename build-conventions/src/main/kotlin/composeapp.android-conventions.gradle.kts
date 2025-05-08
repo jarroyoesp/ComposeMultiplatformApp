@@ -33,7 +33,7 @@ plugins.withType<AndroidBasePlugin>().configureEach {
             minSdk = config.android.minSdk.get()
             targetSdk = config.android.targetSdk.get()
 
-            testInstrumentationRunner = "com.jarroyo.library.test.runner.HiltTestRunner"
+            // testInstrumentationRunner = "com.jarroyo.library.test.runner.HiltTestRunner"
             // The following argument makes the Android Test Orchestrator run its
             // "pm clear" command after each test invocation. This command ensures
             // that the app's state is completely cleared between tests.

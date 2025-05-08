@@ -16,7 +16,6 @@ dependencies {
     implementation (libs.plugin.easylauncher)
     implementation (libs.plugin.firebase.perf)
     implementation (libs.plugin.google.services)
-    implementation (libs.plugin.hilt)
     implementation (libs.plugin.kotlin)
     implementation (libs.plugin.ksp)
     implementation (libs.plugin.ruler)

@@ -40,8 +40,6 @@ kotlin {
         commonMain.dependencies {
             api(libs.apollo.testing.support)
             api(libs.coroutines.test)
-            api(libs.hilt.android.testing)
-            api(libs.jetbrains.kotlin.test)
             api(libs.junit)
             api(libs.mockk)
         }
@@ -49,7 +47,6 @@ kotlin {
         commonTest.dependencies {
             api(libs.apollo.testing.support)
             api(libs.coroutines.test)
-            api(libs.hilt.android.testing)
             api(libs.jetbrains.kotlin.test)
             api(libs.junit)
             api(libs.mockk)

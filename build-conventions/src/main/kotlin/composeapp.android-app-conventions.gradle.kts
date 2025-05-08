@@ -11,7 +11,6 @@ plugins {
     id("com.android.application")
     id("composeapp.android-conventions")
     id("kotlin-parcelize")
-    id("com.google.dagger.hilt.android")
     id("com.mikepenz.aboutlibraries.plugin")
     id("composeapp.merged-manifests-conventions")
     id("composeapp.dependencies-conventions")
@@ -61,21 +60,13 @@ dependencies {
 
     coreLibraryDesugaring(libs.desugar)
     debugImplementation(libs.leakcanary)
-    implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime)
-    implementation(libs.androidx.navigation.fragment)
-    implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.coroutines.core)
-    implementation(libs.hilt.android)
-    implementation(libs.hilt.navigation.compose)
     implementation(libs.jetbrains.kotlinx.collections.immutable)
     implementation(libs.kotlin.result)
     implementation(libs.timber)
-    kapt(libs.hilt.compiler)
 
     testImplementation(project(":modules:library-test"))
-    //androidTestImplementation(project(":modules:library-test-android"))
     androidTestUtil(libs.androidx.test.orchestrator)
 }
 

@@ -29,11 +29,7 @@ android {
 dependencies {
     // Modules
     implementation(projects.modules.featureHomeShared)
-    implementation(projects.modules.libraryNavigation)
-    implementation(projects.modules.libraryNetwork)
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime)
     implementation(libs.androidx.activity.compose)
     implementation(libs.gitlive.firebase.firestore)
     implementation(libs.jetbrains.compose.ui)
