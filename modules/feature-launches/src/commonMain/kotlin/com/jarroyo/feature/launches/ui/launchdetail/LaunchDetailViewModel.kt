@@ -49,14 +49,24 @@ class LaunchDetailViewModel(
             if (viewState.value.favorite == true) {
                 val result = removeFavoriteInteractor(checkNotNull(rocketId))
                 if (result.isOk) {
-                    sendEffect { Effect.ShowSnackbar("Launch removed from Favorites") }
+                    sendEffect {
+                        Effect.SetResultAndNavigate(
+                            result = LaunchDestination.Result(type = "REMOVE", name = viewState.value.launch?.rocket?.rocket?.rocketFragment?.name.orEmpty()),
+                            navigate = { appNavigator.navigateBack() },
+                        )
+                    }
                 } else {
                     sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
                 }
             } else {
                 val result = addFavoriteInteractor(checkNotNull(viewState.value.launch))
                 if (result.isOk) {
-                    sendEffect { Effect.ShowSnackbar("Launch added to Favorites") }
+                    sendEffect {
+                        Effect.SetResultAndNavigate(
+                            result = LaunchDestination.Result(type = "ADDED", name = viewState.value.launch?.rocket?.rocket?.rocketFragment?.name.orEmpty()),
+                            navigate = { appNavigator.navigateBack() },
+                        )
+                    }
                 } else {
                     sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
                 }

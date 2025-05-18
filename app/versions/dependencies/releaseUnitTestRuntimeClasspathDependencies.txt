@@ -1380,6 +1380,12 @@ releaseUnitTestRuntimeClasspath - Runtime classpath of '/releaseUnitTest'.
 |    |    +--- co.touchlab:kermit:2.0.2 (*)
 |    |    +--- io.coil-kt.coil3:coil-compose-core:3.0.4 (*)
 |    |    +--- io.coil-kt.coil3:coil-network-ktor3:3.0.4 (*)
+|    |    +--- org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.0
+|    |    |    \--- org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.8.0
+|    |    |         +--- org.jetbrains.kotlinx:kotlinx-serialization-bom:1.8.0 (*)
+|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.0 -> 2.1.20 (*)
+|    |    |         \--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.8.0 (*)
+|    |    +--- project :modules:library-navigation-api (*)
 |    |    +--- org.jetbrains.compose.components:components-resources:1.8.0 (*)
 |    |    +--- org.jetbrains.compose.foundation:foundation:1.8.0 (*)
 |    |    +--- org.jetbrains.compose.material:material:1.8.0
@@ -1537,11 +1543,7 @@ releaseUnitTestRuntimeClasspath - Runtime classpath of '/releaseUnitTest'.
 |    |    +--- project :modules:feature-common-api
 |    |    |    +--- org.jetbrains.androidx.lifecycle:lifecycle-viewmodel:2.9.0-beta01 (*)
 |    |    |    +--- io.ktor:ktor-client-android:3.0.1 (*)
-|    |    |    +--- org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.0
-|    |    |    |    \--- org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.8.0
-|    |    |    |         +--- org.jetbrains.kotlinx:kotlinx-serialization-bom:1.8.0 (*)
-|    |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.0 -> 2.1.20 (*)
-|    |    |    |         \--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.8.0 (*)
+|    |    |    +--- org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.0 (*)
 |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 (*)
 |    |    |    +--- com.kizitonwose.calendar:compose-multiplatform:2.5.4 (*)
 |    |    |    +--- io.coil-kt.coil3:coil-compose:3.0.4 (*)

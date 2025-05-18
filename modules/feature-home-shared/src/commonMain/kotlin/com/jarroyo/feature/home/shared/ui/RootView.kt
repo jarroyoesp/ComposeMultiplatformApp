@@ -24,6 +24,7 @@ import androidx.navigation.compose.composable
 import androidx.compose.ui.Modifier
 import com.jarroyo.library.feature.Feature
 import com.jarroyo.library.ui.shared.component.LocalMainScaffoldPadding
+import com.jarroyo.library.ui.shared.component.LocalNavHostController
 
 internal val darkmodeState = mutableStateOf(false)
 internal val safeAreaState = mutableStateOf(PaddingValues())
@@ -40,6 +41,7 @@ fun RootView() {
     val mainScaffoldPadding: MutableState<PaddingValues> = remember { mutableStateOf(PaddingValues()) }
     CompositionLocalProvider(
         LocalMainScaffoldPadding provides mainScaffoldPadding,
+        LocalNavHostController provides navHostController,
     ) {
         Scaffold(
             modifier = Modifier.fillMaxSize(),

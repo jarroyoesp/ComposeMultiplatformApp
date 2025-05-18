@@ -33,8 +33,14 @@ class LaunchListViewModel(
         when (event) {
             is Event.FavoritesUpdated -> refreshData(FetchPolicy.NetworkFirst)
             is Event.OnItemClicked -> appNavigator.navigate(LaunchDestination.get(event.id))
+            is Event.OnLaunchUpdated -> handleOnLaunchUpdated(event)
             is Event.OnSwipeToRefresh -> handleOnSwipeToRefresh()
         }
+    }
+
+    private fun handleOnLaunchUpdated(event: Event.OnLaunchUpdated) {
+        sendEffect { Effect.ShowSnackbar("${event.name} was ${event.type} to favorites") }
+        refreshData()
     }
 
     private fun handleOnSwipeToRefresh() {

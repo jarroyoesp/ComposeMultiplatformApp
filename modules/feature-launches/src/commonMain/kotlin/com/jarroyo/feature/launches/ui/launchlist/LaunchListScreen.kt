@@ -32,10 +32,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.LaunchFragment
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.RocketFragment
+import com.jarroyo.feature.launches.api.destination.LaunchDestination
 import com.jarroyo.feature.launches.ui.launchlist.LaunchListContract.Effect
 import com.jarroyo.feature.launches.ui.launchlist.LaunchListContract.Event
 import com.jarroyo.feature.launches.ui.launchlist.LaunchListContract.State
 import com.jarroyo.library.ui.shared.component.LocalMainScaffoldPadding
+import com.jarroyo.library.ui.shared.component.LocalNavHostController
+import com.jarroyo.library.ui.shared.component.observeResult
 import com.jarroyo.library.ui.shared.theme.Spacing
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
@@ -46,6 +49,10 @@ import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun LaunchListScreen(viewModel: LaunchListViewModel = koinViewModel<LaunchListViewModel>()) {
+    LocalNavHostController.current.observeResult<LaunchDestination.Result>(LaunchDestination.route) { result ->
+        viewModel.onUiEvent(Event.OnLaunchUpdated(result.type, result.name))
+    }
+
     LaunchListScreen(
         state = viewModel.viewState.value,
         sendEvent = { viewModel.onUiEvent(it) },

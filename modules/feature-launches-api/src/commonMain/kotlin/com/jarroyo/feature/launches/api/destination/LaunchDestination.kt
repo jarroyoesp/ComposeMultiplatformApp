@@ -5,6 +5,7 @@ import androidx.navigation.NamedNavArgument
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
 import com.jarroyo.library.navigation.api.destination.NavigationDestination
+import kotlinx.serialization.Serializable
 
 object LaunchDestination : NavigationDestination() {
     private const val ID_PARAM = "id"
@@ -19,6 +20,13 @@ object LaunchDestination : NavigationDestination() {
     )
 
     fun get(id: String): String = route.replace("{$ID_PARAM}", id)
+
+    @Serializable
+    data class Result(
+        override val id: Long = uniqueId,
+        val type: String,
+        val name: String,
+    ) : NavigationDestination.Result()
 
     object Arguments {
         fun getId(savedStateHandle: SavedStateHandle): String? = savedStateHandle[ID_PARAM]
