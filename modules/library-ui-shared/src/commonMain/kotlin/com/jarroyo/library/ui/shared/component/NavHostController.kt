@@ -19,17 +19,15 @@ inline fun <reified T> NavHostController.setResult(key: String, value: T): Boole
 @Composable
 inline fun <reified T : NavigationDestination.Result> NavHostController.observeResult(
     key: String,
-    crossinline onResult: (T) -> Unit
+    crossinline onResult: (T) -> Unit,
 ): Boolean =
     currentBackStackEntry?.run {
         LaunchedEffect(Unit) {
             savedStateHandle.getStateFlow<String?>(key, null).collect { result ->
                 result?.let {
                     val response = Json.decodeFromString<T>(result)
-                    if (!response.consumed) {
-                        response.consumed = true
-                        onResult(response)
-                    }
+                    savedStateHandle[key] = null
+                    onResult(response)
                 }
             }
         }
