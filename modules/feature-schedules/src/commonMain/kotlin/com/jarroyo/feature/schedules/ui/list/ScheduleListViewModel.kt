@@ -1,6 +1,8 @@
 package com.jarroyo.feature.schedules.ui.list
 
 import androidx.lifecycle.viewModelScope
+import com.jarroyo.feature.schedules.api.destination.ScheduleDetailDestination
+import com.jarroyo.feature.schedules.api.destination.ScheduleDetailDestination.Result
 import com.jarroyo.feature.schedules.api.interactor.GetSchedulesInteractor
 import com.jarroyo.feature.schedules.ui.list.ScheduleListContract.Effect
 import com.jarroyo.feature.schedules.ui.list.ScheduleListContract.Event
@@ -23,10 +25,21 @@ class ScheduleListViewModel(
 
     override fun handleEvent(event: Event) {
         when (event) {
-            is Event.OnItemClicked -> {}
+            is Event.OnAddScheduleButtonClicked -> appNavigator.navigate(ScheduleDetailDestination.get(""))
+            is Event.OnItemClicked -> appNavigator.navigate(ScheduleDetailDestination.get(event.id))
+            is Event.OnScheduleUpdated -> handleOnScheduleUpdated(event.operationType)
             is Event.OnSwipeToRefresh -> handleOnSwipeToRefresh()
-            is Event.OnUpButtonClicked -> appNavigator.navigateBack()
         }
+    }
+
+    private fun handleOnScheduleUpdated(operationType: Result.OperationType) {
+        refreshData()
+        val message = when(operationType) {
+            Result.OperationType.CREATE -> "Created"
+            Result.OperationType.REMOVE -> "Removed"
+            Result.OperationType.UPDATE -> "Updated"
+        }
+        sendEffect { Effect.ShowSnackbar(message) }
     }
 
     private fun handleOnSwipeToRefresh() {

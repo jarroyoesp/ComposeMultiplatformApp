@@ -18,6 +18,8 @@ kotlin {
 
         commonMain.dependencies {
             api(compose.materialIconsExtended)
+            implementation(libs.jetbrains.kotlinx.serialization)
+            implementation(projects.modules.libraryNavigationApi)
 
             implementation(compose.components.resources)
             implementation(compose.foundation)

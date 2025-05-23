@@ -1,10 +1,13 @@
 package com.jarroyo.feature.schedules.ui.list
 
-import com.jarroyo.feature.schedules.api.interactor.Schedule
+import androidx.compose.runtime.Immutable
+import com.jarroyo.feature.schedules.api.destination.ScheduleDetailDestination
+import com.jarroyo.feature.schedules.api.model.Schedule
 import com.jarroyo.library.ui.shared.ViewEffect
 import com.jarroyo.library.ui.shared.ViewEvent
 import com.jarroyo.library.ui.shared.ViewState
 
+@Immutable
 object ScheduleListContract {
     data class State(
         val loading: Boolean = false,
@@ -13,8 +16,9 @@ object ScheduleListContract {
 
     sealed class Event : ViewEvent {
         data class OnItemClicked(val id: String) : Event()
+        data class OnScheduleUpdated(val operationType: ScheduleDetailDestination.Result.OperationType): Event()
+        data object OnAddScheduleButtonClicked: Event()
         data object OnSwipeToRefresh: Event()
-        data object OnUpButtonClicked: Event()
     }
 
     sealed class Effect : ViewEffect {

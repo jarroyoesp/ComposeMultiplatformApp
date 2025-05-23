@@ -1,9 +1,10 @@
 package com.jarroyo.feature.schedules.api.interactor
 
 import com.github.michaelbull.result.Result
-import com.jarroyo.feature.schedules.api.model.Schedule
+import com.jarroyo.feature.schedules.api.model.User
 
-interface GetSchedulesInteractor {
+interface GetUserInteractor {
     suspend operator fun invoke(
-    ): Result<List<Schedule>?, Exception>
+        id: String,
+    ): Result<User?, Exception>
 }

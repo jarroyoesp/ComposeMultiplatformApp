@@ -1,34 +1,34 @@
-package com.jarroyo.feature.launches.api.destination
+package com.jarroyo.feature.schedules.api.destination
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.navigation.NamedNavArgument
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
+import com.jarroyo.feature.schedules.api.model.User
 import com.jarroyo.library.navigation.api.destination.NavigationDestination
 import kotlinx.serialization.Serializable
 
-object LaunchDestination : NavigationDestination() {
-    private const val ID_PARAM = "id"
-    override val route: String = "launch/{$ID_PARAM}"
+object UserSelectorDestination: NavigationDestination() {
+    private const val USER_LIST_PARAM = "USER_LIST_PARAM"
+    override val route: String = "userSelector/{$USER_LIST_PARAM}"
 
     override val arguments: List<NamedNavArgument> = listOf(
-        navArgument(ID_PARAM) {
+        navArgument(USER_LIST_PARAM) {
             type = NavType.StringType
             nullable = true
             defaultValue = null
         },
     )
 
-    fun get(id: String): String = route.replace("{$ID_PARAM}", id)
+    fun get(userList: String): String = route.replace("{$USER_LIST_PARAM}", userList)
 
     @Serializable
     data class Result(
         override val id: Long = uniqueId,
-        val type: String,
-        val name: String,
+        val userList: List<User>,
     ) : NavigationDestination.Result()
 
     object Arguments {
-        fun getId(savedStateHandle: SavedStateHandle): String? = savedStateHandle[ID_PARAM]
+        fun getUserList(savedStateHandle: SavedStateHandle): String? = savedStateHandle[USER_LIST_PARAM]
     }
 }

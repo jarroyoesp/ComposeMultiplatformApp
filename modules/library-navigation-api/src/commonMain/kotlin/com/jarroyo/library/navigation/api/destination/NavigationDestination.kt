@@ -15,7 +15,7 @@ abstract class NavigationDestination {
 
         companion object {
             val uniqueId
-                get() = Random.nextInt()
+                get() = Random.nextLong()
         }
     }
 

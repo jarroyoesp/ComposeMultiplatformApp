@@ -27,10 +27,13 @@ import androidx.compose.ui.text.style.TextAlign
 import coil3.compose.AsyncImage
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.LaunchFragment
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.RocketFragment
+import com.jarroyo.feature.launches.api.destination.LaunchDestination
 import com.jarroyo.feature.launches.ui.launchdetail.LaunchDetailContract.Effect
 import com.jarroyo.feature.launches.ui.launchdetail.LaunchDetailContract.Event
 import com.jarroyo.feature.launches.ui.launchdetail.LaunchDetailContract.State
+import com.jarroyo.library.ui.shared.component.LocalNavHostController
 import com.jarroyo.library.ui.shared.component.placeholder
+import com.jarroyo.library.ui.shared.component.setResult
 import com.jarroyo.library.ui.shared.theme.Spacing
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
@@ -54,10 +57,15 @@ private fun LaunchDetailScreen(
     sendEvent: (event: Event) -> Unit,
     state: State,
 ) {
+    val navHostController = LocalNavHostController.current
     val snackbarHostState = remember { SnackbarHostState() }
     LaunchedEffect(effectFlow) {
         effectFlow.onEach { effect ->
             when (effect) {
+                is Effect.SetResultAndNavigate -> {
+                    navHostController.setResult(LaunchDestination.route, effect.result)
+                    effect.navigate()
+                }
                 is Effect.ShowSnackbar -> launch {
                     snackbarHostState.showSnackbar(
                         message = effect.message,

@@ -2,6 +2,7 @@ package com.jarroyo.feature.launches.ui.launchdetail
 
 import androidx.compose.runtime.Immutable
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.LaunchFragment
+import com.jarroyo.feature.launches.api.destination.LaunchDestination
 import com.jarroyo.library.ui.shared.ViewEffect
 import com.jarroyo.library.ui.shared.ViewEvent
 import com.jarroyo.library.ui.shared.ViewState
@@ -22,6 +23,10 @@ object LaunchDetailContract {
     }
 
     sealed class Effect : ViewEffect {
+        data class SetResultAndNavigate(
+            val result: LaunchDestination.Result,
+            val navigate: () -> Unit,
+        ) : Effect()
         data class ShowSnackbar(val message: String) : Effect()
     }
 }

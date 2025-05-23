@@ -1,4 +1,4 @@
-package com.jarroyo.feature.launches.api.destination
+package com.jarroyo.feature.schedules.api.destination
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.navigation.NamedNavArgument
@@ -7,9 +7,9 @@ import androidx.navigation.navArgument
 import com.jarroyo.library.navigation.api.destination.NavigationDestination
 import kotlinx.serialization.Serializable
 
-object LaunchDestination : NavigationDestination() {
+object ScheduleDetailDestination: NavigationDestination() {
     private const val ID_PARAM = "id"
-    override val route: String = "launch/{$ID_PARAM}"
+    override val route: String = "scheduleDetail/{$ID_PARAM}"
 
     override val arguments: List<NamedNavArgument> = listOf(
         navArgument(ID_PARAM) {
@@ -24,9 +24,14 @@ object LaunchDestination : NavigationDestination() {
     @Serializable
     data class Result(
         override val id: Long = uniqueId,
-        val type: String,
-        val name: String,
-    ) : NavigationDestination.Result()
+        val operationType: OperationType,
+    ) : NavigationDestination.Result() {
+        enum class OperationType {
+            CREATE,
+            REMOVE,
+            UPDATE,
+        }
+    }
 
     object Arguments {
         fun getId(savedStateHandle: SavedStateHandle): String? = savedStateHandle[ID_PARAM]

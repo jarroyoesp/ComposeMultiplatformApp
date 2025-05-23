@@ -16,6 +16,7 @@ object LaunchListContract {
 
     sealed class Event : ViewEvent {
         data class OnItemClicked(val id: String) : Event()
+        data class OnLaunchUpdated(val type: String, val name: String): Event()
         data object FavoritesUpdated: Event()
         data object OnSwipeToRefresh: Event()
     }

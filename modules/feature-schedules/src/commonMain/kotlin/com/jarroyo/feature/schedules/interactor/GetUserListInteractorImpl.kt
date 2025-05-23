@@ -3,22 +3,22 @@ package com.jarroyo.feature.schedules.interactor
 import com.github.michaelbull.result.Err
 import com.github.michaelbull.result.Ok
 import com.github.michaelbull.result.Result
-import com.jarroyo.feature.schedules.api.interactor.GetSchedulesInteractor
-import com.jarroyo.feature.schedules.api.model.Schedule
+import com.jarroyo.feature.schedules.api.interactor.GetUserListInteractor
+import com.jarroyo.feature.schedules.api.model.User
 import dev.gitlive.firebase.firestore.FirebaseFirestore
 import dev.gitlive.firebase.firestore.FirebaseFirestoreException
 
-internal class GetSchedulesInteractorImpl(
+internal class GetUserListInteractorImpl(
    private val firestore: FirebaseFirestore,
-): GetSchedulesInteractor {
-    override suspend operator fun invoke(): Result<List<Schedule>?, Exception> {
+): GetUserListInteractor {
+    override suspend operator fun invoke(): Result<List<User>?, Exception> {
         try {
-            val scheduleList =
-                firestore.collection("Schedules").get()
+            val list =
+                firestore.collection("Users").get()
                     .documents.map { document ->
-                        document.data(Schedule.serializer())
+                        document.data(User.serializer())
                     }
-            return Ok(scheduleList)
+            return Ok(list)
         } catch (e: FirebaseFirestoreException) {
             return Err(e)
         }
