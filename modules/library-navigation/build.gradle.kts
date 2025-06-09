@@ -16,6 +16,7 @@ kotlin {
             api(projects.modules.libraryNavigationApi)
             implementation(libs.koin.core)
             implementation(projects.modules.featureLaunchesApi)
+            implementation(projects.modules.featureLoginApi)
         }
     }
 }

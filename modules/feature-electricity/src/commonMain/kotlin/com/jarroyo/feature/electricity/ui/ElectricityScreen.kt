@@ -7,24 +7,21 @@ import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.DrawerValue
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
-import androidx.compose.material.Scaffold
-import androidx.compose.material.SnackbarDuration
-import androidx.compose.material.SnackbarHost
-import androidx.compose.material.SnackbarHostState
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarDuration
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.pullrefresh.PullRefreshIndicator
 import androidx.compose.material.pullrefresh.pullRefresh
 import androidx.compose.material.pullrefresh.rememberPullRefreshState
-import androidx.compose.material.rememberDrawerState
-import androidx.compose.material.rememberScaffoldState
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
@@ -86,10 +83,8 @@ private fun ElectricityScreen(
             }
         }.collect()
     }
-    val scaffoldState = rememberScaffoldState(rememberDrawerState(DrawerValue.Closed))
     Scaffold(
         topBar = { TopAppBar(sendEvent, state) },
-        scaffoldState = scaffoldState,
         snackbarHost = { SnackbarHost(snackbarHostState) },
         modifier = Modifier.padding(LocalMainScaffoldPadding.current.value),
     ) { scaffoldPadding ->
@@ -181,6 +176,7 @@ private fun XYGraphScope<String, Float>.chart(
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun TopAppBar(
     sendEvent: (event: Event) -> Unit,
@@ -188,17 +184,6 @@ private fun TopAppBar(
 ) {
     TopAppBar(
         title = { Text("Electricity prize") },
-        navigationIcon =
-            {
-                IconButton(
-                    onClick = { sendEvent(Event.OnUpButtonClicked) },
-                ) {
-                    Icon(
-                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                        contentDescription = null,
-                    )
-                }
-            },
         actions = {
             IconButton(
                 onClick = { sendEvent(Event.OnSwipeToRefresh) },

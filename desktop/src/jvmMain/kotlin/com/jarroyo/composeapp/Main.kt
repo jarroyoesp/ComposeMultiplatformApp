@@ -37,6 +37,7 @@ fun initializeFirebase() {
 
     val options: FirebaseOptions = FirebaseOptions.Builder()
         .setProjectId("virtualgym-684f7")
+        .setApiKey("AIzaSyDvyfQtz9i3vIGKygPYo7x0Y3UVnT3pG3Q")
         .setApplicationId("1:129903346150:android:bf4d3697156f8e7009d627")
         .build()
 

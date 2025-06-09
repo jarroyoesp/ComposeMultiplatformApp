@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS Account (
+  id TEXT NOT NULL PRIMARY KEY,
+  username TEXT
+);
+
+insertAccount:
+INSERT OR REPLACE INTO Account(id, username)
+VALUES(?, ?);
+
+removeAccount:
+DELETE FROM Account WHERE id = ?;
+
+removeAllAccount:
+DELETE FROM Account;
+
+selectAccount:
+SELECT * FROM Account;

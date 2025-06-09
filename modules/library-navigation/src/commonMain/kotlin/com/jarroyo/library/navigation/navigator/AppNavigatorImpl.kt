@@ -2,6 +2,7 @@ package com.jarroyo.library.navigation.navigator
 
 import androidx.navigation.NavOptionsBuilder
 import com.jarroyo.feature.launches.api.destination.LaunchListDestination
+import com.jarroyo.feature.login.api.destination.LoginDestination
 import com.jarroyo.library.navigation.api.navigator.AppNavigator
 import com.jarroyo.library.navigation.api.navigator.NavigatorEvent
 import kotlinx.coroutines.channels.Channel
@@ -50,7 +51,7 @@ internal class AppNavigatorImpl : AppNavigator {
         )
     }
     override fun navigateToLogin(builder: (NavOptionsBuilder.() -> Unit)): Boolean =
-        navigate("", builder)
+        navigate(LoginDestination.route, builder)
 
     override fun navigate(route: String, builder: NavOptionsBuilder.() -> Unit): Boolean =
         navigationEvents.trySend(NavigatorEvent.Directions(route, builder)).isSuccess

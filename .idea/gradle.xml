@@ -26,6 +26,8 @@
             <option value="$PROJECT_DIR$/desktop" />
             <option value="$PROJECT_DIR$/iosapp" />
             <option value="$PROJECT_DIR$/modules" />
+            <option value="$PROJECT_DIR$/modules/feature-account" />
+            <option value="$PROJECT_DIR$/modules/feature-account-api" />
             <option value="$PROJECT_DIR$/modules/feature-common" />
             <option value="$PROJECT_DIR$/modules/feature-common-api" />
             <option value="$PROJECT_DIR$/modules/feature-electricity" />
@@ -34,6 +36,8 @@
             <option value="$PROJECT_DIR$/modules/feature-home-shared" />
             <option value="$PROJECT_DIR$/modules/feature-launches" />
             <option value="$PROJECT_DIR$/modules/feature-launches-api" />
+            <option value="$PROJECT_DIR$/modules/feature-login" />
+            <option value="$PROJECT_DIR$/modules/feature-login-api" />
             <option value="$PROJECT_DIR$/modules/feature-schedules" />
             <option value="$PROJECT_DIR$/modules/feature-schedules-api" />
             <option value="$PROJECT_DIR$/modules/library-feature" />
