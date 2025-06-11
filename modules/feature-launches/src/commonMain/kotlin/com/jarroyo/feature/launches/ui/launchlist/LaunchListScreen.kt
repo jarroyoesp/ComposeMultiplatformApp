@@ -1,6 +1,5 @@
 package com.jarroyo.feature.launches.ui.launchlist
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -10,20 +9,17 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.material.DrawerValue
 import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.SnackbarDuration
-import androidx.compose.material.SnackbarHost
-import androidx.compose.material.SnackbarHostState
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarDuration
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.material.pullrefresh.PullRefreshIndicator
 import androidx.compose.material.pullrefresh.pullRefresh
 import androidx.compose.material.pullrefresh.rememberPullRefreshState
-import androidx.compose.material.rememberDrawerState
-import androidx.compose.material.rememberScaffoldState
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
@@ -60,7 +56,7 @@ fun LaunchListScreen(viewModel: LaunchListViewModel = koinViewModel<LaunchListVi
     )
 }
 
-@OptIn(ExperimentalMaterialApi::class)
+@OptIn(ExperimentalMaterialApi::class, ExperimentalMaterial3Api::class)
 @Composable
 private fun LaunchListScreen(
     state: State,
@@ -80,18 +76,14 @@ private fun LaunchListScreen(
             }
         }.collect()
     }
-    val scaffoldState = rememberScaffoldState(rememberDrawerState(DrawerValue.Closed))
     val scrollState = rememberLazyListState()
     Scaffold(
         modifier = Modifier.padding(LocalMainScaffoldPadding.current.value),
         topBar = {
-            Box(modifier = Modifier.background(MaterialTheme.colors.primary)) {
                 TopAppBar(
                     title = { Text("Space X launches") },
                 )
-            }
         },
-        scaffoldState = scaffoldState,
         snackbarHost = { SnackbarHost(snackbarHostState) },
     ) { scaffoldPadding ->
         val pullRefreshState = rememberPullRefreshState(
@@ -111,9 +103,7 @@ private fun LaunchListScreen(
                 Modifier.align(Alignment.TopCenter),
             )
             LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(scaffoldPadding),
+                modifier = Modifier.fillMaxSize(),
                 state = scrollState,
                 contentPadding = PaddingValues(Spacing.x02),
                 verticalArrangement = Arrangement.spacedBy(Spacing.x01),

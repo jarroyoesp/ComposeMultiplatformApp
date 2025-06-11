@@ -1,6 +1,7 @@
 package com.jarroyo.feature.schedules.ui.list
 
 import androidx.lifecycle.viewModelScope
+import com.jarroyo.feature.account.api.interactor.GetAccountInteractor
 import com.jarroyo.feature.schedules.api.destination.ScheduleDetailDestination
 import com.jarroyo.feature.schedules.api.destination.ScheduleDetailDestination.Result
 import com.jarroyo.feature.schedules.api.interactor.GetSchedulesInteractor
@@ -15,10 +16,20 @@ import org.koin.android.annotation.KoinViewModel
 @KoinViewModel
 class ScheduleListViewModel(
     private val appNavigator: AppNavigator,
+    private val getAccountInteractor: GetAccountInteractor,
     private val getSchedulesInteractor: GetSchedulesInteractor,
 ) : BaseViewModel<Event, State, Effect>() {
     init {
-        refreshData()
+        viewModelScope.launch {
+            if (getAccountInteractor().isOk) {
+                refreshData()
+            } else {
+                appNavigator.navigateToLogin {
+                    launchSingleTop = true
+                    popUpTo(0) { inclusive = true }
+                }
+            }
+        }
     }
 
     override fun provideInitialState() = State()

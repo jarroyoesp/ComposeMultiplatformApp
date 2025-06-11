@@ -10,12 +10,12 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.Scaffold
-import androidx.compose.material.SnackbarDuration
-import androidx.compose.material.SnackbarHost
-import androidx.compose.material.SnackbarHostState
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarDuration
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.material.pullrefresh.PullRefreshIndicator
 import androidx.compose.material.pullrefresh.pullRefresh
 import androidx.compose.material.pullrefresh.rememberPullRefreshState
@@ -113,9 +113,7 @@ private fun ScheduleListScreen(
                 Modifier.align(Alignment.TopCenter),
             )
             LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(scaffoldPadding),
+                modifier = Modifier.fillMaxSize(),
                 state = scrollState,
                 contentPadding = PaddingValues(Spacing.x02),
                 verticalArrangement = Arrangement.spacedBy(Spacing.x01),
@@ -157,6 +155,7 @@ private fun LazyListScope.rocketList(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun TopAppBar() {
     TopAppBar(

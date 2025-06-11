@@ -30,6 +30,8 @@ kotlin {
             implementation(libs.jetbrains.kotlin.datetime)
             implementation(libs.sqldelight.coroutines)
 
+            implementation(projects.modules.featureAccountApi)
+            implementation(projects.modules.featureLoginApi)
             implementation(projects.modules.featureSchedulesApi)
             implementation(projects.modules.libraryNavigation)
             implementation(projects.modules.libraryNetworkApi)

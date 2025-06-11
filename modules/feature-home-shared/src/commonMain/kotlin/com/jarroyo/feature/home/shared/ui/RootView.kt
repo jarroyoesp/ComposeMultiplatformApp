@@ -2,7 +2,7 @@ package com.jarroyo.feature.home.shared.ui
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.Scaffold
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import com.jarroyo.library.feature.Feature
 import com.jarroyo.library.ui.shared.component.LocalMainScaffoldPadding
 import com.jarroyo.library.ui.shared.component.LocalNavHostController
+import com.jarroyo.library.ui.shared.theme.ComposeTheme
 
 internal val darkmodeState = mutableStateOf(false)
 internal val safeAreaState = mutableStateOf(PaddingValues())
@@ -39,34 +40,36 @@ fun RootView() {
     val mainNavigationBarEntries: Map<String, Feature.NavigationSuiteEntry> = populateNavigationBar(features)
 
     val mainScaffoldPadding: MutableState<PaddingValues> = remember { mutableStateOf(PaddingValues()) }
-    CompositionLocalProvider(
-        LocalMainScaffoldPadding provides mainScaffoldPadding,
-        LocalNavHostController provides navHostController,
-    ) {
-        Scaffold(
-            modifier = Modifier.fillMaxSize(),
-            bottomBar = { MainNavigationBar(navHostController, mainNavigationBarEntries) },
-        ) { scaffoldPadding: PaddingValues ->
-            mainScaffoldPadding.value = scaffoldPadding
-            NavHost(
-                navController = navHostController,
-                startDestination = appNavigator.homeDestination,
-                builder = {
-                    addComposableDestinations(features = features)
-                },
-            )
-            LaunchedEffect(navHostController) {
-                appNavigator.destinations.onEach { event ->
-                    when (event) {
-                        is NavigatorEvent.Directions -> navHostController.navigate(
-                            event.destination,
-                            event.builder,
-                        ).also { Logger.d("Navigate to ${event.destination}") }
+    ComposeTheme {
+        CompositionLocalProvider(
+            LocalMainScaffoldPadding provides mainScaffoldPadding,
+            LocalNavHostController provides navHostController,
+        ) {
+            Scaffold(
+                modifier = Modifier.fillMaxSize(),
+                bottomBar = { MainNavigationBar(navHostController, mainNavigationBarEntries) },
+            ) { scaffoldPadding: PaddingValues ->
+                mainScaffoldPadding.value = scaffoldPadding
+                NavHost(
+                    navController = navHostController,
+                    startDestination = appNavigator.homeDestination,
+                    builder = {
+                        addComposableDestinations(features = features)
+                    },
+                )
+                LaunchedEffect(navHostController) {
+                    appNavigator.destinations.onEach { event ->
+                        when (event) {
+                            is NavigatorEvent.Directions -> navHostController.navigate(
+                                event.destination,
+                                event.builder,
+                            ).also { Logger.d("Navigate to ${event.destination}") }
 
-                        is NavigatorEvent.NavigateBack -> navHostController.popBackStack()
-                        is NavigatorEvent.NavigateUp -> navHostController.navigateUp()
-                    }
-                }.launchIn(this)
+                            is NavigatorEvent.NavigateBack -> navHostController.popBackStack()
+                            is NavigatorEvent.NavigateUp -> navHostController.navigateUp()
+                        }
+                    }.launchIn(this)
+                }
             }
         }
     }
