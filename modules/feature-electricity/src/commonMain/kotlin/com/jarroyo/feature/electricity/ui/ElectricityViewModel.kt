@@ -7,7 +7,6 @@ import com.jarroyo.feature.electricity.ui.ElectricityContract.Event
 import com.jarroyo.feature.electricity.ui.ElectricityContract.State
 import com.jarroyo.library.navigation.api.navigator.AppNavigator
 import com.jarroyo.library.ui.shared.BaseViewModel
-import com.kizitonwose.calendar.core.now
 import kotlinx.coroutines.launch
 import kotlinx.datetime.LocalDate
 
@@ -16,21 +15,27 @@ class ElectricityViewModel(
     private val getElectricityDataInteractor: GetElectricityDataInteractor,
 ) : BaseViewModel<Event, State, Effect>() {
     init {
-        refreshData()
+        refreshData(viewState.value.dateSelected)
     }
     override fun provideInitialState() = State()
 
     override fun handleEvent(event: Event) {
         when(event) {
-            is Event.OnSwipeToRefresh -> refreshData()
+            is Event.OnDateInputChipSelected -> handleOnDateInputChipSelected(event.localDate)
+            is Event.OnSwipeToRefresh -> refreshData(viewState.value.dateSelected)
             is Event.OnUpButtonClicked -> appNavigator.navigateUp()
         }
     }
 
-    private fun refreshData() {
+    private fun handleOnDateInputChipSelected(localDate: LocalDate) {
+        updateState { copy(dateSelected = localDate) }
+        refreshData(localDate)
+    }
+
+    private fun refreshData(localDate: LocalDate) {
         viewModelScope.launch {
             updateState { copy(loading = true) }
-            val result = getElectricityDataInteractor(startDate = LocalDate.now(), endDate = LocalDate.now())
+            val result = getElectricityDataInteractor(startDate = localDate, endDate = localDate)
             if (result.isOk) {
                 updateState { copy(electricityData = result.value) }
             } else {
