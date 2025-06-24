@@ -23,6 +23,7 @@ kotlin {
         androidMain.dependencies {
         }
         commonMain.dependencies {
+            implementation(compose.components.resources)
             implementation(compose.ui)
             implementation(compose.foundation)
             implementation(compose.material)

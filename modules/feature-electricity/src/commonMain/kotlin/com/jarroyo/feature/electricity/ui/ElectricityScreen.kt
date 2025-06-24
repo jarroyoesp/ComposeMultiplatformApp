@@ -35,6 +35,8 @@ import co.touchlab.kermit.Logger
 import com.jarroyo.feature.electricity.ui.ElectricityContract.Effect
 import com.jarroyo.feature.electricity.ui.ElectricityContract.Event
 import com.jarroyo.feature.electricity.ui.ElectricityContract.State
+import com.jarroyo.library.ui.shared.component.EmptyState
+import com.jarroyo.library.ui.shared.component.EmptyStateWithImage
 import com.jarroyo.library.ui.shared.component.LocalMainScaffoldPadding
 import com.jarroyo.library.ui.shared.theme.Spacing
 import com.kizitonwose.calendar.core.now
@@ -108,8 +110,12 @@ private fun ElectricityScreen(
                 modifier = Modifier.padding(Spacing.x02),
                 verticalArrangement = Arrangement.spacedBy(Spacing.x02),
             ) {
-                Text(LocalDate.now().toString())
-                XYSamplePlot(state)
+                if (state.loading || state.electricityData != null) {
+                    Text(LocalDate.now().toString())
+                    XYSamplePlot(state)
+                } else {
+                    EmptyStateWithImage("Something was wrong getting Electricity data.")
+                }
             }
         }
     }

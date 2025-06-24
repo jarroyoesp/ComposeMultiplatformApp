@@ -20,7 +20,6 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.InputChip
@@ -44,11 +43,13 @@ import com.jarroyo.library.ui.shared.component.LocalNavHostController
 import com.jarroyo.library.ui.shared.component.observeResult
 import com.jarroyo.library.ui.shared.component.placeholder
 import com.jarroyo.library.ui.shared.component.setResult
+import com.jarroyo.library.ui.shared.resources.SharedResources
 import com.jarroyo.library.ui.shared.theme.Spacing
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.painterResource
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
@@ -173,7 +174,7 @@ private fun TopAppBar(
                     onClick = { sendEvent(Event.OnRemoveButtonClicked) },
                 ) {
                     Icon(
-                        imageVector = Icons.Filled.Delete,
+                        painter = painterResource(SharedResources.ui_ic_delete),
                         contentDescription = null,
                     )
                 }
@@ -199,13 +200,13 @@ fun UserListItem(
             horizontalArrangement = Arrangement.spacedBy(Spacing.quarter),
         ) {
             for (user in userList) {
-                OptionPrimitiveItem(
+                UserInputChipItem(
                     text = user.getFullName(),
                     onclick = { sendEvent(Event.OnUserItemClicked) },
                     placeholder = placeholder,
                 )
             }
-            OptionPrimitiveItem(
+            UserInputChipItem(
                 text = "Add more",
                 onclick = { sendEvent(Event.OnUserItemClicked) },
                 placeholder = placeholder,
@@ -215,7 +216,7 @@ fun UserListItem(
 }
 
 @Composable
-fun OptionPrimitiveItem(
+fun UserInputChipItem(
     text: String,
     onclick: () -> Unit,
     modifier: Modifier = Modifier,
@@ -237,6 +238,12 @@ fun OptionPrimitiveItem(
                     )
                 },
                 modifier = Modifier.placeholder(placeholder),
+                leadingIcon = {
+                    Icon(
+                        painter = painterResource(SharedResources.ui_ic_user),
+                        contentDescription = null,
+                    )
+                },
             )
         }
     }
