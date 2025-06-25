@@ -24,7 +24,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.style.TextAlign
 import coil3.compose.AsyncImage
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.LaunchFragment
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.RocketFragment
@@ -32,6 +31,7 @@ import com.jarroyo.feature.launches.api.destination.LaunchDestination
 import com.jarroyo.feature.launches.ui.launchdetail.LaunchDetailContract.Effect
 import com.jarroyo.feature.launches.ui.launchdetail.LaunchDetailContract.Event
 import com.jarroyo.feature.launches.ui.launchdetail.LaunchDetailContract.State
+import com.jarroyo.library.ui.shared.component.EmptyStateWithImage
 import com.jarroyo.library.ui.shared.component.LocalNavHostController
 import com.jarroyo.library.ui.shared.component.placeholder
 import com.jarroyo.library.ui.shared.component.setResult
@@ -96,11 +96,7 @@ private fun LaunchDetailScreen(
                 if (state.launch != null) {
                     DetailItem(state.launch, sendEvent)
                 } else {
-                    Text(
-                        text = "NO data available",
-                        modifier = Modifier.fillMaxWidth(),
-                        textAlign = TextAlign.Center,
-                    )
+                    EmptyStateWithImage("NO data available")
                 }
             }
         }
@@ -186,7 +182,7 @@ private fun BottomBar(
             onClick = { sendEvent(Event.OnAddFavoritesButtonClicked) },
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = Spacing.x01)
+                .padding(Spacing.x02)
                 .navigationBarsPadding(),
             enabled = !state.loading,
         ) {

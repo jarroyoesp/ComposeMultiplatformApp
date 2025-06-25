@@ -4,8 +4,8 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -32,12 +32,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.onGloballyPositioned
-import androidx.compose.ui.text.style.TextAlign
 import com.jarroyo.feature.schedules.api.destination.ScheduleDetailDestination
 import com.jarroyo.feature.schedules.api.model.Schedule
 import com.jarroyo.feature.schedules.ui.list.ScheduleListContract.Effect
 import com.jarroyo.feature.schedules.ui.list.ScheduleListContract.Event
 import com.jarroyo.feature.schedules.ui.list.ScheduleListContract.State
+import com.jarroyo.library.ui.shared.component.EmptyStateWithImage
 import com.jarroyo.library.ui.shared.component.LocalMainScaffoldPadding
 import com.jarroyo.library.ui.shared.component.LocalNavHostController
 import com.jarroyo.library.ui.shared.component.observeResult
@@ -119,20 +119,16 @@ private fun ScheduleListScreen(
                 verticalArrangement = Arrangement.spacedBy(Spacing.x01),
             ) {
                 if (state.scheduleList.isNullOrEmpty() && state.loading) {
-                    rocketList(getScheduleListPlaceholderData(), sendEvent, placeholder = true)
+                    scheduleList(getScheduleListPlaceholderData(), sendEvent, placeholder = true)
                 } else {
                     if (!state.scheduleList.isNullOrEmpty()) {
-                        rocketList(
+                        scheduleList(
                             data = state.scheduleList,
                             sendEvent = sendEvent,
                         )
                     } else {
                         item {
-                            Text(
-                                text = "NO data available",
-                                modifier = Modifier.fillMaxWidth(),
-                                textAlign = TextAlign.Center,
-                            )
+                            EmptyStateWithImage("No data available")
                         }
                     }
                 }
@@ -141,7 +137,7 @@ private fun ScheduleListScreen(
     }
 }
 
-private fun LazyListScope.rocketList(
+private fun LazyListScope.scheduleList(
     data: List<Schedule>,
     sendEvent: (event: Event) -> Unit,
     placeholder: Boolean = false,
