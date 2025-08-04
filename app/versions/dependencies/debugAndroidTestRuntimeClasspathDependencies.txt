@@ -6,40 +6,41 @@ Project ':app'
 debugAndroidTestRuntimeClasspath - Runtime classpath of '/debugAndroidTest'.
 +--- junit:junit:4.13.2
 |    \--- org.hamcrest:hamcrest-core:1.3
-+--- androidx.test.espresso:espresso-core:3.6.1
-|    +--- androidx.annotation:annotation:1.7.0-beta01 -> 1.9.1
++--- androidx.test.espresso:espresso-core:3.7.0
+|    +--- androidx.annotation:annotation:1.7.0 -> 1.9.1
 |    |    \--- androidx.annotation:annotation-jvm:1.9.1
 |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 -> 2.1.21
 |    |              +--- org.jetbrains:annotations:13.0 -> 23.0.0
 |    |              +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0 -> 1.9.10 (c)
 |    |              \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0 -> 1.9.10 (c)
-|    +--- androidx.concurrent:concurrent-futures:1.1.0
+|    +--- androidx.concurrent:concurrent-futures:1.2.0 -> 1.1.0
 |    |    +--- androidx.annotation:annotation:1.1.0 -> 1.9.1 (*)
 |    |    \--- com.google.guava:listenablefuture:1.0 -> 9999.0-empty-to-avoid-conflict-with-guava
-|    +--- androidx.test.espresso:espresso-idling-resource:3.6.1
-|    +--- androidx.test.services:storage:1.5.0
-|    |    +--- androidx.annotation:annotation:1.7.0-beta01 -> 1.9.1 (*)
-|    |    \--- androidx.test:monitor:1.7.0 -> 1.7.1
-|    |         +--- androidx.annotation:annotation:1.7.0-beta01 -> 1.9.1 (*)
+|    +--- androidx.test.espresso:espresso-idling-resource:3.7.0
+|    +--- androidx.test.services:storage:1.6.0
+|    |    +--- androidx.annotation:annotation:1.7.0 -> 1.9.1 (*)
+|    |    \--- androidx.test:monitor:1.8.0
+|    |         +--- androidx.annotation:annotation:1.7.0 -> 1.9.1 (*)
 |    |         +--- androidx.tracing:tracing:1.1.0 -> 1.2.0
 |    |         |    \--- androidx.annotation:annotation:1.2.0 -> 1.9.1 (*)
-|    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.8.20 -> 2.1.21 (*)
-|    +--- androidx.test:core:1.6.1
-|    |    +--- androidx.annotation:annotation:1.7.0-beta01 -> 1.9.1 (*)
-|    |    +--- androidx.concurrent:concurrent-futures-ktx:1.1.0
-|    |    |    +--- androidx.concurrent:concurrent-futures:1.1.0 (*)
-|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.3.71 -> 2.1.21 (*)
-|    |    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.4 -> 1.10.1
-|    |    |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.1
-|    |    |              +--- org.jetbrains:annotations:23.0.0
-|    |    |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.10.1
-|    |    |              |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.1 (c)
-|    |    |              |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1 (c)
-|    |    |              |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.1 (c)
-|    |    |              |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.1 (c)
-|    |    |              |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.1 (c)
-|    |    |              |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-test-jvm:1.10.1 (c)
-|    |    |              \--- org.jetbrains.kotlin:kotlin-stdlib:2.1.0 -> 2.1.21 (*)
+|    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 2.1.21 (*)
+|    +--- androidx.test:core:1.7.0
+|    |    +--- androidx.annotation:annotation:1.7.0 -> 1.9.1 (*)
+|    |    +--- androidx.concurrent:concurrent-futures-ktx:1.2.0
+|    |    |    +--- androidx.concurrent:concurrent-futures:1.2.0 -> 1.1.0 (*)
+|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.1.21 (*)
+|    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 -> 1.10.1
+|    |    |    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.1
+|    |    |    |         +--- org.jetbrains:annotations:23.0.0
+|    |    |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.10.1
+|    |    |    |         |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.1 (c)
+|    |    |    |         |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1 (c)
+|    |    |    |         |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.1 (c)
+|    |    |    |         |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.1 (c)
+|    |    |    |         |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.1 (c)
+|    |    |    |         |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-test-jvm:1.10.1 (c)
+|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.1.0 -> 2.1.21 (*)
+|    |    |    \--- androidx.concurrent:concurrent-futures:1.2.0 -> 1.1.0 (c)
 |    |    +--- androidx.lifecycle:lifecycle-common:2.3.1 -> 2.9.1
 |    |    |    \--- androidx.lifecycle:lifecycle-common-jvm:2.9.1
 |    |    |         +--- androidx.annotation:annotation:1.8.1 -> 1.9.1 (*)
@@ -57,27 +58,27 @@ debugAndroidTestRuntimeClasspath - Runtime classpath of '/debugAndroidTest'.
 |    |    |         +--- androidx.lifecycle:lifecycle-process:2.9.1 (c)
 |    |    |         +--- androidx.lifecycle:lifecycle-livedata:2.9.1 (c)
 |    |    |         \--- androidx.lifecycle:lifecycle-livedata-core-ktx:2.9.1 (c)
-|    |    +--- androidx.test:monitor:1.7.1 (*)
+|    |    +--- androidx.test:monitor:1.8.0 (*)
 |    |    +--- androidx.tracing:tracing:1.1.0 -> 1.2.0 (*)
 |    |    +--- com.google.guava:listenablefuture:1.0 -> 9999.0-empty-to-avoid-conflict-with-guava
-|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.20 -> 2.1.21 (*)
-|    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.7.1 -> 1.10.1 (*)
-|    +--- androidx.test:monitor:1.7.1 (*)
-|    +--- androidx.test:runner:1.6.1
-|    |    +--- androidx.annotation:annotation:1.7.0-beta01 -> 1.9.1 (*)
-|    |    +--- androidx.test.services:storage:1.5.0 (*)
-|    |    +--- androidx.test:monitor:1.7.1 (*)
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 2.1.21 (*)
+|    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.1 -> 1.10.1 (*)
+|    +--- androidx.test:monitor:1.8.0 (*)
+|    +--- androidx.test:runner:1.7.0
+|    |    +--- androidx.annotation:annotation:1.7.0 -> 1.9.1 (*)
+|    |    +--- androidx.test.services:storage:1.6.0 (*)
+|    |    +--- androidx.test:monitor:1.8.0 (*)
 |    |    +--- androidx.tracing:tracing:1.1.0 -> 1.2.0 (*)
 |    |    \--- junit:junit:4.13.2 (*)
 |    +--- com.google.code.findbugs:jsr305:3.0.2
-|    +--- com.google.errorprone:error_prone_annotations:2.18.0 -> 2.26.0
+|    +--- com.google.errorprone:error_prone_annotations:2.30.0 -> 2.26.0
 |    +--- com.google.guava:listenablefuture:1.0 -> 9999.0-empty-to-avoid-conflict-with-guava
 |    +--- javax.inject:javax.inject:1
 |    +--- junit:junit:4.13.2 (*)
 |    +--- org.hamcrest:hamcrest-core:1.3
 |    +--- org.hamcrest:hamcrest-library:1.3
 |    |    \--- org.hamcrest:hamcrest-core:1.3
-|    \--- org.jetbrains.kotlin:kotlin-stdlib:1.8.20 -> 2.1.21 (*)
+|    \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.21 -> 2.1.21 (*)
 +--- androidx.compose.ui:ui-test-junit4:1.8.3
 |    \--- androidx.compose.ui:ui-test-junit4-android:1.8.3
 |         +--- androidx.activity:activity:1.2.1 -> 1.10.1
@@ -469,9 +470,9 @@ debugAndroidTestRuntimeClasspath - Runtime classpath of '/debugAndroidTest'.
 |         |         +--- androidx.compose.ui:ui-unit:1.8.3 (*)
 |         |         +--- androidx.compose.ui:ui-util:1.8.3 (*)
 |         |         +--- androidx.core:core-ktx:1.12.0 -> 1.16.0 (*)
-|         |         +--- androidx.test:monitor:1.6.1 -> 1.7.1 (*)
-|         |         +--- androidx.test.espresso:espresso-core:3.5.0 -> 3.6.1 (*)
-|         |         +--- androidx.test.espresso:espresso-idling-resource:3.5.0 -> 3.6.1
+|         |         +--- androidx.test:monitor:1.6.1 -> 1.8.0 (*)
+|         |         +--- androidx.test.espresso:espresso-core:3.5.0 -> 3.7.0 (*)
+|         |         +--- androidx.test.espresso:espresso-idling-resource:3.5.0 -> 3.7.0
 |         |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.1.21 (*)
 |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 -> 1.10.1 (*)
 |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3 -> 1.10.1
@@ -490,12 +491,12 @@ debugAndroidTestRuntimeClasspath - Runtime classpath of '/debugAndroidTest'.
 |         |         \--- androidx.compose.ui:ui-geometry:1.8.3 (c)
 |         +--- androidx.lifecycle:lifecycle-common:2.5.1 -> 2.9.1 (*)
 |         +--- androidx.lifecycle:lifecycle-runtime:2.5.1 -> 2.9.1 (*)
-|         +--- androidx.test:core:1.5.0 -> 1.6.1 (*)
-|         +--- androidx.test:monitor:1.6.1 -> 1.7.1 (*)
+|         +--- androidx.test:core:1.5.0 -> 1.7.0 (*)
+|         +--- androidx.test:monitor:1.6.1 -> 1.8.0 (*)
 |         +--- androidx.test.ext:junit:1.1.5
 |         |    +--- junit:junit:4.13.2 (*)
-|         |    +--- androidx.test:core:1.5.0 -> 1.6.1 (*)
-|         |    +--- androidx.test:monitor:1.6.1 -> 1.7.1 (*)
+|         |    +--- androidx.test:core:1.5.0 -> 1.7.0 (*)
+|         |    +--- androidx.test:monitor:1.6.1 -> 1.8.0 (*)
 |         |    \--- androidx.annotation:annotation:1.2.0 -> 1.9.1 (*)
 |         +--- junit:junit:4.13.2 (*)
 |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.1.21 (*)
