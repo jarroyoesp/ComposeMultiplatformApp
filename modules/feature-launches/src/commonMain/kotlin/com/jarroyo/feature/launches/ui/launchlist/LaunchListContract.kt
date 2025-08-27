@@ -1,14 +1,17 @@
+@file:OptIn(ExperimentalTime::class)
+
 package com.jarroyo.feature.launches.ui.launchlist
 
 import com.jarroyo.composeapp.library.network.api.graphql.fragment.LaunchFragment
 import com.jarroyo.library.ui.shared.ViewEffect
 import com.jarroyo.library.ui.shared.ViewEvent
 import com.jarroyo.library.ui.shared.ViewState
-import kotlinx.datetime.LocalDateTime
+import kotlin.time.ExperimentalTime
+import kotlin.time.Instant
 
 object LaunchListContract {
     data class State(
-        val currentLocalDateTime: LocalDateTime? = null,
+        val currentLocalDateTime: Instant? = null,
         val favoritesList: List<String>? = null,
         val loading: Boolean = false,
         val rocketList: List<LaunchFragment>? = null,

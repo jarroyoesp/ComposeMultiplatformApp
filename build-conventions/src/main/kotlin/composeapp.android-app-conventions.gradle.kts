@@ -71,9 +71,12 @@ dependencies {
 }
 
 tasks.register<Copy>("installGitHooks") {
-    from(file("$rootDir/.githooks"))
+    from(file("$rootDir/.githooks")) {
+        filePermissions {
+            unix("rwxr-xr-x")
+        }
+    }
     into(file("$rootDir/.git/hooks"))
-    fileMode = "755".toInt(8)
 }
 
 afterEvaluate {

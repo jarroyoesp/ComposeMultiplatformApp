@@ -61,6 +61,7 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import kotlinx.datetime.LocalDate
 import org.koin.compose.viewmodel.koinViewModel
+import kotlin.time.ExperimentalTime
 
 @Composable
 fun ElectricityScreen(viewModel: ElectricityViewModel = koinViewModel<ElectricityViewModel>()) {
@@ -211,6 +212,7 @@ private fun TopAppBar(
     )
 }
 
+@OptIn(ExperimentalTime::class)
 @Composable
 private fun SelectorDateRow(
     sendEvent: (event: Event) -> Unit,

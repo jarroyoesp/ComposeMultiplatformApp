@@ -8,9 +8,7 @@ plugins {
 version = "1.0-SNAPSHOT"
 
 kotlin {
-    jvm {
-        withJava()
-    }
+    jvm()
     sourceSets {
         jvmMain.dependencies {
             implementation(projects.modules.featureHomeShared)

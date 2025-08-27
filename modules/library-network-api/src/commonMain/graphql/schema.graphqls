@@ -6,6 +6,11 @@ type Address {
   state: String
 }
 
+"""
+The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+"""
+scalar String
+
 type Capsule {
   dragon: Dragon @deprecated(reason: "This is not available in the REST API after MongoDB has been deprecated")
 
@@ -23,6 +28,16 @@ type Capsule {
 
   type: String
 }
+
+"""
+The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `"4"`) or integer (such as `4`) input value will be accepted as an ID.
+"""
+scalar ID
+
+"""
+The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
+"""
+scalar Int
 
 type CapsuleMission {
   flight: Int
@@ -70,6 +85,11 @@ type Core {
   water_landing: Boolean
 }
 
+"""
+The `Boolean` scalar type represents `true` or `false`.
+"""
+scalar Boolean
+
 type CoreMission {
   flight: Int
 
@@ -107,6 +127,11 @@ type Distance {
 
   meters: Float
 }
+
+"""
+The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point).
+"""
+scalar Float
 
 type Dragon {
   active: Boolean
@@ -1883,7 +1908,7 @@ directive @skip ("Skipped when true." if: Boolean!) on FIELD|FRAGMENT_SPREAD|INL
 """
 Marks an element of a GraphQL schema as no longer supported.
 """
-directive @deprecated ("Explains why this element was deprecated, usually also including a suggestion for how to access supported similar data. Formatted using the Markdown syntax, as specified by [CommonMark](https:\/\/commonmark.org\/)." reason: String = "No longer supported") on FIELD_DEFINITION|ARGUMENT_DEFINITION|INPUT_FIELD_DEFINITION|ENUM_VALUE
+directive @deprecated ("Explains why this element was deprecated, usually also including a suggestion for how to access supported similar data. Formatted using the Markdown syntax, as specified by [CommonMark](https://commonmark.org/)." reason: String = "No longer supported") on FIELD_DEFINITION|ARGUMENT_DEFINITION|INPUT_FIELD_DEFINITION|ENUM_VALUE
 
 """
 Exposes a URL that specifies the behavior of this scalar.

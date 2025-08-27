@@ -99,6 +99,7 @@ plugins.withType<AndroidBasePlugin>().configureEach {
 
     kotlin {
         sourceSets.all {
+            languageSettings.optIn("kotlin.time.ExperimentalTime")
             languageSettings.progressiveMode =
                 true // deprecations and bug fixes for unstable code take effect immediately
         }

@@ -3,6 +3,7 @@ package com.jarroyo.feature.launches.ui.launchdetail
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import co.touchlab.kermit.Logger
+import com.github.michaelbull.result.fold
 import com.jarroyo.feature.common.api.interactor.OpenUrlInBrowserInteractor
 import com.jarroyo.feature.launches.api.destination.LaunchDestination
 import com.jarroyo.feature.launches.api.interactor.AddFavoriteInteractor
@@ -48,28 +49,28 @@ class LaunchDetailViewModel(
         viewModelScope.launch {
             if (viewState.value.favorite == true) {
                 val result = removeFavoriteInteractor(checkNotNull(rocketId))
-                if (result.isOk) {
-                    sendEffect {
-                        Effect.SetResultAndNavigate(
-                            result = LaunchDestination.Result(type = "REMOVE", name = viewState.value.launch?.rocket?.rocket?.rocketFragment?.name.orEmpty()),
-                            navigate = { appNavigator.navigateBack() },
-                        )
-                    }
-                } else {
-                    sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
-                }
+                result.fold(
+                    success = {
+                        sendEffect {
+                            Effect.SetResultAndNavigate(
+                                result = LaunchDestination.Result(type = "REMOVE", name = viewState.value.launch?.rocket?.rocket?.rocketFragment?.name.orEmpty()),
+                                navigate = { appNavigator.navigateBack() },
+                            )
+                        }
+                    },
+                    failure = { sendEffect { Effect.ShowSnackbar(it.message.orEmpty()) } },
+                )
             } else {
                 val result = addFavoriteInteractor(checkNotNull(viewState.value.launch))
-                if (result.isOk) {
-                    sendEffect {
+                result.fold(
+                    success = { sendEffect {
                         Effect.SetResultAndNavigate(
                             result = LaunchDestination.Result(type = "ADDED", name = viewState.value.launch?.rocket?.rocket?.rocketFragment?.name.orEmpty()),
                             navigate = { appNavigator.navigateBack() },
                         )
-                    }
-                } else {
-                    sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
-                }
+                    }},
+                    failure = { sendEffect { Effect.ShowSnackbar(it.message.orEmpty()) } },
+                )
             }
             refreshFavorites()
         }
@@ -78,11 +79,10 @@ class LaunchDetailViewModel(
     private fun refreshFavorites() {
         viewModelScope.launch {
             val result = getFavoritesInteractor()
-            if (result.isOk) {
-                updateState { copy(favorite = result.value.contains(rocketId)) }
-            } else {
-                sendEffect { Effect.ShowSnackbar(result.error.toString()) }
-            }
+            result.fold(
+                success = { updateState { copy(favorite = it.contains(rocketId)) }},
+                failure = { sendEffect { Effect.ShowSnackbar(it.toString()) } },
+            )
         }
     }
 
@@ -90,12 +90,11 @@ class LaunchDetailViewModel(
         viewModelScope.launch {
             updateState { copy(loading = true) }
             val result = getLaunchDetailInteractor(checkNotNull(rocketId))
-            if (result.isOk) {
-                updateState { copy(launch = result.value) }
-                refreshFavorites()
-            } else {
-                sendEffect { Effect.ShowSnackbar(result.error.toString()) }
-            }
+            result.fold(
+                success = { updateState { copy(launch = it) }
+                    refreshFavorites()},
+                failure = { sendEffect { Effect.ShowSnackbar(it.toString()) } },
+            )
             updateState { copy(loading = false) }
         }
     }

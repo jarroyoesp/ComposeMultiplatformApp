@@ -20,11 +20,11 @@ apollo {
         generateApolloMetadata.set(true)
         decapitalizeFields.set(true)
         generateDataBuilders.set(true)
-        mapScalar(
-            "Date",
-            "kotlinx.datetime.Instant",
-            "com.apollographql.apollo.adapter.KotlinxInstantAdapter"
-        )
+       mapScalar(
+           "Date",
+           "kotlinx.datetime.Instant",
+           "com.apollographql.apollo.adapter.KotlinxInstantAdapter"
+       )
         introspection {
             endpointUrl.set("https://spacex-production.up.railway.app/")
             schemaFile.set(file("src/commonMain/graphql/schema.graphqls"))
@@ -33,6 +33,10 @@ apollo {
 }
 
 kotlin {
+    sourceSets.all {
+        languageSettings.optIn("kotlin.time.ExperimentalTime")
+    }
+
     sourceSets {
         commonMain.dependencies {
             api(libs.apollo)

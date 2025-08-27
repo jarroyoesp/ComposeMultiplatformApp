@@ -2,6 +2,7 @@ package com.jarroyo.feature.schedules.ui.userselector
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
+import com.github.michaelbull.result.fold
 import com.jarroyo.feature.schedules.api.destination.UserSelectorDestination
 import com.jarroyo.feature.schedules.api.interactor.GetUserListInteractor
 import com.jarroyo.feature.schedules.api.model.User
@@ -77,11 +78,10 @@ class UserSelectorViewModel (
     }
 
     private suspend fun performSearch() {
-        val response = getUserListInteractor()
-        if (response.isOk) {
-            updateState { copy(users = response.value) }
-        } else {
-            sendEffect { Effect.ShowErrorSnackbar(response.error.message.orEmpty()) }
-        }
+        val result = getUserListInteractor()
+        result.fold(
+            success = { updateState { copy(users = it) }},
+            failure = { sendEffect { Effect.ShowErrorSnackbar(it.message.orEmpty()) } },
+        )
     }
 }

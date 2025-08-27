@@ -40,8 +40,9 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
-import kotlinx.datetime.Clock
 import org.koin.compose.viewmodel.koinViewModel
+import kotlinx.datetime.Clock
+import kotlin.time.ExperimentalTime
 
 @Composable
 fun LaunchDetailScreen(viewModel: LaunchDetailViewModel = koinViewModel<LaunchDetailViewModel>()) {
@@ -129,6 +130,7 @@ private fun DetailItem(
     }
 }
 
+@OptIn(ExperimentalTime::class)
 internal fun getPlaceholderData(): LaunchFragment = LaunchFragment(
     id = "id",
     details = "details",

@@ -12,7 +12,7 @@ spotless {
         targetExclude("**/build/**/*.kt", "**/nativeMain/**/*.kt", "**/desktopMain/**/*.kt")
         diktat(libs.versions.diktat.get()).configFile("$rootDir/config/diktat/diktat-analysis.yml")
         trimTrailingWhitespace()
-        indentWithSpaces()
+        leadingTabsToSpaces()
         endWithNewline()
     }
 
@@ -29,7 +29,7 @@ spotless {
     format ("androidXml") {
         target ("**/AndroidManifest.xml", "src/**/*.xml")
         targetExclude ("**/mergedManifests/**/AndroidManifest.xml", "**/build/**/*.xml")
-        indentWithSpaces()
+        leadingTabsToSpaces()
         trimTrailingWhitespace()
         endWithNewline()
     }
@@ -39,7 +39,7 @@ spotless {
         target ("**/*.md", "**/.gitignore")
 
         // define the steps to apply to those files
-        indentWithSpaces()
+        leadingTabsToSpaces()
         trimTrailingWhitespace()
         endWithNewline()
     }

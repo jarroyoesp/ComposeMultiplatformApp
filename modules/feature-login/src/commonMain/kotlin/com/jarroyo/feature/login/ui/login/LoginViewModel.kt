@@ -2,6 +2,7 @@ package com.jarroyo.feature.login.ui.login
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
+import com.github.michaelbull.result.fold
 import com.jarroyo.feature.login.api.interactor.LoginInteractor
 import com.jarroyo.feature.login.ui.login.LoginContract.Effect
 import com.jarroyo.feature.login.ui.login.LoginContract.Event
@@ -35,12 +36,12 @@ class LoginViewModel(
     private fun handleOnLoginButtonClicked() {
         viewModelScope.launch {
             val result = loginInteractor(email = checkNotNull(viewState.value.email), password = checkNotNull(viewState.value.password))
-            if (result.isOk){
-                sendEffect { Effect.ShowSnackbar("LOGIN SUCCESS") }
-                appNavigator.navigateHome()
-            } else {
-                sendEffect { Effect.ShowSnackbar("LOGIN ERROR: ${result.error}") }
-            }
+            result.fold(
+                success = { sendEffect { Effect.ShowSnackbar("LOGIN SUCCESS") }
+                    appNavigator.navigateHome()
+                           },
+                failure = { sendEffect { Effect.ShowSnackbar("LOGIN ERROR: $it") } },
+            )
         }
     }
 

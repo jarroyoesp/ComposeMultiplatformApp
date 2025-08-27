@@ -15,12 +15,12 @@ internal fun configureGradleManagedDevices(
     val pixel6Api31 = DeviceConfig("Pixel 6", 31, "aosp")
     val pixel6Api28 = DeviceConfig("Pixel 6", 28, "aosp")
 
-    val allDevices = listOf(pixel6Api31, pixel6Api28)
+    val myDevices = listOf(pixel6Api31, pixel6Api28)
 
     commonExtension.testOptions {
         managedDevices {
-            devices {
-                allDevices.forEach { deviceConfig ->
+            allDevices {
+                myDevices.forEach { deviceConfig ->
                     create<ManagedVirtualDevice>(deviceConfig.taskName).apply {
                         device = deviceConfig.device
                         apiLevel = deviceConfig.apiLevel

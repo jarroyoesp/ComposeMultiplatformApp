@@ -1,7 +1,11 @@
+@file:OptIn(ExperimentalTime::class)
+
 package com.jarroyo.feature.launches.ui.launchlist
 
 import androidx.lifecycle.viewModelScope
 import com.apollographql.apollo.cache.normalized.FetchPolicy
+import com.github.michaelbull.result.fold
+import com.jarroyo.feature.common.api.interactor.GetInstantFlowInteractor
 import com.jarroyo.feature.launches.api.destination.LaunchDestination
 import com.jarroyo.feature.launches.api.interactor.GetFavoritesInteractor
 import com.jarroyo.feature.launches.api.interactor.GetLaunchesInteractor
@@ -10,18 +14,16 @@ import com.jarroyo.feature.launches.ui.launchlist.LaunchListContract.Event
 import com.jarroyo.feature.launches.ui.launchlist.LaunchListContract.State
 import com.jarroyo.library.navigation.api.navigator.AppNavigator
 import com.jarroyo.library.ui.shared.BaseViewModel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlinx.datetime.Clock
-import kotlinx.datetime.TimeZone
-import kotlinx.datetime.toLocalDateTime
 import org.koin.android.annotation.KoinViewModel
+import kotlin.time.ExperimentalTime
 
 @KoinViewModel
 class LaunchListViewModel(
     private val appNavigator: AppNavigator,
     private val getFavoritesInteractor: GetFavoritesInteractor,
     private val getLaunchesInteractor: GetLaunchesInteractor,
+    private val getInstantFlowInteractor: GetInstantFlowInteractor,
 ) : BaseViewModel<Event, State, Effect>() {
     init {
         refreshData()
@@ -51,12 +53,12 @@ class LaunchListViewModel(
     private fun refreshData(fetchPolicy: FetchPolicy = FetchPolicy.CacheFirst) {
         viewModelScope.launch {
             updateState { copy(loading = true) }
+
             val result = getLaunchesInteractor(0, 0, fetchPolicy)
-            if (result.isOk) {
-                updateState { copy(rocketList = result.value) }
-            } else {
-                sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
-            }
+            result.fold(
+                success = { updateState { copy(rocketList = it) }},
+                failure = { sendEffect { Effect.ShowSnackbar(it.message.orEmpty()) } },
+            )
             refreshFavorites()
             updateState { copy(loading = false) }
         }
@@ -65,22 +67,16 @@ class LaunchListViewModel(
 
     private suspend fun refreshFavorites() {
         val result = getFavoritesInteractor()
-        if (result.isOk) {
-            updateState { copy(favoritesList = result.value) }
-        } else {
-            sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
-        }
+        result.fold(
+            success = { updateState { copy(favoritesList = it) }},
+            failure = { sendEffect { Effect.ShowSnackbar(it.message.orEmpty()) } },
+        )
     }
 
     private fun refreshCurrentLocalDateTime() {
         viewModelScope.launch {
-            while (true) {
-                delay(1000)
-                updateState {
-                    copy(
-                        currentLocalDateTime = Clock.System.now().toLocalDateTime(TimeZone.UTC),
-                    )
-                }
+            getInstantFlowInteractor.invoke().collect {
+                updateState { copy(currentLocalDateTime = it)}
             }
         }
     }

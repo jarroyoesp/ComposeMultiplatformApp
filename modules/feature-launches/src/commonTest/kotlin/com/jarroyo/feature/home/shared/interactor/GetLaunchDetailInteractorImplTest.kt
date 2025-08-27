@@ -15,12 +15,12 @@ import com.jarroyo.composeapp.library.network.api.graphql.LaunchDetailQuery
 import com.jarroyo.feature.launches.api.interactor.GetLaunchDetailInteractor
 import com.jarroyo.feature.launches.interactor.GetLaunchDetailInteractorImpl
 import kotlinx.coroutines.test.runTest
-import kotlinx.datetime.Clock
 import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertIs
+import kotlin.time.ExperimentalTime
 
 class GetLaunchDetailInteractorImplTest {
     private val data: LaunchDetailQuery.Data = LaunchDetailQuery.Data(FakeResolver()) { }
@@ -74,9 +74,10 @@ class GetLaunchDetailInteractorImplTest {
 class FakeResolver : DefaultFakeResolver(
     com.jarroyo.composeapp.library.network.api.graphql.schema.__Schema.all,
 ) {
+    @OptIn(ExperimentalTime::class)
     override fun resolveLeaf(context: FakeResolverContext): Any =
         when (context.mergedField.type.rawType().name) {
-            "Date" -> Clock.System.now()
+            "Date" -> kotlinx.datetime.Clock.System.now()
             else -> super.resolveLeaf(context)
         }
 }

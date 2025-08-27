@@ -35,7 +35,6 @@ kotlin {
             implementation(compose.foundation)
             implementation(compose.material)
             implementation(compose.runtime)
-            implementation(libs.jetbrains.kotlin.datetime)
 
             implementation(projects.modules.featureAccount)
             implementation(projects.modules.featureAccountApi)

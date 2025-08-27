@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalTime::class)
+
 package com.jarroyo.feature.electricity.ui
 
 import com.jarroyo.library.network.di.ElectricityData
@@ -6,6 +8,7 @@ import com.jarroyo.library.ui.shared.ViewEvent
 import com.jarroyo.library.ui.shared.ViewState
 import com.kizitonwose.calendar.core.now
 import kotlinx.datetime.LocalDate
+import kotlin.time.ExperimentalTime
 
 object ElectricityContract {
     data class State(
