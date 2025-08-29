@@ -9,8 +9,6 @@ plugins {
 versionCatalogUpdate {
     keep {
         keepUnusedVersions.set(true)
-        keepUnusedLibraries.set(true)
-        keepUnusedPlugins.set(true)
     }
 }
 

@@ -1,10 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="11">
+    <bytecodeTargetLevel target="21">
       <module name="ComposeApp.modules.feature-home" target="17" />
       <module name="ComposeApp.modules.library-ui" target="21" />
       <module name="ComposeApp.web" target="17" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ComposeApp.desktop" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.desktop.jvmMain" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.desktop.jvmTest" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.desktop.main" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.desktop.test" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-account" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-account-api" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-account-api.desktopMain" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-account-api.desktopTest" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-account.desktopMain" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-account.desktopTest" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-common" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-common-api" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-common-api.desktopMain" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-common-api.desktopTest" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-common.desktopMain" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-common.desktopTest" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-electricity" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-electricity-api" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-electricity-api.desktopMain" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-electricity-api.desktopTest" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-electricity.desktopMain" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-electricity.desktopTest" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-home-api" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-home-api.desktopMain" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-home-api.desktopTest" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-home-shared" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-home-shared.desktopMain" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-home-shared.desktopTest" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-launches" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-launches-api" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-launches-api.desktopMain" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-launches-api.desktopTest" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-launches.desktopMain" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-launches.desktopTest" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-login" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-login-api" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-login-api.desktopMain" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-login-api.desktopTest" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-login.desktopMain" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-login.desktopTest" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-schedules" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-schedules-api" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-schedules-api.desktopMain" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-schedules-api.desktopTest" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-schedules.desktopMain" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.feature-schedules.desktopTest" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.library-feature" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.library-feature.desktopMain" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.library-feature.desktopTest" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.library-navigation" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.library-navigation-api" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.library-navigation-api.desktopMain" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.library-navigation-api.desktopTest" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.library-navigation.desktopMain" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.library-navigation.desktopTest" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.library-network" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.library-network-api" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.library-network-api.desktopMain" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.library-network-api.desktopTest" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.library-network.desktopMain" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.library-network.desktopTest" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.library-ui-shared" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.library-ui-shared.desktopMain" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.library-ui-shared.desktopTest" options="-Xlint:unchecked -Xlint:deprecation" />
+    </option>
   </component>
 </project>

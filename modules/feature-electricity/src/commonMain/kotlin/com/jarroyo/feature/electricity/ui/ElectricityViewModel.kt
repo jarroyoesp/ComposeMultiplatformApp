@@ -1,6 +1,7 @@
 package com.jarroyo.feature.electricity.ui
 
 import androidx.lifecycle.viewModelScope
+import com.github.michaelbull.result.fold
 import com.jarroyo.feature.electricity.api.interactor.GetElectricityDataInteractor
 import com.jarroyo.feature.electricity.ui.ElectricityContract.Effect
 import com.jarroyo.feature.electricity.ui.ElectricityContract.Event
@@ -36,11 +37,10 @@ class ElectricityViewModel(
         viewModelScope.launch {
             updateState { copy(loading = true) }
             val result = getElectricityDataInteractor(startDate = localDate, endDate = localDate)
-            if (result.isOk) {
-                updateState { copy(electricityData = result.value) }
-            } else {
-                sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
-            }
+            result.fold(
+                success = {updateState { copy(electricityData = it) }},
+                failure = { sendEffect { Effect.ShowSnackbar(it.message.orEmpty()) } },
+            )
             updateState { copy(loading = false) }
         }
     }

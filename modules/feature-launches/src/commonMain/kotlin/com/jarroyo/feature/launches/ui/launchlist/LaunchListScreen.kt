@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalTime::class)
+
 package com.jarroyo.feature.launches.ui.launchlist
 
 import androidx.compose.foundation.layout.Arrangement
@@ -40,8 +42,9 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
-import kotlinx.datetime.Clock
 import org.koin.compose.viewmodel.koinViewModel
+import kotlin.time.ExperimentalTime
+import kotlinx.datetime.Clock
 
 @Composable
 fun LaunchListScreen(viewModel: LaunchListViewModel = koinViewModel<LaunchListViewModel>()) {
@@ -108,6 +111,9 @@ private fun LaunchListScreen(
                 contentPadding = PaddingValues(Spacing.x02),
                 verticalArrangement = Arrangement.spacedBy(Spacing.x01),
             ) {
+                item {
+                    Text(state.currentLocalDateTime?.toString().orEmpty())
+                }
                 if (state.rocketList.isNullOrEmpty() && state.loading) {
                     rocketList(getLaunchListPlaceholderData(), sendEvent, placeholder = true)
                 } else {
@@ -152,6 +158,7 @@ private fun getLaunchListPlaceholderData(): List<LaunchFragment> = List(6) {
     getPlaceholderData()
 }
 
+@OptIn(ExperimentalTime::class)
 private fun getPlaceholderData(): LaunchFragment = LaunchFragment(
     id = "id",
     details = "details",

@@ -2,6 +2,7 @@ package com.jarroyo.feature.schedules.ui.scheduledetail
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
+import com.github.michaelbull.result.fold
 import com.jarroyo.feature.schedules.api.destination.ScheduleDetailDestination
 import com.jarroyo.feature.schedules.api.destination.UserSelectorDestination
 import com.jarroyo.feature.schedules.api.interactor.AddScheduleInteractor
@@ -82,16 +83,13 @@ class ScheduleDetailViewModel(
     private fun handleOnRemoveButtonClicked(id: String) {
         viewModelScope.launch {
             val result = removeScheduleInteractor(id)
-            if (result.isOk) {
-                sendEffect {
-                    Effect.SetResultAndNavigate(
-                        result = ScheduleDetailDestination.Result(operationType = ScheduleDetailDestination.Result.OperationType.REMOVE),
-                        navigate = { appNavigator.navigateBack() },
-                    )
-                }
-            } else {
-                sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
-            }
+            result.fold(
+                success = { Effect.SetResultAndNavigate(
+                    result = ScheduleDetailDestination.Result(operationType = ScheduleDetailDestination.Result.OperationType.REMOVE),
+                    navigate = { appNavigator.navigateBack() },
+                )},
+                failure = { sendEffect { Effect.ShowSnackbar(it.message.orEmpty()) } },
+            )
         }
     }
 
@@ -105,16 +103,17 @@ class ScheduleDetailViewModel(
                     users = viewState.value.userList?.map { it.id }.orEmpty(),
                 ),
             )
-            if (result.isOk) {
-                sendEffect {
-                    Effect.SetResultAndNavigate(
-                        result = ScheduleDetailDestination.Result(operationType = ScheduleDetailDestination.Result.OperationType.CREATE),
-                        navigate = { appNavigator.navigateBack() },
-                    )
-                }
-            } else {
-                sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
-            }
+            result.fold(
+                success = {
+                    sendEffect {
+                        Effect.SetResultAndNavigate(
+                            result = ScheduleDetailDestination.Result(operationType = ScheduleDetailDestination.Result.OperationType.CREATE),
+                            navigate = { appNavigator.navigateBack() },
+                        )
+                    }
+                },
+                failure = { sendEffect { Effect.ShowSnackbar(it.message.orEmpty()) } },
+            )
         }
     }
 
@@ -128,19 +127,20 @@ class ScheduleDetailViewModel(
 
     private suspend fun refreshSchedules() {
         val result = getScheduleInteractor(checkNotNull(scheduleId))
-        if (result.isOk) {
-            updateState {
-                copy(
-                    editAllowed = true,
-                    id = result.value?.id,
-                    time = result.value?.time,
-                    slots = result.value?.slots.toString(),
-                )
-            }
-            result.value?.users?.let { getUsers(it) }
-        } else {
-            sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
-        }
+        result.fold(
+            success = {
+                updateState {
+                    copy(
+                        editAllowed = true,
+                        id = it?.id,
+                        time = it?.time,
+                        slots = it?.slots.toString(),
+                    )
+                }
+                it?.users?.let { getUsers(it) }
+            },
+            failure = { sendEffect { Effect.ShowSnackbar(it.message.orEmpty()) } },
+        )
     }
 
     private fun checkSaveButtonEnabled() {
@@ -157,9 +157,10 @@ class ScheduleDetailViewModel(
             val userList = mutableListOf<User>()
             userIdList.forEach { userId ->
                 val result = getUserInteractor(userId)
-                if (result.isOk) {
-                    result.value?.let { userList.add(it) }
-                }
+                result.fold(
+                    success = { it?.let { userList.add(it) }},
+                    failure = { },
+                )
             }
             updateState { copy(userList = userList) }
         }

@@ -5,5 +5,5 @@ import platform.UIKit.UIApplication
 
 actual fun openUrl(url: String) {
     val nsUrl = url.let { NSURL.URLWithString(it) } ?: return
-    UIApplication.sharedApplication.openURL(nsUrl)
+    UIApplication.sharedApplication.openURL(nsUrl, emptyMap<Any?, Any>(), null)
 }

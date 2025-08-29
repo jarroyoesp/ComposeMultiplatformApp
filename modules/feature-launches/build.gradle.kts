@@ -38,7 +38,6 @@ kotlin {
             implementation(compose.foundation)
             implementation(compose.material)
             implementation(compose.runtime)
-            implementation(libs.jetbrains.kotlin.datetime)
             implementation(libs.sqldelight.coroutines)
 
             implementation(projects.modules.featureCommonApi)

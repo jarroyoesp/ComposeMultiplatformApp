@@ -1,6 +1,7 @@
 package com.jarroyo.feature.schedules.ui.list
 
 import androidx.lifecycle.viewModelScope
+import com.github.michaelbull.result.fold
 import com.jarroyo.feature.account.api.interactor.GetAccountInteractor
 import com.jarroyo.feature.schedules.api.destination.ScheduleDetailDestination
 import com.jarroyo.feature.schedules.api.destination.ScheduleDetailDestination.Result
@@ -67,10 +68,9 @@ class ScheduleListViewModel(
     }
     private suspend fun refreshSchedules() {
         val result = getSchedulesInteractor()
-        if (result.isOk) {
-            updateState { copy(scheduleList = result.value) }
-        } else {
-            sendEffect { Effect.ShowSnackbar(result.error.message.orEmpty()) }
-        }
+        result.fold(
+            success = { updateState { copy(scheduleList = it) }},
+            failure = { sendEffect { Effect.ShowSnackbar(it.message.orEmpty()) }},
+        )
     }
 }
