@@ -20,7 +20,7 @@ Current supported Platforms are:
 # Features
 
 ## Home Screen 🚀
-- List of SpaceX launches: Displays a list of SpaceX launches retrieved from a GraphQL endpoint.
+- List of SpaceX launches: Displays a list of SpaceX launches retrieved from a GraphQL endpoint...
 - Show favorite Launches: retrieve data from local database to show your favorite launches
 - Apollo GraphQL Integration: Utilizes GraphQL to fetch and display SpaceX launch data efficiently.
 - SQLDelight Integration: Integrates SQLDelight for managing and persisting favorite launch data.
