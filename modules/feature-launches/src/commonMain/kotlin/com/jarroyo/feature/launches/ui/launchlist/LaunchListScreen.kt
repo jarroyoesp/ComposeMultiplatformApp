@@ -44,7 +44,7 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import org.koin.compose.viewmodel.koinViewModel
 import kotlin.time.ExperimentalTime
-import kotlinx.datetime.Clock
+import kotlin.time.Clock
 
 @Composable
 fun LaunchListScreen(viewModel: LaunchListViewModel = koinViewModel<LaunchListViewModel>()) {

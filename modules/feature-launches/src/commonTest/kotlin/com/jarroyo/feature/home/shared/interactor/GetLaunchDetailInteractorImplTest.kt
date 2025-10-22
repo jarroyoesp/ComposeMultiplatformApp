@@ -20,6 +20,7 @@ import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertIs
+import kotlin.time.Clock
 import kotlin.time.ExperimentalTime
 
 class GetLaunchDetailInteractorImplTest {
@@ -77,7 +78,7 @@ class FakeResolver : DefaultFakeResolver(
     @OptIn(ExperimentalTime::class)
     override fun resolveLeaf(context: FakeResolverContext): Any =
         when (context.mergedField.type.rawType().name) {
-            "Date" -> kotlinx.datetime.Clock.System.now()
+            "Date" -> Clock.System.now()
             else -> super.resolveLeaf(context)
         }
 }

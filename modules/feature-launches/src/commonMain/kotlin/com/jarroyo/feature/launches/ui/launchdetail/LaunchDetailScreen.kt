@@ -41,7 +41,7 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import org.koin.compose.viewmodel.koinViewModel
-import kotlinx.datetime.Clock
+import kotlin.time.Clock
 import kotlin.time.ExperimentalTime
 
 @Composable
