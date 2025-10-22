@@ -24,10 +24,9 @@ import com.jarroyo.composeapp.library.network.api.graphql.fragment.LaunchFragmen
 import com.jarroyo.feature.launches.ui.launchlist.LaunchListContract.Event
 import com.jarroyo.library.ui.shared.component.placeholder
 import com.jarroyo.library.ui.shared.theme.Spacing
-import kotlinx.datetime.TimeZone
-import kotlinx.datetime.toLocalDateTime
+import kotlin.time.ExperimentalTime
 
-@OptIn(ExperimentalMaterialApi::class)
+@OptIn(ExperimentalMaterialApi::class, ExperimentalTime::class)
 @Composable
 fun LaunchListItem(
     item: LaunchFragment,
@@ -89,10 +88,10 @@ fun LaunchListItem(
                     "- Company: ${item.rocket?.rocket?.rocketFragment?.company.orEmpty()}",
                     modifier = Modifier.placeholder(placeholder),
                 )
-                Text(
-                    "- Date: ${item.launch_date_local?.toLocalDateTime(TimeZone.UTC)}",
-                    modifier = Modifier.placeholder(placeholder),
-                )
+               Text(
+                   "- Date: ${item.launch_date_local}",
+                   modifier = Modifier.placeholder(placeholder),
+               )
             }
         }
     }

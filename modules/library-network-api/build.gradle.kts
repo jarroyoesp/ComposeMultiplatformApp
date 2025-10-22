@@ -22,8 +22,8 @@ apollo {
         generateDataBuilders.set(true)
        mapScalar(
            "Date",
-           "kotlinx.datetime.Instant",
-           "com.apollographql.apollo.adapter.KotlinxInstantAdapter"
+           "kotlin.time.Instant",
+           "com.jarroyo.library.network.api.adapter.KotlinTimeInstantAdapter"
        )
         introspection {
             endpointUrl.set("https://spacex-production.up.railway.app/")

@@ -5,7 +5,7 @@ import kotlinx.datetime.format
 import kotlinx.datetime.format.char
 
 fun LocalDateTime.format(): String = format(LocalDateTime.Format {
-    dayOfMonth()
+    day()
     char('/')
     monthNumber()
     char('/')

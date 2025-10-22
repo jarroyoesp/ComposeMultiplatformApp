@@ -1,6 +1,6 @@
 [![CI-MASTER](https://github.com/jarroyoesp/ComposeMultiplatformApp/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/jarroyoesp/ComposeMultiplatformApp/actions/workflows/ci.yml)
 [![Latest release](https://img.shields.io/github/v/release/JetBrains/compose-multiplatform?color=blue&label=Compose%20multiplatform)](https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.8.2)
-![Kotlin Version](https://img.shields.io/badge/Kotlin-2.2.10-blue?logo=kotlin&logoColor=white)
+![Kotlin Version](https://img.shields.io/badge/Kotlin-2.2.20-blue?logo=kotlin&logoColor=white)
 <div align="center">
     <img alt="Compose multiplatform charts" src="./screenshots/compose_multiplatform_logo.png"/>
     <h1>🚀 Example project to show SpaceX data built with Kotlin Multiplatform and Compose UI Multiplatform</h1>
@@ -20,7 +20,7 @@ Current supported Platforms are:
 # Features
 
 ## Home Screen 🚀
-- List of SpaceX launches: Displays a list of SpaceX launches retrieved from a GraphQL endpoint...
+- List of SpaceX launches: Displays a list of SpaceX launches retrieved from a GraphQL endpoint.
 - Show favorite Launches: retrieve data from local database to show your favorite launches
 - Apollo GraphQL Integration: Utilizes GraphQL to fetch and display SpaceX launch data efficiently.
 - SQLDelight Integration: Integrates SQLDelight for managing and persisting favorite launch data.

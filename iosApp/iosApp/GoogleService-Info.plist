@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CLIENT_ID</key>
+	<string>129903346150-rcl4gve552q0g6ock3riei1uupq2moce.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.129903346150-rcl4gve552q0g6ock3riei1uupq2moce</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCEcoV6soF-T9LMLMmXFXgR6JmbGfp1vf0</string>
 	<key>GCM_SENDER_ID</key>
@@ -9,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.jarroyo.composeapp.debug</string>
+	<string>com.jarroyo.composeapp</string>
 	<key>PROJECT_ID</key>
 	<string>virtualgym-684f7</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:129903346150:ios:c5248395c469a52e09d627</string>
+	<string>1:129903346150:ios:48885efc4065251609d627</string>
 </dict>
 </plist>

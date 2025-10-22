@@ -52,8 +52,8 @@ easylauncher {
 }
 
 aboutLibraries {
-    duplicationMode = DuplicateMode.MERGE
-    duplicationRule = DuplicateRule.SIMPLE
+    library.duplicationMode = DuplicateMode.MERGE
+    library.duplicationRule = DuplicateRule.SIMPLE
 }
 
 dependencies {
