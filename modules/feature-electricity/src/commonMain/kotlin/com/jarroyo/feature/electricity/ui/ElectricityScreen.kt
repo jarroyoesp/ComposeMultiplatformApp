@@ -161,8 +161,8 @@ private fun ColumnScope.XYSamplePlot(state: State) {
                 Column {
                     Text("Minimun prize: $minValue € at $hourMin")
                     Text("Maximum prize: $maxValue € at $hourMax")
-                    chart(
-                        points,
+                    Chart(
+                        data = points,
                         modifier = Modifier.fillMaxWidth(),
                     )
                 }
@@ -175,7 +175,7 @@ private val hourList: List<String> =
     List(25) { it.toString() }
 
 @Composable
-private fun XYGraphScope<String, Float>.chart(
+private fun XYGraphScope<String, Float>.Chart(
     data: List<DefaultPoint<String, Float>>,
     modifier: Modifier = Modifier,
 ) {
