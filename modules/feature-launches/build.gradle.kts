@@ -34,10 +34,10 @@ kotlin {
             implementation(libs.sqldelight.androidDriver)
         }
         commonMain.dependencies {
-            implementation(compose.ui)
-            implementation(compose.foundation)
-            implementation(compose.material)
-            implementation(compose.runtime)
+            implementation(libs.jetbrains.compose.ui)
+            implementation(libs.jetbrains.compose.foundation)
+            implementation(libs.jetbrains.compose.material)
+            implementation(libs.jetbrains.compose.runtime)
             implementation(libs.sqldelight.coroutines)
 
             implementation(projects.modules.featureCommonApi)

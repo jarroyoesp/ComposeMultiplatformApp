@@ -17,17 +17,16 @@ kotlin {
         }
 
         commonMain.dependencies {
-            api(compose.materialIconsExtended)
+            api(libs.jetbrains.compose.material.icons.extended)
             implementation(libs.jetbrains.kotlinx.serialization)
             implementation(projects.modules.libraryNavigationApi)
 
-            implementation(compose.components.resources)
-            implementation(compose.foundation)
-            implementation(compose.material)
+            implementation(libs.jetbrains.compose.components.resources)
+            implementation(libs.jetbrains.compose.foundation)
+            implementation(libs.jetbrains.compose.material)
             implementation(libs.jetbrains.compose.material3)
             implementation(libs.jetbrains.compose.ui)
             implementation(libs.jetbrains.compose.ui.graphics)
-            implementation(libs.jetbrains.compose.ui.resources)
             implementation(libs.compose.placeholder)
             implementation(libs.coroutines.core)
         }
