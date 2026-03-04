@@ -4,14 +4,11 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
-android {
-    namespace = "com.jarroyo.feature.electricity"
-    sourceSets["main"].apply {
-        res.srcDirs("src/androidMain/res", "src/commonMain/resources")
-    }
-}
-
 kotlin {
+    android {
+        namespace = "com.jarroyo.feature.electricity"
+    }
+
     // REVIEW reason of ld: framework 'FirebaseCore' not found
     tasks.matching { it.name == "linkDebugTestIosSimulatorArm64" }.configureEach {
         enabled = false

@@ -5,13 +5,13 @@
 //  Created by Javier Arroyo on 25/2/24.
 //
 
-import SwiftUI
 import ComposeApp
+import SwiftUI
 
 struct ContentView: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> UIViewController {
+    func makeUIViewController(context _: Context) -> UIViewController {
         MainViewControllerKt.MainViewController()
     }
 
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
+    func updateUIViewController(_: UIViewController, context _: Context) {}
 }

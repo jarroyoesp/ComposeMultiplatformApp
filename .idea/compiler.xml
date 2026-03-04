@@ -79,6 +79,9 @@
       <module name="ComposeApp.modules.library-network-api.desktopTest" options="-Xlint:unchecked -Xlint:deprecation" />
       <module name="ComposeApp.modules.library-network.desktopMain" options="-Xlint:unchecked -Xlint:deprecation" />
       <module name="ComposeApp.modules.library-network.desktopTest" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.library-test" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.library-test.desktopMain" options="-Xlint:unchecked -Xlint:deprecation" />
+      <module name="ComposeApp.modules.library-test.desktopTest" options="-Xlint:unchecked -Xlint:deprecation" />
       <module name="ComposeApp.modules.library-ui-shared" options="-Xlint:unchecked -Xlint:deprecation" />
       <module name="ComposeApp.modules.library-ui-shared.desktopDev" options="-Xlint:unchecked -Xlint:deprecation" />
       <module name="ComposeApp.modules.library-ui-shared.desktopMain" options="-Xlint:unchecked -Xlint:deprecation" />

@@ -50,10 +50,7 @@ import io.github.koalaplot.core.ChartLayout
 import io.github.koalaplot.core.line.LinePlot
 import io.github.koalaplot.core.style.LineStyle
 import io.github.koalaplot.core.util.ExperimentalKoalaPlotApi
-import io.github.koalaplot.core.xygraph.CategoryAxisModel
 import io.github.koalaplot.core.xygraph.DefaultPoint
-import io.github.koalaplot.core.xygraph.FloatLinearAxisModel
-import io.github.koalaplot.core.xygraph.XYGraph
 import io.github.koalaplot.core.xygraph.XYGraphScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
@@ -144,30 +141,53 @@ private fun ColumnScope.XYSamplePlot(state: State) {
         val maxGraph = maxValue.toFloat() + 20
 
         ChartLayout(modifier = Modifier.fillMaxSize()) {
-            XYGraph(
-                xAxisModel = CategoryAxisModel(hourList),
-                yAxisModel = FloatLinearAxisModel(range = minGraph..maxGraph),
-            ) {
-                val points = mapIndexed { index, value ->
-                    if (value.value == minValue) {
-                        hourMin = hourList[index]
-                    }
-                    if (value.value == maxValue) {
-                        hourMax = hourList[index]
-                    }
-                    Logger.d("JAE ${hourList[index]} - $value")
-                    DefaultPoint(hourList[index], value.value.toFloat())
+            val points = mapIndexed { index, value ->
+                if (value.value == minValue) {
+                    hourMin = hourList[index]
                 }
-                Column {
-                    Text("Minimun prize: $minValue € at $hourMin")
-                    Text("Maximum prize: $maxValue € at $hourMax")
-                    Chart(
-                        data = points,
-                        modifier = Modifier.fillMaxWidth(),
-                    )
+                if (value.value == maxValue) {
+                    hourMax = hourList[index]
                 }
+                Logger.d("JAE ${hourList[index]} - $value")
+                DefaultPoint(hourList[index], value.value.toFloat())
             }
+          // XYGraph(
+          // xAxisModel = CategoryAxisModel(hourList),
+          // yAxisModel = FloatLinearAxisModel(range = minGraph..maxGraph),
+          // yAxisLabels = {
+          // if (!thumbnail) {
+          // AxisLabel(it.toString())
+          // }
+          // },
+          // xAxisLabels = {
+          // if (!thumbnail) {
+          // AxisLabel(it, Modifier.padding(top = 2.dp))
+          // }
+          // }
+          // )
+// XYGraph<String, Float>(
+// xAxisModel = CategoryAxisModel(hourList),
+// yAxisModel = FloatLinearAxisModel(range = minGraph..maxGraph),
+// ) {
+// val points = mapIndexed { index, value ->
+// if (value.value == minValue) {
+// hourMin = hourList[index]
+// }
+// if (value.value == maxValue) {
+// hourMax = hourList[index]
+// }
+// Logger.d("JAE ${hourList[index]} - $value")
+// DefaultPoint(hourList[index], value.value.toFloat())
+// }
+
+// Chart(
+// data = points,
+// modifier = Modifier.fillMaxWidth(),
+// )
+// }
         }
+        Text("Minimun prize: $minValue € at $hourMin")
+        Text("Maximum prize: $maxValue € at $hourMax")
     }
 }
 

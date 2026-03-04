@@ -1,15 +1,9 @@
+import com.android.build.api.dsl.KotlinMultiplatformAndroidLibraryExtension
+
 plugins {
     id("composeapp.multiplatform-feature-conventions")
-    id("org.jetbrains.compose")
     id("org.jetbrains.kotlin.plugin.compose")
     alias(libs.plugins.sqldelight)
-}
-
-android {
-    namespace = "com.jarroyo.account"
-    sourceSets["main"].apply {
-        res.srcDirs("src/androidMain/res", "src/commonMain/resources")
-    }
 }
 
 sqldelight {
@@ -22,6 +16,10 @@ sqldelight {
 }
 
 kotlin {
+    android {
+        namespace = "com.jarroyo.account"
+    }
+
     // REVIEW reason of ld: framework 'FirebaseCore' not found
     tasks.matching { it.name == "linkDebugTestIosSimulatorArm64" }.configureEach {
         enabled = false

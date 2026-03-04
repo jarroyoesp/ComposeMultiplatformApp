@@ -4,14 +4,11 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
-android {
-    namespace = "com.jarroyo.feature.home.shared"
-    sourceSets["main"].apply {
-        res.srcDirs("src/androidMain/res", "src/commonMain/resources")
-    }
-}
-
 kotlin {
+    android {
+        namespace = "com.jarroyo.feature.home.shared"
+    }
+
     targets.filterIsInstance<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget>()
         .forEach {
             it.binaries.filterIsInstance<org.jetbrains.kotlin.gradle.plugin.mpp.Framework>()

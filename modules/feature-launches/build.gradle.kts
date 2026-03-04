@@ -5,30 +5,11 @@ plugins {
     alias(libs.plugins.sqldelight)
 }
 
-android {
-    namespace = "com.jarroyo.launches.schedules"
-    sourceSets["main"].apply {
-        res.srcDirs("src/androidMain/res", "src/commonMain/resources")
-    }
-}
-
-sqldelight {
-    databases {
-        create("Database") {
-            packageName.set("com.jarroyo.feature.launches.sqldelight")
-        }
-    }
-    linkSqlite.set(true)
-}
-
 kotlin {
-    // REVIEW reason of ld: framework 'FirebaseCore' not found
-    tasks.matching { it.name == "linkDebugTestIosSimulatorArm64" }.configureEach {
-        enabled = false
+    android {
+        namespace = "com.jarroyo.launches.schedules"
     }
-    tasks.matching { it.name == "linkDebugTestIosX64" }.configureEach {
-        enabled = false
-    }
+
     sourceSets {
         androidMain.dependencies {
             implementation(libs.sqldelight.androidDriver)
@@ -55,4 +36,21 @@ kotlin {
             implementation(libs.sqldelight.nativeDriver)
         }
     }
+}
+
+sqldelight {
+    databases {
+        create("Database") {
+            packageName.set("com.jarroyo.feature.launches.sqldelight")
+        }
+    }
+    linkSqlite.set(true)
+}
+
+// REVIEW reason of ld: framework 'FirebaseCore' not found
+tasks.matching { it.name == "linkDebugTestIosSimulatorArm64" }.configureEach {
+    enabled = false
+}
+tasks.matching { it.name == "linkDebugTestIosX64" }.configureEach {
+    enabled = false
 }

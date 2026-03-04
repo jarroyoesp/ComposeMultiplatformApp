@@ -31,7 +31,8 @@ dependencies {
 
 afterEvaluate {
     tasks.named("check") {
-        dependsOn(tasks.named("detektMain"))
-        dependsOn(tasks.named("detektTest"))
+        if (tasks.findByName("detekt") != null) {
+            dependsOn(tasks.named("detekt"))
+        }
     }
 }

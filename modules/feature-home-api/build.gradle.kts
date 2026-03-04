@@ -3,15 +3,11 @@ plugins {
     alias(libs.plugins.kotlinx.serialization)
 }
 
-android {
-    namespace = "com.jarroyo.feature.home.api"
-    resourcePrefix = "home_api_"
-    defaultConfig {
-        consumerProguardFiles("$projectDir/proguard-home-api-consumer-rules.pro")
-    }
-}
-
 kotlin {
+    android {
+        namespace = "com.jarroyo.feature.home.api"
+    }
+
     sourceSets {
         commonMain.dependencies {
             api(libs.jetbrains.kotlinx.serialization)

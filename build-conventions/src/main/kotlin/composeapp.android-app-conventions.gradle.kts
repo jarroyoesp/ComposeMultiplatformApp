@@ -1,45 +1,50 @@
+import com.android.build.api.dsl.LibraryExtension
 import com.android.build.gradle.internal.tasks.factory.dependsOn
 import com.jarroyo.composeapp.gmd.configureGradleManagedDevices
 import com.mikepenz.aboutlibraries.plugin.DuplicateMode
 import com.mikepenz.aboutlibraries.plugin.DuplicateRule
 import com.project.starter.easylauncher.filter.ChromeLikeFilter
 import org.gradle.accessors.dm.LibrariesForLibs
-import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
+import org.gradle.kotlin.dsl.withType
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.jetbrains.kotlin.plugin.compose")
     id("com.android.application")
+    id("org.jetbrains.kotlin.plugin.compose")
     id("composeapp.android-conventions")
-    id("kotlin-parcelize")
+    //id("kotlin-parcelize")
     id("com.mikepenz.aboutlibraries.plugin")
     id("composeapp.merged-manifests-conventions")
     id("composeapp.dependencies-conventions")
-    id("com.starter.easylauncher")
     id("composeapp.ruler-conventions")
     id("com.google.gms.google-services")
+    id("com.starter.easylauncher")
 }
 
 val libs = the<LibrariesForLibs>()
 
-android {
-    buildFeatures {
-        compose = true
-    }
-    compileOptions {
-        isCoreLibraryDesugaringEnabled = true  // https://developer.android.com/studio/write/java8-support#library-desugaring
-    }
-    configureGradleManagedDevices(this)
-    configure<KotlinAndroidProjectExtension> {
-        compilerOptions {
-            freeCompilerArgs.set(
-                freeCompilerArgs.get() + listOf(
-                    "-opt-in=androidx.compose.foundation.ExperimentalFoundationApi",
-                    "-opt-in=androidx.compose.material.ExperimentalMaterialApi",
-                    "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api",
-                    "-opt-in=androidx.compose.ui.ExperimentalComposeUiApi",
-                )
-            )
+plugins.withId("com.android.library") {
+    extensions.configure<LibraryExtension> {
+
+        buildFeatures {
+            compose = true
         }
+        compileOptions {
+            isCoreLibraryDesugaringEnabled =
+                true  // https://developer.android.com/studio/write/java8-support#library-desugaring
+        }
+        configureGradleManagedDevices(this)
+    }
+}
+
+tasks.withType<KotlinCompile>().configureEach {
+    compilerOptions {
+        freeCompilerArgs.addAll(listOf(
+            "-opt-in=androidx.compose.material.ExperimentalMaterialApi",
+            "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api",
+            "-opt-in=androidx.compose.ui.ExperimentalComposeUiApi",
+            "-opt-in=androidx.compose.ui.test.ExperimentalTestApi",
+        ))
     }
 }
 
@@ -57,7 +62,7 @@ aboutLibraries {
 }
 
 dependencies {
-
+    implementation(project.dependencies.platform("com.google.firebase:firebase-bom:33.10.0"))
     coreLibraryDesugaring(libs.desugar)
     debugImplementation(libs.leakcanary)
     implementation(libs.androidx.core.ktx)

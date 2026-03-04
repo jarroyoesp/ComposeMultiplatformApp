@@ -1,37 +1,30 @@
+import com.android.build.api.dsl.KotlinMultiplatformAndroidLibraryExtension
 import com.jarroyo.composeapp.ext.android
 import com.jarroyo.composeapp.ext.config
 import org.gradle.accessors.dm.LibrariesForLibs
+import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.the
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     kotlin("multiplatform")
-    id("com.android.library")
-    id("kotlin-parcelize")
+    id("com.android.kotlin.multiplatform.library")
     id("composeapp.config-conventions")
 }
 
 val libs = the<LibrariesForLibs>()
 
-android {
-    compileSdk = libs.versions.androidCompileSdk.get().toInt()
-    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
-    compileOptions {
-        sourceCompatibility = config.android.javaVersion.get()
-        targetCompatibility = config.android.javaVersion.get()
-    }
-    defaultConfig {
-        minSdk = config.android.minSdk.get()
-    }
-}
-
 kotlin {
-    androidTarget {
+    android {
+        namespace = "com.jarroyo.composeapp"
+        compileSdk = project.config.android.compileSdk.get()
+        minSdk = project.config.android.minSdk.get()
+
         compilerOptions {
-            jvmTarget.set(JvmTarget.fromTarget(config.android.javaVersion.get().toString()))
+            jvmTarget.set(JvmTarget.fromTarget(project.config.android.javaVersion.get().toString()))
         }
     }
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -54,8 +47,10 @@ kotlin {
 
     sourceSets {
         androidMain.dependencies {
+            implementation(project.dependencies.platform(libs.firebase.android.bom))
             implementation(libs.jetbrains.lifecycle.viewmodel)
             implementation(libs.ktor.client.android)
+            implementation(libs.junit)
         }
 
         commonMain.dependencies {
@@ -83,14 +78,13 @@ kotlin {
             api(libs.apollo.testing.support)
             api(libs.coroutines.test)
             api(libs.jetbrains.kotlin.test)
-            api(libs.junit)
         }
 
         val desktopMain by getting {
             dependencies {
                 implementation(libs.coroutines.swing)
                 implementation(libs.ktor.client.java)
-
+                implementation(libs.junit)
             }
         }
 
