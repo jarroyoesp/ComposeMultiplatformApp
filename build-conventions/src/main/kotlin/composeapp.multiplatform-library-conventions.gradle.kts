@@ -3,6 +3,7 @@ import com.jarroyo.composeapp.ext.android
 import com.jarroyo.composeapp.ext.config
 import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.get
 import org.gradle.kotlin.dsl.the
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -16,7 +17,7 @@ val libs = the<LibrariesForLibs>()
 
 kotlin {
     android {
-        namespace = "com.jarroyo.composeapp"
+        namespace = config.android.applicationId.get()
         compileSdk = project.config.android.compileSdk.get()
         minSdk = project.config.android.minSdk.get()
 

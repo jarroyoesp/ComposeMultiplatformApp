@@ -7,10 +7,6 @@ plugins {
 kotlin {
     android {
         namespace = "com.jarroyo.library.network"
-        //resourcePrefix = "network_"
-        //defaultConfig {
-        //    consumerProguardFiles("$projectDir/proguard-network-consumer-rules.pro")
-        //}
     }
     sourceSets {
         commonMain.dependencies {

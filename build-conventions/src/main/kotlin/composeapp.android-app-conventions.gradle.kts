@@ -12,7 +12,6 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.plugin.compose")
     id("composeapp.android-conventions")
-    //id("kotlin-parcelize")
     id("com.mikepenz.aboutlibraries.plugin")
     id("composeapp.merged-manifests-conventions")
     id("composeapp.dependencies-conventions")

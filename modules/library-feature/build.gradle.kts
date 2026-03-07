@@ -8,10 +8,6 @@ plugins {
 kotlin {
     android {
         namespace = "com.jarroyo.library.feature"
-        // resourcePrefix = "feature_" // Not supported in KotlinMultiplatformAndroidLibraryTarget
-        // defaultConfig { // Not supported in KotlinMultiplatformAndroidLibraryTarget
-        //     consumerProguardFiles("$projectDir/proguard-feature-consumer-rules.pro")
-        // }
     }
 
     sourceSets {

@@ -47,11 +47,17 @@ import com.jarroyo.library.ui.shared.theme.Spacing
 import com.kizitonwose.calendar.core.minusDays
 import com.kizitonwose.calendar.core.now
 import io.github.koalaplot.core.ChartLayout
-import io.github.koalaplot.core.line.LinePlot
+import io.github.koalaplot.core.line.LinePlot2
 import io.github.koalaplot.core.style.LineStyle
 import io.github.koalaplot.core.util.ExperimentalKoalaPlotApi
+import io.github.koalaplot.core.xygraph.AxisContent
+import io.github.koalaplot.core.xygraph.AxisStyle
+import io.github.koalaplot.core.xygraph.CategoryAxisModel
 import io.github.koalaplot.core.xygraph.DefaultPoint
+import io.github.koalaplot.core.xygraph.XYGraph
 import io.github.koalaplot.core.xygraph.XYGraphScope
+import io.github.koalaplot.core.xygraph.rememberFloatLinearAxisModel
+import io.github.koalaplot.core.xygraph.rememberGridStyle
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
@@ -140,51 +146,37 @@ private fun ColumnScope.XYSamplePlot(state: State) {
         val minGraph = minValue.toFloat() - 20
         val maxGraph = maxValue.toFloat() + 20
 
-        ChartLayout(modifier = Modifier.fillMaxSize()) {
-            val points = mapIndexed { index, value ->
-                if (value.value == minValue) {
-                    hourMin = hourList[index]
-                }
-                if (value.value == maxValue) {
-                    hourMax = hourList[index]
-                }
-                Logger.d("JAE ${hourList[index]} - $value")
-                DefaultPoint(hourList[index], value.value.toFloat())
+        val points = mapIndexed { index, value ->
+            if (value.value == minValue) {
+                hourMin = hourList[index]
             }
-          // XYGraph(
-          // xAxisModel = CategoryAxisModel(hourList),
-          // yAxisModel = FloatLinearAxisModel(range = minGraph..maxGraph),
-          // yAxisLabels = {
-          // if (!thumbnail) {
-          // AxisLabel(it.toString())
-          // }
-          // },
-          // xAxisLabels = {
-          // if (!thumbnail) {
-          // AxisLabel(it, Modifier.padding(top = 2.dp))
-          // }
-          // }
-          // )
-// XYGraph<String, Float>(
-// xAxisModel = CategoryAxisModel(hourList),
-// yAxisModel = FloatLinearAxisModel(range = minGraph..maxGraph),
-// ) {
-// val points = mapIndexed { index, value ->
-// if (value.value == minValue) {
-// hourMin = hourList[index]
-// }
-// if (value.value == maxValue) {
-// hourMax = hourList[index]
-// }
-// Logger.d("JAE ${hourList[index]} - $value")
-// DefaultPoint(hourList[index], value.value.toFloat())
-// }
-
-// Chart(
-// data = points,
-// modifier = Modifier.fillMaxWidth(),
-// )
-// }
+            if (value.value == maxValue) {
+                hourMax = hourList[index]
+            }
+            Logger.d("JAE ${hourList[index]} - $value")
+            DefaultPoint(hourList[index], value.value.toFloat())
+        }
+        ChartLayout(modifier = Modifier.fillMaxSize()) {
+            XYGraph(
+                xAxisModel = CategoryAxisModel(hourList),
+                yAxisModel = rememberFloatLinearAxisModel(range = minGraph..maxGraph),
+                xAxisContent = AxisContent(
+                    labels = { Text(it) },
+                    title = { Text("Hour") },
+                    style = AxisStyle(),
+                ),
+                yAxisContent = AxisContent(
+                    labels = { Text(it.toString()) },
+                    title = { Text("Price") },
+                    style = AxisStyle(),
+                ),
+                gridStyle = rememberGridStyle(),
+            ) {
+                Chart(
+                    data = points,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+            }
         }
         Text("Minimun prize: $minValue € at $hourMin")
         Text("Maximum prize: $maxValue € at $hourMax")
@@ -199,7 +191,7 @@ private fun XYGraphScope<String, Float>.Chart(
     data: List<DefaultPoint<String, Float>>,
     modifier: Modifier = Modifier,
 ) {
-    LinePlot(
+    LinePlot2(
         data = data,
         modifier = modifier.fillMaxSize(),
         lineStyle = LineStyle(

@@ -22,6 +22,7 @@ kotlin = "2.3.10"
 kotlinpoet = "2.2.0"
 kotlin-multiplatform = "1.10.1"
 kotlin-result = "2.1.0"
+kotlinx-datetime = "0.6.1"
 ksp = "2.3.5"
 ktlint = "0.43.0"
 ktor = "3.4.0"
@@ -76,7 +77,7 @@ jetbrains-compose-material3 = { module = "org.jetbrains.compose.material3:materi
 jetbrains-compose-runtime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "kotlin-multiplatform" }
 jetbrains-compose-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "kotlin-multiplatform" }
 jetbrains-compose-ui-graphics = { module = "org.jetbrains.compose.ui:ui-graphics", version.ref = "kotlin-multiplatform" }
-## jetbrains-kotlin-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+jetbrains-kotlin-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
 jetbrains-kotlin-extensions = { module = "org.jetbrains.kotlin:kotlin-android-extensions", version.ref = "kotlin" }
 jetbrains-kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlin" }
 jetbrains-kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
