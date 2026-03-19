@@ -10,11 +10,9 @@ plugins {
 }
 
 subprojects {
-    gradle.projectsEvaluated {
-        tasks.withType<JavaCompile> {
-            options.compilerArgs.add("-Xlint:unchecked")
-            options.compilerArgs.add("-Xlint:deprecation")
-        }
+    tasks.withType<JavaCompile>().configureEach {
+        options.compilerArgs.add("-Xlint:unchecked")
+        options.compilerArgs.add("-Xlint:deprecation")
     }
 }
 

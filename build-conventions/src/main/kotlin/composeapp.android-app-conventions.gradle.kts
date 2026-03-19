@@ -1,5 +1,4 @@
 import com.android.build.api.dsl.LibraryExtension
-import com.android.build.gradle.internal.tasks.factory.dependsOn
 import com.jarroyo.composeapp.gmd.configureGradleManagedDevices
 import com.mikepenz.aboutlibraries.plugin.DuplicateMode
 import com.mikepenz.aboutlibraries.plugin.DuplicateRule
@@ -83,6 +82,4 @@ tasks.register<Copy>("installGitHooks") {
     into(file("$rootDir/.git/hooks"))
 }
 
-afterEvaluate {
-    tasks.named("preBuild").dependsOn("installGitHooks")
-}
+tasks.named("preBuild") { dependsOn("installGitHooks") }

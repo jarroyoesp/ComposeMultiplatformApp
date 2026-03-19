@@ -18,7 +18,7 @@ val isNonStable: (String) -> Boolean = { version ->
     !stableKeyword && !(version matches regex)
 }
 
-tasks.withType<DependencyUpdatesTask>() {
+tasks.withType<DependencyUpdatesTask>().configureEach {
     gradleReleaseChannel = "current"
     rejectVersionIf {
         isNonStable(candidate.version) && !isNonStable(currentVersion)

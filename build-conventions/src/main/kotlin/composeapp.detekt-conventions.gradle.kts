@@ -29,10 +29,6 @@ dependencies {
     detektPlugins (libs.detekt.twitter.compose.rules)
 }
 
-afterEvaluate {
-    tasks.named("check") {
-        if (tasks.findByName("detekt") != null) {
-            dependsOn(tasks.named("detekt"))
-        }
-    }
+tasks.named("check") {
+    dependsOn(tasks.named("detekt"))
 }
