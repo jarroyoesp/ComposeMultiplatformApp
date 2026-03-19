@@ -12,7 +12,7 @@ import com.jarroyo.feature.schedules.ui.list.ScheduleListContract.State
 import com.jarroyo.library.navigation.api.navigator.AppNavigator
 import com.jarroyo.library.ui.shared.BaseViewModel
 import kotlinx.coroutines.launch
-import org.koin.android.annotation.KoinViewModel
+import org.koin.core.annotation.KoinViewModel
 
 @KoinViewModel
 class ScheduleListViewModel(
