@@ -79,7 +79,7 @@ jobs:
       - name: Detekt
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: detektMain detektTest
+          arguments: detekt
 
       - name: Spotless
         uses: gradle/gradle-build-action@v2

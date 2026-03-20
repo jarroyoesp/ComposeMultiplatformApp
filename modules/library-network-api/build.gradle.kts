@@ -8,12 +8,9 @@ plugins {
     alias(libs.plugins.apollo)
     alias(libs.plugins.kotlinx.serialization)
 }
-
-android {
-    namespace = "com.jarroyo.composeapp.library.network.api"
-    resourcePrefix = "network_api_"
-    defaultConfig {
-        consumerProguardFiles("$projectDir/proguard-network-api-consumer-rules.pro")
+kotlin {
+    android {
+        namespace = "com.jarroyo.composeapp.library.network.api"
     }
 }
 

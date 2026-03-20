@@ -6,10 +6,9 @@ pluginManagement {
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
 }
-// https://docs.gradle.org/7.0/userguide/declaring_dependencies.html#sec:type-safe-project-accessors
+
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
-@Suppress("UnstableApiUsage")
 dependencyResolutionManagement {
     repositories {
         gradlePluginPortal()
@@ -24,7 +23,6 @@ include(
     // Apps
     ":app",
     ":desktop",
-    ":iosapp",
 
     // Modules
     ":modules:feature-account",

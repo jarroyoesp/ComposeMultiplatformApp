@@ -5,15 +5,14 @@ plugins {
     id("composeapp.spotless-conventions")
     id("composeapp.versions-conventions")
     id("composeapp.violation-comments-to-github-conventions")
-    alias(libs.plugins.multiplatform)
+    alias(libs.plugins.multiplatform) apply false
+    alias(libs.plugins.androidKmpLibrary) apply false
 }
 
 subprojects {
-    gradle.projectsEvaluated {
-        tasks.withType<JavaCompile> {
-            options.compilerArgs.add("-Xlint:unchecked")
-            options.compilerArgs.add("-Xlint:deprecation")
-        }
+    tasks.withType<JavaCompile>().configureEach {
+        options.compilerArgs.add("-Xlint:unchecked")
+        options.compilerArgs.add("-Xlint:deprecation")
     }
 }
 

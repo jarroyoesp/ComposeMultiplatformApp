@@ -1,120 +1,122 @@
-import com.android.build.api.dsl.CommonExtension
-import com.android.build.gradle.BaseExtension
-import com.android.build.gradle.api.AndroidBasePlugin
-import com.jarroyo.composeapp.ext.android
-import com.jarroyo.composeapp.ext.config
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import com.android.build.api.dsl.ApplicationExtension
+import com.android.build.api.dsl.LibraryExtension
+import com.jarroyo.composeapp.ext.ConfigExt
+import com.jarroyo.composeapp.ext.AndroidConfigExt
 import org.gradle.accessors.dm.LibrariesForLibs
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
+import org.gradle.api.JavaVersion
 
 plugins {
-    id("kotlin-android")
-    id("kotlin-kapt")
     id("composeapp.detekt-conventions")
     id("composeapp.config-conventions")
 }
 
 val libs = the<LibrariesForLibs>()
 
-kapt {
-    useBuildCache = true
-    correctErrorTypes = true
-    javacOptions {
-        option("-Xmaxerrs", Integer.MAX_VALUE.toString())
-    }
+/**
+ * Explicitly get the custom android configuration to avoid conflicts with the AGP 'android' extension
+ */
+fun Project.getAndroidConfig(): AndroidConfigExt {
+    return extensions.getByType<ConfigExt>().extensions.getByType<AndroidConfigExt>()
 }
 
-plugins.withType<AndroidBasePlugin>().configureEach {
-    extensions.configure<BaseExtension> {
-        compileSdkVersion(config.android.compileSdk.get())
+plugins.withId("com.android.application") {
+    extensions.configure<ApplicationExtension> {
+        val config = project.getAndroidConfig()
+        compileSdk = config.compileSdk.get()
 
         defaultConfig {
-            minSdk = config.android.minSdk.get()
-            targetSdk = config.android.targetSdk.get()
-
-            // testInstrumentationRunner = "com.jarroyo.library.test.runner.HiltTestRunner"
-            // The following argument makes the Android Test Orchestrator run its
-            // "pm clear" command after each test invocation. This command ensures
-            // that the app's state is completely cleared between tests.
-            setTestInstrumentationRunnerArguments(mutableMapOf("clearPackageData" to "true"))
+            minSdk = config.minSdk.get()
+            targetSdk = config.targetSdk.get()
+            testInstrumentationRunnerArguments["clearPackageData"] = "true"
         }
+
         compileOptions {
-            sourceCompatibility = config.android.javaVersion.get()
-            targetCompatibility = config.android.javaVersion.get()
-        }
-
-        kotlin {
-            sourceSets {
-                named("debug") {
-                    kotlin.srcDir("build/generated/ksp/debug/kotlin")
-                }
-                named("release") {
-                    kotlin.srcDir("build/generated/ksp/release/kotlin")
-                }
-            }
+            sourceCompatibility = config.javaVersion.get()
+            targetCompatibility = config.javaVersion.get()
         }
 
         testOptions {
-            execution = "ANDROIDX_TEST_ORCHESTRATOR"
             animationsDisabled = true
             unitTests {
                 isIncludeAndroidResources = true
                 isReturnDefaultValues = true
             }
         }
-        if (this is CommonExtension<*, *, *, *, *, *>) {
-            lint {
-                abortOnError = true
-                checkAllWarnings = false
-                checkDependencies = true
-                checkReleaseBuilds = false
-                ignoreTestSources = true
-                warningsAsErrors = false
-                disable.add("ResourceType")
-                lintConfig = file("${project.rootDir}/config/lint/lint.xml")
-            }
 
-            configure<KotlinAndroidProjectExtension> {
-                compilerOptions {
-                    freeCompilerArgs.set(
-                        freeCompilerArgs.get() + listOf(
-                            "-opt-in=kotlin.RequiresOptIn",
-                            "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
-                            "-opt-in=kotlinx.coroutines.FlowPreview",
-                        )
-                    )
-                    jvmTarget.set(JvmTarget.fromTarget(config.android.javaVersion.get().toString()))
-                }
-            }
-            packaging {
-                resources {
-                    // Use this block to exclude conflicting files that breaks your APK assemble task
-                    excludes.add("META-INF/LICENSE.md")
-                    excludes.add("META-INF/LICENSE-notice.md")
-                }
+        lint {
+            abortOnError = true
+            checkAllWarnings = false
+            checkDependencies = true
+            checkReleaseBuilds = false
+            ignoreTestSources = true
+            warningsAsErrors = false
+            disable.add("ResourceType")
+            lintConfig = project.file("${project.rootDir}/config/lint/lint.xml")
+        }
+
+        packaging {
+            resources {
+                excludes.add("META-INF/LICENSE-notice.md")
+                excludes.add("META-INF/LICENSE.md")
+                excludes.add("META-INF/NOTICE.md")
             }
         }
     }
+}
 
-    kotlin {
-        sourceSets.all {
-            languageSettings.optIn("kotlin.time.ExperimentalTime")
-            languageSettings.progressiveMode =
-                true // deprecations and bug fixes for unstable code take effect immediately
-        }
-    }
-    tasks {
-        withType<KotlinCompile> {
-            compilerOptions.jvmTarget.set(
-                JvmTarget.fromTarget(
-                    config.android.javaVersion.get().toString()
-                )
-            )
+plugins.withId("com.android.library") {
+    extensions.configure<LibraryExtension> {
+        val config = project.getAndroidConfig()
+        compileSdk = config.compileSdk.get()
+
+        defaultConfig {
+            minSdk = config.minSdk.get()
+            testInstrumentationRunnerArguments["clearPackageData"] = "true"
         }
 
-        withType<Test> {
-            testLogging.events("skipped", "failed")
+        compileOptions {
+            sourceCompatibility = config.javaVersion.get()
+            targetCompatibility = config.javaVersion.get()
+        }
+
+        testOptions {
+            animationsDisabled = true
+            unitTests {
+                isIncludeAndroidResources = true
+                isReturnDefaultValues = true
+            }
+        }
+
+        lint {
+            abortOnError = true
+            checkAllWarnings = false
+            checkDependencies = true
+            checkReleaseBuilds = false
+            ignoreTestSources = true
+            warningsAsErrors = false
+            disable.add("ResourceType")
+            lintConfig = project.file("${project.rootDir}/config/lint/lint.xml")
+        }
+
+        packaging {
+            resources {
+                excludes.add("META-INF/LICENSE-notice.md")
+                excludes.add("META-INF/LICENSE.md")
+                excludes.add("META-INF/NOTICE.md")
+            }
         }
     }
+}
+
+tasks.withType<KotlinCompile>().configureEach {
+    compilerOptions {
+        val config = project.getAndroidConfig()
+        jvmTarget.set(JvmTarget.fromTarget(config.javaVersion.get().toString()))
+    }
+}
+
+tasks.withType<Test>().configureEach {
+    testLogging.events("skipped", "failed")
 }

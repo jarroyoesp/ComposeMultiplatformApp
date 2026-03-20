@@ -1,27 +1,37 @@
+import com.android.build.api.dsl.ApplicationExtension
+
 plugins {
-    id ("composeapp.android-app-conventions")
-    alias(libs.plugins.tripletplay)
+    id("composeapp.android-app-conventions")
 }
 
-android {
+base {
+    archivesName.set("composeapp")
+}
+
+configure<ApplicationExtension> {
+    namespace = config.android.applicationId.get()
     defaultConfig {
         applicationId = config.android.applicationId.get()
-        setProperty("archivesBaseName", "composeapp")
+        namespace = config.android.applicationId.get()
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"  // https://github.com/google/dagger/issues/2033
+
+        testInstrumentationRunner =
+            "androidx.test.runner.AndroidJUnitRunner"
 
         vectorDrawables.useSupportLibrary = true
     }
+    
     buildTypes {
         getByName("debug") {
-            namespace = config.android.applicationId.get() + ".debug"
             applicationIdSuffix = ".debug"
         }
         getByName("release") {
-            namespace = config.android.applicationId.get()
             isShrinkResources = true
             isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 }
@@ -35,6 +45,7 @@ dependencies {
     implementation(libs.jetbrains.compose.ui)
     implementation(libs.jetbrains.compose.material3)
     implementation(libs.koin.android)
+    implementation(libs.androidx.core.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.espresso.core)

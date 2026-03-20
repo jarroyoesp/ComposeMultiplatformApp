@@ -37,7 +37,7 @@ import com.jarroyo.feature.schedules.api.model.Schedule
 import com.jarroyo.feature.schedules.ui.list.ScheduleListContract.Effect
 import com.jarroyo.feature.schedules.ui.list.ScheduleListContract.Event
 import com.jarroyo.feature.schedules.ui.list.ScheduleListContract.State
-import com.jarroyo.library.ui.shared.component.EmptyStateWithImage
+import com.jarroyo.library.ui.shared.component.EmptyState
 import com.jarroyo.library.ui.shared.component.LocalMainScaffoldPadding
 import com.jarroyo.library.ui.shared.component.LocalNavHostController
 import com.jarroyo.library.ui.shared.component.observeResult
@@ -128,7 +128,7 @@ private fun ScheduleListScreen(
                         )
                     } else {
                         item {
-                            EmptyStateWithImage("No data available")
+                            EmptyState("No data available")
                         }
                     }
                 }

@@ -2,15 +2,11 @@ plugins {
     id("composeapp.multiplatform-library-conventions")
 }
 
-android {
-    namespace = "com.jarroyo.library.navigation"
-    resourcePrefix = "navigation_"
-    defaultConfig {
-        consumerProguardFiles("$projectDir/proguard-navigation-consumer-rules.pro")
-    }
-}
-
 kotlin {
+    android {
+      namespace = "com.jarroyo.library.navigation"
+    }
+
     sourceSets {
         commonMain.dependencies {
             api(projects.modules.libraryNavigationApi)

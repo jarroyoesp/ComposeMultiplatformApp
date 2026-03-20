@@ -1,21 +1,22 @@
-import com.android.build.gradle.internal.tasks.factory.dependsOn
 import java.util.Locale
 
-afterEvaluate {
-    val outputPath = "$projectDir/versions/dependencies"
-    mkdir(outputPath)
-    val compileDependencyReportTask = tasks.register("generateRuntimeDependenciesReport") {
-        description = "Generates a text file containing the Runtime classpath dependencies."
-    }
-    project.configurations.filter { it.name.contains("RuntimeClasspath") }.forEach { configuration ->
-        val configurationTask = tasks.register(
-                "generate${configuration.name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() }}DependenciesReport",
-                DependencyReportTask::class.java,
-        ) {
-            configurations = setOf(configuration)
-            outputFile = File("$outputPath/${configuration.name}Dependencies.txt")
-        }
-        compileDependencyReportTask.configure { dependsOn(configurationTask) }
-    }
-    tasks.named("check").dependsOn(tasks.named("generateRuntimeDependenciesReport"))
+val outputPath = layout.projectDirectory.dir("versions/dependencies").asFile
+
+val compileDependencyReportTask = tasks.register("generateRuntimeDependenciesReport") {
+    description = "Generates a text file containing the Runtime classpath dependencies."
 }
+
+configurations.matching { it.name.contains("RuntimeClasspath") }.configureEach {
+    val configuration = this
+    val configurationTask = tasks.register(
+        "generate${name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() }}DependenciesReport",
+        DependencyReportTask::class.java,
+    ) {
+        this.configurations = setOf(configuration)
+        outputFile = outputPath.resolve("${configuration.name}Dependencies.txt")
+        doFirst { outputPath.mkdirs() }
+    }
+    compileDependencyReportTask.configure { dependsOn(configurationTask) }
+}
+
+tasks.named("check") { dependsOn(compileDependencyReportTask) }

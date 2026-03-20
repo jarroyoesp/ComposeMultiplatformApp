@@ -1,15 +1,15 @@
+import com.android.build.api.dsl.KotlinMultiplatformAndroidLibraryTarget
+import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+
 plugins {
     id("composeapp.multiplatform-library-conventions")
 }
-android {
-    namespace = "com.jarroyo.library.feature"
-    resourcePrefix = "feature_"
-    defaultConfig {
-        consumerProguardFiles("$projectDir/proguard-feature-consumer-rules.pro")
-    }
-}
 
 kotlin {
+    android {
+        namespace = "com.jarroyo.library.feature"
+    }
+
     sourceSets {
         androidMain.dependencies {
         }
