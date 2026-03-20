@@ -26,6 +26,11 @@ compose.desktop {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "desktop"
             packageVersion = "1.0.0"
+            modules(
+                "java.sql",           // required by Firebase JVM & SQLDelight JDBC drivers
+                "java.naming",        // required by Firebase/Firestore internals
+                "java.net.http",      // required by Ktor/OkHttp HTTP client
+            )
         }
     }
 }

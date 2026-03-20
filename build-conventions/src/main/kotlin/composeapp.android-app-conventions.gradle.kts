@@ -1,4 +1,4 @@
-import com.android.build.api.dsl.LibraryExtension
+import com.android.build.api.dsl.ApplicationExtension
 import com.jarroyo.composeapp.gmd.configureGradleManagedDevices
 import com.mikepenz.aboutlibraries.plugin.DuplicateMode
 import com.mikepenz.aboutlibraries.plugin.DuplicateRule
@@ -21,8 +21,8 @@ plugins {
 
 val libs = the<LibrariesForLibs>()
 
-plugins.withId("com.android.library") {
-    extensions.configure<LibraryExtension> {
+plugins.withId("com.android.application") {
+    extensions.configure<ApplicationExtension> {
 
         buildFeatures {
             compose = true
