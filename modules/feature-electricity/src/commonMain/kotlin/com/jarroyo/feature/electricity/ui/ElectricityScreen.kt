@@ -40,7 +40,7 @@ import co.touchlab.kermit.Logger
 import com.jarroyo.feature.electricity.ui.ElectricityContract.Effect
 import com.jarroyo.feature.electricity.ui.ElectricityContract.Event
 import com.jarroyo.feature.electricity.ui.ElectricityContract.State
-import com.jarroyo.library.ui.shared.component.EmptyStateWithImage
+import com.jarroyo.library.ui.shared.component.EmptyState
 import com.jarroyo.library.ui.shared.component.LocalMainScaffoldPadding
 import com.jarroyo.library.ui.shared.component.placeholder
 import com.jarroyo.library.ui.shared.theme.Spacing
@@ -125,7 +125,7 @@ private fun ElectricityScreen(
                     Text(state.dateSelected.toString())
                     XYSamplePlot(state)
                 } else {
-                    EmptyStateWithImage("Something was wrong getting Electricity data.")
+                    EmptyState("Something was wrong getting Electricity data.")
                 }
             }
         }
