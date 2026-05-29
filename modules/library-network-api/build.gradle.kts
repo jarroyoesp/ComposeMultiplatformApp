@@ -20,6 +20,7 @@ apollo {
         generateApolloMetadata.set(true)
         decapitalizeFields.set(true)
         generateDataBuilders.set(true)
+        dataBuildersOutputDirConnection { connectToKotlinSourceSet("commonMain") }
        mapScalar(
            "Date",
            "kotlin.time.Instant",
@@ -40,9 +41,7 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             api(libs.apollo)
-            api(libs.apollo.adapters)
             api(libs.apollo.cache)
-            implementation(libs.apollo.cache.sqlite)
             implementation(libs.jetbrains.kotlinx.serialization)
         }
     }

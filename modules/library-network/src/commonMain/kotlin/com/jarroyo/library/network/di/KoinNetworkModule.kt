@@ -1,9 +1,9 @@
 package com.jarroyo.library.network.di
 
 import com.apollographql.apollo.ApolloClient
-import com.apollographql.apollo.cache.normalized.api.MemoryCacheFactory
-import com.apollographql.apollo.cache.normalized.api.NormalizedCacheFactory
-import com.apollographql.apollo.cache.normalized.normalizedCache
+import com.apollographql.cache.normalized.api.NormalizedCacheFactory
+import com.apollographql.cache.normalized.memory.MemoryCacheFactory
+import com.apollographql.cache.normalized.normalizedCache
 import dev.gitlive.firebase.Firebase
 import dev.gitlive.firebase.firestore.FirebaseFirestore
 import dev.gitlive.firebase.firestore.firestore
@@ -26,7 +26,11 @@ val networkModule = module {
         val chainedCacheFactory: NormalizedCacheFactory = get()
         ApolloClient.Builder()
             .serverUrl("https://spacex-production.up.railway.app/")
-            .apply { normalizedCache(chainedCacheFactory) }
+            .normalizedCache(
+                normalizedCacheFactory = chainedCacheFactory,
+                typePolicies = emptyMap(),
+                fieldPolicies = emptyMap(),
+            )
             .build()
     }
 

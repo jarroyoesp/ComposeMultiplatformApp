@@ -1,6 +1,7 @@
 package com.jarroyo.feature.home.shared.ui
 
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -47,6 +48,7 @@ fun RootView() {
         ) {
             Scaffold(
                 modifier = Modifier.fillMaxSize(),
+                contentWindowInsets = WindowInsets(0),
                 bottomBar = { MainNavigationBar(navHostController, mainNavigationBarEntries) },
             ) { scaffoldPadding: PaddingValues ->
                 mainScaffoldPadding.value = scaffoldPadding
