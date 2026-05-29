@@ -1,8 +1,8 @@
 package com.jarroyo.feature.launches.interactor
 
 import com.apollographql.apollo.ApolloClient
-import com.apollographql.apollo.cache.normalized.FetchPolicy
-import com.apollographql.apollo.cache.normalized.fetchPolicy
+import com.apollographql.cache.normalized.FetchPolicy
+import com.apollographql.cache.normalized.fetchPolicy
 import com.github.michaelbull.result.Ok
 import com.github.michaelbull.result.Result
 import com.jarroyo.composeapp.library.network.api.graphql.LaunchDetailQuery

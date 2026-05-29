@@ -3,7 +3,7 @@
 package com.jarroyo.feature.launches.ui.launchlist
 
 import androidx.lifecycle.viewModelScope
-import com.apollographql.apollo.cache.normalized.FetchPolicy
+import com.apollographql.cache.normalized.FetchPolicy
 import com.github.michaelbull.result.fold
 import com.jarroyo.feature.common.api.interactor.GetInstantFlowInteractor
 import com.jarroyo.feature.launches.api.destination.LaunchDestination

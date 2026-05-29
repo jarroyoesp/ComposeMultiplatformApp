@@ -4,11 +4,12 @@ package com.jarroyo.feature.home.shared.interactor
 
 import com.apollographql.apollo.ApolloClient
 import com.apollographql.apollo.annotations.ApolloExperimental
-import com.apollographql.apollo.api.DefaultFakeResolver
 import com.apollographql.apollo.api.FakeResolverContext
 import com.apollographql.apollo.testing.QueueTestNetworkTransport
 import com.apollographql.apollo.testing.enqueueTestNetworkError
 import com.apollographql.apollo.testing.enqueueTestResponse
+import com.jarroyo.composeapp.library.network.api.graphql.builder.Data
+import com.jarroyo.composeapp.library.network.api.graphql.builder.resolver.DefaultFakeResolver
 import com.github.michaelbull.result.unwrap
 import com.github.michaelbull.result.unwrapError
 import com.jarroyo.composeapp.library.network.api.graphql.LaunchDetailQuery
@@ -24,7 +25,7 @@ import kotlin.time.Clock
 import kotlin.time.ExperimentalTime
 
 class GetLaunchDetailInteractorImplTest {
-    private val data: LaunchDetailQuery.Data = LaunchDetailQuery.Data(FakeResolver()) { }
+    private val data: LaunchDetailQuery.Data = LaunchDetailQuery.Data(FakeResolver())
     private lateinit var apolloClient: ApolloClient
     private lateinit var getLaunchDetailInteractor: GetLaunchDetailInteractor
 
@@ -72,13 +73,11 @@ class GetLaunchDetailInteractorImplTest {
     }
 }
 
-class FakeResolver : DefaultFakeResolver(
-    com.jarroyo.composeapp.library.network.api.graphql.schema.__Schema.all,
-) {
+class FakeResolver : DefaultFakeResolver() {
     @OptIn(ExperimentalTime::class)
     override fun resolveLeaf(context: FakeResolverContext): Any =
         when (context.mergedField.type.rawType().name) {
-            "Date" -> Clock.System.now()
+            "Date" -> Clock.System.now().toString()
             else -> super.resolveLeaf(context)
         }
 }

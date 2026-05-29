@@ -5,13 +5,14 @@
 aboutlibraries = "13.2.1"
 agp = "9.0.1"
 androidCompileSdk = "36"
-androidx-compose = "1.11.0"
-apollo = "4.4.3"
+androidx-compose = "1.11.2"
+apollo = "5.0.0"
+apolloCache = "1.0.3"
 coil3 = "3.4.0"
-coroutines = "1.10.2"
+coroutines = "1.11.0"
 detekt = "1.23.8"
 diktat = "1.2.5"
-firebase-bom = "34.12.0"
+firebase-bom = "34.13.0"
 gitlive = "2.4.0"
 gradle = "8.1.1"
 jetbrains-lifecycle = "2.10.0"
@@ -20,12 +21,12 @@ koin = "4.2.1"
 koin-ksp = "4.2.1"
 kotlin = "2.3.21"
 kotlinpoet = "2.3.0"
-kotlin-multiplatform = "1.10.3"
+kotlin-multiplatform = "1.11.0"
 kotlin-result = "2.3.1"
-kotlinx-datetime = "0.7.1"
+kotlinx-datetime = "0.8.0"
 ksp = "2.3.5"
 ktlint = "0.43.0"
-ktor = "3.4.3"
+ktor = "3.5.0"
 material3 = "1.9.0"
 mockk = "1.14.9"
 okhttp = "4.12.0"
@@ -44,12 +45,11 @@ androidx-test-espresso-core = { module = "androidx.test.espresso:espresso-core",
 androidx-test-orchestrator = { module = "androidx.test:orchestrator", version = "1.6.1" }
 androidx-test-runner = { module = "androidx.test:runner", version = "1.7.0" }
 apollo = { module = "com.apollographql.apollo:apollo-runtime", version.ref = "apollo" }
-apollo-adapters = { module = "com.apollographql.apollo:apollo-adapters", version.ref = "apollo" }
-apollo-cache = { module = "com.apollographql.apollo:apollo-normalized-cache", version.ref = "apollo" }
-apollo-cache-sqlite = { module = "com.apollographql.apollo:apollo-normalized-cache-sqlite", version.ref = "apollo" }
+apollo-cache = { module = "com.apollographql.cache:normalized-cache", version.ref = "apolloCache" }
+apollo-cache-sqlite = { module = "com.apollographql.cache:normalized-cache-sqlite", version.ref = "apolloCache" }
 apollo-testing-support = { module = "com.apollographql.apollo:apollo-testing-support", version.ref = "apollo" }
 calendar = { module = "com.kizitonwose.calendar:compose-multiplatform", version = "2.10.1" }
-composemultiplatformcharts = { module = "io.github.koalaplot:koalaplot-core", version = "0.11.0" }
+composemultiplatformcharts = { module = "io.github.koalaplot:koalaplot-core", version = "0.11.2" }
 composemultiplatformcharts2 = { module = "io.github.thechance101:chart", version = "Beta-0.0.5" }
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil3" }
 coil-compose-core = { module = "io.coil-kt.coil3:coil-compose-core", version.ref = "coil3" }
@@ -113,7 +113,7 @@ leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", version = 
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockk" }
 multiplatform-log = { module = "co.touchlab:kermit", version = "2.1.0" }
-multiplatform-constraintlayout-compose = { module = "tech.annexflow.compose:constraintlayout-compose-multiplatform", version = "0.7.0" }
+multiplatform-constraintlayout-compose = { module = "tech.annexflow.compose:constraintlayout-compose-multiplatform", version = "0.8.0" }
 sqldelight-androidDriver = { module = "app.cash.sqldelight:android-driver", version.ref = "sqlDelight" }
 sqldelight-jvmDriver = { module = "app.cash.sqldelight:sqlite-driver", version.ref = "sqlDelight" }
 sqldelight-nativeDriver = { module = "app.cash.sqldelight:native-driver", version.ref = "sqlDelight" }
@@ -133,7 +133,7 @@ plugin-google-services = { module = "com.google.gms:google-services", version = 
 plugin-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 plugin-ksp = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 plugin-ruler = { module = "com.spotify.ruler:ruler-gradle-plugin", version = "1.4.0" }
-plugin-spotless = { module = "com.diffplug.spotless:spotless-plugin-gradle", version = "8.4.0" }
+plugin-spotless = { module = "com.diffplug.spotless:spotless-plugin-gradle", version = "8.5.1" }
 plugin-versions = "com.github.ben-manes:gradle-versions-plugin:0.52.0"
 plugin-versions-update = "nl.littlerobots.vcu:plugin:1.1.0"
 plugin-violation = { module = "se.bjurr.violations:violation-comments-to-github-gradle-plugin", version = "1.70.0" }
