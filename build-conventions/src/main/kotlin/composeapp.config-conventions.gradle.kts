@@ -7,10 +7,10 @@ val config = extensions.create<ConfigExt>("config").apply {
     extensions.create<AndroidConfigExt>("android").apply {
         accountType.convention("com.jarroyo.composeapp.auth")
         applicationId.convention("com.jarroyo.composeapp")
-        compileSdk.convention(36)
+        compileSdk.convention(37)
         javaVersion.convention(JavaVersion.VERSION_17)
         minSdk.convention(24)
-        targetSdk.convention(36)
+        targetSdk.convention(37)
     }
 
     extensions.create<ParamsConfigExt>("params").apply {
