@@ -4,9 +4,9 @@ Project ':app'
 ------------------------------------------------------------
 
 releaseRuntimeClasspath - Runtime classpath of '/release'.
-+--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21
++--- org.jetbrains.kotlin:kotlin-stdlib:2.4.0
 |    +--- org.jetbrains:annotations:13.0 -> 23.0.0
-|    +--- org.jetbrains.kotlin:kotlin-stdlib-common:2.3.21 (c)
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-common:2.4.0 (c)
 |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0 -> 1.9.0 (c)
 |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0 -> 1.9.0 (c)
 +--- com.google.firebase:firebase-bom:33.10.0 -> 34.15.0
@@ -17,28 +17,28 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    +--- androidx.core:core:1.19.0
 |    |    +--- androidx.annotation:annotation:1.10.0
 |    |    |    \--- androidx.annotation:annotation-jvm:1.10.0
-|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 |    |    |         \--- org.jetbrains.compose.annotation-internal:annotation:1.8.0 -> 1.9.1 (c)
 |    |    +--- androidx.annotation:annotation-experimental:1.4.1
-|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.7.10 -> 2.3.21 (*)
+|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.7.10 -> 2.4.0 (*)
 |    |    +--- androidx.collection:collection:1.4.2 -> 1.5.0
 |    |    |    \--- androidx.collection:collection-jvm:1.5.0
 |    |    |         +--- androidx.annotation:annotation:1.9.1 -> 1.10.0 (*)
-|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.3.21 (*)
+|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.4.0 (*)
 |    |    |         +--- androidx.collection:collection-ktx:1.5.0 (c)
-|    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 -> 2.3.21 (c)
+|    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.24 -> 2.4.0 (c)
 |    |    +--- androidx.concurrent:concurrent-futures:1.0.0 -> 1.1.0
 |    |    |    +--- androidx.annotation:annotation:1.1.0 -> 1.10.0 (*)
 |    |    |    \--- com.google.guava:listenablefuture:1.0 -> 9999.0-empty-to-avoid-conflict-with-guava
 |    |    +--- androidx.core:core-viewtree:1.0.0
-|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.3.21 (*)
-|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.3.21 (c)
+|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.4.0 (*)
+|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.4.0 (c)
 |    |    +--- androidx.interpolator:interpolator:1.0.0
 |    |    |    \--- androidx.annotation:annotation:1.0.0 -> 1.10.0 (*)
 |    |    +--- androidx.lifecycle:lifecycle-common:2.6.2 -> 2.10.0
 |    |    |    \--- androidx.lifecycle:lifecycle-common-jvm:2.10.0
 |    |    |         +--- androidx.annotation:annotation:1.9.1 -> 1.10.0 (*)
-|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (*)
+|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (*)
 |    |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0 -> 1.11.0
 |    |    |         |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.11.0
 |    |    |         |         +--- org.jetbrains:annotations:23.0.0
@@ -48,7 +48,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |         |         |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (c)
 |    |    |         |         |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.11.0 (c)
 |    |    |         |         |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-slf4j:1.11.0 (c)
-|    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |    |         +--- org.jspecify:jspecify:1.0.0
 |    |    |         +--- androidx.lifecycle:lifecycle-common-java8:2.10.0 (c)
 |    |    |         +--- androidx.lifecycle:lifecycle-livedata:2.10.0 (c)
@@ -81,11 +81,11 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |         |    |    \--- androidx.tracing:tracing:1.0.0 -> 1.2.0
 |    |    |         |    |         \--- androidx.annotation:annotation:1.2.0 -> 1.10.0 (*)
 |    |    |         |    \--- com.google.guava:listenablefuture:1.0 -> 9999.0-empty-to-avoid-conflict-with-guava
-|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (*)
+|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (*)
 |    |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0 -> 1.11.0
 |    |    |         |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
 |    |    |         |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.11.0 (*)
-|    |    |         |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |    |         |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |    |         +--- org.jspecify:jspecify:1.0.0
 |    |    |         +--- androidx.lifecycle:lifecycle-common:2.10.0 (c)
 |    |    |         +--- androidx.lifecycle:lifecycle-common-java8:2.10.0 (c)
@@ -105,21 +105,21 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    +--- androidx.annotation:annotation:1.1.0 -> 1.10.0 (*)
 |    |    |    \--- androidx.collection:collection:1.0.0 -> 1.5.0 (*)
 |    |    +--- com.google.guava:listenablefuture:1.0 -> 9999.0-empty-to-avoid-conflict-with-guava
-|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0 -> 1.11.0 (*)
 |    |    +--- org.jspecify:jspecify:1.0.0
 |    |    \--- androidx.core:core-ktx:1.19.0 (c)
-|    +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 |    \--- androidx.core:core:1.19.0 (c)
 +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
 +--- org.jetbrains.kotlinx:kotlinx-collections-immutable:0.4.0
 |    \--- org.jetbrains.kotlinx:kotlinx-collections-immutable-jvm:0.4.0
-|         \--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|         \--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 +--- com.michael-bull.kotlin-result:kotlin-result:2.3.1
 |    \--- com.michael-bull.kotlin-result:kotlin-result-jvm:2.3.1
-|         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 -> 2.3.21 (*)
+|         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 -> 2.4.0 (*)
 +--- com.jakewharton.timber:timber:5.0.1
-|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.5.21 -> 2.3.21 (*)
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.5.21 -> 2.4.0 (*)
 |    \--- org.jetbrains:annotations:20.1.0 -> 23.0.0
 +--- project :modules:feature-home-shared
 |    +--- com.google.firebase:firebase-bom:34.15.0 (*)
@@ -128,7 +128,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |         \--- androidx.lifecycle:lifecycle-viewmodel-android:2.10.0
 |    |              +--- androidx.annotation:annotation:1.9.1 -> 1.10.0 (*)
 |    |              +--- androidx.core:core-viewtree:1.0.0 (*)
-|    |              +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (*)
+|    |              +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (*)
 |    |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0 -> 1.11.0 (*)
 |    |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0 -> 1.11.0 (*)
 |    |              +--- androidx.lifecycle:lifecycle-common:2.10.0 (c)
@@ -167,9 +167,9 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |         |         |         |         |         |    \--- org.jetbrains.kotlinx:kotlinx-io-core-jvm:0.9.0
 |    |         |         |         |         |         |         +--- org.jetbrains.kotlinx:kotlinx-io-bytestring:0.9.0
 |    |         |         |         |         |         |         |    \--- org.jetbrains.kotlinx:kotlinx-io-bytestring-jvm:0.9.0
-|    |         |         |         |         |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.0 -> 2.3.21 (*)
-|    |         |         |         |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.0 -> 2.3.21 (*)
-|    |         |         |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |         |         |         |         |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.0 -> 2.4.0 (*)
+|    |         |         |         |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.0 -> 2.4.0 (*)
+|    |         |         |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 -> 2.4.0 (*)
 |    |         |         |         |         +--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.11.0
 |    |         |         |         |         |    \--- org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.11.0
 |    |         |         |         |         |         +--- org.jetbrains.kotlinx:kotlinx-serialization-bom:1.11.0
@@ -179,10 +179,10 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |         |         |         |         |         |    +--- org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0 (c)
 |    |         |         |         |         |         |    +--- org.jetbrains.kotlinx:kotlinx-serialization-json-io:1.11.0 (c)
 |    |         |         |         |         |         |    \--- org.jetbrains.kotlinx:kotlinx-serialization-json-io-jvm:1.11.0 (c)
-|    |         |         |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.20 -> 2.3.21 (*)
-|    |         |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |         |         |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.20 -> 2.4.0 (*)
+|    |         |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 -> 2.4.0 (*)
 |    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.11.0 (*)
-|    |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 -> 2.4.0 (*)
 |    |         |         +--- io.ktor:ktor-http-cio:3.5.0
 |    |         |         |    \--- io.ktor:ktor-http-cio-jvm:3.5.0
 |    |         |         |         +--- org.slf4j:slf4j-api:2.0.18
@@ -191,17 +191,17 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |         |         |         |         +--- org.slf4j:slf4j-api:2.0.18
 |    |         |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
 |    |         |         |         |         +--- io.ktor:ktor-utils:3.5.0 (*)
-|    |         |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |         |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 -> 2.4.0 (*)
 |    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
 |    |         |         |         +--- io.ktor:ktor-http:3.5.0 (*)
 |    |         |         |         +--- io.ktor:ktor-io:3.5.0 (*)
-|    |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 -> 2.4.0 (*)
 |    |         |         +--- io.ktor:ktor-events:3.5.0
 |    |         |         |    \--- io.ktor:ktor-events-jvm:3.5.0
 |    |         |         |         +--- org.slf4j:slf4j-api:2.0.18
 |    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
 |    |         |         |         +--- io.ktor:ktor-utils:3.5.0 (*)
-|    |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 -> 2.4.0 (*)
 |    |         |         +--- io.ktor:ktor-websocket-serialization:3.5.0
 |    |         |         |    \--- io.ktor:ktor-websocket-serialization-jvm:3.5.0
 |    |         |         |         +--- org.slf4j:slf4j-api:2.0.18
@@ -216,23 +216,23 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |         |         |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
 |    |         |         |         |         |         +--- io.ktor:ktor-utils:3.5.0 (*)
 |    |         |         |         |         |         +--- io.ktor:ktor-http:3.5.0 (*)
-|    |         |         |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
-|    |         |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
-|    |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |         |         |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 -> 2.4.0 (*)
+|    |         |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 -> 2.4.0 (*)
+|    |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 -> 2.4.0 (*)
 |    |         |         +--- io.ktor:ktor-sse:3.5.0
 |    |         |         |    \--- io.ktor:ktor-sse-jvm:3.5.0
 |    |         |         |         +--- org.slf4j:slf4j-api:2.0.18
 |    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
 |    |         |         |         +--- io.ktor:ktor-utils:3.5.0 (*)
-|    |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
-|    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 -> 2.4.0 (*)
+|    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 -> 2.4.0 (*)
 |    |         |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-slf4j:1.11.0
 |    |         |              +--- org.slf4j:slf4j-api:1.7.32 -> 2.0.18
 |    |         |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
 |    |         |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.11.0 (*)
-|    |         |              \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |         |              \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
-|    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 -> 2.4.0 (*)
 |    +--- junit:junit:4.13.2
 |    |    \--- org.hamcrest:hamcrest-core:1.3
 |    +--- project :modules:library-ui-shared
@@ -264,7 +264,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |         |         |    |    |         |    +--- androidx.arch.core:core-common:2.2.0 (*)
 |    |    |    |         |         |         |    |    |         |    +--- androidx.arch.core:core-runtime:2.2.0 (*)
 |    |    |    |         |         |         |    |    |         |    +--- androidx.lifecycle:lifecycle-common:2.10.0 (*)
-|    |    |    |         |         |         |    |    |         |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (*)
+|    |    |    |         |         |         |    |    |         |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (*)
 |    |    |    |         |         |         |    |    |         |    +--- org.jspecify:jspecify:1.0.0
 |    |    |    |         |         |         |    |    |         |    +--- androidx.lifecycle:lifecycle-common:2.10.0 (c)
 |    |    |    |         |         |         |    |    |         |    +--- androidx.lifecycle:lifecycle-common-java8:2.10.0 (c)
@@ -286,14 +286,14 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |         |         |    |    |         |         +--- androidx.core:core-ktx:1.13.1 -> 1.19.0 (*)
 |    |    |    |         |         |         |    |    |         |         +--- androidx.core:core-viewtree:1.0.0 (*)
 |    |    |    |         |         |         |    |    |         |         +--- androidx.lifecycle:lifecycle-common:2.9.2 -> 2.10.0 (*)
-|    |    |    |         |         |         |    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.3.21 (*)
+|    |    |    |         |         |         |    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.4.0 (*)
 |    |    |    |         |         |         |    |    |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0 -> 1.11.0 (*)
 |    |    |    |         |         |         |    |    |         |         +--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.7.3 -> 1.11.0 (*)
 |    |    |    |         |         |         |    |    |         |         +--- androidx.savedstate:savedstate-compose:1.4.0 (c)
 |    |    |    |         |         |         |    |    |         |         +--- androidx.savedstate:savedstate-ktx:1.4.0 (c)
-|    |    |    |         |         |         |    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (c)
+|    |    |    |         |         |         |    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (c)
 |    |    |    |         |         |         |    |    |         |         \--- org.jetbrains.androidx.savedstate:savedstate:1.3.2 -> 1.3.6 (c)
-|    |    |    |         |         |         |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (*)
+|    |    |    |         |         |         |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (*)
 |    |    |    |         |         |         |    |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0 -> 1.11.0 (*)
 |    |    |    |         |         |         |    |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0 -> 1.11.0 (*)
 |    |    |    |         |         |         |    |    |         +--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.7.3 -> 1.11.0 (*)
@@ -315,20 +315,20 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |         |         |    |    |         +--- androidx.annotation:annotation:1.9.1 -> 1.10.0 (*)
 |    |    |    |         |         |         |    |    |         +--- androidx.compose.runtime:runtime-annotation:1.9.0 -> 1.11.3
 |    |    |    |         |         |         |    |    |         |    \--- androidx.compose.runtime:runtime-annotation-android:1.11.3
-|    |    |    |         |         |         |    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|    |    |    |         |         |         |    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 |    |    |    |         |         |         |    |    |         |         +--- androidx.compose.runtime:runtime:1.11.3 (c)
 |    |    |    |         |         |         |    |    |         |         +--- androidx.compose.runtime:runtime-retain:1.11.3 (c)
 |    |    |    |         |         |         |    |    |         |         \--- androidx.compose.runtime:runtime-saveable:1.11.3 (c)
 |    |    |    |         |         |         |    |    |         +--- androidx.core:core-viewtree:1.0.0 (*)
-|    |    |    |         |         |         |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.3.21 (*)
+|    |    |    |         |         |         |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.4.0 (*)
 |    |    |    |         |         |         |    |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0 -> 1.11.0 (*)
 |    |    |    |         |         |         |    |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0 -> 1.11.0 (*)
 |    |    |    |         |         |         |    |    |         +--- androidx.navigationevent:navigationevent-compose:1.0.0 (c)
-|    |    |    |         |         |         |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (c)
+|    |    |    |         |         |         |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (c)
 |    |    |    |         |         |         |    |    +--- androidx.profileinstaller:profileinstaller:1.4.0 -> 1.4.1 (*)
 |    |    |    |         |         |         |    |    +--- androidx.savedstate:savedstate:1.2.1 -> 1.4.0 (*)
 |    |    |    |         |         |         |    |    +--- androidx.tracing:tracing:1.0.0 -> 1.2.0 (*)
-|    |    |    |         |         |         |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|    |    |    |         |         |         |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 |    |    |    |         |         |         |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0 -> 1.11.0 (*)
 |    |    |    |         |         |         |    |    +--- androidx.activity:activity-compose:1.13.0 (c)
 |    |    |    |         |         |         |    |    \--- androidx.activity:activity-ktx:1.13.0 (c)
@@ -336,7 +336,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |         |         |    |    \--- androidx.lifecycle:lifecycle-runtime-ktx-android:2.10.0
 |    |    |    |         |         |         |    |         +--- androidx.annotation:annotation:1.9.1 -> 1.10.0 (*)
 |    |    |    |         |         |         |    |         +--- androidx.lifecycle:lifecycle-runtime:2.10.0 (*)
-|    |    |    |         |         |         |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (*)
+|    |    |    |         |         |         |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (*)
 |    |    |    |         |         |         |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0 -> 1.11.0 (*)
 |    |    |    |         |         |         |    |         +--- androidx.lifecycle:lifecycle-common:2.10.0 (c)
 |    |    |    |         |         |         |    |         +--- androidx.lifecycle:lifecycle-common-java8:2.10.0 (c)
@@ -352,7 +352,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |         |         |    |         \--- androidx.lifecycle:lifecycle-process:2.10.0 (c)
 |    |    |    |         |         |         |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1 -> 2.10.0
 |    |    |    |         |         |         |    |    +--- androidx.lifecycle:lifecycle-viewmodel:2.10.0 (*)
-|    |    |    |         |         |         |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (*)
+|    |    |    |         |         |         |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (*)
 |    |    |    |         |         |         |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0 -> 1.11.0 (*)
 |    |    |    |         |         |         |    |    +--- androidx.lifecycle:lifecycle-common:2.10.0 (c)
 |    |    |    |         |         |         |    |    +--- androidx.lifecycle:lifecycle-livedata-core-ktx:2.10.0 (c)
@@ -368,11 +368,11 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |         |         |    |    \--- androidx.lifecycle:lifecycle-process:2.10.0 (c)
 |    |    |    |         |         |         |    +--- androidx.savedstate:savedstate-ktx:1.2.1 -> 1.4.0
 |    |    |    |         |         |         |    |    +--- androidx.savedstate:savedstate:1.4.0 (*)
-|    |    |    |         |         |         |    |    +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.3.21 (*)
+|    |    |    |         |         |         |    |    +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.4.0 (*)
 |    |    |    |         |         |         |    |    +--- androidx.savedstate:savedstate:1.4.0 (c)
 |    |    |    |         |         |         |    |    +--- androidx.savedstate:savedstate-compose:1.4.0 (c)
-|    |    |    |         |         |         |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (c)
-|    |    |    |         |         |         |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|    |    |    |         |         |         |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (c)
+|    |    |    |         |         |         |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 |    |    |    |         |         |         |    +--- androidx.activity:activity:1.13.0 (c)
 |    |    |    |         |         |         |    \--- androidx.activity:activity-compose:1.13.0 (c)
 |    |    |    |         |         |         +--- androidx.annotation:annotation:1.8.1 -> 1.10.0 (*)
@@ -386,7 +386,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |         |         |         +--- androidx.annotation:annotation-experimental:1.4.1 (*)
 |    |    |    |         |         |         |         +--- androidx.collection:collection:1.5.0 (*)
 |    |    |    |         |         |         |         +--- androidx.compose.runtime:runtime-annotation:1.11.3 (*)
-|    |    |    |         |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|    |    |    |         |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 |    |    |    |         |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0 -> 1.11.0 (*)
 |    |    |    |         |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0 -> 1.11.0 (*)
 |    |    |    |         |         |         |         +--- androidx.compose.runtime:runtime-annotation:1.11.3 (c)
@@ -397,7 +397,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |         |         |    \--- androidx.compose.runtime:runtime-retain-android:1.11.3
 |    |    |    |         |         |         |         +--- androidx.collection:collection:1.5.0 (*)
 |    |    |    |         |         |         |         +--- androidx.compose.runtime:runtime:1.11.3 (*)
-|    |    |    |         |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|    |    |    |         |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 |    |    |    |         |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0 -> 1.11.0 (*)
 |    |    |    |         |         |         |         +--- androidx.compose.runtime:runtime:1.11.3 (c)
 |    |    |    |         |         |         |         +--- androidx.compose.runtime:runtime-annotation:1.11.3 (c)
@@ -413,7 +413,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |         |         |         |         +--- androidx.compose.runtime:runtime:1.9.0 -> 1.11.3 (*)
 |    |    |    |         |         |         |         |         +--- androidx.lifecycle:lifecycle-runtime:2.10.0 (*)
 |    |    |    |         |         |         |         |         +--- androidx.lifecycle:lifecycle-runtime-ktx:2.10.0 (*)
-|    |    |    |         |         |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (*)
+|    |    |    |         |         |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (*)
 |    |    |    |         |         |         |         |         +--- androidx.lifecycle:lifecycle-common:2.10.0 (c)
 |    |    |    |         |         |         |         |         +--- androidx.lifecycle:lifecycle-common-java8:2.10.0 (c)
 |    |    |    |         |         |         |         |         +--- androidx.lifecycle:lifecycle-livedata-core:2.10.0 (c)
@@ -435,7 +435,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |         |         |         |         +--- androidx.savedstate:savedstate:1.4.0 (*)
 |    |    |    |         |         |         |         |         +--- androidx.savedstate:savedstate:1.4.0 (c)
 |    |    |    |         |         |         |         |         \--- androidx.savedstate:savedstate-ktx:1.4.0 (c)
-|    |    |    |         |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|    |    |    |         |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 |    |    |    |         |         |         |         +--- androidx.compose.runtime:runtime:1.11.3 (c)
 |    |    |    |         |         |         |         +--- androidx.compose.runtime:runtime-annotation:1.11.3 (c)
 |    |    |    |         |         |         |         +--- androidx.compose.runtime:runtime-retain:1.11.3 (c)
@@ -449,7 +449,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |         |         |         |         +--- androidx.annotation:annotation-experimental:1.4.1 (*)
 |    |    |    |         |         |         |         |         +--- androidx.collection:collection:1.4.3 -> 1.5.0 (*)
 |    |    |    |         |         |         |         |         +--- androidx.compose.runtime:runtime:1.11.3 (*)
-|    |    |    |         |         |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|    |    |    |         |         |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 |    |    |    |         |         |         |         |         +--- androidx.compose.ui:ui:1.11.3 (c)
 |    |    |    |         |         |         |         |         +--- androidx.compose.ui:ui-geometry:1.11.3 (c)
 |    |    |    |         |         |         |         |         +--- androidx.compose.ui:ui-graphics:1.11.3 (c)
@@ -458,7 +458,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |         |         |         |         +--- androidx.compose.ui:ui-tooling-data:1.11.3 (c)
 |    |    |    |         |         |         |         |         +--- androidx.compose.ui:ui-tooling-preview:1.11.3 (c)
 |    |    |    |         |         |         |         |         \--- androidx.compose.ui:ui-unit:1.11.3 (c)
-|    |    |    |         |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|    |    |    |         |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 |    |    |    |         |         |         |         +--- androidx.compose.ui:ui:1.11.3 (c)
 |    |    |    |         |         |         |         +--- androidx.compose.ui:ui-graphics:1.11.3 (c)
 |    |    |    |         |         |         |         +--- androidx.compose.ui:ui-text:1.11.3 (c)
@@ -484,7 +484,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |         |         |         |         +--- androidx.compose.runtime:runtime:1.11.3 (*)
 |    |    |    |         |         |         |         |         +--- androidx.compose.ui:ui-geometry:1.11.3 (*)
 |    |    |    |         |         |         |         |         +--- androidx.compose.ui:ui-util:1.11.3 (*)
-|    |    |    |         |         |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|    |    |    |         |         |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 |    |    |    |         |         |         |         |         +--- androidx.compose.ui:ui:1.11.3 (c)
 |    |    |    |         |         |         |         |         +--- androidx.compose.ui:ui-geometry:1.11.3 (c)
 |    |    |    |         |         |         |         |         +--- androidx.compose.ui:ui-graphics:1.11.3 (c)
@@ -497,8 +497,8 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |         |         |         +--- androidx.core:core:1.12.0 -> 1.19.0 (*)
 |    |    |    |         |         |         |         +--- androidx.graphics:graphics-path:1.0.1
 |    |    |    |         |         |         |         |    +--- androidx.core:core:1.12.0 -> 1.19.0 (*)
-|    |    |    |         |         |         |         |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.3.21 (*)
-|    |    |    |         |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|    |    |    |         |         |         |         |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.4.0 (*)
+|    |    |    |         |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 |    |    |    |         |         |         |         +--- androidx.compose.ui:ui:1.11.3 (c)
 |    |    |    |         |         |         |         +--- androidx.compose.ui:ui-geometry:1.11.3 (c)
 |    |    |    |         |         |         |         +--- androidx.compose.ui:ui-text:1.11.3 (c)
@@ -526,7 +526,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |         |         |         |    |    +--- androidx.annotation:annotation:1.9.1 -> 1.10.0 (*)
 |    |    |    |         |         |         |         |    |    +--- androidx.lifecycle:lifecycle-runtime:2.10.0 (*)
 |    |    |    |         |         |         |         |    |    +--- androidx.startup:startup-runtime:1.1.1 -> 1.2.0 (*)
-|    |    |    |         |         |         |         |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (*)
+|    |    |    |         |         |         |         |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (*)
 |    |    |    |         |         |         |         |    |    +--- androidx.lifecycle:lifecycle-common:2.10.0 (c)
 |    |    |    |         |         |         |         |    |    +--- androidx.lifecycle:lifecycle-common-java8:2.10.0 (c)
 |    |    |    |         |         |         |         |    |    +--- androidx.lifecycle:lifecycle-livedata:2.10.0 (c)
@@ -541,7 +541,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |         |         |         |    |    \--- androidx.lifecycle:lifecycle-viewmodel-savedstate:2.10.0 (c)
 |    |    |    |         |         |         |         |    +--- androidx.startup:startup-runtime:1.0.0 -> 1.2.0 (*)
 |    |    |    |         |         |         |         |    \--- androidx.emoji2:emoji2-views-helper:1.4.0 (c)
-|    |    |    |         |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|    |    |    |         |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 |    |    |    |         |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0 -> 1.11.0 (*)
 |    |    |    |         |         |         |         +--- androidx.compose.ui:ui:1.11.3 (c)
 |    |    |    |         |         |         |         +--- androidx.compose.ui:ui-geometry:1.11.3 (c)
@@ -556,7 +556,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |         |         +--- androidx.core:core:1.16.0 -> 1.19.0 (*)
 |    |    |    |         |         |         +--- androidx.customview:customview-poolingcontainer:1.0.0
 |    |    |    |         |         |         |    +--- androidx.core:core-ktx:1.5.0 -> 1.19.0 (*)
-|    |    |    |         |         |         |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.6.21 -> 2.3.21 (*)
+|    |    |    |         |         |         |    \--- org.jetbrains.kotlin:kotlin-stdlib:1.6.21 -> 2.4.0 (*)
 |    |    |    |         |         |         +--- androidx.emoji2:emoji2:1.2.0 -> 1.4.0 (*)
 |    |    |    |         |         |         +--- androidx.lifecycle:lifecycle-runtime-compose:2.8.7 -> 2.10.0 (*)
 |    |    |    |         |         |         +--- androidx.lifecycle:lifecycle-viewmodel:2.9.2 -> 2.10.0 (*)
@@ -585,7 +585,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |         |         |    |         |    |    +--- androidx.lifecycle:lifecycle-livedata-core:2.10.0 (*)
 |    |    |    |         |         |         |    |         |    |    +--- androidx.lifecycle:lifecycle-livedata-core-ktx:2.10.0
 |    |    |    |         |         |         |    |         |    |    |    +--- androidx.lifecycle:lifecycle-livedata-core:2.10.0 (*)
-|    |    |    |         |         |         |    |         |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (*)
+|    |    |    |         |         |         |    |         |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (*)
 |    |    |    |         |         |         |    |         |    |    |    +--- androidx.lifecycle:lifecycle-common:2.10.0 (c)
 |    |    |    |         |         |         |    |         |    |    |    +--- androidx.lifecycle:lifecycle-common-java8:2.10.0 (c)
 |    |    |    |         |         |         |    |         |    |    |    +--- androidx.lifecycle:lifecycle-livedata-core:2.10.0 (c)
@@ -598,7 +598,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |         |         |    |         |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-savedstate:2.10.0 (c)
 |    |    |    |         |         |         |    |         |    |    |    +--- androidx.lifecycle:lifecycle-livedata:2.10.0 (c)
 |    |    |    |         |         |         |    |         |    |    |    \--- androidx.lifecycle:lifecycle-process:2.10.0 (c)
-|    |    |    |         |         |         |    |         |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (*)
+|    |    |    |         |         |         |    |         |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (*)
 |    |    |    |         |         |         |    |         |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0 -> 1.11.0 (*)
 |    |    |    |         |         |         |    |         |    |    +--- org.jspecify:jspecify:1.0.0
 |    |    |    |         |         |         |    |         |    |    +--- androidx.lifecycle:lifecycle-common:2.10.0 (c)
@@ -626,15 +626,15 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |         |         |    +--- androidx.window:window-core:1.5.0
 |    |    |    |         |         |         |    |    \--- androidx.window:window-core-android:1.5.0
 |    |    |    |         |         |         |    |         +--- androidx.annotation:annotation:1.9.1 -> 1.10.0 (*)
-|    |    |    |         |         |         |    |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.3.21 (*)
+|    |    |    |         |         |         |    |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.4.0 (*)
 |    |    |    |         |         |         |    |         +--- androidx.window:window:1.5.0 (c)
-|    |    |    |         |         |         |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (c)
-|    |    |    |         |         |         |    +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.3.21 (*)
+|    |    |    |         |         |         |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (c)
+|    |    |    |         |         |         |    +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.4.0 (*)
 |    |    |    |         |         |         |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1 -> 1.11.0 (*)
 |    |    |    |         |         |         |    +--- org.jspecify:jspecify:1.0.0
 |    |    |    |         |         |         |    +--- androidx.window:window-core:1.5.0 (c)
-|    |    |    |         |         |         |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (c)
-|    |    |    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|    |    |    |         |         |         |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (c)
+|    |    |    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 |    |    |    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0 -> 1.11.0 (*)
 |    |    |    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0 -> 1.11.0 (*)
 |    |    |    |         |         |         +--- org.jspecify:jspecify:1.0.0
@@ -647,10 +647,10 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |         |         +--- androidx.compose.ui:ui-unit:1.11.3 (c)
 |    |    |    |         |         |         +--- androidx.compose.ui:ui-util:1.11.3 (c)
 |    |    |    |         |         |         \--- androidx.compose.foundation:foundation:1.7.0 -> 1.11.2 (c)
-|    |    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.3.21 (*)
-|    |    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22 -> 2.3.21
-|    |    |    |         |              \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
-|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22 -> 2.3.21 (*)
+|    |    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.4.0 (*)
+|    |    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22 -> 2.4.0
+|    |    |    |         |              \--- org.jetbrains.kotlin:kotlin-stdlib:2.4.0 (*)
+|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22 -> 2.4.0 (*)
 |    |    |    +--- org.jetbrains.compose.material:material-icons-core:1.7.3
 |    |    |    |    +--- androidx.compose.material:material-icons-core:1.7.6 (*)
 |    |    |    |    +--- org.jetbrains.compose.ui:ui:1.7.3 -> 1.11.1
@@ -668,7 +668,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |    |    |    \--- org.jetbrains.androidx.lifecycle:lifecycle-common:2.10.0 (*)
 |    |    |    |    |    |    \--- org.jetbrains.compose.runtime:runtime:1.9.3 -> 1.11.1
 |    |    |    |    |    |         +--- androidx.compose.runtime:runtime:1.11.2 -> 1.11.3 (*)
-|    |    |    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |    |    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |    |    |    |    +--- org.jetbrains.androidx.lifecycle:lifecycle-viewmodel:2.9.6 -> 2.10.0 (*)
 |    |    |    |    |    +--- org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-savedstate:2.9.6 -> 2.10.0
 |    |    |    |    |    |    +--- androidx.lifecycle:lifecycle-viewmodel-savedstate:2.10.0 (*)
@@ -684,7 +684,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |    |    |    +--- org.jetbrains.androidx.savedstate:savedstate:1.3.6 (*)
 |    |    |    |    |    |    |    \--- org.jetbrains.compose.runtime:runtime:1.9.3 -> 1.11.1 (*)
 |    |    |    |    |    |    +--- org.jetbrains.compose.runtime:runtime:1.11.1 (*)
-|    |    |    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |    |    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |    |    |    |    +--- org.jetbrains.compose.ui:ui-geometry:1.11.1
 |    |    |    |    |    |    +--- androidx.compose.ui:ui-geometry:1.11.2 -> 1.11.3 (*)
 |    |    |    |    |    |    +--- org.jetbrains.compose.runtime:runtime:1.11.1 (*)
@@ -692,8 +692,8 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |    |    |    +--- androidx.collection:collection:1.5.0 (*)
 |    |    |    |    |    |    |    +--- androidx.compose.ui:ui-util:1.11.2 -> 1.11.3 (*)
 |    |    |    |    |    |    |    +--- org.jetbrains.compose.runtime:runtime:1.11.1 (*)
-|    |    |    |    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
-|    |    |    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |    |    |    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
+|    |    |    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |    |    |    |    +--- org.jetbrains.compose.ui:ui-graphics:1.11.1
 |    |    |    |    |    |    +--- androidx.annotation:annotation:1.9.1 -> 1.10.0 (*)
 |    |    |    |    |    |    +--- androidx.collection:collection:1.5.0 (*)
@@ -706,9 +706,9 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |    |    |    +--- org.jetbrains.compose.runtime:runtime:1.11.1 (*)
 |    |    |    |    |    |    |    +--- org.jetbrains.compose.ui:ui-geometry:1.11.1 (*)
 |    |    |    |    |    |    |    +--- org.jetbrains.compose.ui:ui-util:1.11.1 (*)
-|    |    |    |    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |    |    |    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |    |    |    |    |    +--- org.jetbrains.compose.ui:ui-util:1.11.1 (*)
-|    |    |    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |    |    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |    |    |    |    +--- org.jetbrains.compose.ui:ui-text:1.11.1
 |    |    |    |    |    |    +--- androidx.collection:collection:1.5.0 (*)
 |    |    |    |    |    |    +--- androidx.compose.ui:ui-text:1.11.2 -> 1.11.3 (*)
@@ -717,15 +717,15 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |    |    +--- org.jetbrains.compose.ui:ui-graphics:1.11.1 (*)
 |    |    |    |    |    |    +--- org.jetbrains.compose.ui:ui-unit:1.11.1 (*)
 |    |    |    |    |    |    +--- org.jetbrains.compose.ui:ui-util:1.11.1 (*)
-|    |    |    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |    |    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |    |    |    |    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0 -> 1.11.0 (*)
 |    |    |    |    |    +--- org.jetbrains.compose.ui:ui-unit:1.11.1 (*)
 |    |    |    |    |    +--- org.jetbrains.compose.ui:ui-util:1.11.1 (*)
-|    |    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |    |    |    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0 -> 1.11.0 (*)
 |    |    |    |    +--- org.jetbrains.compose.ui:ui-graphics:1.7.3 -> 1.11.1 (*)
 |    |    |    |    +--- org.jetbrains.compose.ui:ui-unit:1.7.3 -> 1.11.1 (*)
-|    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.9.24 -> 2.3.21 (*)
+|    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.9.24 -> 2.4.0 (*)
 |    |    |    +--- org.jetbrains.compose.ui:ui:1.7.3 -> 1.11.1 (*)
 |    |    |    \--- org.jetbrains.compose.ui:ui-graphics:1.7.3 -> 1.11.1 (*)
 |    |    +--- org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose:2.10.0
@@ -738,7 +738,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         +--- androidx.lifecycle:lifecycle-common:2.10.0 (*)
 |    |    |    |         +--- androidx.lifecycle:lifecycle-viewmodel:2.10.0 (*)
 |    |    |    |         +--- androidx.lifecycle:lifecycle-viewmodel-savedstate:2.10.0 (*)
-|    |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (*)
+|    |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (*)
 |    |    |    |         +--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.7.3 -> 1.11.0 (*)
 |    |    |    |         +--- androidx.lifecycle:lifecycle-common:2.10.0 (c)
 |    |    |    |         +--- androidx.lifecycle:lifecycle-common-java8:2.10.0 (c)
@@ -757,12 +757,12 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    +--- org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-savedstate:2.10.0 (*)
 |    |    |    +--- org.jetbrains.compose.runtime:runtime:1.9.3 -> 1.11.1 (*)
 |    |    |    +--- org.jetbrains.compose.ui:ui:1.9.3 -> 1.11.1 (*)
-|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.3.21 (*)
+|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.4.0 (*)
 |    |    |    \--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.7.3 -> 1.11.0 (*)
 |    |    +--- org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose:2.10.0 (*)
 |    |    +--- org.jetbrains.compose.components:components-resources:1.11.1
 |    |    |    \--- org.jetbrains.compose.components:components-resources-android:1.11.1
-|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.20 -> 2.3.21 (*)
+|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.20 -> 2.4.0 (*)
 |    |    |         +--- org.jetbrains.compose.runtime:runtime:1.11.1 (*)
 |    |    |         +--- org.jetbrains.compose.foundation:foundation:1.11.1
 |    |    |         |    +--- androidx.collection:collection:1.5.0 (*)
@@ -785,7 +785,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |         |    |         |         |         +--- androidx.compose.ui:ui-graphics:1.10.0 -> 1.11.3 (*)
 |    |    |         |    |         |         |         +--- androidx.compose.ui:ui-unit:1.10.0 -> 1.11.3 (*)
 |    |    |         |    |         |         |         +--- androidx.compose.ui:ui-util:1.10.0 -> 1.11.3 (*)
-|    |    |         |    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|    |    |         |    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 |    |    |         |    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0 -> 1.11.0 (*)
 |    |    |         |    |         |         |         \--- androidx.compose.animation:animation:1.11.2 (c)
 |    |    |         |    |         |         +--- androidx.compose.foundation:foundation-layout:1.10.0 -> 1.11.2
@@ -799,14 +799,14 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |         |    |         |         |         +--- androidx.compose.ui:ui-unit:1.10.0 -> 1.11.3 (*)
 |    |    |         |    |         |         |         +--- androidx.compose.ui:ui-util:1.10.0 -> 1.11.3 (*)
 |    |    |         |    |         |         |         +--- androidx.core:core:1.16.0 -> 1.19.0 (*)
-|    |    |         |    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|    |    |         |    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 |    |    |         |    |         |         |         \--- androidx.compose.foundation:foundation:1.11.2 (c)
 |    |    |         |    |         |         +--- androidx.compose.runtime:runtime:1.11.2 -> 1.11.3 (*)
 |    |    |         |    |         |         +--- androidx.compose.ui:ui:1.10.0 -> 1.11.3 (*)
 |    |    |         |    |         |         +--- androidx.compose.ui:ui-geometry:1.10.0 -> 1.11.3 (*)
 |    |    |         |    |         |         +--- androidx.compose.ui:ui-graphics:1.10.0 -> 1.11.3 (*)
 |    |    |         |    |         |         +--- androidx.compose.ui:ui-util:1.10.0 -> 1.11.3 (*)
-|    |    |         |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|    |    |         |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 |    |    |         |    |         |         \--- androidx.compose.animation:animation-core:1.11.2 (c)
 |    |    |         |    |         +--- androidx.compose.foundation:foundation-layout:1.11.2 (*)
 |    |    |         |    |         +--- androidx.compose.runtime:runtime:1.11.2 -> 1.11.3 (*)
@@ -815,7 +815,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |         |    |         +--- androidx.compose.ui:ui-util:1.10.0 -> 1.11.3 (*)
 |    |    |         |    |         +--- androidx.core:core:1.13.1 -> 1.19.0 (*)
 |    |    |         |    |         +--- androidx.emoji2:emoji2:1.3.0 -> 1.4.0 (*)
-|    |    |         |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|    |    |         |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 |    |    |         |    |         \--- androidx.compose.foundation:foundation-layout:1.11.2 (c)
 |    |    |         |    +--- org.jetbrains.compose.animation:animation:1.11.1
 |    |    |         |    |    +--- androidx.collection:collection:1.5.0 (*)
@@ -828,7 +828,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |         |    |    |    +--- org.jetbrains.compose.ui:ui-graphics:1.11.1 (*)
 |    |    |         |    |    |    +--- org.jetbrains.compose.ui:ui-unit:1.11.1 (*)
 |    |    |         |    |    |    +--- org.jetbrains.compose.ui:ui-util:1.11.1 (*)
-|    |    |         |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |    |         |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |    |         |    |    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0 -> 1.11.0 (*)
 |    |    |         |    |    +--- org.jetbrains.compose.foundation:foundation-layout:1.11.1
 |    |    |         |    |    |    +--- androidx.collection:collection:1.5.0 (*)
@@ -837,19 +837,19 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |         |    |    |    +--- org.jetbrains.compose.ui:ui:1.11.1 (*)
 |    |    |         |    |    |    +--- org.jetbrains.compose.ui:ui-unit:1.11.1 (*)
 |    |    |         |    |    |    +--- org.jetbrains.compose.ui:ui-util:1.11.1 (*)
-|    |    |         |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |    |         |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |    |         |    |    +--- org.jetbrains.compose.runtime:runtime:1.11.1 (*)
 |    |    |         |    |    +--- org.jetbrains.compose.ui:ui:1.11.1 (*)
 |    |    |         |    |    +--- org.jetbrains.compose.ui:ui-geometry:1.11.1 (*)
 |    |    |         |    |    +--- org.jetbrains.compose.ui:ui-graphics:1.11.1 (*)
 |    |    |         |    |    +--- org.jetbrains.compose.ui:ui-util:1.11.1 (*)
-|    |    |         |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |    |         |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |    |         |    +--- org.jetbrains.compose.foundation:foundation-layout:1.11.1 (*)
 |    |    |         |    +--- org.jetbrains.compose.runtime:runtime:1.11.1 (*)
 |    |    |         |    +--- org.jetbrains.compose.ui:ui:1.11.1 (*)
 |    |    |         |    +--- org.jetbrains.compose.ui:ui-text:1.11.1 (*)
 |    |    |         |    +--- org.jetbrains.compose.ui:ui-util:1.11.1 (*)
-|    |    |         |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |    |         |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |    |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0 -> 1.11.0 (*)
 |    |    +--- org.jetbrains.compose.foundation:foundation:1.11.1 (*)
 |    |    +--- org.jetbrains.compose.material:material:1.11.1
@@ -868,7 +868,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |         +--- androidx.compose.foundation:foundation:1.7.1 -> 1.11.2 (*)
 |    |    |    |         |         +--- androidx.compose.runtime:runtime:1.11.2 -> 1.11.3 (*)
 |    |    |    |         |         +--- androidx.compose.ui:ui-util:1.7.1 -> 1.11.3 (*)
-|    |    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|    |    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 |    |    |    |         +--- androidx.compose.runtime:runtime:1.11.2 -> 1.11.3 (*)
 |    |    |    |         +--- androidx.compose.ui:ui:1.8.2 -> 1.11.3 (*)
 |    |    |    |         +--- androidx.compose.ui:ui-text:1.8.2 -> 1.11.3 (*)
@@ -876,7 +876,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         +--- androidx.lifecycle:lifecycle-runtime:2.6.1 -> 2.10.0 (*)
 |    |    |    |         +--- androidx.lifecycle:lifecycle-viewmodel:2.6.1 -> 2.10.0 (*)
 |    |    |    |         +--- androidx.savedstate:savedstate:1.2.1 -> 1.4.0 (*)
-|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 |    |    |    +--- org.jetbrains.compose.animation:animation:1.11.1 (*)
 |    |    |    +--- org.jetbrains.compose.animation:animation-core:1.11.1 (*)
 |    |    |    +--- org.jetbrains.compose.foundation:foundation:1.11.1 (*)
@@ -888,12 +888,12 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    +--- org.jetbrains.compose.foundation:foundation:1.11.1 (*)
 |    |    |    |    +--- org.jetbrains.compose.runtime:runtime:1.11.1 (*)
 |    |    |    |    +--- org.jetbrains.compose.ui:ui-util:1.11.1 (*)
-|    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |    |    +--- org.jetbrains.compose.runtime:runtime:1.11.1 (*)
 |    |    |    +--- org.jetbrains.compose.ui:ui:1.11.1 (*)
 |    |    |    +--- org.jetbrains.compose.ui:ui-text:1.11.1 (*)
 |    |    |    +--- org.jetbrains.compose.ui:ui-util:1.11.1 (*)
-|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |    +--- org.jetbrains.compose.material3:material3:1.9.0
 |    |    |    +--- androidx.compose.material3:material3:1.4.0
 |    |    |    |    \--- androidx.compose.material3:material3-android:1.4.0
@@ -912,12 +912,12 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |    |         +--- androidx.compose.runtime:runtime:1.9.2 -> 1.11.3 (*)
 |    |    |    |         |    |         +--- androidx.compose.ui:ui:1.9.2 -> 1.11.3 (*)
 |    |    |    |         |    |         +--- androidx.navigationevent:navigationevent:1.0.0 (*)
-|    |    |    |         |    |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.3.21 (*)
+|    |    |    |         |    |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.4.0 (*)
 |    |    |    |         |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0 -> 1.11.0 (*)
 |    |    |    |         |    |         +--- androidx.navigationevent:navigationevent:1.0.0 (c)
-|    |    |    |         |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (c)
+|    |    |    |         |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (c)
 |    |    |    |         |    +--- androidx.savedstate:savedstate:1.2.1 -> 1.4.0 (*)
-|    |    |    |         |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|    |    |    |         |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 |    |    |    |         |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0 -> 1.11.0 (*)
 |    |    |    |         |    +--- androidx.activity:activity:1.13.0 (c)
 |    |    |    |         |    \--- androidx.activity:activity-ktx:1.13.0 (c)
@@ -947,8 +947,8 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.10.0 (c)
 |    |    |    |         |    +--- androidx.lifecycle:lifecycle-viewmodel-savedstate:2.10.0 (c)
 |    |    |    |         |    \--- androidx.lifecycle:lifecycle-process:2.10.0 (c)
-|    |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.3.21 (*)
-|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (c)
+|    |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.4.0 (*)
+|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (c)
 |    |    |    +--- org.jetbrains.compose.animation:animation-core:1.9.1 -> 1.11.1 (*)
 |    |    |    +--- org.jetbrains.compose.annotation-internal:annotation:1.9.1
 |    |    |    |    \--- androidx.annotation:annotation:1.9.1 -> 1.10.0 (*)
@@ -965,18 +965,18 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         +--- org.jetbrains.compose.annotation-internal:annotation:1.9.1 (*)
 |    |    |    |         +--- org.jetbrains.compose.runtime:runtime:1.9.1 -> 1.11.1 (*)
 |    |    |    |         +--- org.jetbrains.compose.ui:ui-util:1.9.1 -> 1.11.1 (*)
-|    |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.3.21 (*)
+|    |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.4.0 (*)
 |    |    |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0 -> 1.11.0 (*)
-|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.1.21 -> 2.3.21 (c)
+|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.1.21 -> 2.4.0 (c)
 |    |    |    +--- org.jetbrains.compose.ui:ui-graphics:1.9.1 -> 1.11.1 (*)
 |    |    |    +--- org.jetbrains.compose.ui:ui-text:1.9.1 -> 1.11.1 (*)
 |    |    |    +--- org.jetbrains.compose.ui:ui-util:1.9.1 -> 1.11.1 (*)
-|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib -> 2.3.21 (*)
+|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib -> 2.4.0 (*)
 |    |    +--- org.jetbrains.compose.ui:ui:1.11.1 (*)
 |    |    +--- org.jetbrains.compose.ui:ui-graphics:1.11.1 (*)
 |    |    +--- com.eygraber:compose-placeholder:1.0.12
 |    |    |    \--- com.eygraber:compose-placeholder-android:1.0.12
-|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.2.10 -> 2.3.21 (*)
+|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.2.10 -> 2.4.0 (*)
 |    |    |         +--- org.jetbrains.compose.foundation:foundation:1.9.0-rc02 -> 1.11.1 (*)
 |    |    |         +--- org.jetbrains.compose.ui:ui-util:1.9.0-rc02 -> 1.11.1 (*)
 |    |    |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2 -> 1.11.0 (*)
@@ -991,7 +991,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    +--- org.jetbrains.androidx.lifecycle:lifecycle-viewmodel:2.10.0 (*)
 |    |    |    |    +--- io.ktor:ktor-client-android:3.5.0 (*)
 |    |    |    |    +--- junit:junit:4.13.2 (*)
-|    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.4.0 (*)
 |    |    |    |    +--- com.kizitonwose.calendar:compose-multiplatform:2.10.1
 |    |    |    |    |    \--- com.kizitonwose.calendar:compose-multiplatform-android:2.10.1
 |    |    |    |    |         +--- org.jetbrains.compose.ui:ui-tooling-preview:1.10.0
@@ -1000,7 +1000,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |         |    |    \--- androidx.compose.ui:ui-tooling-preview-android:1.11.3
 |    |    |    |    |         |    |         +--- androidx.annotation:annotation:1.9.1 -> 1.10.0 (*)
 |    |    |    |    |         |    |         +--- androidx.compose.runtime:runtime:1.11.3 (*)
-|    |    |    |    |         |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+|    |    |    |    |         |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
 |    |    |    |    |         |    |         +--- androidx.compose.ui:ui:1.11.3 (c)
 |    |    |    |    |         |    |         +--- androidx.compose.ui:ui-geometry:1.11.3 (c)
 |    |    |    |    |         |    |         +--- androidx.compose.ui:ui-graphics:1.11.3 (c)
@@ -1010,11 +1010,11 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |         |    |         +--- androidx.compose.ui:ui-unit:1.11.3 (c)
 |    |    |    |    |         |    |         \--- androidx.compose.ui:ui-util:1.11.3 (c)
 |    |    |    |    |         |    +--- org.jetbrains.compose.runtime:runtime:1.10.0 -> 1.11.1 (*)
-|    |    |    |    |         |    \--- org.jetbrains.kotlin:kotlin-stdlib -> 2.3.21 (*)
+|    |    |    |    |         |    \--- org.jetbrains.kotlin:kotlin-stdlib -> 2.4.0 (*)
 |    |    |    |    |         +--- org.jetbrains.kotlinx:kotlinx-datetime:0.7.1
 |    |    |    |    |         |    \--- org.jetbrains.kotlinx:kotlinx-datetime-jvm:0.7.1
-|    |    |    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
-|    |    |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.0 -> 2.3.21 (*)
+|    |    |    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
+|    |    |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.0 -> 2.4.0 (*)
 |    |    |    |    |         +--- org.jetbrains.compose.runtime:runtime:1.10.0 -> 1.11.1 (*)
 |    |    |    |    |         +--- org.jetbrains.compose.foundation:foundation:1.10.0 -> 1.11.1 (*)
 |    |    |    |    |         +--- org.jetbrains.compose.ui:ui:1.10.0 -> 1.11.1 (*)
@@ -1022,7 +1022,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |         +--- org.jetbrains.compose.components:components-ui-tooling-preview:1.10.0
 |    |    |    |    |         |    \--- org.jetbrains.compose.components:components-ui-tooling-preview-android:1.10.0
 |    |    |    |    |         |         +--- androidx.compose.ui:ui-tooling-preview:1.6.1 -> 1.11.3 (*)
-|    |    |    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |    |    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |    |    |    |         +--- androidx.annotation:annotation:1.9.1 -> 1.10.0 (*)
 |    |    |    |    |         \--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.9.0 -> 1.11.0 (*)
 |    |    |    |    +--- io.coil-kt.coil3:coil-compose:3.4.0
@@ -1033,10 +1033,10 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |         |         |    \--- io.coil-kt.coil3:coil-core-android:3.4.0
 |    |    |    |    |         |         |         +--- androidx.lifecycle:lifecycle-runtime:2.9.4 -> 2.10.0 (*)
 |    |    |    |    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2 -> 1.11.0 (*)
-|    |    |    |    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.3.21 (*)
+|    |    |    |    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.4.0 (*)
 |    |    |    |    |         |         |         +--- com.squareup.okio:okio:3.16.4
 |    |    |    |    |         |         |         |    \--- com.squareup.okio:okio-jvm:3.16.4
-|    |    |    |    |         |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |    |    |    |         |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |    |    |    |         |         |         +--- androidx.annotation:annotation:1.9.1 -> 1.10.0 (*)
 |    |    |    |    |         |         |         +--- androidx.appcompat:appcompat-resources:1.7.1
 |    |    |    |    |         |         |         |    +--- androidx.annotation:annotation:1.2.0 -> 1.10.0 (*)
@@ -1057,18 +1057,18 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |         |         |         |    \--- org.jspecify:jspecify:1.0.0
 |    |    |    |    |         |         |         +--- androidx.profileinstaller:profileinstaller:1.4.1 (*)
 |    |    |    |    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2 -> 1.11.0 (*)
-|    |    |    |    |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 -> 2.3.21 (c)
-|    |    |    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 -> 2.3.21 (*)
+|    |    |    |    |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 -> 2.4.0 (c)
+|    |    |    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 -> 2.4.0 (*)
 |    |    |    |    |         +--- io.coil-kt.coil3:coil-compose-core:3.4.0
 |    |    |    |    |         |    \--- io.coil-kt.coil3:coil-compose-core-android:3.4.0
 |    |    |    |    |         |         +--- io.coil-kt.coil3:coil-core:3.4.0 (*)
 |    |    |    |    |         |         +--- org.jetbrains.compose.foundation:foundation:1.9.3 -> 1.11.1 (*)
-|    |    |    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 -> 2.3.21 (*)
+|    |    |    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 -> 2.4.0 (*)
 |    |    |    |    |         |         \--- com.google.accompanist:accompanist-drawablepainter:0.37.3
 |    |    |    |    |         |              +--- androidx.compose.ui:ui:1.7.0 -> 1.11.3 (*)
 |    |    |    |    |         |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4 -> 1.11.0 (*)
-|    |    |    |    |         |              \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.20 -> 2.3.21 (*)
-|    |    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 -> 2.3.21 (*)
+|    |    |    |    |         |              \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.20 -> 2.4.0 (*)
+|    |    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 -> 2.4.0 (*)
 |    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
 |    |    |    |    +--- dev.gitlive:firebase-common:2.4.0
 |    |    |    |    |    \--- dev.gitlive:firebase-common-android:2.4.0
@@ -1099,9 +1099,9 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |         |    |    |              |    \--- androidx.customview:customview:1.0.0
 |    |    |    |    |         |    |    |              |         +--- androidx.annotation:annotation:1.0.0 -> 1.10.0 (*)
 |    |    |    |    |         |    |    |              |         \--- androidx.core:core:1.0.0 -> 1.19.0 (*)
-|    |    |    |    |         |    |    |              +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.3.21 (*)
+|    |    |    |    |         |    |    |              +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.4.0 (*)
 |    |    |    |    |         |    |    |              \--- androidx.fragment:fragment-ktx:1.8.9 (c)
-|    |    |    |    |         |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |    |    |    |         |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |    |    |    |         |    +--- com.google.firebase:firebase-components:19.0.0
 |    |    |    |    |         |    |    +--- com.google.firebase:firebase-annotations:17.0.0
 |    |    |    |    |         |    |    |    \--- javax.inject:javax.inject:1
@@ -1117,10 +1117,10 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |         |    |         |         |    \--- androidx.datastore:datastore-core-android:1.1.7
 |    |    |    |    |         |    |         |         |         +--- androidx.annotation:annotation:1.7.0 -> 1.10.0 (*)
 |    |    |    |    |         |    |         |         |         +--- org.jetbrains.kotlin:kotlin-parcelize-runtime:1.9.22
-|    |    |    |    |         |    |         |         |         |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 -> 2.3.21 (*)
+|    |    |    |    |         |    |         |         |         |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 -> 2.4.0 (*)
 |    |    |    |    |         |    |         |         |         |    \--- org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.9.22
-|    |    |    |    |         |    |         |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 -> 2.3.21 (*)
-|    |    |    |    |         |    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.3.21 (*)
+|    |    |    |    |         |    |         |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.22 -> 2.4.0 (*)
+|    |    |    |    |         |    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.4.0 (*)
 |    |    |    |    |         |    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 -> 1.11.0 (*)
 |    |    |    |    |         |    |         |         |         +--- androidx.datastore:datastore:1.1.7 (c)
 |    |    |    |    |         |    |         |         |         +--- androidx.datastore:datastore-core-okio:1.1.7 (c)
@@ -1132,7 +1132,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |         |    |         |         |    \--- androidx.datastore:datastore-core-okio-jvm:1.1.7
 |    |    |    |    |         |    |         |         |         +--- androidx.datastore:datastore-core:1.1.7 (*)
 |    |    |    |    |         |    |         |         |         +--- com.squareup.okio:okio:3.4.0 -> 3.16.4 (*)
-|    |    |    |    |         |    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.3.21 (*)
+|    |    |    |    |         |    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.4.0 (*)
 |    |    |    |    |         |    |         |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 -> 1.11.0 (*)
 |    |    |    |    |         |    |         |         |         +--- androidx.datastore:datastore:1.1.7 (c)
 |    |    |    |    |         |    |         |         |         +--- androidx.datastore:datastore-core:1.1.7 (c)
@@ -1141,7 +1141,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |         |    |         |         |         +--- androidx.datastore:datastore-preferences-external-protobuf:1.1.7 (c)
 |    |    |    |    |         |    |         |         |         \--- androidx.datastore:datastore-preferences-proto:1.1.7 (c)
 |    |    |    |    |         |    |         |         +--- com.squareup.okio:okio:3.4.0 -> 3.16.4 (*)
-|    |    |    |    |         |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.3.21 (*)
+|    |    |    |    |         |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.4.0 (*)
 |    |    |    |    |         |    |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 -> 1.11.0 (*)
 |    |    |    |    |         |    |         |         +--- androidx.datastore:datastore-core:1.1.7 (c)
 |    |    |    |    |         |    |         |         +--- androidx.datastore:datastore-core-okio:1.1.7 (c)
@@ -1168,14 +1168,14 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |         |    |         |         |    +--- androidx.datastore:datastore-preferences-core:1.1.7 (c)
 |    |    |    |    |         |    |         |         |    \--- androidx.datastore:datastore-preferences-external-protobuf:1.1.7 (c)
 |    |    |    |    |         |    |         |         +--- com.squareup.okio:okio:3.4.0 -> 3.16.4 (*)
-|    |    |    |    |         |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.3.21 (*)
+|    |    |    |    |         |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.4.0 (*)
 |    |    |    |    |         |    |         |         +--- androidx.datastore:datastore:1.1.7 (c)
 |    |    |    |    |         |    |         |         +--- androidx.datastore:datastore-core:1.1.7 (c)
 |    |    |    |    |         |    |         |         +--- androidx.datastore:datastore-core-okio:1.1.7 (c)
 |    |    |    |    |         |    |         |         +--- androidx.datastore:datastore-preferences:1.1.7 (c)
 |    |    |    |    |         |    |         |         +--- androidx.datastore:datastore-preferences-proto:1.1.7 (c)
 |    |    |    |    |         |    |         |         \--- androidx.datastore:datastore-preferences-external-protobuf:1.1.7 (c)
-|    |    |    |    |         |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.3.21 (*)
+|    |    |    |    |         |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.4.0 (*)
 |    |    |    |    |         |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 -> 1.11.0 (*)
 |    |    |    |    |         |    |         +--- androidx.datastore:datastore:1.1.7 (c)
 |    |    |    |    |         |    |         +--- androidx.datastore:datastore-preferences-core:1.1.7 (c)
@@ -1185,13 +1185,13 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |         |    |         \--- androidx.datastore:datastore-preferences-external-protobuf:1.1.7 (c)
 |    |    |    |    |         |    +--- androidx.annotation:annotation:1.5.0 -> 1.10.0 (*)
 |    |    |    |    |         |    +--- androidx.concurrent:concurrent-futures:1.1.0 (*)
-|    |    |    |    |         |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (*)
+|    |    |    |    |         |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (*)
 |    |    |    |    |         |    +--- com.google.android.gms:play-services-basement:18.9.0 (*)
 |    |    |    |    |         |    \--- com.google.android.gms:play-services-tasks:18.4.0 (*)
 |    |    |    |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.2 -> 1.11.0 (*)
 |    |    |    |    |         +--- com.google.firebase:firebase-bom:33.15.0 -> 34.15.0 (*)
 |    |    |    |    |         +--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.9.0 -> 1.11.0 (*)
-|    |    |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |    |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |    |    |    |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2 -> 1.11.0 (*)
 |    |    |    |    +--- dev.gitlive:firebase-firestore:2.4.0
 |    |    |    |    |    \--- dev.gitlive:firebase-firestore-android:2.4.0
@@ -1261,7 +1261,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |         |    |    +--- io.grpc:grpc-api:1.62.2 (*)
 |    |    |    |    |         |    |    +--- com.google.guava:guava:32.1.3-android (*)
 |    |    |    |    |         |    |    \--- com.google.errorprone:error_prone_annotations:2.23.0 -> 2.26.0
-|    |    |    |    |         |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (*)
+|    |    |    |    |         |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (*)
 |    |    |    |    |         |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0 -> 1.11.0 (*)
 |    |    |    |    |         |    \--- com.google.re2j:re2j:1.6
 |    |    |    |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.2 -> 1.11.0 (*)
@@ -1271,18 +1271,18 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |         |         +--- com.google.firebase:firebase-common -> 22.1.0 (*)
 |    |    |    |    |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.2 -> 1.11.0 (*)
 |    |    |    |    |         |         +--- com.google.firebase:firebase-bom:33.15.0 -> 34.15.0 (*)
-|    |    |    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |    |    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |    |    |    |         |         +--- dev.gitlive:firebase-common:2.4.0 (*)
 |    |    |    |    |         |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2 -> 1.11.0 (*)
 |    |    |    |    |         +--- dev.gitlive:firebase-common:2.4.0 (*)
-|    |    |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |    |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |    |    |    |         +--- dev.gitlive:firebase-common-internal:2.4.0
 |    |    |    |    |         |    \--- dev.gitlive:firebase-common-internal-android:2.4.0
 |    |    |    |    |         |         +--- com.google.firebase:firebase-common -> 22.1.0 (*)
 |    |    |    |    |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.2 -> 1.11.0 (*)
 |    |    |    |    |         |         +--- com.google.firebase:firebase-bom:33.15.0 -> 34.15.0 (*)
 |    |    |    |    |         |         +--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.9.0 -> 1.11.0 (*)
-|    |    |    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |    |    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |    |    |    |         |         +--- dev.gitlive:firebase-common:2.4.0 (*)
 |    |    |    |    |         |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2 -> 1.11.0 (*)
 |    |    |    |    |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2 -> 1.11.0 (*)
@@ -1319,11 +1319,11 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |    |         |         +--- androidx.lifecycle:lifecycle-viewmodel-savedstate:2.9.0 -> 2.10.0 (*)
 |    |    |    |    |    |         |         +--- androidx.profileinstaller:profileinstaller:1.4.0 -> 1.4.1 (*)
 |    |    |    |    |    |         |         +--- androidx.savedstate:savedstate:1.3.0 -> 1.4.0 (*)
-|    |    |    |    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.3.21 (*)
+|    |    |    |    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.4.0 (*)
 |    |    |    |    |    |         |         +--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.7.3 -> 1.11.0 (*)
 |    |    |    |    |    |         |         +--- androidx.navigation:navigation-compose:2.9.7 (c)
 |    |    |    |    |    |         |         +--- androidx.navigation:navigation-runtime:2.9.7 (c)
-|    |    |    |    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (c)
+|    |    |    |    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (c)
 |    |    |    |    |    |         +--- androidx.navigation:navigation-runtime:2.9.7
 |    |    |    |    |    |         |    \--- androidx.navigation:navigation-runtime-android:2.9.7
 |    |    |    |    |    |         |         +--- androidx.activity:activity-ktx:1.7.1 -> 1.13.0 (*)
@@ -1336,20 +1336,20 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |    |         |         +--- androidx.lifecycle:lifecycle-viewmodel:2.8.7 -> 2.10.0 (*)
 |    |    |    |    |    |         |         +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7 -> 2.10.0 (*)
 |    |    |    |    |    |         |         +--- androidx.navigation:navigation-common:2.9.7 (*)
-|    |    |    |    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.3.21 (*)
+|    |    |    |    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.4.0 (*)
 |    |    |    |    |    |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 -> 1.11.0 (*)
 |    |    |    |    |    |         |         +--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.7.3 -> 1.11.0 (*)
 |    |    |    |    |    |         |         +--- androidx.navigation:navigation-common:2.9.7 (c)
 |    |    |    |    |    |         |         +--- androidx.navigation:navigation-compose:2.9.7 (c)
-|    |    |    |    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (c)
+|    |    |    |    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (c)
 |    |    |    |    |    |         +--- androidx.savedstate:savedstate:1.3.0 -> 1.4.0 (*)
 |    |    |    |    |    |         +--- androidx.savedstate:savedstate-compose:1.3.0 -> 1.4.0 (*)
-|    |    |    |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.3.21 (*)
+|    |    |    |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.4.0 (*)
 |    |    |    |    |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 -> 1.11.0 (*)
 |    |    |    |    |    |         +--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.7.3 -> 1.11.0 (*)
 |    |    |    |    |    |         +--- androidx.navigation:navigation-common:2.9.7 (c)
 |    |    |    |    |    |         +--- androidx.navigation:navigation-runtime:2.9.7 (c)
-|    |    |    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (c)
+|    |    |    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (c)
 |    |    |    |    |    +--- org.jetbrains.androidx.lifecycle:lifecycle-common:2.9.6 -> 2.10.0 (*)
 |    |    |    |    |    +--- org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose:2.9.6 -> 2.10.0 (*)
 |    |    |    |    |    +--- org.jetbrains.androidx.lifecycle:lifecycle-viewmodel:2.9.6 -> 2.10.0 (*)
@@ -1364,7 +1364,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |    |    +--- org.jetbrains.androidx.lifecycle:lifecycle-viewmodel:2.9.6 -> 2.10.0 (*)
 |    |    |    |    |    |    +--- org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-savedstate:2.9.6 -> 2.10.0 (*)
 |    |    |    |    |    |    +--- org.jetbrains.androidx.savedstate:savedstate:1.3.6 (*)
-|    |    |    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.3.21 (*)
+|    |    |    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.4.0 (*)
 |    |    |    |    |    |    \--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.7.3 -> 1.11.0 (*)
 |    |    |    |    |    +--- org.jetbrains.androidx.navigation:navigation-runtime:2.9.2
 |    |    |    |    |    |    +--- androidx.annotation:annotation:1.9.1 -> 1.10.0 (*)
@@ -1376,7 +1376,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |    |    +--- org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-savedstate:2.9.6 -> 2.10.0 (*)
 |    |    |    |    |    |    +--- org.jetbrains.androidx.navigation:navigation-common:2.9.2 (*)
 |    |    |    |    |    |    +--- org.jetbrains.androidx.savedstate:savedstate:1.3.6 (*)
-|    |    |    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.3.21 (*)
+|    |    |    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.4.0 (*)
 |    |    |    |    |    |    \--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.7.3 -> 1.11.0 (*)
 |    |    |    |    |    +--- org.jetbrains.androidx.savedstate:savedstate:1.3.6 (*)
 |    |    |    |    |    +--- org.jetbrains.androidx.savedstate:savedstate-compose:1.3.6 (*)
@@ -1385,37 +1385,37 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |    +--- org.jetbrains.compose.foundation:foundation-layout:1.8.2 -> 1.11.1 (*)
 |    |    |    |    |    +--- org.jetbrains.compose.runtime:runtime:1.9.3 -> 1.11.1 (*)
 |    |    |    |    |    +--- org.jetbrains.compose.runtime:runtime-saveable:1.9.3 -> 1.11.1 (*)
-|    |    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.3.21 (*)
+|    |    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.4.0 (*)
 |    |    |    |    |    \--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.7.3 -> 1.11.0 (*)
 |    |    |    |    +--- io.insert-koin:koin-annotations:4.2.2
 |    |    |    |    |    \--- io.insert-koin:koin-annotations-jvm:4.2.2
 |    |    |    |    |         +--- io.insert-koin:koin-core-annotations:4.2.2
 |    |    |    |    |         |    \--- io.insert-koin:koin-core-annotations-jvm:4.2.2
-|    |    |    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.20 -> 2.3.21 (*)
-|    |    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.20 -> 2.3.21 (*)
+|    |    |    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.20 -> 2.4.0 (*)
+|    |    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.20 -> 2.4.0 (*)
 |    |    |    |    +--- io.insert-koin:koin-compose:koin -> 4.2.2
 |    |    |    |    |    \--- io.insert-koin:koin-compose-android:4.2.2
 |    |    |    |    |         +--- androidx.activity:activity-compose:1.12.4 -> 1.13.0 (*)
 |    |    |    |    |         +--- io.insert-koin:koin-android:4.2.2
 |    |    |    |    |         |    +--- io.insert-koin:koin-core:4.2.2
 |    |    |    |    |         |    |    \--- io.insert-koin:koin-core-jvm:4.2.2
-|    |    |    |    |         |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.20 -> 2.3.21 (*)
+|    |    |    |    |         |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.20 -> 2.4.0 (*)
 |    |    |    |    |         |    |         +--- co.touchlab:stately-concurrency:2.1.0
 |    |    |    |    |         |    |         |    \--- co.touchlab:stately-concurrency-jvm:2.1.0
-|    |    |    |    |         |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.23 -> 2.3.21 (*)
+|    |    |    |    |         |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.23 -> 2.4.0 (*)
 |    |    |    |    |         |    |         |         \--- co.touchlab:stately-strict:2.1.0
 |    |    |    |    |         |    |         |              \--- co.touchlab:stately-strict-jvm:2.1.0
-|    |    |    |    |         |    |         |                   \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.23 -> 2.3.21 (*)
+|    |    |    |    |         |    |         |                   \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.23 -> 2.4.0 (*)
 |    |    |    |    |         |    |         \--- co.touchlab:stately-concurrent-collections:2.1.0
 |    |    |    |    |         |    |              \--- co.touchlab:stately-concurrent-collections-jvm:2.1.0
 |    |    |    |    |         |    |                   +--- co.touchlab:stately-concurrency:2.1.0 (*)
-|    |    |    |    |         |    |                   \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.23 -> 2.3.21 (*)
+|    |    |    |    |         |    |                   \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.23 -> 2.4.0 (*)
 |    |    |    |    |         |    +--- io.insert-koin:koin-core-viewmodel:4.2.2
 |    |    |    |    |         |    |    \--- io.insert-koin:koin-core-viewmodel-android:4.2.2
 |    |    |    |    |         |    |         +--- io.insert-koin:koin-core:4.2.2 (*)
 |    |    |    |    |         |    |         +--- org.jetbrains.androidx.lifecycle:lifecycle-viewmodel:2.9.6 -> 2.10.0 (*)
 |    |    |    |    |         |    |         +--- org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-savedstate:2.9.6 -> 2.10.0 (*)
-|    |    |    |    |         |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.20 -> 2.3.21 (*)
+|    |    |    |    |         |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.20 -> 2.4.0 (*)
 |    |    |    |    |         |    +--- androidx.appcompat:appcompat:1.7.1
 |    |    |    |    |         |    |    +--- androidx.activity:activity:1.8.0 -> 1.13.0 (*)
 |    |    |    |    |         |    |    +--- androidx.annotation:annotation:1.3.0 -> 1.10.0 (*)
@@ -1442,7 +1442,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |         |    |    +--- androidx.resourceinspection:resourceinspection-annotation:1.0.1
 |    |    |    |    |         |    |    |    \--- androidx.annotation:annotation:1.1.0 -> 1.10.0 (*)
 |    |    |    |    |         |    |    +--- androidx.savedstate:savedstate:1.2.1 -> 1.4.0 (*)
-|    |    |    |    |         |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.3.21 (*)
+|    |    |    |    |         |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.4.0 (*)
 |    |    |    |    |         |    |    \--- androidx.appcompat:appcompat-resources:1.7.1 (c)
 |    |    |    |    |         |    +--- androidx.activity:activity-ktx:1.12.4 -> 1.13.0 (*)
 |    |    |    |    |         |    +--- androidx.fragment:fragment-ktx:1.8.9
@@ -1453,29 +1453,29 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    |         |    |    +--- androidx.lifecycle:lifecycle-livedata-core-ktx:2.6.1 -> 2.10.0 (*)
 |    |    |    |    |         |    |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1 -> 2.10.0 (*)
 |    |    |    |    |         |    |    +--- androidx.savedstate:savedstate-ktx:1.2.1 -> 1.4.0 (*)
-|    |    |    |    |         |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.3.21 (*)
+|    |    |    |    |         |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.4.0 (*)
 |    |    |    |    |         |    |    \--- androidx.fragment:fragment:1.8.9 (c)
 |    |    |    |    |         |    +--- androidx.lifecycle:lifecycle-viewmodel-ktx:2.10.0 (*)
-|    |    |    |    |         |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.20 -> 2.3.21 (*)
+|    |    |    |    |         |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.20 -> 2.4.0 (*)
 |    |    |    |    |         +--- io.insert-koin:koin-core:4.2.2 (*)
 |    |    |    |    |         +--- org.jetbrains.compose.runtime:runtime:1.10.2 -> 1.11.1 (*)
 |    |    |    |    |         +--- org.jetbrains.compose.foundation:foundation:1.10.2 -> 1.11.1 (*)
-|    |    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.20 -> 2.3.21 (*)
+|    |    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.20 -> 2.4.0 (*)
 |    |    |    |    +--- io.insert-koin:koin-compose-viewmodel:4.2.2
 |    |    |    |    |    \--- io.insert-koin:koin-compose-viewmodel-android:4.2.2
 |    |    |    |    |         +--- androidx.activity:activity-compose:1.12.4 -> 1.13.0 (*)
 |    |    |    |    |         +--- io.insert-koin:koin-compose:4.2.2 (*)
 |    |    |    |    |         +--- io.insert-koin:koin-core-viewmodel:4.2.2 (*)
 |    |    |    |    |         +--- org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose:2.9.6 -> 2.10.0 (*)
-|    |    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.20 -> 2.3.21 (*)
+|    |    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.20 -> 2.4.0 (*)
 |    |    |    |    +--- io.insert-koin:koin-core:4.2.2 (*)
 |    |    |    |    +--- com.michael-bull.kotlin-result:kotlin-result:2.3.1 (*)
 |    |    |    |    +--- co.touchlab:kermit:2.1.0
 |    |    |    |    |    \--- co.touchlab:kermit-android:2.1.0
 |    |    |    |    |         +--- co.touchlab:kermit-core:2.1.0
 |    |    |    |    |         |    \--- co.touchlab:kermit-core-android:2.1.0
-|    |    |    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.0 -> 2.3.21 (*)
-|    |    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.0 -> 2.3.21 (*)
+|    |    |    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.0 -> 2.4.0 (*)
+|    |    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.0 -> 2.4.0 (*)
 |    |    |    |    +--- io.coil-kt.coil3:coil-compose-core:3.4.0 (*)
 |    |    |    |    \--- io.coil-kt.coil3:coil-network-ktor3:3.4.0
 |    |    |    |         \--- io.coil-kt.coil3:coil-network-ktor3-android:3.4.0
@@ -1483,11 +1483,11 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |              +--- io.coil-kt.coil3:coil-network-core:3.4.0
 |    |    |    |              |    \--- io.coil-kt.coil3:coil-network-core-android:3.4.0
 |    |    |    |              |         +--- io.coil-kt.coil3:coil-core:3.4.0 (*)
-|    |    |    |              |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 -> 2.3.21 (*)
+|    |    |    |              |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 -> 2.4.0 (*)
 |    |    |    |              |         \--- androidx.core:core-ktx:1.16.0 -> 1.19.0 (*)
 |    |    |    |              +--- io.ktor:ktor-client-core:3.1.0 -> 3.5.0 (*)
-|    |    |    |              \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 -> 2.3.21 (*)
-|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |    |    |              \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 -> 2.4.0 (*)
+|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.4.0 (*)
 |    |    |    +--- com.kizitonwose.calendar:compose-multiplatform:2.10.1 (*)
 |    |    |    +--- io.coil-kt.coil3:coil-compose:3.4.0 (*)
 |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
@@ -1503,7 +1503,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    +--- co.touchlab:kermit:2.1.0 (*)
 |    |    |    +--- io.coil-kt.coil3:coil-compose-core:3.4.0 (*)
 |    |    |    \--- io.coil-kt.coil3:coil-network-ktor3:3.4.0 (*)
-|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.4.0 (*)
 |    |    +--- com.kizitonwose.calendar:compose-multiplatform:2.10.1 (*)
 |    |    +--- io.coil-kt.coil3:coil-compose:3.4.0 (*)
 |    |    +--- dev.gitlive:firebase-common:2.4.0 (*)
@@ -1520,10 +1520,10 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    +--- org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0
 |    |    |    \--- org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.11.0
 |    |    |         +--- org.jetbrains.kotlinx:kotlinx-serialization-bom:1.11.0 (*)
-|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.20 -> 2.3.21 (*)
+|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.20 -> 2.4.0 (*)
 |    |    |         \--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.11.0 (*)
 |    |    \--- project :modules:library-navigation-api (*)
-|    +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:2.4.0 (*)
 |    +--- com.kizitonwose.calendar:compose-multiplatform:2.10.1 (*)
 |    +--- io.coil-kt.coil3:coil-compose:3.4.0 (*)
 |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
@@ -1555,20 +1555,20 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         +--- androidx.sqlite:sqlite:2.6.2
 |    |    |    |         |    \--- androidx.sqlite:sqlite-android:2.6.2
 |    |    |    |         |         +--- androidx.annotation:annotation:1.9.1 -> 1.10.0 (*)
-|    |    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.3.21 (*)
+|    |    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.4.0 (*)
 |    |    |    |         |         +--- androidx.sqlite:sqlite-framework:2.6.2 (c)
-|    |    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (c)
-|    |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.3.21 (*)
+|    |    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (c)
+|    |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib -> 2.4.0 (*)
 |    |    |    |         +--- androidx.sqlite:sqlite:2.6.2 (c)
-|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (c)
+|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (c)
 |    |    |    +--- app.cash.sqldelight:runtime:2.3.2
 |    |    |    |    \--- app.cash.sqldelight:runtime-jvm:2.3.2
-|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 -> 2.3.21 (*)
+|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 -> 2.4.0 (*)
 |    |    |    +--- androidx.sqlite:sqlite:2.6.2 (*)
-|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 -> 2.3.21 (*)
+|    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 -> 2.4.0 (*)
 |    |    +--- project :modules:library-ui-shared (*)
 |    |    +--- app.cash.sqldelight:runtime:2.3.2 (*)
-|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.4.0 (*)
 |    |    +--- com.kizitonwose.calendar:compose-multiplatform:2.10.1 (*)
 |    |    +--- io.coil-kt.coil3:coil-compose:3.4.0 (*)
 |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
@@ -1590,7 +1590,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    +--- io.ktor:ktor-client-android:3.5.0 (*)
 |    |    |    +--- junit:junit:4.13.2 (*)
 |    |    |    +--- org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0 (*)
-|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.4.0 (*)
 |    |    |    +--- com.kizitonwose.calendar:compose-multiplatform:2.10.1 (*)
 |    |    |    +--- io.coil-kt.coil3:coil-compose:3.4.0 (*)
 |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
@@ -1621,28 +1621,28 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |         |         |         +--- androidx.annotation:annotation:1.9.1 -> 1.10.0 (*)
 |    |    |         |         |         +--- androidx.startup:startup-runtime:1.2.0 (*)
 |    |    |         |         |         +--- com.squareup.okio:okio:3.16.2 -> 3.16.4 (*)
-|    |    |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.21 -> 2.3.21 (*)
-|    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.0 -> 2.3.21 (*)
+|    |    |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.2.21 -> 2.4.0 (*)
+|    |    |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.0 -> 2.4.0 (*)
 |    |    |         |         +--- com.apollographql.apollo:apollo-api:5.0.0
 |    |    |         |         |    \--- com.apollographql.apollo:apollo-api-jvm:5.0.0
-|    |    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.0 -> 2.3.21 (*)
+|    |    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.0 -> 2.4.0 (*)
 |    |    |         |         |         +--- com.squareup.okio:okio:3.16.2 -> 3.16.4 (*)
 |    |    |         |         |         +--- com.benasher44:uuid:0.8.4
 |    |    |         |         |         |    \--- com.benasher44:uuid-jvm:0.8.4
-|    |    |         |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.20 -> 2.3.21 (*)
+|    |    |         |         |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.20 -> 2.4.0 (*)
 |    |    |         |         |         \--- com.apollographql.apollo:apollo-annotations:5.0.0
 |    |    |         |         |              \--- com.apollographql.apollo:apollo-annotations-jvm:5.0.0
-|    |    |         |         |                   \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.0 -> 2.3.21 (*)
+|    |    |         |         |                   \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.0 -> 2.4.0 (*)
 |    |    |         |         +--- com.apollographql.apollo:apollo-mpp-utils:5.0.0
 |    |    |         |         |    \--- com.apollographql.apollo:apollo-mpp-utils-jvm:5.0.0
-|    |    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.0 -> 2.3.21 (*)
+|    |    |         |         |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.0 -> 2.4.0 (*)
 |    |    |         |         |         \--- com.apollographql.apollo:apollo-annotations:5.0.0 (*)
 |    |    |         |         +--- com.squareup.okio:okio:3.16.2 -> 3.16.4 (*)
 |    |    |         |         +--- com.benasher44:uuid:0.8.4 (*)
 |    |    |         |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2 -> 1.11.0 (*)
 |    |    |         |         \--- org.jetbrains.kotlinx:atomicfu:0.28.0
 |    |    |         |              \--- org.jetbrains.kotlinx:atomicfu-jvm:0.28.0
-|    |    |         |                   \--- org.jetbrains.kotlin:kotlin-stdlib:{prefer 2.1.0} -> 2.3.21 (*)
+|    |    |         |                   \--- org.jetbrains.kotlin:kotlin-stdlib:{prefer 2.1.0} -> 2.4.0 (*)
 |    |    |         +--- com.apollographql.cache:normalized-cache:1.0.4
 |    |    |         |    \--- com.apollographql.cache:normalized-cache-jvm:1.0.4
 |    |    |         |         +--- com.apollographql.apollo:apollo-runtime:4.4.2 -> 5.0.0 (*)
@@ -1650,7 +1650,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |         |         +--- com.benasher44:uuid:0.8.4 (*)
 |    |    |         |         +--- com.squareup.okio:okio:3.9.0 -> 3.16.4 (*)
 |    |    |         |         \--- org.jetbrains.kotlinx:atomicfu:0.28.0 (*)
-|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.4.0 (*)
 |    |    |         +--- com.kizitonwose.calendar:compose-multiplatform:2.10.1 (*)
 |    |    |         +--- io.coil-kt.coil3:coil-compose:3.4.0 (*)
 |    |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
@@ -1673,7 +1673,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    +--- io.ktor:ktor-client-android:3.5.0 (*)
 |    |    |    +--- junit:junit:4.13.2 (*)
 |    |    |    +--- org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0 (*)
-|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.4.0 (*)
 |    |    |    +--- com.kizitonwose.calendar:compose-multiplatform:2.10.1 (*)
 |    |    |    +--- io.coil-kt.coil3:coil-compose:3.4.0 (*)
 |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
@@ -1697,7 +1697,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    +--- io.ktor:ktor-client-android:3.5.0 (*)
 |    |    |    +--- junit:junit:4.13.2 (*)
 |    |    |    +--- project :modules:library-navigation-api (*)
-|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.4.0 (*)
 |    |    |    +--- com.kizitonwose.calendar:compose-multiplatform:2.10.1 (*)
 |    |    |    +--- io.coil-kt.coil3:coil-compose:3.4.0 (*)
 |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
@@ -1719,7 +1719,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |    +--- io.ktor:ktor-client-android:3.5.0 (*)
 |    |    |    |    +--- junit:junit:4.13.2 (*)
 |    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0 (*)
-|    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.4.0 (*)
 |    |    |    |    +--- com.kizitonwose.calendar:compose-multiplatform:2.10.1 (*)
 |    |    |    |    +--- io.coil-kt.coil3:coil-compose:3.4.0 (*)
 |    |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
@@ -1743,7 +1743,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |         +--- io.ktor:ktor-client-android:3.5.0 (*)
 |    |    |         +--- junit:junit:4.13.2 (*)
 |    |    |         +--- org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0 (*)
-|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.4.0 (*)
 |    |    |         +--- com.kizitonwose.calendar:compose-multiplatform:2.10.1 (*)
 |    |    |         +--- io.coil-kt.coil3:coil-compose:3.4.0 (*)
 |    |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
@@ -1768,7 +1768,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    +--- io.ktor:ktor-client-android:3.5.0 (*)
 |    |    |    +--- junit:junit:4.13.2 (*)
 |    |    |    +--- project :modules:library-network-api (*)
-|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.4.0 (*)
 |    |    |    +--- com.kizitonwose.calendar:compose-multiplatform:2.10.1 (*)
 |    |    |    +--- io.coil-kt.coil3:coil-compose:3.4.0 (*)
 |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
@@ -1790,7 +1790,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
 |    |    |    |         +--- io.ktor:ktor-client-core:3.5.0 (*)
 |    |    |    |         +--- io.ktor:ktor-serialization:3.5.0 (*)
-|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 -> 2.4.0 (*)
 |    |    |    +--- io.ktor:ktor-client-core:3.5.0 (*)
 |    |    |    +--- io.ktor:ktor-client-cio:3.5.0
 |    |    |    |    \--- io.ktor:ktor-client-cio-jvm:3.5.0
@@ -1806,8 +1806,8 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    |         |         +--- io.ktor:ktor-http:3.5.0 (*)
 |    |    |    |         |         +--- io.ktor:ktor-network:3.5.0 (*)
 |    |    |    |         |         +--- io.ktor:ktor-utils:3.5.0 (*)
-|    |    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
-|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 -> 2.4.0 (*)
+|    |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 -> 2.4.0 (*)
 |    |    |    \--- io.ktor:ktor-serialization-kotlinx-json:3.5.0
 |    |    |         \--- io.ktor:ktor-serialization-kotlinx-json-jvm:3.5.0
 |    |    |              +--- org.slf4j:slf4j-api:2.0.18
@@ -1818,16 +1818,16 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |              |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
 |    |    |              |         +--- io.ktor:ktor-serialization:3.5.0 (*)
 |    |    |              |         +--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.11.0 (*)
-|    |    |              |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |    |              |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 -> 2.4.0 (*)
 |    |    |              +--- org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0 (*)
 |    |    |              +--- org.jetbrains.kotlinx:kotlinx-serialization-json-io:1.11.0
 |    |    |              |    \--- org.jetbrains.kotlinx:kotlinx-serialization-json-io-jvm:1.11.0
 |    |    |              |         +--- org.jetbrains.kotlinx:kotlinx-serialization-bom:1.11.0 (*)
-|    |    |              |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.20 -> 2.3.21 (*)
+|    |    |              |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.20 -> 2.4.0 (*)
 |    |    |              |         +--- org.jetbrains.kotlinx:kotlinx-serialization-core:1.11.0 (*)
 |    |    |              |         +--- org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0 (*)
 |    |    |              |         \--- org.jetbrains.kotlinx:kotlinx-io-core:0.6.0 -> 0.9.0 (*)
-|    |    |              \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |    |              \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 -> 2.4.0 (*)
 |    |    +--- dev.gitlive:firebase-auth:2.4.0
 |    |    |    \--- dev.gitlive:firebase-auth-android:2.4.0
 |    |    |         +--- com.google.firebase:firebase-auth -> 24.1.0
@@ -1841,7 +1841,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |         |    +--- androidx.collection:collection:1.0.0 -> 1.5.0 (*)
 |    |    |         |    +--- androidx.credentials:credentials:1.2.0-rc01
 |    |    |         |    |    +--- androidx.annotation:annotation:1.5.0 -> 1.10.0 (*)
-|    |    |         |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.3.21 (*)
+|    |    |         |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.4.0 (*)
 |    |    |         |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1 -> 1.11.0 (*)
 |    |    |         |    |    \--- androidx.credentials:credentials-play-services-auth:1.2.0-rc01 (c)
 |    |    |         |    +--- androidx.credentials:credentials-play-services-auth:1.2.0-rc01
@@ -1866,12 +1866,12 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |         |    |    |    \--- com.google.android.gms:play-services-tasks:18.0.1 -> 18.4.0 (*)
 |    |    |         |    |    +--- com.google.android.gms:play-services-fido:20.1.0 (*)
 |    |    |         |    |    +--- com.google.android.libraries.identity.googleid:googleid:1.1.0
-|    |    |         |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.0 -> 2.3.21 (*)
+|    |    |         |    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.0 -> 2.4.0 (*)
 |    |    |         |    |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0 -> 1.9.0
-|    |    |         |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.0 -> 2.3.21 (*)
+|    |    |         |    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:1.9.0 -> 2.4.0 (*)
 |    |    |         |    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.0
-|    |    |         |    |    |              \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.0 -> 2.3.21 (*)
-|    |    |         |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.3.21 (*)
+|    |    |         |    |    |              \--- org.jetbrains.kotlin:kotlin-stdlib:1.9.0 -> 2.4.0 (*)
+|    |    |         |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.8.22 -> 2.4.0 (*)
 |    |    |         |    |    \--- androidx.credentials:credentials:1.2.0-rc01 (c)
 |    |    |         |    +--- androidx.fragment:fragment:1.1.0 -> 1.8.9 (*)
 |    |    |         |    +--- androidx.localbroadcastmanager:localbroadcastmanager:1.0.0 (*)
@@ -1886,7 +1886,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |         |    |    +--- com.google.android.gms:play-services-basement:18.4.0 -> 18.9.0 (*)
 |    |    |         |    |    +--- com.google.android.gms:play-services-tasks:18.2.0 -> 18.4.0 (*)
 |    |    |         |    |    +--- com.google.android.play:integrity:1.3.0 (*)
-|    |    |         |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.7.0 -> 2.3.21 (*)
+|    |    |         |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.7.0 -> 2.4.0 (*)
 |    |    |         |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3 -> 1.11.0 (*)
 |    |    |         |    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3 -> 1.11.0 (*)
 |    |    |         |    +--- com.google.firebase:firebase-annotations:16.2.0 -> 17.0.0 (*)
@@ -1894,22 +1894,22 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |         |    +--- com.google.firebase:firebase-auth-interop:20.0.0 (*)
 |    |    |         |    +--- com.google.firebase:firebase-common:21.0.0 -> 22.1.0 (*)
 |    |    |         |    +--- com.google.firebase:firebase-components:18.0.0 -> 19.0.0 (*)
-|    |    |         |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.3.21 (*)
+|    |    |         |    \--- org.jetbrains.kotlin:kotlin-stdlib:2.0.21 -> 2.4.0 (*)
 |    |    |         +--- org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.2 -> 1.11.0 (*)
 |    |    |         +--- com.google.firebase:firebase-bom:33.15.0 -> 34.15.0 (*)
 |    |    |         +--- dev.gitlive:firebase-app:2.4.0 (*)
-|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.3.21 (*)
+|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.2.20 -> 2.4.0 (*)
 |    |    |         +--- dev.gitlive:firebase-common:2.4.0 (*)
 |    |    |         \--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2 -> 1.11.0 (*)
 |    |    \--- app.cash.sqldelight:coroutines-extensions:2.3.2
 |    |         \--- app.cash.sqldelight:coroutines-extensions-jvm:2.3.2
 |    |              +--- app.cash.sqldelight:runtime:2.3.2 (*)
 |    |              +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2 -> 1.11.0 (*)
-|    |              +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 -> 2.3.21 (*)
+|    |              +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 -> 2.4.0 (*)
 |    |              \--- app.cash.sqldelight:async-extensions:2.3.2
 |    |                   \--- app.cash.sqldelight:async-extensions-jvm:2.3.2
 |    |                        +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2 -> 1.11.0 (*)
-|    |                        +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 -> 2.3.21 (*)
+|    |                        +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 -> 2.4.0 (*)
 |    |                        \--- app.cash.sqldelight:runtime:2.3.2 (*)
 |    +--- project :modules:feature-account-api (*)
 |    +--- project :modules:feature-common
@@ -1918,7 +1918,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    +--- io.ktor:ktor-client-android:3.5.0 (*)
 |    |    +--- junit:junit:4.13.2 (*)
 |    |    +--- project :modules:library-ui-shared (*)
-|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.4.0 (*)
 |    |    +--- com.kizitonwose.calendar:compose-multiplatform:2.10.1 (*)
 |    |    +--- io.coil-kt.coil3:coil-compose:3.4.0 (*)
 |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
@@ -1949,7 +1949,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    +--- io.ktor:ktor-client-android:3.5.0 (*)
 |    |    +--- junit:junit:4.13.2 (*)
 |    |    +--- project :modules:library-ui-shared (*)
-|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.4.0 (*)
 |    |    +--- com.kizitonwose.calendar:compose-multiplatform:2.10.1 (*)
 |    |    +--- io.coil-kt.coil3:coil-compose:3.4.0 (*)
 |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
@@ -1973,7 +1973,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    \--- io.github.koalaplot:koalaplot-core-android:0.11.2
 |    |    |         +--- org.jetbrains.compose.ui:ui:1.10.0 -> 1.11.1 (*)
 |    |    |         +--- org.jetbrains.compose.animation:animation:1.10.0 -> 1.11.1 (*)
-|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.0 -> 2.3.21 (*)
+|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.0 -> 2.4.0 (*)
 |    |    |         +--- org.jetbrains.compose.runtime:runtime:1.10.0 -> 1.11.1 (*)
 |    |    |         +--- org.jetbrains.compose.foundation:foundation:1.10.0 -> 1.11.1 (*)
 |    |    |         +--- org.jetbrains.compose.material3:material3:1.9.0 (*)
@@ -1986,7 +1986,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |         +--- org.jetbrains.compose.runtime:runtime:1.4.3 -> 1.11.1 (*)
 |    |    |         +--- org.jetbrains.compose.foundation:foundation:1.4.3 -> 1.11.1 (*)
 |    |    |         +--- org.jetbrains.compose.material:material:1.4.3 -> 1.11.1 (*)
-|    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.9.0 -> 2.3.21 (*)
+|    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.9.0 -> 2.4.0 (*)
 |    |    +--- app.cash.sqldelight:coroutines-extensions:2.3.2 (*)
 |    |    +--- project :modules:feature-electricity-api
 |    |    |    +--- com.google.firebase:firebase-bom:34.15.0 (*)
@@ -1994,7 +1994,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    +--- io.ktor:ktor-client-android:3.5.0 (*)
 |    |    |    +--- junit:junit:4.13.2 (*)
 |    |    |    +--- org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0 (*)
-|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.4.0 (*)
 |    |    |    +--- com.kizitonwose.calendar:compose-multiplatform:2.10.1 (*)
 |    |    |    +--- io.coil-kt.coil3:coil-compose:3.4.0 (*)
 |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
@@ -2022,7 +2022,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    +--- io.ktor:ktor-client-android:3.5.0 (*)
 |    |    +--- junit:junit:4.13.2 (*)
 |    |    +--- org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0 (*)
-|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.4.0 (*)
 |    |    +--- com.kizitonwose.calendar:compose-multiplatform:2.10.1 (*)
 |    |    +--- io.coil-kt.coil3:coil-compose:3.4.0 (*)
 |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
@@ -2048,7 +2048,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    +--- app.cash.sqldelight:android-driver:2.3.2 (*)
 |    |    +--- project :modules:library-ui-shared (*)
 |    |    +--- app.cash.sqldelight:runtime:2.3.2 (*)
-|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.4.0 (*)
 |    |    +--- com.kizitonwose.calendar:compose-multiplatform:2.10.1 (*)
 |    |    +--- io.coil-kt.coil3:coil-compose:3.4.0 (*)
 |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
@@ -2081,7 +2081,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    +--- io.ktor:ktor-client-android:3.5.0 (*)
 |    |    +--- junit:junit:4.13.2 (*)
 |    |    +--- project :modules:library-ui-shared (*)
-|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.4.0 (*)
 |    |    +--- com.kizitonwose.calendar:compose-multiplatform:2.10.1 (*)
 |    |    +--- io.coil-kt.coil3:coil-compose:3.4.0 (*)
 |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
@@ -2115,7 +2115,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    +--- io.ktor:ktor-client-android:3.5.0 (*)
 |    |    +--- junit:junit:4.13.2 (*)
 |    |    +--- project :modules:library-ui-shared (*)
-|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.4.0 (*)
 |    |    +--- com.kizitonwose.calendar:compose-multiplatform:2.10.1 (*)
 |    |    +--- io.coil-kt.coil3:coil-compose:3.4.0 (*)
 |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
@@ -2145,7 +2145,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
 |    |    |    +--- io.ktor:ktor-client-android:3.5.0 (*)
 |    |    |    +--- junit:junit:4.13.2 (*)
 |    |    |    +--- org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0 (*)
-|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.21 (*)
+|    |    |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.4.0 (*)
 |    |    |    +--- com.kizitonwose.calendar:compose-multiplatform:2.10.1 (*)
 |    |    |    +--- io.coil-kt.coil3:coil-compose:3.4.0 (*)
 |    |    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0 (*)
@@ -2187,7 +2187,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
           |    \--- androidx.compose.ui:ui-tooling-data-android:1.11.3
           |         +--- androidx.compose.runtime:runtime:1.11.3 (*)
           |         +--- androidx.compose.ui:ui:1.11.3 (*)
-          |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+          |         +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
           |         +--- androidx.compose.ui:ui:1.11.3 (c)
           |         +--- androidx.compose.ui:ui-geometry:1.11.3 (c)
           |         +--- androidx.compose.ui:ui-graphics:1.11.3 (c)
@@ -2199,7 +2199,7 @@ releaseRuntimeClasspath - Runtime classpath of '/release'.
           +--- androidx.compose.ui:ui-tooling-preview:1.11.3 (*)
           +--- androidx.lifecycle:lifecycle-common:2.6.1 -> 2.10.0 (*)
           +--- androidx.savedstate:savedstate-ktx:1.2.1 -> 1.4.0 (*)
-          +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.3.21 (*)
+          +--- org.jetbrains.kotlin:kotlin-stdlib:2.1.20 -> 2.4.0 (*)
           +--- androidx.compose.ui:ui:1.11.3 (c)
           +--- androidx.compose.ui:ui-geometry:1.11.3 (c)
           +--- androidx.compose.ui:ui-graphics:1.11.3 (c)
